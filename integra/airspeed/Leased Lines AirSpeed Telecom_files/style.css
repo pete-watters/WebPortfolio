@@ -1,0 +1,828 @@
+/* CSS Document */
+
+body
+{
+	padding:0;
+	margin:0;
+	background:#fff;
+}
+#container
+{
+	width:960px;
+	margin:0px;
+	padding:0px;
+	height:auto;
+}
+/*------------Header Starts---------------------*/
+#header
+{
+	width:960px;
+	height:130px;
+	/*border:1px solid #000;*/
+}
+
+#header-top
+{
+	height:82px;
+}
+
+#header-left
+{
+	float:left;
+	padding-left:25px;
+	width:440px;
+	border:0px solid #000;
+}
+#header-right
+{
+	float:left;
+	width:490px;
+	height:34px;
+	margin-top:25px;
+	border:0px solid #000;
+}
+
+.tel
+{
+	width:150px;
+	height:34px;
+	float:left;
+	background:url(/images/tel.jpg) no-repeat;
+	padding-top:8px;
+	margin:0px;
+	border:0px solid;
+}
+.tel a
+{
+	text-decoration:none;
+	padding-left:0px;
+	margin:0px;
+	font-weight:bold;
+	color:#046b95;
+	font-size:14px;
+	font-family:"arial",san-sarif;
+}
+.quote
+{
+	width:150px;
+	height:34px;
+	float:left;
+	background:url(/images/quote.jpg) no-repeat;
+	padding-top:8px;
+	margin:0px;
+	border:0px solid;
+}
+.quote a
+{
+	text-decoration:none;
+	padding-left:20px;
+	font-weight:bold;
+	color:#046b95;
+	font-size:14px;
+	font-family:"arial" , san-sarif;
+}
+.newsletter
+{
+	width:180px;
+	height:34px;
+	float:left;
+	/*background:url(/images/newsletter1.gif) no-repeat;*/
+	/*border:1px solid #000;*/
+	padding-top:8px;
+
+}
+
+
+.newsletter a
+{
+	text-decoration:none;
+	padding-left:35px;
+	font-weight:bold;
+	color:#046b95;
+	font-size:14px;
+	font-family:HelveticaNeueLTStd-Bd,arial,"san-sarif";
+}
+
+#header-bottom
+{
+	height:48px;
+	width:960px;
+
+}
+#headerMenu
+{
+	float:left;
+	width:747px;
+	height:48px;
+	float:left;
+	background:url(/images/header-bottom-bg.gif) repeat-x;
+	
+}
+
+/*#headerMenu ul
+{
+	width:740px;
+	list-style-type:none;
+	margin:0px;
+	padding-top:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	padding-right:0px;
+}
+#headerMenu ul li
+{
+	display:inline;
+}
+
+#headerMenu ul li a
+{
+	text-decoration:none;
+	
+	font-weight:bold;	
+	
+}*/
+
+#headerMenu ul.menu
+{
+	display:block;
+	padding:0px;
+	margin-top:13px;
+	margin-left:0px;
+	margin-bottom:0px;
+	margin-right:0px;
+	background:none;
+	/*width:720px;*/
+	text-align:left;
+	border:0px solid #000;
+	
+}
+#headerMenu ul.menu li
+{
+	background:url(/images/saparation.gif) no-repeat right;
+	height:22px;
+	padding-left:29px;
+	padding-top:0px;
+	padding-right:29px;
+	padding-bottom:1px;
+	margin:0;
+	display:block; 
+	float:left; 
+	border:0px solid #000;
+
+}
+
+#headerMenu ul.menu li.lil
+{
+	background:none;
+	height:22px;
+	padding-left:29px;
+	padding-top:0px;
+	padding-right:29px;
+	padding-bottom:0px;
+	margin:0px;
+	display:block;
+	float:left; 
+	
+}
+/*#headerMenu ul.menu li.lil a
+{
+	
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	color:#1e6d8c;
+	font-size:13px;
+	font-weight:bold;
+}*/
+#headerMenu ul.menu li.lil a:hover
+{
+	/*color:#3e7f9f;*/
+	color:#1e6d8c;
+}
+#headerMenu ul.menu li a
+{
+	text-decoration:none;
+	/*color:#3e7f9f;*/
+	color:#1e6d8c;
+	text-indent:0px; 
+	padding-left:0px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	font-weight:bold; 
+	margin:0px; 
+	width:inherit; 
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+ }
+#headerMenu ul.menu li a:hover
+{
+	/*color:#3e7f9f;*/
+	color:#1e6d8c;
+}
+#header-bottom-right
+{
+	float:left;
+	width:173px;
+	height:48px;
+	background:url(/images/header-bottom-right.gif) no-repeat;
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	color:#3e7f9f;
+	font-size:16px;
+	font-weight:bold;
+	/*border:1px solid #000;*/
+}
+#header-bottom-right ul
+{
+	width:171px;
+	list-style-type:none;
+	margin:0px;
+	padding-top:14px;
+	padding-left:0px;
+	padding-bottom:0px;
+	padding-right:0px;
+}
+#header-bottom-right ul li
+{
+	display:inline;
+}
+
+#header-bottom-right ul li a
+{
+	/*color:#3e7f9f;*/
+	color:#1e6d8c;
+	text-decoration:none;
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+}
+#header-bottom-right ul li a:hover
+{
+	/*color:#3e7f9f;*/
+	color:#1e6d8c;
+}
+
+
+
+
+
+
+/*------------------- header end-------------------------------------------*/
+/*------------Bannder Starts---------------------*/
+
+#banner
+{
+	width:960px;
+	height:178px;
+	/*background:url(/images/banner.jpg) no-repeat;*/
+	text-align:left;
+	padding:0px
+	margin:0px;
+}
+.clickhere
+{
+	height:50px;
+	padding-top:122px;
+	padding-left:20px;
+	width:89px;
+}
+.clickhere a
+{
+	text-decoration:none;
+}
+.clickhere a:hover
+{
+	border-bottom:#baca74 solid 2px; 
+}
+/*------------------- banner end-------------------------------------------*/
+/*------------Body Starts---------------------*/
+
+#body
+{
+	width:960px;
+	/*background: url("/images/bg.gif") repeat-x;*/
+
+}
+#body-top
+{
+	
+	padding:0px;
+	margin:0px;
+}
+#body-top-middle
+{
+	float:left;
+	width:928px;
+	height:232px;
+	margin:0px;
+	background:url(/images/body-top-middle.gif) repeat-x;
+	/*border:1px solid #000;*/
+
+}
+
+#body-top-middle h1
+{
+	font-family:Helvetica,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:24px;
+	color:#7bb830;
+	padding-top:10px;
+	margin:0px;
+	font-weight:normal;
+}
+#body-top-middle p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	padding-top:5px;
+	margin:0px;
+	width:210px;
+}
+
+#body-top-middle ul
+{
+	list-style-type:none;
+	width:210px;
+	display:block;
+	margin:10px 0 0 0px;
+	padding:0px;
+}
+#body-top-middle ul li
+{
+	
+	/*height:24px;*/
+	background:url(/images/arrow.gif) no-repeat 0 6px;
+	padding-left:15px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	margin:0px;
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#005b7f;
+}
+#body-top-middle ul li a
+{
+	text-decoration:none;
+	color:#005b7f
+}
+.product
+{
+	width:220px;
+	/*border:1px solid #000;*/
+	float:left;
+	text-align:left;
+	margin-top:0px;
+	height:230px;
+}
+.product p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	text-align:left;
+	line-height:17px;
+	margin:0px;
+}
+.service
+{
+	width:210px;
+	height:212px;
+	/*border:1px solid #000;*/
+	float:left;
+	text-align:left;
+	padding-left:10px;
+	padding-right:10px;
+	margin-top:0px;
+	height:230px;
+}
+.technology
+{
+	width:210px;
+	height:212px;
+	/*border:1px solid #000;*/
+	float:left;
+	text-align:left;
+	padding-left:10px;
+	padding-right:10px;
+	margin-top:0px;
+	height:230px;
+}
+.customercare
+{
+	width:220px;
+	height:212px;
+	/*border:1px solid #000;*/
+	float:left;
+	text-align:left;
+	padding-left:10px;
+	margin-top:0px;
+	height:230px;
+}
+#body-bottom
+{
+	height:176px;
+	margin:0px;
+	/*border:1px solid #000;*/
+}
+#body-bottom-middle
+{
+	float:left;
+	width:932px;
+	height:176px;
+	background:url(/images/body-bottom-middle-bg.gif) repeat-x;
+	margin:0px;
+	/*border:1px solid #000;*/
+}
+#body-bottom-middle h1
+{
+	font-family:Helvetica,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:24px;
+	color:#7bb830;
+	padding:0px;
+	margin:0px;
+	padding-top:10px;
+	font-weight:normal;
+}
+#body-bottom-middle p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	padding-top:5px;
+	margin:0px;
+	width:440px;
+}
+.welcome
+{
+	width:455px;
+	/*border:1px solid #000;*/
+	float:left;
+	text-align:left;
+	padding-top:0px;
+	padding-left:0px;
+	float:left;
+}
+.news
+{
+	width:430px;
+	/*border:1px solid #000;*/
+	width:462px;
+	float:left;
+	padding-top:0px;
+	padding-left:8px;
+	text-align:left;
+}
+.network 
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#1f9cc3;
+	margin-top:5px;
+	/*padding-left:5px;*/
+	/*border:1px solid #000;*/
+	float:left;
+}
+.fuldetail 
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#005b7f;
+	margin-top:5px;
+	float:left;
+	padding-left:5px;
+	font-weight:normal;
+}
+.fuldetail a
+{
+
+	color:#005b7f;
+	text-decoration:none;
+}
+/*------------body End---------------------*/
+/*------------Subtemplate Starts---------------------*/
+
+a
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#005b7f;
+}
+
+a:hover
+{
+	color:#005b7f;
+	text-decoration:none;
+}
+
+.sub_heading
+{
+	font-family:arial,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:14px;
+	color:#1ab7ea;
+}
+
+.bodyText
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+}
+.bodyText1
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	text-align:left;
+	margin:0px;
+}
+
+#subtemplate
+{
+	margin:0px;
+	padding:0px;
+	background: url(/images/subtemplate-bg.gif) #fff;
+	background-attachment: scroll;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	border-left:1px solid #bdbcbd;
+	border-right:1px solid #bdbcbd;
+}
+#subtemplate_left
+{
+	width:189px;
+	padding:0px;
+	float:left;
+	margin-top:10px;
+	padding-left:13px;
+	padding-right:13px;
+	/*border:1px solid #000;*/
+	text-align:left;
+	border-right:1px solid #bdbcbd;
+}
+#subtemplate_left h1
+{
+	font-family:arial,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:16px;
+	color:#7bb830;
+	margin:0px;
+	padding-top:10px;
+	font-weight:normal;
+}
+
+#subtemplate_left ul
+{
+	list-style-type:none;
+	display:block;
+	margin:5px 0 0 0px;
+	padding:0px;
+
+}
+#subtemplate_left ul li
+{
+	background:url(/images/arrow.gif) no-repeat 0px 7px ;
+	padding-left:15px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	margin:0px;
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#005b7f;
+	line-height:15px;
+}
+#subtemplate_left ul li a
+{
+	text-decoration:none;
+	color:#005b7f;
+	/*display:block;*/
+	
+}
+
+#subtemplate_left ul li a:hover
+{
+	/*background-color:#dcf2b4;*/
+	color:#1ab7ea;
+}
+
+
+#subtemplate_middle
+{
+	height:550px;
+	width:1px;
+	background:url(/images/dot.gif) repeat-y;
+	float:left;
+	margin-top:10px;
+}
+
+#subtemplate_right
+{
+	width:737px;
+	padding:0px;
+	float:left;
+	border:0px solid;
+	
+}
+#subtemplate_right_top
+{
+	position:relative;
+	left:4px;
+	top:0px;
+	background:url(/images/subtemplate-top1.jpg) no-repeat;
+	width:736px;
+	height:82px;
+	/*margin-bottom:15px;*/
+	text-align:left;	
+	/*border:1px solid #000;*/
+}
+#subtemplate_right_top h1
+{
+	font-family:Helvetica,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:24px;
+	color:#7bb830;
+	font-weight:normal;
+	padding-left:15px;
+	padding-top:30px;
+	margin:0px;
+}
+
+#subtemplate_right_bottom_leftpan
+{
+	padding:0px;
+	margin-top:15px;
+	width:480px;
+	float:left;
+	border:0px solid #000;
+	text-align:left;
+	padding-left:15px;
+	padding-right:5px;
+
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+
+}
+#subtemplate_right_bottom_leftpan h1
+{
+	font-family:arial,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:14px;
+	color:#1ab7ea;
+	margin:0px;
+	/*padding-top:10px;*/
+	font-weight:normal;
+
+}
+
+h1
+{
+	font-family:arial,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:14px;
+	color:#1ab7ea;
+	margin:0px;
+	font-weight:normal;
+}
+
+#subtemplate_right_bottom_leftpan p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	text-align:left;
+	line-height:17px;
+	/*padding-right:25px;*/
+	/*padding-top:5px;*/
+	margin:0px;
+	/*width:440px;*/
+}
+
+p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	text-align:left;
+	line-height:17px;
+	margin:0px;
+}
+
+#subtemplate_right_bottom_leftpan ul
+{
+	list-style-type:none;
+	width:410px;
+	display:block;
+	/*margin:10px 0 0 0px;*/
+	padding:0px;
+	margin:5px 0 0 0px;	
+}
+#subtemplate_right_bottom_leftpan ul li
+{
+	background:url(/images/dot.jpg) no-repeat 0 7px;
+	/*padding-left:15px;*/
+	padding-left:13px;
+	margin:0px;
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+}
+#subtemplate_right_bottom_rightpan
+{
+	padding:0px;
+	margin:0px;
+	width:227px;
+	float:right;
+	margin-top:15px;
+	margin-right:5px;
+	border:0px solid #000;
+}
+#subtemplate_right_bottom_rightpan p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#525252;
+	width:195px;
+	text-align:left;
+	margin-top:15px;
+	/*border:1px solid #000;*/
+}
+
+/*------------Subtemplate End---------------------*/
+
+
+#footer
+{
+	width:960px;
+	/*height:100px;*/
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	padding:0px;
+	line-height:10px;
+}
+#footer a
+{
+	
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#005b7f;
+}
+.footer-top
+{
+	
+	color:#8f8f8f;
+	line-height:18px;
+}
+.footer-bottom
+{
+	
+	color:#a7a7a7;
+}
+
+/*-------Mailer---*/
+
+
+#mailer
+{
+	width:598px;
+	height:auto;
+	border:1px solid #4a4a4a;
+	margin:10 0 0 0px;
+}
+.mailertop
+{
+	width:598px;
+	height:112px;
+	background:url(/images/mailer_banner.jpg) no-repeat #005f85;
+}
+#mailerbody
+{
+	width:598px;
+	height:470px;
+	float:left;
+	text-align:left;
+}
+#mailerbody p
+{
+	font-family:arial,"Bitstream Vera Sans",Helvetica, sans-serif;
+	font-size:12px;
+	color:#626262;
+}
+#mailerbody h3
+{
+	font-family:Helvetica,"Bitstream Vera Sans",HelveticaNeueLTStd-Lt, sans-serif;
+	font-size:14px;
+	color:#66b300;
+	text-align:left;
+	padding-top:10px;
+	padding-left:10px;
+	margin:0px;
+	font-weight:bold;
+	border:1px solid #000;
+}
+
+
+.ErrorPrompt
+{	BACKGROUND: #FCFCBF;
+	BORDER: 1px dotted #6ab503;
+	margin-top: 5px;
+	margin-left: 5px;margin-right: 5px;	padding-left: 5px; padding-right: 5px;	FONT-FAMILY: Georgia; FONT-SIZE: 12px;
+}
