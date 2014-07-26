@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>About</title>
+<!-- TemplateEndEditable --><link href="../style.css" rel="stylesheet" type="text/css" />
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="inner_pg_top_section_bg"><table width="932" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+         <td height="33"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="33" class="top_links"><a href="../index.htm">Home</a> | <a href="../contact_us.htm">Contact</a> </td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="126" valign="top"><!-- TemplateBeginEditable name="header_graphic" --><img src="../images/header_about.jpg" width="932" height="126" border="0" align="top" usemap="#Map" /><!-- TemplateEndEditable --></td>
+      </tr>
+      <tr>
+        <td height="33">
+        <div class="navigation">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" height="33px">
+          <tr class="bttn_bg">
+            <td width="88px"><div class="about"><a href="../about.htm" class="activea">About</a></div></td>
+            <td width="98px"><div class="products"><a href="../products.htm">Products</a></div></td>
+            <td width="119px"><div class="online_shp"><a href="../online_shop.htm">Online Shop</a></div></td>
+            <td width="97px"><div class="support"><a href="../support.htm">Support</a></div></td>
+            <td width="107px"><div class="downld"><a href="../download.htm">Download</a></div></td>
+            <td width="83px"><div class="news"><a href="../news.htm">News</a></div></td>
+            <td width="92px"><div class="careers"><a href="../careers.htm">Careers</a></div></td>
+            <td width="89px"><div class="partners"><a href="../partners.htm">Partners</a></div></td>
+            <td width="95px">&nbsp;</td>
+            <td width="64px"><img src="../images/top_link_img.jpg" width="64" height="33" /></td>
+            </tr>
+        </table> 
+        </div>       </td>
+      </tr>
+      <tr>
+        <td height="24"></td>
+      </tr>
+      <tr>
+        <td><table width="932" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="2">&nbsp;</td>
+            <td width="215" valign="top"><!-- TemplateBeginEditable name="navigation" -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" background="../images/left_tab_horizntal_bg.jpg">
+                <tr>
+                  <td width="16" height="35"><img src="../images/left_tab_top_left_cnr.jpg" width="16" height="35" /></td>
+                  <td height="35" background="../images/left_tab_bg.jpg"><img src="../images/about.gif" width="33" height="9" /></td>
+                  <td width="14" height="35"><img src="../images/left_tab_top_rght_cnr.jpg" width="14" height="35" /></td>
+                </tr>
+                <!--tr>
+                <td width="16" height="11"><img src="images/inner_pg_top_lft_cnr.jpg" width="16" height="11" align="top" /></td>
+                <td height="11"><img src="images/inner_pg_tab_top_img.jpg" width="185" height="11" align="top" /></td>
+                <td width="14" height="11"><img src="images/inner_pg_top_right_cnr.jpg" width="14" height="11" align="top" /></td>
+              </tr-->
+                <tr>
+                  <td colspan="3" class="left_nav">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="../about.htm" class="topsel">Company Overview</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="../management.htm">Management</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" background="../images/left_tab_horizntal_bg.jpg" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" background="../images/left_tab_horizntal_bg.jpg" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" background="../images/left_tab_horizntal_bg.jpg" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" background="../images/left_tab_horizntal_bg.jpg" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="16" height="20"><img src="../images/left_tab_bttm_lft_cnr.jpg" width="16" height="20" /></td>
+                  <td height="20"><img src="../images/left_tab_bott_img.jpg" width="185" height="20" /></td>
+                  <td width="14" height="20"><img src="../images/left_tab_bttm_rght_cnr.jpg" width="14" height="20" /></td>
+                </tr>
+                <tr> </tr>
+              </table>
+            <!-- TemplateEndEditable --></td>
+            <td width="30">&nbsp;</td>
+            <td width="685" valign="top"><!-- TemplateBeginEditable name="content_area" -->
+              <table width="685" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="21" background="../images/line_bg.jpg" ><img src="../images/company_company%20overview_title.jpg" width="171" height="20"  /></td>
+                </tr>
+                <tr>
+                  <td height="16"></td>
+                </tr>
+                <tr>
+                  <td class="text">Ocuco has developed two of the most comprehensive ranges of practice software on the market for opticians, ophthalmologists<br />
+                    and optometrists today, as well as the market leading optical laboratory management software in the UK and Europe, drs<br />
+      Labman<sup>TM</sup>. We have been supplying and supporting Windows-based optical practice and lab management systems since 1990, and<br />
+      today have a complete range of products to suit every need.<br />
+      <p>From F.O.C.U.S.<sup>TM</sup> to Acuitas<sup>TM</sup> we have applications that have been developed to deliver real, measurable business benefit to<br />
+        practices and groups wishing to make the most of computer technology. </p>
+      <strong><span style="font-size:13px; line-height:26px;">Values</span></strong><br />
+      <strong>Our Clients – </strong>We are committed to the concept that we can only deliver the benefits our clients need by working in<br />
+      partnership with them. From product development to support, we work with our clients to ensure that the products and services<br />
+      are tailored to their needs. The proof of this can be found in our commitment to the regular User Groups, which meet at<br />
+      regular intervals to review our systems and services and discuss future product development.<br />
+      <p><strong>Our People –</strong> Ocuco is all about people. Nowhere else will you find a group of people more dedicated to the needs of their<br />
+        customers. We have created an environment that promotes ingenuity, resourcefulness, and an entrepreneurial spirit that is<br />
+        exemplary.</p></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            <!-- TemplateEndEditable --></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      
+      
+      
+      
+      
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td height="38" class="footer_bg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="38" class="footer_bg"><table width="932" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="13" height="38" align="left" valign="top"><img src="../images/footer_left_cnr.jpg" width="13" height="38" /></td>
+                    <td width="906" background="../images/footer_tab_bg.jpg" valign="middle"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="524" height="38" valign="middle" class="footer_text">Phone : UK - 0800 9121004 , Ireland - 1800 927191.</td>
+                        <td width="382" valign="middle" class="footer_right_text" >Designed by <a href="http://www.fractalink.com" target="_blank">fractal | ink</a></td>
+                      </tr>
+                    </table></td>
+                    <td width="13"><img src="../images/footer_right_cnr.jpg" width="13" height="38" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+</body>
+</html>

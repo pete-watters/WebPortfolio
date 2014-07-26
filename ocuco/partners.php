@@ -1,0 +1,396 @@
+<?php include"header_partner.php" ?>
+      <tr>
+        <td height="24"></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="932" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="2">&nbsp;</td>
+            <td width="215" valign="top"><!-- InstanceBeginEditable name="navigation" -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/left_tab_horizntal_bg.jpg">
+                <tr>
+                  <td width="16" height="35"><img src="images/left_tab_top_left_cnr.jpg" width="16" height="35" /></td>
+                  <td height="35" background="images/left_tab_bg.jpg"><img src="images/partners_tab_img.gif" width="47" height="9" /></td>
+                  <td width="14" height="35"><img src="images/left_tab_top_rght_cnr.jpg" width="14" height="35" /></td>
+                </tr>
+                <!--tr>
+                <td width="16" height="11"><img src="images/inner_pg_top_lft_cnr.jpg" width="16" height="11" align="top" /></td>
+                <td height="11"><img src="images/inner_pg_tab_top_img.jpg" width="185" height="11" align="top" /></td>
+                <td width="14" height="11"><img src="images/inner_pg_top_right_cnr.jpg" width="14" height="11" align="top" /></td>
+              </tr-->
+                <tr>
+                  <td colspan="3" class="left_nav">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#sp" class="top">Software</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#rs" >Retail Software</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#lm" > Lenses</a></td>
+                </tr>
+                <tr>
+                 <td colspan="3" class="left_nav"><a href="#ip" >Instruments </a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#so" >Consultants</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#fp" > Finance</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#ta" > Trade</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="left_nav"><a href="#jm" > Press</a></td>
+                </tr>
+                <tr>
+                  <td colspan="3" background="images/left_tab_horizntal_bg.jpg" class="text">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="16" height="20"><img src="images/left_tab_bttm_lft_cnr.jpg" width="16" height="20" /></td>
+                  <td height="20"><img src="images/left_tab_bott_img.jpg" width="185" height="20" /></td>
+                  <td width="14" height="20"><img src="images/left_tab_bttm_rght_cnr.jpg" width="14" height="20" /></td>
+                </tr>
+              </table>
+            <!-- InstanceEndEditable --></td>
+            <td width="30">&nbsp;</td>
+            <td width="685" valign="top"><!-- InstanceBeginEditable name="content_area" -->
+              <table width="685" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="21" background="images/line_bg.jpg"  valign="top"><img src="images/partners.gif" width="71" height="14" /></td>
+                </tr>
+                <tr>
+                  <td height="15"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="sp" id="sp"><strong>Software Partners</strong></a></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="138" valign="top"><img src="images/opn_logo.gif" width="105" height="46" /></td>
+                      <td valign="top" class="text1">Oracle partnership with Ocuco dates back to the first version of Acuitas.  Many Ocuco products rely on the stability and scalability of Oracle 10g to serve large multiple-site customers like Vision Express.&nbsp; <a href="http://www.oracle.com/partners/market/cust_ref/emea/english/profiles/snapshots/pdf/ocuco_vision.pdf" target="_blank" title="Oracle Success Story - Ocuco and Vision Express">Read</a> and download the&nbsp;Success Story&nbsp;published on the Oracle Partner Network, then <a href="http://www.oracle.com/pls/ebn/live_viewer.main?p_shows_id=4975732&amp;p_referred=OSES_WEBCASTS" target="_blank">watch an interview</a> with David Hart, Vision Express Supply Chain Director, on chosing Acuitas by Ocuco for the Vision Express chain of optical stores in the UK and Ireland.<br />
+                        URL : <span class="text3"><a href="http://www.oracle.com" target="_blank">www.oracle.com</a></span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+               <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr><tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="138" valign="top"><img src="images/contact.gif" width="126" height="62" /></td>
+                      <td valign="top" class="text1">Supply Chain Connect has been providing Private Supply Hubs on Demand™ to major global corporations since 2000. Based in London, UK, and with offices in the US, Supply Chain Connect is a privately held company committed to delivering fully managed private supply hubs and the technology and services that underpin them. As the quality of its user base attests, Supply Chain Connect is becoming one of the pre-eminent companies in the field of hosted supply chain connectivity solutions.<br />
+                        URL : <span class="text3"><a href="http://www.supplychainconnect.com" target="_blank">www.supplychainconnect.com</a></span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="138" valign="top"><img src="images/logic_group.gif" width="123" height="74" /></td>
+                      <td valign="top" class="text1">The Retail Logic team has been providing payment processing software for over 16 years. Covering any form of payment card and transaction environment, Retail Logic’s software handles more than £100 billion a year. Investment in people and research &amp; development, together with a clear focus on the needs of retailers, have led to award-winning products and UK market leadership.<br />
+                        URL : <span class="text3"><a href="http://www.retail-logic.com" target="_blank">www.retail-logic.com</a></span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="138" valign="top"><img src="images/postcard.jpg" width="78" height="89" /></td>
+                      <td valign="top" class="text1">AFD Software provides postcode and address management software solutions.<br />
+                        URL : <span class="text3"><a href="http://www.afd.co.uk" target="_blank">www.afd.co.uk</a></span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="138"><img src="images/capscan.gif" width="123" height="66" /></td>
+                      <td valign="top" class="text1">Capscan provides postcode and address management software solutions.<br />
+                        URL :<span class="text3"><a href="http://www.capscan.com" target="_blank"> www.capscan.com</a></span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2"  style="padding-left:5px;"><a name="lm" id="lm"><strong>Lens Manufacturers</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/rodenstock.gif" width="123" height="59" /></td>
+                        <td valign="top" class="text1">Rodenstock is one of the world's most successful manufacturers of optical products, offering a comprehensive range that includes frames, lenses, sunglasses and complete spectacles, with a global reputation for quality and innovation. Commissioned from Drs by Rodenstock UK, SpeedMasterTM is a dedicated professional service for opticians within the UK wanting to order Rodenstock products using an Extranet electronic ordering service that is secure cannot be accessed by members of the public. It also incorporates the Teleshape 'remote edging' facility and a direct on-line link with that latest ophthalmic lens laboratory production processes. Orders raised in the Ocuco FOCUS Practice Management Software can easily be imported into SpeedMaster to ensure quick and fully validated ordering. If you would like to know more about SpeedMaster or Rodenstock products and services please contact Michael R Potter FBDO at Rodenstock on 01474 325555 or e-mail him on michael.potter@rodenstock.co.uk<br />
+                          URL :<span class="text3"><a href="http://www.rodenstock.co.uk" target="_blank" style="text-decoration:none; "> www.rodenstock.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/essilor.gif" width="126" height="88" /></td>
+                        <td valign="top" class="text1">Essilor is the largest manufacturer of ophthalmic products in the world, with subsidiaries in over 50 countries. Essilor is well known for Varilux progressive lenses, Crizal antireflective coating and Airwear polycarbonate lenses. Opsys is Essilor’s lens ordering and dispensing software. Opsys makes it easy to order lenses, as well as being a useful dispensing tool featuring 3D graphical views of lenses and a lens comparison module. Opsys gives users a fast, easy-to-use interface for ordering lenses and also provides full validation of orders. Opsys users also have the benefit of all orders being received directly by our automated factory system, which can reduce delivery time on orders. There has recently been developed a brand new link between Opsys and Ocuco’s practice management systems Acuitas and FOCUS. With this new link Focus offers significant benefits including a seamless transmission of orders from FOCUS to Opsys when any of Essilor’s lenses are selected. <br />
+                          URL : <span class="text3"><a href="http://http://www.essilor.co.uk" target="_blank">http://www.essilor.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/hoya.gif" width="126" height="29" /></td>
+                        <td valign="top" class="text1">Hoya is one of the leading lens manufacturers in the UK. Ocuco's practice management software, F.O.C.U.S. links to Hoya's propietary Hoyalog Lens Ordering software. <br />
+                          URL :<span class="text3"><a href="http://www.hoya.co.uk" target="_blank"> www.hoya.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="ip" id="ip"><strong>Instrumentation Providers</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/topcon.gif" width="123" height="32" /></td>
+                        <td valign="top" class="text1">Topcon is one of the leading instrumentation providers in the UK. Ocuco's practice management software, Acuitas and F.O.C.U.S. link to various instruments through defined interfaces.<br />
+                          URL :<span class="text3"> <a href="http://www.topcon.co.uk" target="_blank">www.topcon.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/nidek.gif" width="126" height="196" /></td>
+                        <td valign="top" class="text1">Nidek is one of the leading instrumentation providers in the UK. Ocuco's practice management software, Acuitas and F.O.C.U.S. link to various instruments through defined interfaces. <br />
+                          URL :<span class="text3"> <a href="http://www.nidek.co.uk" target="_blank">http://www.nidek.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+				<tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/grafton.gif" width="126" height="140" /></td>
+                        <td valign="top" class="text1">Grafton Optical are leading suppliers of Optometry equipment throughout the UK. Specialist products include:- Corneal Topographer, Retinal Imaging Software Systems, Visual Field and Tonometry equipment. Data from all of the above equipment can be linked directly to your Ocuco system. <br />
+                          URL :<span class="text3"><a href="http://www.graftonoptical.com" target="_blank"> www.graftonoptical.com</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+               
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="so" id="so"><strong>Specialist Optical Industry Consultants</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/myres.gif" width="122" height="30" /></td>
+                        <td valign="top" class="text1">Myers La Roche is a specialist consultancy which works with independent optometrists and dispensing opticians to improve productivity and profitability through innovative self-financing business solutions.<br />
+                          URL :<span class="text3"><a href="http://www.myerslaroche.co.uk" target="_blank"> www.myerslaroche.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/tmr.gif" width="126" height="44" /></td>
+                        <td valign="top" class="text1">Total Marketing Resource (TMR) is a specialist consultancy, working nationwide, to increase sales, profitability and growth within retail optics.<br />
+                          URL :<span class="text3"><a href="http://www.tmr.co.uk" target="_blank"> www.tmr.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/visual_extreme_ltd.gif" width="126" height="16" vspace="4" /></td>
+                        <td valign="top" class="text1">Visual Extreme Ltd offers target marketing solutions for the optical industry, through the use of the OptiMail patient mailing facility. Visual Extreme are also exclusive providers of the EasiProm patient mailing facility for Rodenstock Club members.<br />
+                          <strong>Contact: 01903 743 582</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/OCL.gif" width="126" height="84" /></td>
+                        <td valign="top" class="text1">OCL is an independent company, run by opticians and exclusively responsible for compiling the electronic spectacle frame and sunglass product data on behalf of users of the ‘F.O.C.U.S.™’ Practice Management System from Ocuco Software. Customers of OCL services range from individual independent opticians to medium and large nationwide groups..<br />
+                          <strong>Contact: 01903 743 582</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="fp" id="fp"><strong>Finance Providers</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/professinal.gif" width="126" height="89" /></td>
+                        <td valign="top" class="text1">Financial solutions for professionals in the form of equipment, computer, software and vehicle lease and purchase, practice and personal loans.<br />
+                          <strong>Contact: 01832 733 489</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/breamer.gif" width="126" height="36" /></td>
+                        <td valign="top" class="text1">Financial solutions for professionals in the form of equipment, computer, software and vehicle lease and purchase, practice and personal loans.<br />
+                          <strong>Contact: 01563 852 100</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="ta" id="ta"><strong>Trade Associations</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/fmo.gif" width="126" height="36" /></td>
+                        <td valign="top" class="text1">The Federation of Manufacturing Opticians (FMO) represents ophthalmic optical companies involved in all aspects of manufacturing, importing and wholesaling spectacles.<br />
+                          URL :<span class="text3"><a href="http://www.fmo.co.uk%20" target="_blank"> www.fmo.co.uk</a></span> </td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+                <tr>
+                  <td height="8"><img src="images/spacer.gif" width="1" height="8" /></td>
+                </tr>
+                <tr>
+                  <td height="24" bgcolor="#e4e4e4" class="text2" style="padding-left:5px;"><a name="jm" id="jm"><strong>Journals and Magazines</strong></a></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/ot.gif" width="126" height="51" /></td>
+                        <td valign="top" class="text1">Optometry Today is a twice monthly magazine for optical professionals.<br />
+                          URL :<span class="text3"><a href="http://www.optometry.co.uk" target="_blank"> www.optometry.co.uk</a></span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="1" valign="top" bgcolor="#e4e4e4"><img src="images/spacer.gif" width="1" height="1" /></td>
+                </tr>
+                <tr>
+                  <td class="partner_container"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="138" valign="top"><img src="images/optician.gif" width="126" height="35" /></td>
+                        <td valign="top" class="text1">Optician is a weekly journal for optometrists and dispensing opticians.<br />
+                         URL : <span class="text3"><a href="http://www.optometryonline.net%20" target="_blank"> www.optometryonline.net</a></span> </td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" class="text3" style="padding-right:4px; "><a href="#">Top</a></td>
+                </tr>
+              </table>
+            <!-- InstanceEndEditable --></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      
+      
+      
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td height="38" class="footer_bg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="38" class="footer_bg"><table width="932" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="13" height="38" align="left" valign="top"><img src="images/footer_left_cnr.jpg" width="13" height="38" /></td>
+                    <td width="906" background="images/footer_tab_bg.jpg" valign="middle"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="524" height="38" valign="middle" class="footer_text"> Phone : UK - 0800 9121004 , Ireland - 1800 927191.</td>
+                        <td width="382" valign="middle" class="footer_right_text" >Designed by <a href="http://www.fractalink.com" target="_blank">fractal | ink</a></td>
+                      </tr>
+                    </table></td>
+                    <td width="13"><img src="images/footer_right_cnr.jpg" width="13" height="38" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+</body>
+<!-- InstanceEnd --></html>
