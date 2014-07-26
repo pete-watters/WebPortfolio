@@ -1,0 +1,25 @@
+.footer{
+	float: right;
+}
+
+#map{
+	height: 400px;
+}
+
+#locations .location-entry{
+	display: inline-block;
+}
+.location-entry-text{
+	padding-left: 5%;
+}
+
+.locationControls, .weatherForecastWell{
+	display:none;
+}
+
+.weatherLabel{
+	font-weight: bold;
+}
+.hideWeatherPanel{
+	margin-left: 100px;
+}

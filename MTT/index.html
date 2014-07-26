@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>MTT Technical Test | Peter Watters</title>
+<!-- Include jQuery and bootstrap from hosted CDNs -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.1.1/cerulean/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include my CSS file -->
+<link href="css/style.css" rel="stylesheet">
+
+<!-- include i18n plugin file--> 
+<script src="js/libs/jquery.i18n.properties-min-1.0.9.js"></script>
+<!-- Include Google Maps and markers -->
+<script type="text/javascript" 
+      src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" >
+</script>
+<script src="http://gmaps-utility-library.googlecode.com/svn/trunk/markermanager/release/src/markermanager.js"></script>
+
+<!-- Include my Map setup JS file -->
+<script type="text/javascript" src="js/mapSetup.js"> </script>
+<!-- Include my weatherForecast lookup JS file -->
+<script type="text/javascript" src="js/getForecast.js"> </script>
+<!-- Include my locationListSetup JS file -->
+<script type="text/javascript" src="js/locationListSetup.js"> </script>
+<!-- JsonUtil contains my modified plugin to generate HTML based on JSON weather data --> 
+<script type="text/javascript" src="js/JsonUtil.js"></script>
+<!-- include functions to setup weather info panels-->
+<script type="text/javascript" src="js/weatherContainerSetup.js"></script>
+
+<!-- include i18n setup file: this changes all JSON rendered display text  (references i18n/Weather.properties)    --> 
+<script type="text/javascript" src="js/i18nSetup.js"></script>
+
+<script type="text/javascript">    
+$(document).ready(function() {
+
+  // important for local storage - added to elements
+  var i = 0;
+  // check for existance of first time user flag
+  if(!localStorage.getItem("returningUser")){
+    // this is a first time user so store the default locations to LocalStorage
+    // this is used whether to re-load defaults
+    // without this user cannot delete one of the originals
+     localStorage.setItem( "returningUser",true);         
+     /* Storage is empty so populate with default countries*/
+      var defaultWeatherLocations = {
+                    "weatherLocations": [
+                    { "city":"Dublin" , "country":"Ireland"}, 
+                    { "city":"London" , "country":"England"}, 
+                    { "city":"Barcelona", "country":"Spain"}, 
+                    { "city":"Paris" , "country":"France"}
+                    ]
+      }
+
+      for(var j=0; j < defaultWeatherLocations.weatherLocations.length; j++){
+          localStorage.setItem( "location-city-"+i, defaultWeatherLocations.weatherLocations[ j ].city );
+          localStorage.setItem( "location-country-"+i, defaultWeatherLocations.weatherLocations[ j ].country );
+          localStorage.setItem( "location-forecast-"+i, ""  );
+      /* lookup forecast */
+        // prepare query string 
+          var weatherQueryString = defaultWeatherLocations.weatherLocations[ j ].city + "," 
+                                  + defaultWeatherLocations.weatherLocations[ j ].country;
+             
+        
+            i++; // increment localstorage order
+      }          
+  }
+
+  // Populate location data minus one for returning user and divide by 3 as 3 entries per city
+  var cityCount = ((localStorage.length-1) / 3);
+    // Initial loading of 4 default locations
+      for( i = 0; i < cityCount; i++){        
+ // var forecast = JSON.parse(localStorage.getItem("location-forecast-" + i));
+    // pass values to be added to location list
+    setupLocationList(i, localStorage.getItem('location-city-'+i) , localStorage.getItem('location-country-'+i));
+        // could create weather info part here now too
+      }
+
+  var WeatherInfo_onEvent = function(){
+
+      /*   WeatherInfo event handler - retrieves forecast on  */
+        $(".WeatherInfo").on({
+            click: function(event){
+
+              // get the address text and show on map
+              var thisLocation = $(this).parent().parent().find("a").text();
+              // getgetForecast is a deferred function and I am 
+              // making use of .done to only add forecast once request has finised
+              getForecast(i, thisLocation).done( function(response){  
+
+                localStorage.setItem( "location-forecast-"+i, JSON.stringify(response.data) );
+                          var data = response.data;
+                          var json = new JsonUtil();
+                          $('#weatherForecastWell').html(json.tableifyObject(data));
+
+                          // initial container setup
+                          hideWeatherContainers();
+                          setupWeatherContainers();
+                          // Make map smaller and show forecast
+                          $(".weatherMapWell").addClass("span7");
+                          $(".weatherForecastWell").show();
+
+                            $(".currentWeatherButton").on("click", function(event){
+                                  event.preventDefault();
+                                  var buttonText = $(this).text();
+                                  // traverse the element tree to the root container of this button
+                                  // then obtain a reference to its containers to show/ hide them            
+                                  var sectionContainer = $(this).parent().parent().parent().find($(".weather-container-parent"));
+                                  // hide weather containers in this section
+                                  hideWeatherContainers(sectionContainer);
+                                  // use the button text to determine which element to show
+                                  
+                                  switch(buttonText){
+                                      case "Current":
+                                                  $($(sectionContainer[0])).show();
+                                          break;
+                                      case "Two Day":
+                                                  $($(sectionContainer[2])).show();
+                                          break;
+                                      case "Location":
+                                                  $($(sectionContainer[1])).show();
+                                          break;
+                                      case "":
+                                              $(".weatherMapWell").removeClass("span7");
+                                              // empty text denotes the close icon
+                                              
+                                          break;
+                                  }
+                              });
+
+                            // translate JSON tags
+                            i18nSetup();
+                            // show Address on map
+                            showAddress(thisLocation);
+
+                            }  ).fail(function(rs) {
+
+                            // translate JSON tags
+                            i18nSetup();
+                            deferred.reject(rs);
+                            });                    
+            }
+          });
+
+  }
+  var weatherbutton_hoverEvent = function(){
+        /* Event handler for location entry list  
+        */
+        $(".location-entry").on({
+              mouseenter: function(){
+                // show the controls for this location on hover
+              $(this).find(".locationControls").show();
+            },
+            mouseleave: function(){
+                // hide the controls for this location on hover
+              $(this).find(".locationControls").hide();
+            }
+          });
+
+
+// set up the map
+setupMap();
+
+// stop enter key submitting for inputs
+$("input").keypress(function (evt) {
+    //Deterime where our character code is coming from within the event
+    var charCode = evt.charCode || evt.keyCode;
+    if (charCode  == 13) { //Enter key's keycode
+    return false;
+    }
+});
+}
+
+
+/* event setup*/
+    weatherbutton_hoverEvent();
+    WeatherInfo_onEvent();
+
+/* click handler setup*/
+$(".location-entry a").click(function(e) {
+          e.preventDefault();
+          if (  $(this).text() != "" ) {
+                showAddress($(this).text());
+          }
+        });
+$(".hideWeatherPanel").click(function(e) {
+          e.preventDefault();          
+          $(".weatherForecastWell").hide();
+          $(".weatherMapWell").removeClass("span7");
+        });
+
+  // find location
+  $("#findLocationButton").click( function() {
+          if (  $("#location").val() != "" ) {
+                showAddress($("#location").val());
+          }
+        });
+
+   $("#centerMap").click( function() {
+         map.setCenter(new GLatLng(48.25, 11.00), 4);
+        });
+
+  // Add a location
+  $("#addLocationButton").click( function() {
+    if (  $("#location").val() != "" ) {
+
+      var locationString = $("#location").val();
+      var locationArray = locationString.split(',');
+
+      localStorage.setItem( "location-city-"+i, locationArray[0] );
+      localStorage.setItem( "location-country-"+i, locationArray[1] );
+      setupLocationList(i, locationArray[0] , locationArray[1]);
+
+    weatherbutton_hoverEvent();
+    WeatherInfo_onEvent();
+    }
+  //  return false;
+  });
+  
+  // Remove a location      
+  $(".RemoveLocation").live("click", function() {
+    // get the storage id from its parents parent
+    var elementStorageID = $(this).parent().parent().attr("id").replace("location-forecast-","");
+    var thisQueryString = $(this).parent().parent().find("a").text();
+
+    localStorage.removeItem("location-city-"+elementStorageID);
+    localStorage.removeItem("location-country-"+elementStorageID);
+    // remove the div element
+    $(this).parent().parent().slideUp('slow', function() { $(this).remove(); } );
+   
+    $("#weatherForecastWell .well").html("Location removed!");
+    // expand map and hide forecast
+    $(".weatherForecastWell").hide();
+    $(".weatherMapWell").removeClass("span7");
+  });
+
+});    
+</script>
+
+
+</head>
+<!-- mapSetup and GUnload added to body  -->
+<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+
+<!-- Navbar -->
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+ <div class="container">
+   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+   </a>
+   <a class="brand" href="">MTT Technical Test | Peter Watters</a>
+   <div class="nav-collapse" id="main-menu">        
+   </div>
+ </div>
+</div>
+</div>
+
+
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span10">
+      <h2>MTT Technical Test</h2>
+    </div>
+  </div>
+</header>
+
+  <section id="map-section">    
+    <div class="row">
+      <div class="weatherMapWell span12 offset1"> 
+          <h4>Weather Map</h4> 
+          <div class="well">
+            <div id="map"></div>
+          </div>
+            <button id="centerMap" class="btn btn-inverse">Center Map View</button>
+      </div>
+
+      <div class="weatherForecastWell span5"> 
+        <ul class="breadcrumb">
+          <li><a href="#" class="currentWeatherButton">Current</a> <span class="divider">/</span></li>
+          <li><a href="#" class="currentWeatherButton">Two Day</a> <span class="divider">/</span></li>
+          <li><a href="#" class="currentWeatherButton">Location</a></li>
+          <li><a class="btn hideWeatherPanel" href="#"><i class="icon-remove"></i></a></li>            
+        </ul>
+
+        <div id="weatherForecastWell" class="span5"></div>
+      </div>
+
+      <div class="span4 offset1">  
+             <div class="row">            
+                <div class="well">  
+                    <ul id="locations" class="nav nav-list">
+                      <li class="nav-header">Locations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">  
+                  <div class="well">
+                    <h4>Add Location</h4>                
+                      <form id="locations-list">
+                          <input id="location" type="text" class="input-large">         
+                      </form>
+                     <!-- control buttons -->       
+                     <button id="findLocationButton" class="btn btn-inverse">Find</button>
+                     <button id="addLocationButton" class="btn btn-inverse">Add</button>      
+                  </div>
+             </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer-->
+  <footer id="footer">
+    <div class="span6 offset6">
+    <blockquote class="pull-right">
+      <p>Made by <a target="_blank" href="http://www.peterjwatters.com">Peter Watters</a>. </p>
+      <p> Contact him <a href="mailto:peterjwatters@gmail.com">peterjwatters@gmail.com</a>. </p>           
+      <small><cite title="">www.peterjwatters.com</cite></small>
+    </blockquote>
+  </div>
+  </footer>
+</div><!-- /container -->
+</body>
+</html>
+​

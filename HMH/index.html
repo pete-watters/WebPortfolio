@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>HMH Technical Test | Peter Watters</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootswatch/2.1.1/cosmo/bootstrap.min.css" rel="stylesheet">
+     <style type="text/css" title="currentStyle">
+      @import "css/style.css";
+      @import "css/demo_table.css";
+    </style>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript">    
+     $(document).ready(function() {
+      $.getJSON('Content.json', function(data) {
+              // retrieved data
+          }).success(function(data) { 
+             var items = [];
+
+                if(data.response.results){
+                    $.each(data.response.results, function(key, val) {
+                      if(val.length){
+
+                        for(var i=0; i < val.length; i++){
+                            // check for standards information and create list of them if they exist
+                           var standards_information = val[i].content.resource.standards;
+                           if(standards_information && standards_information.standard.length){
+                              var standards_information_string = '<ol class="standards_information">';
+
+                               $(val[i].content.resource.standards).each(function(index) {
+                                        for(var j=0; j < this.standard.length; j++){
+                                            standards_information_string =  standards_information_string + 
+                                                                            '<li><b>Standard ID:</b>' + this.standard[j].id  + '<br>' 
+                                                                            + '<b>Standard description:</b>'  + this.standard[j].description  + '</li>';
+                                        }
+                                  });
+
+                               standards_information_string = standards_information_string + '</ol>'
+
+                               // generate HTML for additional_info
+                               var additional_info = '<ul class="additional_info">' + 
+                                                        '<li><b>Categorization:</b>' + val[i].content.resource.categorization + '</li>' +
+                                                        '<li><b>Meaningful description:</b>' + val[i].content.resource.meaningful_description +'</li>' +
+                                                        '<li><b>Additional Text:</b>' + val[i].content.resource.additional_text +  '</li>' +
+                                                       '<li><b>Standards Information:</b>' + standards_information_string +  '</li>' +
+                                                        '</ul>';
+                       
+                               var more_info_text =    'Categorization:' + val[i].content.resource.categorization;
+                                                       
+                           }
+                            // if it is viewable add colour coded viewable class indicator
+                            var trClass;
+                            if(val[i].content.resource.viewable === "true"){
+                                  trClass = "viewable";
+                            }else{
+                               trClass = "notViewable";
+                            }
+                          items.push('<tr class="contentRow '+ trClass + '">');
+                          items.push('<td class="'+ trClass + '">' + val[i].content.resource.resource_type + '</td>');
+                          items.push('<td class="'+ trClass + ' display_title">' + additional_info +  val[i].content.resource.display_title +
+                                      '<a href="#" rel="tooltip" class="btn large primary moreinfo_tooltip" data-placement="right" title="'+more_info_text+'">More info</a>' + '</td>');
+                          items.push('<td class="'+ trClass + '"><span class="media_type_icon ' + val[i].content.resource.media_type + '">'+val[i].content.resource.media_type+'</span></td>');
+                          items.push('<td class="'+ trClass + '">' + val[i].content.resource.language + '</td>');
+                          items.push('</tr>');
+                        }
+                      }
+                    });
+
+                    var tableData = items.join('');
+                    $(".jsonDataTable").html(tableData);
+
+                    var oTable =  $('#main-table').dataTable({
+                        "bFilter": true,
+                        "bLengthChange": false, //  disable pagination length change
+                        "bSort": true,
+                        "bInfo": false,
+                        "bAutoWidth": false,
+                        "iDisplayLength": 5,
+                          "fnInitComplete": function (){
+                                  /*
+                                      on click needs to use delegate to work with pagination
+                                   */ 
+                                   $("body").on("click", ".contentRow", function(){                                                     
+                                                      if($(this).find(".display_title").hasClass("viewable")){
+                                                        // its viewable
+                                                      $("#well-section").html( '<div class="well">' + $(this).find(".display_title").find(".additional_info").html() + '</div>').show();
+                                                      }
+                                                      else{
+                                                         $("#well-section").html('<div class="well">This record is not viewable</div>').show();
+                                                      }
+                                                   });
+                                 
+                                 // initialise bootstrap tooltips
+                                   $("a").tooltip();
+  
+                              }
+                      });
+
+                 }else{
+                     return false;
+
+                 }
+
+          }).error(function(e) { 
+                })
+            .complete(function(data) { 
+              });
+    });
+
+    </script>
+
+  </head>
+
+
+
+<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+
+  <!-- Navbar-->
+
+ <div class="navbar navbar-fixed-top">
+   <div class="navbar-inner">
+     <div class="container">
+       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </a>
+       <a class="brand" href="">HMH Technical Test | Peter Watters</a>
+       <div class="nav-collapse" id="main-menu">
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="container">
+       <header class="jumbotron subhead" id="overview">
+          <div class="row">
+            <div class="span10">
+              <h2>HMH Technical Test</h2>
+            </div>
+
+            <div class="span2">
+              <div class="bsa well">
+                  <div class="clearfix">
+                      <a href="http://www.peterjwatters.com" target="_blank">Peter Watters </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+      <section id="table-section">
+
+        <div class="well"> Click on a table row to view information or hover on 'More Info' for limited information</div>
+      <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped table-hover" id="main-table">
+        <thead>
+          <tr>
+              <th class="table-head">Resource Type</th>
+              <th class="table-head">Display Title</th>
+              <th class="table-table-head">Media Type </th>
+              <th class="table-head">Language</th>
+            </tr>
+          </thead>
+          <tbody class="jsonDataTable">
+          </tbody>
+      </table>    
+
+      </section>
+      <section id="well-section">
+
+      </section>
+     <!-- Footer-->
+      <hr>
+
+    <footer id="footer">
+            <div class="span6 offset6">
+                <blockquote class="pull-right">
+                  <p>Made by <a target="_blank" href="http://www.peterjwatters.com">Peter Watters</a>. </p>
+                  <p> Contact him <a href="mailto:peterjwatters@gmail.com">peterjwatters@gmail.com</a>. </p>           
+                  <small><cite title="">www.peterjwatters.com</cite></small>
+                </blockquote>
+                </div>
+          </footer>
+   
+
+    </div><!-- /container -->
+
+  </body>
+
+</html>

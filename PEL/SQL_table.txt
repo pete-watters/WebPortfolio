@@ -1,0 +1,37 @@
+-- Table structure for table `admins`
+-- 
+
+CREATE TABLE `admins` (
+  `id` tinyint(4) NOT NULL auto_increment,
+  `username` varchar(10) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE= InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- Table structure for table `categories`
+-- 
+
+CREATE TABLE `categories` (
+  `id` tinyint(4) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- 
+-- Table structure for table `publications`
+-- 
+
+CREATE TABLE `publications` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `user_id` int(20) NOT NULL,
+  `cat_id` tinyint(6) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `p_author` varchar(40) NOT NULL,
+  `s_author` varchar(200) NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `cat_description` varchar(50) NOT NULL,
+  `location` varchar(50) NOT NULL,
+  `date` varchar(10) NOT NULL,
+  `year` int(4) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;

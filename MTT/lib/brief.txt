@@ -1,0 +1,45 @@
+1 Project: WeatherMap App 
+To help the public plan for the future you decide to build a Javascript weather forecast application. 
+The application should allow users to build a list of cities (by default Dublin, London, Paris, Barcelona) 
+and view a current weather forecast for all cities on the map. The application must be implemented as 
+a Javascript application and run within a browser without any backend component. 
+
+
+2 Minimal functionality 
+- The user must be able to add a city to the list. 
+- The user must be able to remove a city from the list. 
+- All changes should be persistent – If the user adds or remove a city those changes should be 
+stored and loaded back when application is run again inside the same browser 
+- The user must be able to refresh the weather forecast 
+- The application should present the forecasts on a map 
+
+
+3 Deliverables 
+Please supply the following
+
+1. All Javscript, CSS, HTML files required to run the  application with index.html file inside root 
+directory (All packaged as a zip)  
+
+2. A short (1-2 pages) write up that explains you design choices 
+• Why certain approaches were used, why others were not used 
+• Why certain 3rd party libraries were used if any 
+• Any design patterns you used 
+• Anything extra you would have done given more time 
+• Anything else you feel I should know 
+
+4 Additional Information 
+
+• The application can use any available free weather  API. However, since it has to run 
+without a backend nor proxy, APIs that support JSONP protocol are recommended (see 
+Resources) 
+• The application can use any available free Map and geocoding API 
+• The application will be tested with latest stable Chrome and Firefox browsers (you can use 
+any Javascript/CSS/HTML features supported by both browsers) 
+• You can use any 3rd party, open source, non-commercial Javascript libraries 
+
+
+5 Resources 
+
+http://free.worldweatheronline.com/feed/weather.ashx?q=dublin,ireland&format=json&num_of_days=
+2&key=84c7b64156180731130701&callback=myCallback
+http://gmaps-samples.googlecode.com/svn/trunk/geocoder/singlegeocode.html

@@ -1,0 +1,65 @@
+/* additional info span*/
+
+.additional_info{
+
+	display:none;
+
+}
+
+/* additional info well*/
+
+.well-section{
+
+	display:none;
+
+}
+
+/*  background images for media_type_icon */
+
+.media_type_icon{
+
+	position: relative;
+
+	left: 40%;
+
+	display:block;
+
+	height:24px;
+
+	width:24px;
+
+	/* hack to hide text inside span but use it to sort*/
+
+	font-size:0;
+
+}
+
+.flash{
+
+	background:url('../images/flash.png') no-repeat;	
+
+}
+
+.pdf{
+
+	background:url('../images/pdf.jpg') no-repeat
+
+}
+
+.html{
+
+	background:url('../images/html.png') no-repeat;
+
+}
+
+.moreinfo_tooltip{
+	float:right;
+}
+.tooltip-inner {
+    max-width:none;
+    width:300px;
+}
+
+.contentRow{
+	cursor: pointer;
+}

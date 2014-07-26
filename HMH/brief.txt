@@ -1,0 +1,42 @@
+Use the attached json file
+
+
+
+Create a search page that retrieves the records within the file
+Display the following fields
+o Resource Type
+o Display Title
+o Media Type (display icon instead of text)
+o Language.
+
+Implement paging (5 per page)
+
+List should be sortable by the above 4 fields.
+
+Allow ability to view the additional details while maximising real estate
+o Meaningful description
+o Additional Text
+o Standards
+o Categorization
+
+
+Allow ability to view based on whether the viewable flag is available for each resource
+o Viewable should display all fields of the resource in a different view layout while
+hiding the current view and provide a mechanism to return back to the current view.
+
+It must also meet the following technical requirements:
+- Must be a single page application.
+- Can use any JavaScript library (preferably one of Backbone, jQuery, jQuery UI).
+- Can use any CSS framework.
+- UI / UX design is totally within your control.
+- UI must be totally independent of any backend framework.
+- Demonstrate a grasp of the JavaScript language with particular emphasis on event handling
+- and delegate.
+- Demonstrate modern design techniques.
+- Demonstrate efficient use of page real estate enhancing the UX experience.
+- Should work in Firefox, Chrome and IE 9
+
+
+The following deliverables are expected:
+- Zipped up version of the source code.
+- Setup instructions.
