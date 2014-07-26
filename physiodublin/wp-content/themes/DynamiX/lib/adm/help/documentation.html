@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>DynamiX</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+
+<!-- DynamiX Outer Skin (Change Accordingly)  --> 
+<link rel="stylesheet" href="css/grey.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" />
+<!-- / DynamiX Outer Skin -->
+
+
+<!-- Demo ACCORDION SETUP  --> 
+<script type="text/javascript">
+$(document).ready(function() {
+	// Accordion
+	$(".accordion").accordion({ header: "h3.accordionhead",autoHeight: false,collapsible: true,active: false, });
+
+});
+<!--
+if(navigator.appName == "Opera" || navigator.appName == "Microsoft Internet Explorer") {
+
+if(navigator.appName == "Opera" && parseInt(navigator.appVersion)<"9.8" || navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion)<"5") {
+document.write ('<link rel="stylesheet" href="css/opera-ie-only.css" type="text/css" media="screen" />');
+} 
+}	
+//-->
+</script>
+
+<!--[if IE 7]>
+<style type="text/css" media="screen">
+  @import "../DynamiX_HTML/stylesheets/ie7.css";
+</style>
+<![endif]-->
+
+<!--[if IE]> <style> .clearfix {display: inline-block;} /* Hides from IE-mac \*/ * html .clearfix {height: 1%;} .clearfix {display: block;} /* End hide from IE-mac */ </style> <![endif]-->
+
+
+<!-- / IE & Opera ONLY functions  -->
+
+
+
+
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/dynamix.min.js"></script>
+
+<style type="text/css">
+<!--
+.contents span.dropcap {
+ margin-bottom:8px;
+}
+.contents h2 {
+ margin-top:6px;
+}
+-->
+</style>
+</head>
+<body>
+
+
+<!-- Back to top anchor -->
+<a name="top" id="top"></a>
+
+<!-- Page Header Config 1: class="gallery" for use with stage gallery, 2: pages for normal class="pages" -->
+<div id="wrapper" class="pages">
+	<div id="page" class="pages">
+		<div id="header" class="pages">
+        
+			<div id="header-logo">
+				<div id="logo">
+					<div class="description">
+					  <h2>DynamiX Wordpress v2.8.3</h2></div>
+					<h1><a href="index.html">DynamiX Wordpress Documentation</a></h1>
+				</div><div class="clear"></div>
+			</div><!-- /header-logo -->
+			
+ 
+		</div><!-- /header -->
+ 
+        <div class="inner-page">
+        
+			<div>
+				<div class="content-wrapper-inner">                                    
+					<div class="mid-wrap  left out-full">
+                        <div id="content">          
+                            <div class="post">                                             
+                                <div class="entry">
+
+									<div class="styledbox shadow top clearfix">
+										<div class="styledbox shadow bottom">
+											<div class="boxcontent shadow contents">
+                                            	<p>&nbsp;</p>
+                                            	<h1 align="center">Table of Contents</h1><p>&nbsp;</p>
+
+                                                <div class="columns three">
+                                                <span class="dropcap two lightgrey">1</span> <h2><a href="#one">Getting Started</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">4</span> <h2><a href="#four">Header Settings</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">7</span> <h2><a href="#seven">Post Options</a></h2><div class="clear"></div>
+												<span class="dropcap two lightgrey">10</span> <h2><a href="#ten">Shortcodes</a></h2><div class="clear"></div> 
+												<span class="dropcap two lightgrey">13</span> <h2><a href="#thirteen">Custom Skin Creator</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">16</span> <h2><a href="#sixteen">Demo Data</a></h2><div class="clear"></div>                                                                                             
+                                                </div>
+                                                
+                                                <div class="columns three">
+                                                <span class="dropcap two lightgrey">2</span> <h2><a href="#two">General Settings</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">5</span> <h2><a href="#five">Footer Settings</a></h2><div class="clear"></div> 
+                                                <span class="dropcap two lightgrey">8</span> <h2><a href="#eight">Page Options</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">11</span> <h2><a href="#eleven">BuddyPress</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">14</span> <h2><a href="#fourteen">Sources &amp; Credits</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">17</span> <h2><a href="http://support.creativeworkz.co.uk/troubleshooting/dynamix-troubleshooting/" target="_blank">Troubleshooting</a></h2><div class="clear"></div>
+												</div>                                    
+            
+                                                <div class="columns three last clearfix">
+                                                <span class="dropcap two lightgrey">3</span> <h2><a href="#three">Blog Settings</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">6</span> <h2><a href="#six">Gallery Slide Sets</a></h2><div class="clear"></div>   
+                                                <span class="dropcap two lightgrey">9</span> <h2><a href="#nine">Galleries</a></h2><div class="clear"></div>
+												<span class="dropcap two lightgrey">12</span> <h2><a href="#twelve">Child Theme</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">15</span> <h2><a href="#fifteen">Contact Details</a></h2><div class="clear"></div>
+                                                <span class="dropcap two lightgrey">18</span> <h2><a href="http://support.creativeworkz.co.uk/how-to-guides/dynamix-how-to-guides/" target="_blank">How to Guides</a></h2><div class="clear"></div>
+												</div>
+												<div class="clear">&nbsp;</div>
+											</div>
+										</div>
+									</div>    
+
+								<a name="one" id="one"></a>
+								<p>&nbsp;</p>
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Getting Started</h2>
+										</div>
+									</div>				
+								</div>                                                                                    
+                                 <!-- accordion -->
+                                 <div class="accordion"> 
+                                 
+									<div class="section">
+										<h3 class="accordionhead"><a href="#">Theme Installation</a></h3>
+										<div class="sectioncontent">
+                                            <p>Please visit this page on the support website for how to install the theme correctly.</p>
+                                            
+                                            <p><a href="http://support.creativeworkz.co.uk/dynamix-getting-started/installing-dynamix/">http://support.creativeworkz.co.uk/dynamix-getting-started/installing-dynamix/</a></p>
+                                            
+                                            <p>After uploading the DynamiX theme, log into the dashboard and goto Appearance -> Themes and find the DynamiX theme then activate it. 
+                                            
+                                            Once activated a tab will appear at the bottom left hand menu of Wordpress named "DynamiX".</p>
+
+                                    
+										</div>
+									</div>
+    
+<div class="section">
+										<h3 class="accordionhead"><a href="#">Video Tutorials</a></h3>
+										<div class="sectioncontent">
+                                            <p>General Settings	 	<br>
+                                            <a href="http://www.youtube.com/watch?v=GAwnV0-GJWA">http://www.youtube.com/watch?v=GAwnV0-GJWA</a></p>
+<p>Blog Settings		 	<br>
+  <a href="http://www.youtube.com/watch?v=4Vjh_kDsR24">http://www.youtube.com/watch?v=4Vjh_kDsR24</a></p>
+                                            <p>Drop Panel /
+                                          Footer Settings<br>
+                                          <a href="http://www.youtube.com/watch?v=FnIieYfVrGw">http://www.youtube.com/watch?v=FnIieYfVrGw</a>                                            </p>
+                                            <p>Shortcode Generator 	<br>
+                                            <a href="http://www.youtube.com/watch?v=Llvoeng0DcE">http://www.youtube.com/watch?v=Llvoeng0DcE</a></p>
+                                            <p>Gallery Slideset System 	<br>
+                                            <a href="http://www.youtube.com/watch?v=0-MUgzysMLY">http://www.youtube.com/watch?v=0-MUgzysMLY</a></p>
+                                            <p>Language Translation	<br>
+                                            <a href="http://www.youtube.com/watch?v=tr4Z5AEoUzk">http://www.youtube.com/watch?v=tr4Z5AEoUzk</a></p>
+                                            <p>How to create the home page Part 1 				<br>
+                                              <a href="http://www.youtube.com/watch?v=kNbz1892acE">http://www.youtube.com/watch?v=kNbz1892acE </a><br>
+                                              <br>
+                                          How to create the home page Part 2<br>
+                                          <a href="http://www.youtube.com/watch?v=TXulV6DA81Y">http://www.youtube.com/watch?v=TXulV6DA81Y </a></p>
+                                            <p>How to create a
+                                              custom skin<br>
+                                              <a href="http://www.youtube.com/watch?v=1GKJKmdXF-s">http://www.youtube.com/watch?v=1GKJKmdXF-s</a>                                              <br>
+                                          </p>
+                                        </div>
+</div>
+
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#">Image Resizing Script / External Image Support</a></h3>
+										<div class="sectioncontent">
+											<p>Image resizing script Timthumb is bundled with DynamiX –  this version <strong>supports external images, </strong>however a safe list is required.  Locate the section of code shown below in DynamiX → lib → scripts →  timthumb.php and add to the safelist the domains you wish to allow access to. </p>
+											<p><img src="images/safelist.jpg" width="200" height="93" alt="safe list"></p>
+                                      </div>
+									</div>
+
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#">Language Translation</a></h3>
+										<div class="sectioncontent">
+                                        	<p>DynamiX is translation ready, included with the theme is  the required files for the translating the theme into any language. Please  watch the following screencast on how to translate the DynamiX theme using a  wordpress plugin (codestyling localization).</p>
+                                            <p><em>Language  Translation Screencast<br>
+                                            </em><a href="http://www.youtube.com/watch?v=tr4Z5AEoUzk">http://www.youtube.com/watch?v=tr4Z5AEoUzk</a></p>
+<p>The required files are located in the DynamiX/languages/  folder.</p>
+                                        </div>
+									</div>                                    
+								</div>
+                                <!-- / accordion -->
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div> 
+                                <a name="two" id="two"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">General Settings</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two">General Settings Screencast</span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=GAwnV0-GJWA"> Watch Now</a></span></h2></em></p><br>    
+                                
+                                <p>After installation select the <strong>General Settings </strong>tab  from the DynamiX menu. Below is a description of each option.</p>
+                                <p>&nbsp;</p>                            
+								<!-- accordion -->
+								<div class="accordion">    
+									<div class="section">
+										<h3 class="accordionhead"><a href="#">DynamiX Skins</a></h3>
+										<div class="sectioncontent">
+										<p>The theme is split into two skins – select one of the 10 <strong>Outer Skin</strong> colours which affects the Header/Footer parts of the theme.  The Inner Skin has two options – <strong>Light </strong>&amp; <strong>Dark </strong>which affects  the body of the theme<strong>.</strong></p>
+Skins can also change per page – see <em>Page Content  Configuration</em> within <em>Pages</em><strong> </strong>in the Wordpress admin. </div>
+									</div>
+
+								<div class="section">
+										<h3 class="accordionhead"><a href="#">Wordpress Custom Menu</a></h3>
+										<div class="sectioncontent">
+										Click enable if you have WP 3.0 or greater. Then goto WP Admin → Appearance → Menus → Create your menu and select your Custom Menu in the top  left hand corner (Theme Locations). 
+										  <p><strong>Drop Panel Menu Item</strong></p>
+<p>To initiate the Drop Panel using WP Custom Menu,  got to <em>WP Admin → Appearance → Menus</em> and click  &quot;Screen Options&quot; (Top Right) and switch on &quot;CSS Classes&quot;. Now create a new <em>Custom  Link </em>with the URL left as http:// and give the link a name e.g. Contact Us. </p>
+                                        <p>Once the link is added to the menu, you need to remove  the URL and paste <em>droppaneltrigger</em> into the CSS Classes field. Now your  menu item will act as a drop panel trigger.</p>
+                                        <p><strong>Main Menu Description</strong></p>
+                                        <p>To add a menu description simply add text to the &quot;Title  Attribute&quot;.</p>
+                                        </div>
+								  </div>
+                                    
+									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Full Widget Footer /  Drop Panel</a></h3>
+										<div class="sectioncontent">
+                         
+                                        <p>Enable this option to drag and drop Widgets into the Footer / Drop Panel columns. </p>
+<p>Once enabled goto  WP → Admin Appearance → Widgets.   Panels should be present representing each column of the Drop Panel and Footer. </p>
+                                        <p><strong>Note </strong>any previous data stored in the Footer and  Drop Panel will be replaced with the new widget system.  </p>
+                                        </div>
+								  </div>                                    
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Sidebars</a></h3>
+										<div class="sectioncontent">
+                         
+                                        <p>This option allows you to select how many sidebars you  wish to create. Default is <strong>Two. </strong>See<em> Wordpress Admin→ Appearance</em> → <em>Widgets </em>once  you have entered the amount of sidebars you require. </p>
+										</div>
+									</div>   
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Branding Image</a></h3>
+										<div class="sectioncontent">
+                         
+                                        <p>If you wish to upload your logo, please enter the URI of  your image. Alternatively if you haven't uploaded one already select the <em>Upload<strong> </strong></em>button and upload your logo to the media library then copy the URI of  the image in the box. </p>
+                                        <p>The recommended dimensions for the image are  <strong>(W) 225px * (H) 50px</strong>.</p>
+                                        <p>If this is left empty the theme will automatically  display the <strong>Blog Title</strong> and <strong>Tagline</strong> – set in <em>Settings →  General. </em></p>
+                                        </div>
+									</div>                        
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#">Font Settings</a></h3>
+									  <div class="sectioncontent">
+                                        <p>If you wish to override the default font colours for the  theme please enter a hexadecimal code <em>without the #</em> into each option. </p>
+									  </div>
+									</div> 
+
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Cufón Font Settings </a></h3>
+										<div class="sectioncontent">
+										<p>To disable the Cufón text replacement script select <em>Disable</em>.  For more information on the script see <a href="http://cufon.shoqolate.com/generate/">http://cufon.shoqolate.com/generate/</a> .</p>
+                                        <p>By default the Cufón script will affect all H1 → H6 tags  – this can be modified by selecting which areas you wish to affect. </p>
+                                        <p>This theme is bundled with <strong>Lucida Sans Unicode font</strong> - <strong> </strong>you can upload your own font  using the upload button, this will upload the font to the media library and  then copy the URI into the box. New fonts can be created at  <a href="http://cufon.shoqolate.com/generate/">http://cufon.shoqolate.com/generate/</a><a href="http://cufon.shoqolate.com/generate/">. </a></p>
+                                        <p>The default Cufón gradient colours can also be  overridden by entering a hexadecimal code – this is broken down by theme areas.  The colours go from <em>top</em> to <em>bottom. </em></p>
+                                        </div>
+									</div> 
+
+									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Timthumb Image Resizing Script </a></h3>
+										<div class="sectioncontent">
+										<p>Timthumb image resizing script is enabled by default, if you do not want to have your images resized, you can disable it here.</p>
+                                        </div>
+									</div>                                     
+ 
+ 									<div class="section">
+										<h3 class="accordionhead"><a href="#"> JW Player Configuration</a></h3>
+										<div class="sectioncontent">
+										<p>To play most  Video / Audio formats with DynamiX, it's recommended to use JW Player embed option. </p>
+                                        <p>JW Player can  be embedded into the Grid, Stage, Accordion, Group Slider Galleries and the Video Shortcode.</p>
+                                        <p><strong>JW Player</strong> must be  downloaded form <a href="http://www.longtailvideo.com/players/">http://www.longtailvideo.com/players/</a></p>
+                                        <p>Within the  downloaded zip you will find the following files: <strong>jwplayer.js</strong>, <strong>player.swf, </strong>upload these files (via FTP or WP Media Library) and copy and paste the file URL's into the relevant fields (important).</p>
+<p>Once this is  complete <strong>JW Player </strong>can be selected from the embed option in both <strong>Posts  → Embed Video / Timeout Options </strong>and <strong>Gallery Slide Set</strong> → <strong>Embed  Type. </strong></p>
+<p><strong><em>JW Player in  Lightbox</em></strong></p>
+<p>To play <strong>JW  Player </strong>within lightboxes specify the path of your <strong>JW Player </strong>flash  file. e.g. </p>
+                                        <p><strong>/wp-content/uploads/2011/03/player.swf </strong>then add the video path using  the flashvars variable. e.g.</p>
+                                        <p><strong>?flashvars=file=/wp-content/uploads/2011/03/InsideJob-Sample.mp4</strong></p>
+                                        <p>So  the full path looks similar to the following. (<strong>note!</strong> this is just an example - you'll need to modify to represent the paths to your own files). </p>
+                                        <p><strong><em>/wp-content/uploads/2011/03/player.swf</em></strong><strong><em>?flashvars=file=/wp-content/uploads/2011/03/InsideJob-Sample.mp4</em></strong></p>
+                                        <p>Check the  autoplay check option in either Gallery Slide Set or Posts → Embed Video /  Timeout Options to automatically start the video. </p>
+                                        </div>
+                                    </div>
+
+ 									<div class="section">
+										<h3 class="accordionhead"><a href="#"> Twitter</a></h3>
+										<div class="sectioncontent">
+										<p>Enter your Twitter account details and how many tweets  you wish to display. The theme will cycle through your latest tweets. Enter a  label e.g. <em>DynamiX Tweets. </em></p>
+                                        <p>The Twitter pod can be enabled per page, under <em>Pages</em><strong> </strong>in the Wordpress admin ( See lower Right hand area).</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+<!-- / accordion -->                                
+
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div> 
+ 								<p>&nbsp;</p>
+								<a name="three" id="three"></a>
+								
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Blog Settings</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two"> Blog Settings Screencast </span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=4Vjh_kDsR24"> Watch Now</a></span></h2></em></p><br>                                
+
+								<!-- accordion -->
+                                <div class="accordion"> 
+
+                                    <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Archive / Index Posts Configuration</a></h3>
+                                        <div class="sectioncontent">
+                                        <p><strong><em>Post View Type<br>
+                                        </em></strong>Display your posts in normal or grid view. This will  affect all archive, index and blog pages. </p>
+                                        <p><strong><em>Post Content<br>
+                                        </em></strong>Select post content type. This will determine  what parts of the post you wish to display in  the archive, index and blog pages. This does not affect the single post. </p>
+                                        <p><strong><em>Excerpt Limit<br>
+                                        </em></strong>If you select a Post Content type to include excerpt  please enter the limit of words you want to use.</p>
+                                        <p><strong><em>Postmeta Data</em></strong><br>
+                                          Choose where to display Comments and Date information.</p>
+</div>
+</div>
+
+
+                                    <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Archive / Index Pages Image Configuration</a></h3>
+                                            <div class="sectioncontent">
+                                              <p><strong><em>Image Behaviour</em></strong></p>
+                                              <p>Select the behaviour of the image, if set to Normal the  image will act as a link – select lightbox and the image will display within a  lightbox when clicked.  </p>
+                                              <p><strong><em>Image Effect</em></strong></p>
+                                              <p>Select the effect you want to apply to the image.</p>
+<p><strong><em>Image Height</em></strong></p>
+<p>Enter a height value for all the images to be set by.  This will automatically determine the width of the image if the image field is  left blank. </p>
+                                              <p><strong><em>Image Width</em></strong></p>
+                                              <p>This is optional, if you want to set a default width for  all images enter the value here. </p>
+                                              <p><strong>NOTE! </strong>The settings above do <strong>NOT</strong> affect  Full Post Content Type. <br>
+      </p>
+                                   		</div>
+                                    </div>
+
+
+                                    <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Single Post Image Configuration</a></h3>
+                                            <div class="sectioncontent">
+                                              <p><strong><em>Image Behaviour</em></strong></p>
+                                              <p>Select the behaviour of the image, if set to Normal the  image will act as a link – select lightbox and the image will display within a  lightbox when clicked.  </p>
+                                              <p><strong><em>Image Effect</em></strong></p>
+                                              <p>Select the effect you want to apply to the image.</p>
+<p><strong><em>Image Height</em></strong></p>
+<p>Enter a height value for all the images to be set by.  This will automatically determine the width of the image if the image field is  left blank. </p>
+                                              <p><strong><em>Image Width</em></strong></p>
+                                              <p>This is optional, if you want to set a default width for  all images enter the value here. </p>
+                                              <p><strong>NOTE! </strong>The settings above do <strong>NOT</strong> affect  Full Post Content Type. <br>
+      </p>
+                                   		</div>
+                                    </div>
+
+                                    <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Archive / Index Page Layout Config</a></h3>
+                                      <div class="sectioncontent">
+                                        <p></p>
+                           		        <p><strong><em>Page Configuration</em></strong></p>
+                                              <p>Select page configuration for<strong> Archive / Index Pages</strong> (Blog Template page is defined the same as a normal page layout)</p>
+                                              <p><strong><em>Column Configuration</em></strong></p>
+                                              <p>Select column configuration for Archive / Index Pages. </p>
+                                      </div>
+                                    </div>
+
+                                    <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Blog Templates</a></h3>
+                                      <div class="sectioncontent">
+                                        <p></p>
+                           		        <p>To add a BLOG page to your website goto <em>Pages → Page Attributes → Template → Blog or Grid Blog</em><em></em></p>
+                                        <p>Your page now acts like a blog. You can select which  categories you wish to display by selecting categories from the <strong>Blog Categories</strong> meta box (Bottom Right of Pages). </p>
+                                        <p><strong>Add content to your blog</strong></p>
+                                        <p>You can add content above your blog by entering  information into the &ldquo;Editor&rdquo; like a normal page. This also includes adding  galleries.</p>
+                                      </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- / accordion -->   
+
+
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div> 
+                                <a name="four" id="four"></a>
+ 								<p>&nbsp;</p>
+
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Header Settings</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two"> Drop Panel Settings Screencast </span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=FnIieYfVrGw"> Watch Now</a></span></h2></em></p><br>   
+                                
+
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Drop Panel Options</a></h3>
+                                      <div class="sectioncontent">
+                                        <p><strong><em>Select Number of Columns</em></strong></p>
+By default the Drop Panel is split into 4 columns - this can be adjusted by changing this option.
+<p><strong><em>Enable / Disable </em></strong><br>
+                        By default the Drop Panel is enabled. You can disable it and leave the Search bar or disable both Drop Panel and Search bar.</p>
+<p><strong>Menu Trigger Name</strong> / <strong>Menu Trigger Description</strong> adds a Menu item to trigger the Drop Panel. These options only appear when WP Custom Menu is disabled. </p>
+<p>If you are using WP Custom menu and you require a Menu item to trigger the Drop Panel, please follow the instructions below. </p>
+<p><strong>Drop Panel Menu Item</strong> (WP Custom Menu)</p>
+<p>To initiate the Drop Panel using WP Custom Menu,  got to <em>WP Admin → Appearance → Menus</em> and click  &quot;Screen Options&quot; (Top Right) and switch on &quot;CSS Classes&quot;. Now create a new <em>Custom  Link </em>with the URL left as http:// and give the link a name e.g. Contact Us. </p>
+<p>Once the link is added to the menu, you need to<strong> remove  the URL </strong>so it's blank and paste <em>droppaneltrigger</em> into the <strong>CSS Classes</strong> field. Now your  menu item will act as a drop panel trigger.</p>
+                                    </div>
+                                  </div>     
+                                </div>
+                                <!-- / accordion -->   
+                                
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div> 
+                                <a name="five" id="five"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Footer Settings</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two"> Footer Settings Screencast </span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=FnIieYfVrGw"> Watch Now</a></span></h2></em></p><br>   
+                                                                  
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Footer Options</a></h3>
+                                    <div class="sectioncontent">
+                                      <p><strong><em>Select Number of Columns</em></strong></p>
+By default the Footer is split into 4 columns - this can be adjusted by changing this option.
+<p><strong>Lower Footer Options</strong></p>
+<p>The Lower Footer can be disabled if required. </p>
+<p>This area can contain text and HTML in both left and  right sections. This is also an ideal place to enter your <strong>Google Analytics  Code.</strong></p>
+                                      </div>
+                                  </div>     
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>                                                                                         
+                                
+                               <a name="six" id="six"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Gallery Slide Sets System</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two"> Gallery Slide Sets Screencast </span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=0-MUgzysMLY"> Watch Now</a></span></h2></em></p><br>   
+
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Gallery Slide Sets</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>The system has the same options as the post gallery. You <strong>MUST </strong>give each Slide Set a <strong>unique id </strong>otherwise the data can not be  identified. </p>
+                                      <p>Complete the  relevant fields you require.  For just  images, complete the<strong> Image URL </strong>and the <strong>Title </strong>field. </p>
+                                      <p>The <strong>description </strong>is <strong>HTML </strong>only, this means you will need to enter HTML in order to  obtain paragraphs. </p>
+                                      <p>Basic HTML which  is essential to creating paragraphs is <strong>&lt;p&gt;paragraph text&lt;/p&gt;. </strong>Use  this code for each paragraph you wish to have. Please search in google for  other HTML formatting. </p>
+                                      <p>To create a new  Slide, simply click the Add New Slide. The <strong>order </strong>of your images can be  changed by dragging the slide up and down. (Note slides can NOT be dragged to  other slide sets). </p>
+                                      <p>Once you have  completed your slide set, goto your <strong>Page → Add Post / Slide Set Gallery </strong> or <strong>Shortcode Generator → Post / Slide Set  Gallery → Data Source </strong>and select your Slide Set.  </p>
+                                      <p>Select your  relevant Slide Set from the drop menu. (<strong>Note,</strong> selecting a Slide Set  overrides the post category – disable the slide set to enable the category  option. )  </p>
+                                      <p><strong>Slide Set Options</strong></p>
+                                      <p><strong>Image URL</strong><br>
+Enter the URL of the of the Image you wish to associate  the post with. This image will appear in the Galleries and Archive/Post pages  (see <em>Show Image/Video in Post &amp; Archive</em>).  Click &quot;Get Image&quot; button to upload/select an  image in the media library. </p>
+                                      <p>If you do not enter an image into this field the  Galleries will automatically detect the first image in the post and use that. </p>
+                                      <p><strong>Video URL</strong><br>
+                                        As with the Image File, enter the URL of the Video file,  from <em>YouTube </em>etc. The video file requires an Image File to use as a  thumbnail.</p>
+                                      <p><strong>Title</strong><br> 
+                                        Enter a title which acts as an Image Alternate Text and Slide Title. 
+</p>
+                                      <p><strong>Description</strong><br>
+Enter a description - this can contain shortcodes and HTML.</p>
+                                      <p><strong>Embed  Type</strong><br>
+                                      To embed a video within the gallery slide, select the relevant video type from this select menu. </p>
+                                      <p><strong>Autoplay<br>
+                                      </strong>Enabling this option will auto play the video within the gallery slide. </p>
+                                      <p><strong>Timeout</strong><br>
+                                        This option overides the default timeout setting for this slide only. For example if the default time for all slides is 10 seconds and you enter 30 seconds in this option, this slide only will display for 30 seconds. <strong><br>
+</strong></p>
+                                      <p><strong>Link  URL</strong><br>
+                                      This allows you to  link the image/title to a URL ( Within your website or external ). To open the link into a new window add <em>target_blank</em> to the CSS Classes field.</p>
+                                      <p><strong>Disable Link Text<br>
+                                        </strong>This option removes the &quot;Read More&quot; text but still allows the post image/title to link. <strong><br>
+                                      </strong></p>
+                                      <p><strong>Image Crop</strong><br>
+                                      DynamiX uses timthumb to resize it's images – one of  it's options allows the image to be cropped or zoomed. Default is Cropped. </p>
+                                      <p><strong>Stage Content</strong><br>
+                                      This option allows you to select what  content is show in the Gallery, Image Only, Text &amp; Image Left Align, Text  &amp; Image Right Align, Text Only. Text Only uses the description field. </p>
+                                      <p><strong>Title Overlay</strong><em><br>
+                                      </em>If you wish to  overlay the gallery image with the Post Title / Post Sub Title text, select an  option from this list. There are various options to suit the image the text is  overlaying, including light or dark text. </p>
+                                      <p><em><strong>CSS Classes</strong></em><br>
+										Add custom CSS Classes to your galleries. e.g. add <em>target_blank</em> to open the link url in a new window.   </p>
+                                      <p><strong>Filter Category</strong><em><br>
+                                      </em>This applies to the Grid Gallery Only. Select a Category for this slide to appear in. (Create the Categories using the &quot;New Filter Category&quot; field. </p>
+                                      <p><strong>3d Gallery Settings<br>
+                                        <br>
+                                        Pieces</strong><br>
+                                        Number of pieces to which the image is sliced.<br>
+  <strong><br>
+    Time</strong><br>
+                                        Time for one cube to turn.<br>
+  <strong><br>
+    Transition</strong><br>
+                                        Choose from various Tweener effects.<br>
+  <strong><br>
+    Delay<br>
+  </strong> Delay between the start of one cube to the start of the next cube.<br>
+  <br>
+  <strong>DepthOffset</strong><br>
+                                        The offset during transition on the z-axis. Value between 100 and 1000 are recommended. But go for experiments.<br>
+  <br>
+  <strong> CubeDistance</strong><br>
+                                      The distance between the cubes during transition. Values between 5 and 50 are recommended. But go for experiments.</p>
+<p>&nbsp;</p>
+                                    </div>
+                                  </div>     
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>                           
+
+
+                               <a name="seven" id="seven"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Post Options</h2>
+										</div>
+									</div>				
+								</div>
+                
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Post Content Configuration </a></h3>
+                                    <div class="sectioncontent">
+                                      <p><strong>Post Title<br>
+                                      </strong>If you wish to  display a title other than the given one for the post name enter this  here.  Alternatively enter the text <em>BLANK</em> to block the page title from displaying. </p>
+                                      <p><strong>Post Sub  Title<br>
+                                      </strong>Enter a page Sub  Title if required, this will appear directly underneath the main Post Title. </p>
+                                      <p><strong>Enable Text  Resizer</strong><br>
+                                      Enable this  option to display the text resizer icons which allows the user to increase or  decrease the size of the font within the main content. </p>
+<p><strong>Hide Breadcrumbs</strong><br> 
+  Disable the breadcrumbs from displaying on this post only. </p>
+<p><strong>Disable Content Border</strong><br>
+Disable the Content Border for this post only. </p>
+<p><strong>Publish Author Name</strong><br>
+Publish the author name that created this post. </p>
+<p>&nbsp;</p>
+                                    </div>                         
+                                  </div>  
+
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Social Options</a></h3>
+                                    <div class="sectioncontent">
+										<p>Social Options allows you to add various Social  Networking links to your Page or Post. It also allows you to add a Twitter Feed  to the page – this will cycle through your latest tweets. See General Settings  → Twitter from the DynamiX menu. </p>
+                                      <p>Twitter can be placed either above or beneath the  content. </p>
+                                        <p>Social Networking icons can also be placed within the content of the Page/Post. <br>
+                                          <br>
+                                        Each social networking icon added to the page will link  that page and attempt to post it on the social networking site. The colours of  the icon are determinded by the font colour set in General Settings → Font  Settings from the DynamiX menu. <br>
+                                        <br>
+                                        <strong>Disable Heart Icon</strong><br>
+                                        Selecting this option will display the Social Networking icons directly on the page without the &quot;Heart&quot; graphic. </p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Shortcode Generator</a></h3>
+                                    <div class="sectioncontent">
+										<p>Add Shortcodes to your Post/Page. See <a href="#ten">Shortcode Generator</a></p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Post / Page Layout Configuration</a></h3>
+                                    <div class="sectioncontent">
+										<p>Select the ideal layout configuration for the post / page you are creating – the columns are numbered and coloured to easily identify with selecting a sidebar for that column. <br>
+										  <br>
+									    <strong>Sidebar Configuration</strong><br>
+									    If you have selected a layout configuration with columns  this panel will allow you to configure that column with a sidebar. See  <em>General Settings → Sidebars</em> from the DynamiX menu to create more than the default 2. To populate your sidebars see <em>WP Admin  → Appearance  → Widgets</em>. </p>
+<p>The option is also available to make that column  borderless. </p>
+                                        <p>If a layout only contains one column the yellow column  (Column 2) option will be ignored.  </p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Post Image Gallery Options</a></h3>
+                                    <div class="sectioncontent">
+										<p>Always ensure you save your post within a relevant category  e.g. home images, portfolio, video work etc   – this will help identify your posts when creating a Gallery. </p>
+										<p><strong>Image / Video Source</strong></p>
+									  <p><strong>
+									    URL of Image File</strong><br>
+									    Enter the URL of the of the Image you wish to associate  the post with. This image will appear in the Galleries and Archive/Post pages  (see <em>Show Image/Video in Post &amp; Archive</em>).  Click &quot;Get Image&quot; button to upload/select an  image in the media library. </p>
+<p>If you do not enter an image into this field the  Galleries will automatically detect the first image in the post and use that. </p>
+                                      <p><strong>URL of Video File</strong><br>
+                                      As with the Image File, enter the URL of the Video file,  from <em>YouTube </em>etc. The video file requires an Image File to use as a  thumbnail.</p>
+                                      <p>&nbsp;</p>
+<p><strong>Embed Video / Timeout Options</strong></p>
+<p><strong>Embed Video Type</strong><br>
+To embed a video within the gallery slide, select the relevant video type from this select menu. </p>
+<p><strong>Autoplay Video<br>
+</strong>Enabling this option will auto play the video within the gallery slide. </p>
+<p><strong>Stage Gallery Slide Timeout</strong><br>
+  This option overides the default timeout setting for this slide only. For example if the default time for all slides is 10 seconds and you enter 30 seconds in this option, this slide only will display for 30 seconds. <strong><br>
+  </strong></p>
+<p>&nbsp;</p>
+<p><strong>Additional Settings</strong><br>
+  <strong><br>
+  Enter post order number</strong><br>
+  If you wish to change the order of the images within the  post galleries you can enter an order number. 0 being first then increment by  adding a number afterwards. It MUST begin with a 0 then the number e.g.  01,02,03. </p>
+<p><strong>Show Image/Video in Post &amp; Archive<br>
+</strong>If you wish to display your Image File as part of the  post in the Archive and Single Post pages then select this option. If this  option is enabled it will display the image within the post and enable the  Lightbox effect. If you have a Video file also associated with the post it will  use the Image as a thumbnail and then open the video within the Lightbox. </p>
+<p><strong>Image Orientation<br>
+</strong>This option applies to Archive / Index / Blog pages. Default is landscape, if your image is portrait change this option. </p>
+<p><strong>CSS Classes<br>
+</strong>Add custom CSS Classes to your galleries. e.g. add <em>target_blank</em> to open the link url in a new window.   </p>
+<p><strong>Link Image to Alternative URL</strong><br>
+  This option is for Galleries ONLY! - this allows you to  link the image to an alternative URL ( Within your website or external ). e.g.  The image advertises a Service – link the image to a Services page. </p>
+                                      <p><strong>Disable Gallery Image Link</strong><br>
+                                      If you wish to just display an image within a gallery  without linking to the post it is associated with or any other URL then enable  this option.</p>
+                                        <p><strong>Disable Read More Only<br>
+                                          </strong>This option removes the &quot;Read More&quot; text but still allows the post image/title to link. <strong><br>
+                                        </strong></p>
+                                      <p><strong>Image Crop Settings</strong><br>
+                                      DynamiX uses timthumb to resize it's images – one of  it's options allows the image to be cropped or zoomed. Default is Cropped. </p>
+                                      <p>&nbsp;</p>
+<p><strong>Stage Gallery Settings<br>
+</strong>These settings ONLY apply to the Stage Gallery Settings.</p>
+                                        <p><strong>Gallery Image Content</strong><br>
+                                          This option allows you to select what  content is show in the Gallery, Image Only, Text &amp; Image Left Align, Text  &amp; Image Right Align. </p>
+                                        <p><strong>Display Post Title On Image </strong><em><br>
+                                        </em>If you wish to  overlay the gallery image with the Post Title / Post Sub Title text, select an  option from this list. There are various options to suit the image the text is  overlaying, including light or dark text. </p>
+                                        <p>&nbsp;</p>
+                                        <p><strong>3d Gallery Options<br>
+                                          <br>
+                                        Pieces</strong><br>
+                                        Number of pieces to which the image is sliced.<br>
+                                        <strong><br>
+                                        Time</strong><br>
+                                        Time for one cube to turn.<br>
+                                        <strong><br>
+                                        Transition</strong><br>
+                                        Choose from various Tweener effects.<br>
+                                        <strong><br>
+                                        Delay<br>
+                                        </strong> Delay between the start of one cube to the start of the next cube.<br>
+                                        <br>
+                                        <strong>DepthOffset</strong><br>
+                                        The offset during transition on the z-axis. Value between 100 and 1000 are recommended. But go for experiments.<br>
+                                        <br>
+                                        <strong>                                        CubeDistance</strong><br>
+                                        The distance between the cubes during transition. Values between 5 and 50 are recommended. But go for experiments.<br>
+                                      </p>
+                                        <p><strong>                                        </strong></p>
+                                      <p> </p>
+									</div>                         
+                                  </div>                                   
+                                   
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>
+
+                               <a name="eight" id="eight"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Page Options</h2>
+										</div>
+									</div>				
+								</div>                                
+               
+                                <!-- accordion -->
+                                <div class="accordion"> 
+                                
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Page Content Configuration </a></h3>
+                                    <div class="sectioncontent">
+										<p><strong>Menu  Description</strong><br>
+									    This field  allows you to enter a description of the page which will appear in the Menu  Navigation.</p>
+<p><strong>Page Title<br>
+</strong>If you wish to  display a title other than the given one for the page name enter this here.  This is ideal for page titles too large for the menu. Alternatively enter the  text <em>BLANK</em> to block the page title from displaying. </p>
+<p><strong>Page Sub  Title<br>
+</strong>Enter a page Sub  Title if required, this will appear directly underneath the main Page Title. <br>
+</p>
+<p><strong>Hide Breadcrumbs</strong><br>
+Disable the breadcrumbs from displaying on this post only. </p>
+<p><strong>Hide Content<br>
+</strong>This is ideal if  you wish to just display a <em>Post Gallery</em> on the page without any other  text/content. </p>
+<p><strong>Disable  Content Border<br>
+</strong>Use this to  disable the main border which surrounds the page content. Ideal if you wish to  format the page differently – You can use the <em>Shortcode Generator → Styled  Boxes → General</em> to add the same border type around selected content  only.  </p>
+<p><strong>Publish  Author Name / Date</strong><br>
+  Selecting these  options will display the Publish Date and Author Name on the page. </p>
+<p><strong>Enable Text  Resizer</strong><br>
+  Enable this option to display the text </p>
+<p><strong>Page Skins<br>
+</strong>If you wish to  assign a  skin to a specific page, you can do so by selecting a Outer Skin  option and Inner Skin option. (This will override the global skin setting).</p>
+</div>                         
+                                  </div>  
+
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Social Options</a></h3>
+                                    <div class="sectioncontent">
+										<p>Social Options allows you to add various Social  Networking links to your Page or Post. It also allows you to add a Twitter Feed  to the page – this will cycle through your latest tweets. See General Settings  → Twitter from the DynamiX menu. </p>
+                                      <p>Twitter can be placed either above or beneath the  content. </p>
+                                        <p>Social Networking icons can also be placed within the content of the Page/Post. <br>
+                                          <br>
+                                        Each social networking icon added to the page will link  that page and attempt to post it on the social networking site. The colours of  the icon are determinded by the font colour set in General Settings → Font  Settings from the DynamiX menu. <br>
+                                        <br>
+                                        <strong>Disable Heart Icon</strong><br>
+                                        Selecting this option will display the Social Networking icons directly on the page without the &quot;Heart&quot; graphic. </p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Shortcode Generator</a></h3>
+                                    <div class="sectioncontent">
+										<p>Add Shortcodes to your Post/Page. See <a href="#ten">Shortcode Generator</a></p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Post / Page Layout Configuration</a></h3>
+                                    <div class="sectioncontent">
+										<p>Select the ideal layout configuration for the post / page you are creating – the columns are numbered and coloured to easily identify with selecting a sidebar for that column. <br>
+										  <br>
+									    <strong>Sidebar Configuration</strong><br>
+									    If you have selected a layout configuration with columns  this panel will allow you to configure that column with a sidebar. See  <em>General Settings → Sidebars</em> from the DynamiX menu to create more than the default 2. To populate your sidebars see <em>WP Admin  → Appearance  → Widgets</em>. </p>
+<p>The option is also available to make that column  borderless. </p>
+                                        <p>If a layout only contains one column the yellow column  (Column 2) option will be ignored.  </p>
+									</div>                         
+                                  </div> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Add Post / Slide Set Gallery</a></h3>
+                                    <div class="sectioncontent">
+										<p>A Post Gallery ( collection of posts grouped by category  ) and Gallery Slide Set  can be added to any page – you can select from <strong>Stage Slider</strong>, <strong>Group Slider</strong>, <strong>Grid Gallery</strong>, <strong>3d Gallery</strong> and <strong>Accordion</strong>. </p>
+                                        <p><strong>Gallery Data Source</strong><br>
+                                          <br>
+                                        Once you have created your Posts with images or Gallery Slide Set, you can select the Post Category or Slide Set ID from the Data Source Tab. </p>
+<p>More than one Post category can be selected e.g. video  portfolio, graphic design portfolio. </p>
+                                        <p><strong>Image Effects</strong><br>
+                                          Each gallery can be customised by adding Image effects  to each image displayed. Add a reflection, shadow or reflection and shadow  combined. </p>
+                                        <p><strong>Enable Lighbox</strong></p>
+                                        <p>Depending on the gallery requirements, Lightbox can be  enabled – this display the full size image within a lightbox or if a video is  attached for that post it will display the video in the lightbox. Alternatively  the image will link to the post it was created in or a specific URI specified.  ( See Post Image / Gallery Options - Located under Posts )</p>
+                                        <p><strong>Additional Settings</strong></p>
+                                        <p><strong>Group Slider, Grid Gallery, Accordion Content </strong><br>
+                                        This option allows  you to choose what to display in those galleries. A choice of <strong>Text Image</strong>, <strong>Title  Image</strong>, <strong>Title Overlay Image</strong>, <strong>Title &amp; Text Overlay Image</strong>, <strong>Image Only</strong>, <strong>Text Only</strong>. Title Overlay Image and Title &amp; Text Overlay Image reveal the Title/ Description Text when the image is hovered over.   </p>
+                                        <p><strong>Group Slider / Grid Gallery Position </strong><br>
+the option is  available to display the gallery above or below the main content. </p>
+                                        <p><strong>Grid Gallery Columns</strong>                                        <br>
+                                        Choose between 3 and 6 columns for the Grid Gallery. </p>
+                                        <p> <strong>Grid Gallery</strong> Show Posts<br>
+                                          For use with Posts only, paginate how many posts to display on a page. 
+                                        </p>
+                                        <p> <strong>Grid Gallery</strong> Category Filter<br>
+                                        Enable for animated category filtering. Select more than one Post category or create Gallery Slide Set categories (See Gallery Slide Set). <br>
+                                        <br>
+                                        If  a category is clicked, the gallery is animated to filter only the Images within that category. </p>
+                                      <p><strong>Group Slider, 3d Gallery, Grid Row Height </strong><br>
+  Specify the heights of galleries to accommodate the  content. This option is for Grid (This controls the Grid Row Height), Group Slider and the 3d Gallery only. For Stage gallery see  Image Height below this option. </p>
+<p><strong>Image Height</strong> <br>
+  The image height within the galleries can  be configured here, default heights are specified so this is optional but gives  you the complete control over how the gallery displays. </p>
+<p><strong>Image Width</strong> <br>
+  For use with Stage and 3d Galleries Only  - control the width with this option, default is 940px. </p>
+                                        <p><strong>Number of Posts to Display</strong><br>
+                                        Limit the number of posts  you want to display from the gallery. </p>
+                                        <p><strong>Excerpt Word Limit</strong><br>
+Limit the amount of words you want the gallery to display. Default is 55 words. </p>
+                                        <p><strong>Sort By and Order By<br>
+</strong>Control how the  posts are retrieved from the database - for Posts only. </p>
+<p><strong>Slide Timeout</strong> <br>
+  Set the length of time the  slides are visible for. This is a global setting for that gallery, you can add  further control under the Gallery Post by selecting a greater or lesser time  which will be unique to that gallery slide. <br>
+  <br>
+  This option applies to Stage, Accordion and Group Slider Galleries only. </p>
+                                        <p><strong>Stage Gallery  Navigation</strong><br>
+                                        Control your gallery  slides with an optional  navigation. </p>
+<p><br>
+  <strong>3d Gallery Options:</strong></p>
+                                        <p><strong>Pieces</strong><br>
+Number of pieces to which the image is sliced.<br>
+<strong><br>
+Time</strong><br>
+Time for one cube to turn.<br>
+<strong><br>
+Transition</strong><br>
+Choose from various Tweener effects.<br>
+<strong><br>
+Delay<br>
+</strong> Delay between the start of one cube to the start of the next cube.<br>
+<br>
+<strong>DepthOffset</strong><br>
+The offset during transition on the z-axis. Value between 100 and 1000 are recommended. But go for experiments.<br>
+<br>
+<strong> CubeDistance</strong><br>
+The distance between the cubes during transition. Values between 5 and 50 are recommended. But go for experiments.</p>
+                                        <p>The width of the image for the Stage Gallery should be  at least 940px. </p>
+                                        <p><br>
+                                          <strong>Accordion Gallery Options<br>
+                                        </strong></p>
+                                        <p> <strong>Accordion Auto Rotate</strong><br>
+                                        Enable to auto rotate through each accordion panel.Set the timeout using the <strong>Slide Timeout</strong> option</p>
+                                        <p><strong>Accordion Startup Mini Titles</strong><br>
+                                        This option is enabled by default, it displays the Title overlaying each image when the gallery has loaded. </p>
+                                    </div>                         
+                                  </div>                                   
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Blog Categories</a></h3>
+                                    <div class="sectioncontent">
+										<p>To add a BLOG page to your website goto <em>Page Attributes → Template → Blog</em> or <em>Grid Blog</em></p>
+                                        <p>Your page now acts like a blog. You can select which  categories you wish to display by selecting categories from the Blog Categories meta box. </p>
+                                        <p><strong>Add content to your blog</strong></p>
+                                        <p>You can add content above your blog by entering  information into the &ldquo;Editor&rdquo; like a normal page. This also includes adding  galleries.</p>
+                                    </div>                         
+                                  </div> 
+                                   
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>
+
+                                <a name="nine" id="nine"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Galleries</h2>
+										</div>
+									</div>				
+								</div>
+
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">External Galleries</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>To create an External Gallery (Outside of the main content) you can do so by going to<em> Pages → Add Post / Slide Set Gallery.</em> See <a href="#eight">Page Options </a>for details on what the options do. </p>
+                                      <p>Choose from the following Galleries</p>
+                                      <p><strong>Stage Gallery</strong><br>
+                                      <a href="http://dynamix.creativeworkz.co.uk/galleries-2/stage/">http://dynamix.creativeworkz.co.uk/galleries-2/stage/</a></p>
+                                      <p><strong>Group Slider</strong><br>
+                                      <a href="http://dynamix.creativeworkz.co.uk/galleries-2/group-slider/">http://dynamix.creativeworkz.co.uk/galleries-2/group-slider/</a></p>
+                                      <p><strong>Grid Gallery</strong><br>
+                                      <a href="http://dynamix.creativeworkz.co.uk/4-columns-sortable/">http://dynamix.creativeworkz.co.uk/4-columns-sortable/</a></p>
+<p><strong>3d Gallery<br>
+</strong><a href="http://dynamix.creativeworkz.co.uk/3d-slider/">http://dynamix.creativeworkz.co.uk/3d-slider/</a></p>
+<p><strong>Accordion Gallery</strong><br>
+  <a href="http://dynamix.creativeworkz.co.uk/accordion-gallery/">http://dynamix.creativeworkz.co.uk/accordion-gallery/</a></p>
+									</div>
+                                  </div>     
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Internal Galleries</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>To create an Internal Gallery (Inside of the main content) you can do so by going to<em> Shortcode Generator → Post / Slide Set Gallery.</em> See <a href="#ten">Shortcode Generator </a>for details on what the options do. </p>
+                                      <p>Choose from the following Galleries</p>
+                                      <p><strong>Image Gallery</strong><br>
+                                        <strong>Group Slider</strong><br>
+                                        <strong>Grid Gallery</strong><br>
+                                      <strong>Accordion Gallery</strong></p>
+                                      <p>See this page for examples   <a href="http://dynamix.creativeworkz.co.uk/shortcodes/post-galleries/">http://dynamix.creativeworkz.co.uk/shortcodes/post-galleries/</a> <br>
+                                      </p>
+                                    </div>
+                                  </div>    
+                                  
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>                                            
+
+
+                                <a name="ten" id="ten"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Shortcode Generator &amp; Contact Form</h2>
+										</div>
+									</div>				
+								</div>
+
+								<p><strong>General Shortcodes</strong></p>
+								<p><strong>Contact Form</strong><br>
+								  Below is the shortcode for the contact form (If you intend to add more than one contact form, you must change the ID).<br>
+								  <br>
+								  [enquiry_form  id=&quot;footercontact&quot; emailto=&quot;myemail@address.com&quot;  thankyou=&quot;thanks, we'll be in touch soon!&quot; /]</p>
+                                <p>&nbsp;</p>
+								<p><em>Shortcode  Generator Screencast<br>
+								</em><a href="http://www.youtube.com/watch?v=Llvoeng0DcE">http://www.youtube.com/watch?v=Llvoeng0DcE</a></p>
+<p>The <em>Shortcode Generator </em>was designed to allow the  user to create complex shortcodes without having to type all the individual  values. Itallows the user to select a Shortcode they wish to add and  enter values into the specific fields. </p>
+                                <p>The Shortcodes provided are as follows; </p>
+                                <ol>
+                                  <li>Post / Slide Set Gallery</li>
+                                  <li>Columns</li>
+                                  <li>Styled Boxes</li>
+                                  <li>Buttons</li>
+                                  <li>Horizontal Break</li>
+                                  <li>Block Quote</li>
+                                  <li>Highlight</li>
+                                  <li>Image Shortcode</li>
+                                  <li>Video Shortcode</li>
+                                  <li>Tabs</li>
+                                  <li>Accordion</li>
+                                  <li>List</li>
+                                  <li>Reveal Content</li>
+                                  <li>Drop Caps</li>
+                                </ol>
+                                <p>&nbsp;</p>
+Once you have entered the values simply click the  &quot;Send Shortcode to Editor&quot; button which automatically generates all the code  for you within the editor.      
+                                              
+                                <!-- accordion -->
+                                <div class="accordion"> 
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Post / Slide Set Gallery</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Add a  Post or Gallery Slide Set Gallery by using this shortcode<strong> – </strong>this allows you  to add a gallery anywhere on your website. They can be placed anywhere in  the main content, sidebars (Using Text Widget), Drop Panel and the Footer. </p>
+                                      <p><strong>Select Type</strong></p>
+<p>There are three types of Post Gallery's you can add</p>
+                                      <ol>
+                                        <li>Image Gallery</li>
+                                        <li>Slider Gallery</li>
+                                        <li>Grid Gallery</li>
+                                        <li>Accordion Gallery</li>
+                                      </ol>
+                                      <p>Each has it's own options and can be highly customised  adding image effects and specific heights to suit the types of images used.  Simply select a Post Category or Gallery Slide Set containing the images you wish to display. Under Slider Gallery and Grid Gallery  you can select the type of content to display. </p>
+<p>It's recommended that you open a page and experiment with the settings to achieve your perfect configuration.</p>
+<p>View this page for examples (click view code under each gallery to get shortcode)   <a href="http://dynamix.creativeworkz.co.uk/shortcodes/post-galleries/">http://dynamix.creativeworkz.co.uk/shortcodes/post-galleries/</a></p>
+</div>
+                                  </div>     
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Columns</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Select this option to generate a range of columns. </p>
+                                      <p>Content can be pasted into the individual fields or  select the options you require and manually enter the content between the  relevant parts of the shortcode. </p>
+<p>The columns have the option of having a border and the  height can be specified in pixels to create an equal length. </p>
+<p>View this page for examples <a href="http://dynamix.creativeworkz.co.uk/shortcodes/columns/">http://dynamix.creativeworkz.co.uk/shortcodes/columns/</a></p>
+                                    </div>
+                                  </div>    
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Styled Boxes</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Select from a range of styled boxes, each comes with  it's own icon aside from General and Shadow. </p>
+                                      <p>The width can be specified in pixels along with the  alignment. </p>
+                                      <p>Paste the content into the &quot;Box Content&quot; field and press  the &quot;Send Shortcode to Editor&quot; button. </p>
+<p>View this page for examples   <a href="http://dynamix.creativeworkz.co.uk/shortcodes/styled-boxes/">http://dynamix.creativeworkz.co.uk/shortcodes/styled-boxes/</a></p>
+                                    </div>
+                                  </div>  
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Buttons</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Button shortcode allows you to add buttons to your page  with a range of colours shown above.</p>
+                                      <p>There are two types of button &quot;Button&quot; and &quot;Drop Panel  Trigger&quot;. The first is a normal button which allows you to add a URI. The  latter being a button which triggers the Drop Panel. e.g. You create a contact  us form in the Drop Panel and somewhere on the page create a &quot;Drop Panel  Trigger&quot; button, this will trigger the panel to drop down. </p>
+                                      <p>A width and button text can be specified for both. </p>
+<p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/button-shortcodes/">http://dynamix.creativeworkz.co.uk/shortcodes/button-shortcodes/</a></p>
+                                    </div>
+                                  </div>    
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Horizontal Break</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>The horizontal break has two options - &quot;Break Line&quot; and &quot;Break Line Top Link&quot;. This adds a horizontal break line across the page. The latter adds a top link to navigate the user back to the top. </p>
+<p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/"> http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/ </a></p>
+                                    </div>
+                                  </div>
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Block Quotes</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>There are two types of Block Quotes, &quot;Block Quote Line&quot;  and &quot;Block Quote Quotes&quot;. The first displays a line to separate to the left or  right of the text (dependant on alignment) and the latter displays quotes  surrounding the text. </p>
+<p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/"> http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/ </a></p>
+                                    </div>
+                                  </div>                                                                                                                 <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Highlight</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Select a the highlight shortcode if you wish to add a  highlight to a selection of text. There are two types available – black and  the current link color you have selected. </p>
+                                      <p>Select the  Type and enter the  text you wish to highlight. </p>
+<p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/"> http://dynamix.creativeworkz.co.uk/shortcodes/general-styling/ </a></p>
+                                    </div>
+                                  </div>
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Image Shortcode</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>The Image Shortcode allows you to add effects to  an image.</p>
+                                      <p>Enter the URL of the image you want to apply the effect to and select from one of the effects available. </p>
+                                      <p>A lightbox can be added to the image with the option to  link to a video URI (Youtube etc).  </p>
+                                      <p> <strong>Enable Title Text Overlay</strong><br>
+                                        This displays the title over the image when the image is hovered over. 
+</p>
+                                      <p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/image-effects/ "> http://dynamix.creativeworkz.co.uk/shortcodes/image-effects/ </a></p>
+                                    </div>
+                                  </div>
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Video Shortcode</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Select from a range of Video Embed Types</p>
+                                      <p><strong>YouTube</strong>, <strong>Vimeo</strong>,<strong> Flash</strong> and <strong>JW Player.</strong></p>
+                                      <p><strong>JW Player <br>
+                                      </strong>You must ensure the JW Player files are installed first. (See <a href="#two">General Settings</a>). There are unique options for JW Player:</p>
+                                      <p> <em>JW Player Image URL - </em>Whilst the video is buffering or loading JW Player can use a holding image. </p>
+                                      <p><em>Video ID - </em>If you plan on having more than one JW Player Video Shortcode on a page, ensure you enter a unique ID. </p>
+                                      <p>View this page for examples     <a href="http://dynamix.creativeworkz.co.uk/shortcodes/video-shortcodes/"> http://dynamix.creativeworkz.co.uk/shortcodes/video-shortcodes/ </a></p>
+                                    </div>
+                                  </div>                                                                                                                <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Tabs</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Add a jQuery Tab Shortcode to your page - enter the amount of Tabs you require and click Send Shortcode to Editor and change the default Titles and Content. </p>
+                                      <p>View this page for an example     <a href="http://dynamix.creativeworkz.co.uk/tabs/"> http://dynamix.creativeworkz.co.uk/tabs/ </a></p>
+                                    </div>
+                                  </div>       
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Accordion</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Add a jQuery Accordion Shortcode to your page - enter the amount of Panels you require and click Send Shortcode to Editor and change the default Titles and Content. </p>
+                                      <p>View this page for an example     <a href="http://dynamix.creativeworkz.co.uk/accordion/"> http://dynamix.creativeworkz.co.uk/accordion/ </a></p>
+                                    </div>
+                                  </div>
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">List</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Add a List shortcode to your page, select the color, type and items you require and click Send Shortcode to Editor. </p>
+                                      <p>View this page for examples    <a href="http://dynamix.creativeworkz.co.uk/lists/"> http://dynamix.creativeworkz.co.uk/lists/ </a></p>
+                                    </div>
+                                  </div>                                                                                                                <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Reveal Content</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>The Reveal Content Shortcode reveals content when it's clicked on. Enter the Title (e.g. view code), the content you wish to reveal and if required the width and alignment. Shortcode example below. </p>
+                                      <p><xmp>[reveal   title=&quot;view this text&quot; ]this is some text to be revealed[/reveal]</xmp></p>
+                                    </div>
+                                  </div>
+
+
+                                  <div class="section">
+                                        <h3 class="accordionhead"><a href="#">Drop Caps</a></h3>
+                                    <div class="sectioncontent">
+                                      <p>Choose between two types of Drop Caps, the Color and enter the text you want to appear as a Drop Cap.</p>
+                                      <p>View this page for examples <a href="http://dynamix.creativeworkz.co.uk/drop-caps/"> http://dynamix.creativeworkz.co.uk/drop-caps/</a>
+                                      </p>
+                                    </div>
+                                  </div>                                      
+                                  
+                                </div>
+                                <!-- / accordion -->                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>  
+
+                                <a name="eleven" id="eleven"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">BuddyPress</h2>
+										</div>
+									</div>				
+								</div>
+
+								<p>DynamiX supports the BuddyPress Plugin, this allows you to use your WP site as usual but with the added features of BuddyPress.
+
+To activate BuddyPress you need to download the BuddyPress plugin via the Wordpress Admin <em>→</em> Plugins <em>→</em> Add New. </p>
+								<p>Once activated DynamiX automatically enables BuddyPress	features.	You	can	create	Groups	by clicking on <em> My Account → Groups → My Groups → Create Group.</em></p>
+								<p>See the http://buddypress.org site for help setting up.								</p>
+                                <p><strong>Add BP pages to Custom Menu</strong></p>
+                                <p>To add BP pages to your WP Custom Menu, simply add the URL's of what you require, examples below.</p>
+								<p><em><strong>Link to Groups Overview</strong></em><br>
+                                /groups/</p>    
+								<p><em><strong>Link to Group Example</strong></em><br>
+                                /groups/<strong>your-group-name</strong>/</p>                            
+                                <p><em><strong>Link to Group Forum Example</strong></em><br>
+                                /groups/<strong>your-group-name</strong>/forum/</p>
+                                <p><em><strong> Link to Registration</strong></em><br>
+                                /register/
+                                <p><em><strong>Forums Overview</strong></em><br>
+                                /forums/</p>
+								<p><strong>NOTE</strong>, no support is given for how to use or install  BuddyPress – the only support given is for any CSS issues. </p>                                  
+                                    
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>  
+                                         
+                                <a name="twelve" id="twelve"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Child Theme</h2>
+										</div>
+									</div>				
+								</div>
+                                
+
+								<p>A child theme is designed to allow you to makes changes to the CSS and Functions without affecting the core files, making it easy to modify and still upgrade easily.                               </p>
+								<p>Upload the DynamiX-Child folder to the same directory as the DynamiX folder i.e.</p>
+								<p><em>http://yourdomain.com/wp-content/themes/DynamiX<br>
+							    http://yourdomain.com/wp-content/themes/DynamiX-Child</em></p>
+								<p>Once uploaded, goto your <em>WP Admin →  Appearance →  Themes</em> and activate the DynamiX Child theme. </p>
+								<p>From here you can modify the DynamiX-Child/style.css via FTP or via <em>WP Admin →  Appearance → Editor.</em></p>
+								<p>For example, If you wish to change overall font size of the Theme the following CSS would be added to the DynamiX-Child/style.css file. </p>
+								<p>body {<br>
+								  font-size: 0.85;<br>
+								  }</p>
+								<p>It's recommend that you have a copy of the core DynamiX/style.css  to view when wanting to change attributes. Whatever is defined in the DynamiX/style.css needs to be re-defined the same way in the DynamiX-Child/style.css file. </p>
+								<p>e.g. The following is for the header logo description position, found in the core DynamiX/style.css.</p>
+								<p>#header-logo .description {	position:absolute;margin-top:33px;}</p>
+								<p>To modify the margin-top value you would add the following in the DynamiX-Child/style.css</p>
+								<p>#header-logo .description {	margin-top:40px;}</p>
+								<p>If the change does not apply, the !important rule maybe needed. e.g. </p>
+								<p>#header-logo .description {	margin-top:40px !important;}</p>
+                                <p>&nbsp;</p>
+                                <p><strong>Custom Style Sheet</strong></p>
+                                <p>If you are using a custom stylesheet you want to load in, do the following.</p>
+                                <p>For example, if you have created a custom skin (using the custom.css stylesheet) - copy your <em><strong>DynamiX/stylesheets/</strong></em> folder contents to the <em><strong>DynamiX-Child/stylesheets/</strong></em> folder contents (overwrite any existing files). And place the following code in the <em><strong>DynamiX-Child/functions.php</strong></em> file.<br></p>
+								<p>
+                                <xmp>
+<?php 
+/**
+ * DynamiX Child Theme Functions
+ * Load languages directory for translation
+*/
+ 
+add_action('wp_print_styles', 'dyn_childstyles');
+
+function dyn_childstyles() {
+	$childstyledir = get_bloginfo('stylesheet_directory');
+	wp_register_style('custom-style', $childstyledir.'/stylesheets/custom.css');
+	wp_enqueue_style( 'custom-style');
+}  
+?>
+                                </xmp>
+                                </p>
+                                <div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>  
+
+
+                                <a name="thirteen" id="thirteen"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Custom Skin Creator</h2>
+										</div>
+									</div>				
+								</div>
+                                
+                                <p><em><h2><span class="highlight two"> Custom Skin Creator Screencast </span><span class="highlight one"><a rel="prettyPhoto[screencast]" title="DynamiX Screencast" href="http://www.youtube.com/watch?v=1GKJKmdXF-s"> Watch Now</a></span></h2></em></p><br>  
+                                
+								<p>There are several PSD files included with this theme and  fully sliced. They are designed to help you create further colour schemes  easily if required. </p>
+                                <p>Each of the outer skin colour variations are included.</p>
+                                <p><strong>Custom Skin Creator  PSD (Photoshop Required)</strong></p>
+<p>Locate and open the custom skin creator under the folder <em>DynamiX/PSD/custom-skin-creator.psd</em></p>
+                                <p>1) Enable slices under <em>View → Show → Slices</em></p>
+                                <p><em>2) Press F7 to view Layers or Window → Layers</em></p>
+                                <p>Layer colours can be manually changed under each group  or you can use the built in Adjustment Layers. </p>
+                                <p>It's recommended to use the <strong>Hue/Saturation</strong> adjustment layer and<br>
+                                  adjust the Hue scrub. </p>
+                                <p>To adjust the hue <strong>right </strong>click the Hue/Saturation  adjustment layer under layers and select <em>Edit Adjustment – </em>the  Hue/Saturation panel will appear. Drag the scrub you will see the entire skin  change colour. <br>
+                                  <img src="images/hue-saturation.jpg" alt="img one" width="180" height="300"><img src="images/adjustmentlayers.jpg" alt="img two" width="162" height="300">&nbsp;</p>
+                                <br clear="ALL">
+                                <p>Once you are happy with the colour, you need to open the  following file</p>
+<p><strong>DynamiX/stylesheets/custom.css</strong>  </p>
+<p>4) Edit custom.css file</p>
+<p>There are three sections that need to be modified for  the theme to work correctly. </p>
+<p>#Class Menu<br>
+  #Class Footer<br>
+  #Class Form</p>
+<p>Within the custom-skin-creator.psd file there are 3  sections with various colour block underneath them. </p>
+<p>Pick the colours   on each block using the colour picker in photoshop and copy the hex  colour in the relating Class in custom.css</p>
+<p>See example<br>
+</p>
+<p><img src="images/colourpicker.jpg" alt="img 3" width="400" height="254">&nbsp;</p>
+<p>&nbsp;</p>
+<p>Under custom.css paste <strong>4685a0 </strong>into #Class Footer  section </p>
+<p><img src="images/customcss.jpg" alt="img 4" width="641" height="151"><br clear="ALL">
+  Repeat the process for each section – once this is complete you need to export  the images. </p>
+<p>4) Within Photoshop Select File → Save For Web &amp;  Devices (Each slice is configured already) → Click Save. </p>
+<p><strong>Important!</strong></p>
+<p>Ensure that Slices → All User Slices is selected  otherwise more images than you need will be created. </p>
+<p><img src="images/slices.jpg" alt="img 5" width="665" height="178"><br clear="ALL">
+  <br>
+  Navigate to the Theme Folder DynamiX/stylesheets/ (DO  NOT click on the image folder otherwise this will not work) → Click Save → You  will be prompted to replace your existing custom images. Take note of the  images if required (For FTP) → Click Replace. </p>
+<p>&nbsp;</p>
+<p>Use your FTP client to upload the following modified  files</p>
+<p><em>DynamiX/stylesheets/custom.css</em></p>
+<p><em>DynamiX/stylesheets/images/header-a-custom.png </em><br>
+  <em>DynamiX/stylesheets/images/header-b-custom.png </em><br>
+  <em>DynamiX/stylesheets/images/header-c-custom.png</em><br>
+  <em>DynamiX/stylesheets/images/header-d-custom.png</em></p>
+<p><em>DynamiX/stylesheets/images/footer-a-custom.png   </em><br>
+  <em>DynamiX/stylesheets/images/footer-m-custom.png   </em></p>
+<p><em>DynamiX/stylesheets/images/break-a-custom.png   </em><br>
+  <em>DynamiX/stylesheets/images/break-c-custom.png   </em></p>
+<p>Alternatively if you are using Wordpress to upload your  theme you will need to re-zip just the Theme Folder (Doesn't include the PSD  folder etc) and use the WP admin to re-upload the theme. </p>
+<p>Once this is complete you can login to your WP admin →  Select General Settings from the DynamiX menu and change to the outer skin  (Header / Footer) to custom. </p>
+<p><strong>For more complex skins, take a look at the bundled  PSD files for Urban, Wood, Bokeh, Carbon and Grunge skins. </strong></p>
+<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>  
+
+                                <a name="fourteen" id="fourteen"></a>
+ 								<p>&nbsp;</p>
+
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Sources &amp; Credits</h2>
+										</div>
+									</div>				
+								</div>
+                                
+								<p>Pretty Photo<br>
+                                  <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/</a></p>
+                                <p>Timthumb <br>
+                                  <a href="http://www.darrenhoyt.com/2008/04/02/timthumb-php-script-released/">http://www.darrenhoyt.com/2008/04/02/timthumb-php-script-released/</a></p>
+                                <p>Reflection<br>
+                                  <a href="http://www.digitalia.be/">http://www.digitalia.be/</a></p>
+                                <p>Cufón text replacement script <br>
+                                  <a href="http://cufon.shoqolate.com/generate/">http://cufon.shoqolate.com/generate/</a></p>
+                                <p>Kwicks Basic Script<br>
+                                  <a href="http://www.jeremymartin.name/projects.php?project=kwicks">http://www.jeremymartin.name/projects.php?project=kwicks</a> </p>
+                                <p>Piecemaker<br>
+                                  <a href="http://www.modularweb.net/">http://www.modularweb.net/</a> <br>
+                                </p>
+<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div> 
+
+                                <a name="fifteen" id="fifteen"></a>
+ 								<p>&nbsp;</p>
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Contact Details</h2>
+										</div>
+									</div>				
+								</div>
+
+								<p>If you are experiencing any difficulties with this theme   please join the support forum @ http://support.creativeworkz.co.uk or contact me via this contact form @ <a href="http://themeforest.net/user/cwz000">http://themeforest.net/user/cwz000</a><strong> – ENJOY!! :)</strong></p>
+<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>
+
+
+                               <a name="sixteen" id="fifteen"></a>
+ 								<p>&nbsp;</p>
+								<div class="styledbox shadow top clearfix">
+									<div class="styledbox shadow bottom">
+										<div class="boxcontent shadow contents">              
+											<h2 style="text-align:center">Demo Data</h2>
+										</div>
+									</div>				
+								</div>
+
+								<p><strong>Note</strong> The demo data does not include the images and sidebar data from the demo site, it does include the page structures, gallery settings, menus etc. </p>
+								<p>If you would like to import the data from the demo site, goto the <em>Wordpress Admin → Tools → Import → Wordpress</em></p>
+								<p>You may be required to install a plugin (Wordpress Importer) - install this plugin.</p>
+								<p>Click <em>Choose File → Navigate to the DynamiX-Wordpress folder on your computer → DynamiX-Wordpress → DynamiX-Demo-Data → dynamix-demo-data.xml→ Click Upload file and import</em>.	Select	the	relevant	options	you	want	to	import.</p>
+								<p>&nbsp;</p>
+								<div class="hozbreak-top clearfix"><a class="clearfix" href="#top">Back to Top</a></div>                                 
+                                
+                              </div><!-- /entry -->  
+                            </div><!-- /post -->
+                        </div><!-- /content -->
+                        <div class="clear"></div>
+                    </div><!-- /mid-wrap -->
+                    <div class="clear"></div>
+                </div><!-- /content-wrapper-inner -->
+			</div><!-- / content-wrapper -->
+   
+            <div class="clear"></div>
+        </div><!-- /inner-page -->
+	</div><!-- /page -->
+
+	<div class="push"></div>
+</div>
+<!-- /wrapper -->
+
+<div class="clear"></div>
+
+<!-- Another Great Website Design by Creative Workz - http://www.creativeworkz.co.uk -->
+
+<script type="text/javascript" charset="utf-8"> 
+
+<!--
+$(document).ready(function(){
+$('.shortcodeimg').append('<div class="hoverimg" style="height:100%"></div>');	
+$('.shortcodevid').append('<div class="hovervid" style="height:100%"></div>');	
+$('.archiveimg-wrap .galleryimg,.group-slider .galleryimg, .grid-gallery .galleryimg').append('<div class="hoverimg" style="height:100%"></div>');	
+$('.archiveimg-wrap .galleryvid,.group-slider .galleryvid, .grid-gallery .galleryvid').append('<div class="hovervid" style="height:100%"></div>');	
+});
+//-->
+
+$(document).ready(function(){$("a[rel^='prettyPhoto']").prettyPhoto({theme:'light_rounded',	default_width: '97%',	default_height: '97%'});});
+</script>
+
+</body>
+</html>

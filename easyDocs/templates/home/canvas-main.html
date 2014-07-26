@@ -1,0 +1,116 @@
+
+                   <!-- START SEARCH -->
+                <div id="search"  class="row">
+                 <div id="innersearch">
+                   Templates: <span id="regtext">Pick a popular template below, or search our database for the template you need!
+
+
+
+
+
+
+                 </span>
+                 </div>
+                   <form action="" class="searchform" style="float: right; margin-left: 10px; margin-top: -11px;">
+
+
+                        <input type="text" class="span3" style="margin:2px;" data-provide="typeahead" data-items="4" data-source="[&quot;Peter&quot;,&quot;Alaska&quot;,&quot;Alan&quot;,&quot;Patrick&quot;]" onclick="this.value=''" value="Search for a template here..." onblur="formDefault(this)" name="search">
+                       
+                       <input type="submit" style="margin-right:1px;" value="" name="find">
+                  </form>
+                </div>    
+                <!-- END SEARCH --> 
+
+                      <!-- START DOCUMENT LIST NAVIGATION-->
+                     <div  class="doclist-style row">
+
+
+                     <div class="title"><img class="titleIcon" alt="" src="images/stats.png"><h1>Popular Templates</h1></div>
+                     </div>
+                      <!-- END DOCUMENT LIST NAVIGATION -->
+                    
+
+
+                        <div class="btn-group document-display-views">
+                                          <button class="btn" title="List view"><i class="icon-list"></i> </button>
+                                          <button class="btn" title="Small Icon view"><i class="icon-th"></i> </button>
+                                          <button class="btn" title="Large Icon view"><i class="icon-th-large"></i> </button>
+                                        </div>
+                    <!-- START DOCUMENT LIST -->                  
+                     <div class="doclist-style row">               
+
+
+                      <ul  id="reportlist-content" class="mydocuments-list span10 offset1 thumbnails">                          
+                            
+                      <% _.each(templates, function(template){ %>
+                      <li>
+                         <div class="thumbnail row">
+
+                              <div class="mythumbnail span2">
+                                <img src="images/thumbs/1.jpg" alt="Thumbnail" />
+                              </div> 
+                            
+                            <div class="mythumbnail span3">
+                              <a href="" title="Title"><%= template.get("title") %></a>
+                            <span><%= template.get("description") %></span>
+                            </div>
+
+                            <ul class="mylist-details span3">
+                              <li><span>Popularity: <strong><%= template.get("popularity") %></strong></span></li>
+                              <li><span>Downloads: <strong><%= template.get("downloads") %></strong></span></li>
+                              <li><span>Partner: <strong><%= template.get("partner") %></strong></span></li>
+                            </ul>
+                                                        
+                            <div id="generate-doc" class="mythumbnail btn btn-primary span2">Generate</div>
+
+                              </div>
+                        <a href="" title="Edit Question">Edit</a>
+                        </li>
+                                                 <% }); %>
+
+                                                  <% _.each(templates, function(template){ %>
+                      <li>
+                        <div class="thumbnail row">
+
+                              <div class="mythumbnail span2">
+                              <img src="images/thumbs/1.jpg" alt="Thumbnail" />
+                            </div> 
+                            
+                            <div class="mythumbnail span3">
+                              <a href="" title="Title"><%= template.get("title") %></a>
+                            <span><%= template.get("description") %>
+                            </div>
+
+                            <ul class="mylist-details span3">
+                              <li><span>Popularity: <strong><%= template.get("popularity") %></strong></span></li>
+                              <li><span>Downloads: <strong><%= template.get("downloads") %></strong></span></li>
+                              <li><span>Partner: <strong>ESA</strong></span></li>
+                            </ul>
+                                                        
+                            <div id="generate-doc" class="mythumbnail btn btn-primary span2">
+                              Generate</div>
+
+                              </div>
+                        <a href="" title="Edit Question">Edit</a>
+                        </li>
+                                                 <% }); %>
+                        
+                    </ul>
+                    <!-- the input fields that will hold the variables we will use -->
+                      <input type='hidden' id='current_page' />
+                      <input type='hidden' id='show_per_page' />
+                    <!-- START pagination -->
+                    <div class="pagination">
+                      <ul>
+                        <li><a href="#">Prev</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">Next</a></li>
+                      </ul>
+                    </div>
+                      <!-- END pagination -->
+                     </div> 
+                    <!-- END DOCUMENT LIST -->
+                    

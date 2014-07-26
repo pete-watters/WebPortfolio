@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Xmine is a feed which T-Mobile USA have bought which we will need 
+     to provide as default for System Test/Operations. -->
+<record_layout id="trans6001">
+    <record id="3999">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="3">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_GTP_IMSI</field>
+        <field id="5">ID_GTP_APN</field>
+        <field id="6">ID_GTP_SIGNALLING_GSN_IPV4_ADDRESS</field>
+        <field id="7">ID_GTP_MSISDN</field>
+        <field id="8">ID_GTP_END_USER_IPV4_ADDRESS</field>
+        <field id="9">ID_GTP_CELL_LAC</field>
+        <field id="10">ID_GTP_CELL_ID</field>
+        <field id="11">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>
+        <field id="12">ID_GTP_IMEISV</field>
+    </record>
+
+    <record id="6001">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_URI</field>
+        <field id="4">ID_SERVER_STATUS_CODE</field>
+        <field id="5">ID_PROBE_STATUS</field>
+        <field id="6">ID_HEADERS_SIZE_REQ</field>
+        <field id="7">ID_DATA_SIZE_REQ</field>
+        <field id="8">ID_HEADERS_SIZE_RSP</field>
+        <field id="9">ID_DATA_SIZE_RSP</field>
+        <field id="10">ID_USER_AGENT</field>
+        <field id="11">ID_DOWNLOAD_TIME</field>
+        <field id="12">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="13">ID_HTTP_CONTENT_TYPE</field>
+    </record>
+
+</record_layout>

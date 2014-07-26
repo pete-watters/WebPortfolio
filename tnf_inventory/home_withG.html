@@ -1,0 +1,1296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<!--  Inclue deader file with all css/ js  -->
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="icon" href="images/favicon.gif" type="image/gif"> 
+
+	
+
+<title>TNFMON CEM Analysis</title>
+
+
+
+<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="js/highstock.js"></script>   
+ <!-- Needed to make chart export buttons show up -->
+<script type="text/javascript" src="js/exporting.js"></script>   
+<!-- Form style JS. select elements taken out....-->
+<script type="text/javascript" src="js/custom-form.js"></script>
+<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.7.1.custom.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css" /> 
+
+
+
+<!-- Include jQuery declarations -->
+
+<script type="text/javascript">
+
+$(function(){
+
+	// Tabs
+
+	$('#Main_tabs').tabs();
+
+	$('#Statistics_tabs').tabs();
+
+	$('#Inventory_tabs').tabs();
+
+	$('#CustomerMatrix_tabs').tabs();
+
+	$("#search_accordion").accordion({ header: "h3" });
+
+	
+
+});
+
+</script>
+
+
+<!-- Search Form Definitions -->
+<!-- Include Servlet that sets up select List -->
+<!--  ComboBox Population -->
+<script type="text/javascript">
+
+
+
+var SiteData = [{"Customer"   : "","Site"  : ['']},{"Customer"   : "TNF:TNF INTERNAL","Site"  : ['1:H2REP2:Sandyford', '3:MPPMASTER:Sandyford']}, {"Customer"   : "","Site"  : ['']},{"Customer"   : "VFES:VODAFONE SPAIN","Site"  : ['2:ALCOBENDASTRIAL:Somewhere in Spain']}]
+
+;
+
+$(function() { // create an array to be referenced by state name
+
+		state = [] ;
+
+		for(var i=0; i<SiteData.length; i++) {	state[SiteData[i].Customer] = SiteData[i].Site ;
+
+				 								}
+
+			});
+
+
+
+$(function() {
+
+ // populate Customer select box
+
+ var options = '' ;
+
+ for (var i = 0; i < SiteData.length; i++) {
+
+  options += '<option value="' + SiteData[i].Customer + '">' + SiteData[i].Customer + '</option>'; 
+
+ }
+
+ $("#Customer").html(options);   // populate select box with array
+
+
+
+ // selecting state (change) will populate Site select box
+
+ $("#Customer").bind("change",
+
+   function() {
+
+    $("#Site").children().remove() ;          // clear select box
+
+    var options = '' ;
+
+    for (var i = 0; i < state[this.value].length; i++) { 
+
+     options += '<option value="' + state[this.value][i] + '">' + state[this.value][i] + '</option>'; 
+
+    }
+
+    $("#Site").html(options);   // populate select box with array
+
+   }            // bind function end
+
+ );             // bind end 
+
+
+
+ 
+
+$(".ValidateData").click(function() {
+
+	// get vaues from form and set dataString
+
+	var Customer = $("#Customer").val();
+
+	var Site = $("#Site").val();
+
+	var StartDate = $("#StartDate").val();
+
+	var EndDate = $("#EndDate").val();
+
+	var dataString = "Customer="+ Customer+"&Site="+Site+"&StartDate="+StartDate+"&EndDate="+EndDate;
+
+		
+
+	if(Customer == ""){		
+
+		alert("Please Choose a customer");		
+
+		}
+
+	else{		
+
+		$("#flash").show();
+
+		$("#flash").fadeIn(400).html('<img src="images/ajax-loader.gif" align="absmiddle">&nbsp;<span class="loading">Loading Comment...</span>');
+
+	$.ajax({
+
+	    	type: "POST",
+
+     	    url: "AJAX_ValidateData.jsp",
+
+			data: dataString,
+
+			cache: false,
+
+			success: function(data){$("#flash").hide();			
+
+			$("#console").empty();
+
+			$("#console").append(data);}
+
+  			});
+
+		}			
+
+		return false;
+
+	});
+
+		
+
+$("#StartDate").datepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+
+$("#EndDate").datepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+
+$("form").form();	});
+
+  </script>
+
+<!-- Search Form Definitions -->
+
+<script type="text/javascript">
+
+$(function() {
+
+var TOTAL_NIC_SPEED =[7172,7180,7229,7245,7219,7228,7211,7233,7252,7227,7206,7235,7242,7218,7220,7237,7243,7223,7178,7218,7144,7184,7210,7193,7251,7225,7148,7108,7162,7173,7146,7201,7161,7186,7236,7225,7227,7236,7191,7172,7203,7240,7206,7239,7253,7256,7249,4793,7238,7232,7214,7206,7256,7257,7247,7259,7255,7206,7248,7206,7167,7168,7194,7188,7203,7193,7198,7209,7166,7213,7191,7198,7124,7199,7216,7195,7214,7226,7235,7196,7189,7251,7200,7213,7170,7229,7242,7235,7221,7219,7184,7207,7238,7230,7225,7224,7252,7253,7245,7189,7217,7248,7204,7205,7192,7216,7221,7225,7238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7210,7182,7210,7198,7203,7168,7186,7213,7189,7185,7202,7220,7222,7198,7182,7200,7245,7234,7246,7224,7197,6364,5436,5381,5419,5439,5442,5435,5443,5444,5398,5418,5434,5434,5435,5431,5409,5416,5438,5402,5404,5418,5417,5415,5418,5436,5419,5436,5427,5403,5393,5433,5410,5418,5418,5397,5377,5427,5430,5371,5396,5413,5419,5386,5411,5383,5423,5425,5440,5382,5415,5432,5411,5395,5381,5403,5363,5407,5323,5396,5427,5403,5391,5385,5414,5408,5403,5398,5399,5440,5437,5415,5386,5407,5423];
+
+var PORT_1 =[1807,1790,1810,1809,1814,1813,1805,1796,1815,1815,1816,1814,1817,1817,1816,1803,1817,1818,1813,1782,1766,1777,1813,1812,1810,1810,1773,1773,1796,1811,1797,1810,1787,1783,1804,1803,1813,1813,1802,1796,1816,1815,1815,1801,1812,1814,1810,1814,1815,1794,1812,1814,1813,1815,1815,1817,1818,1774,1813,1771,1778,1787,1795,1793,1796,1788,1812,1813,1791,1813,1795,1813,1812,1812,1803,1800,1812,1795,1808,1814,1812,1815,1797,1813,1809,1806,1801,1797,1815,1815,1771,1812,1813,1811,1814,1814,1815,1816,1807,1785,1773,1805,1786,1799,1798,1798,1807,1811,1810,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1784,1780,1807,1793,1809,1789,1803,1812,1815,1808,1806,1808,1811,1808,1783,1773,1810,1814,1817,1816,1814,1814,1813,1798,1796,1813,1816,1816,1816,1815,1785,1789,1814,1810,1817,1817,1812,1813,1817,1812,1800,1813,1795,1791,1794,1811,1794,1813,1813,1814,1812,1814,1801,1800,1790,1812,1811,1813,1804,1769,1803,1800,1803,1791,1798,1790,1811,1812,1812,1779,1808,1809,1811,1790,1806,1782,1774,1779,1746,1785,1813,1808,1794,1763,1810,1800,1809,1810,1810,1812,1810,1789,1785,1813,1812];
+
+var PORT_2 =[5364,5389,5418,5436,5404,5414,5406,5437,5437,5412,5390,5421,5425,5400,5404,5434,5426,5406,5365,5436,5378,5407,5397,5381,5441,5414,5374,5334,5366,5362,5347,5390,5373,5402,5431,5421,5414,5422,5388,5375,5387,5424,5391,5438,5441,5442,5439,3202,5423,5437,5403,5391,5442,5442,5432,5442,5437,5431,5434,5434,5389,5381,5398,5394,5407,5405,5386,5395,5374,5400,5396,5384,5311,5387,5412,5395,5402,5431,5426,5381,5376,5435,5402,5400,5361,5422,5441,5437,5405,5404,5413,5394,5425,5419,5410,5409,5437,5436,5436,5403,5443,5442,5417,5406,5394,5417,5413,5413,5427,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5426,5403,5403,5405,5393,5379,5383,5401,5374,5376,5397,5412,5411,5390,5399,5426,5436,5420,5428,5407,5382,4550,3623,3583,3623,3626,3625,3619,3627,3629,3612,3628,3619,3624,3618,3614,3596,3602,3620,3589,3604,3604,3622,3624,3623,3624,3625,3623,3613,3588,3581,3619,3609,3617,3627,3586,3566,3613,3625,3602,3593,3613,3615,3595,3613,3592,3611,3612,3628,3602,3607,3622,3599,3604,3576,3621,3588,3628,3576,3611,3614,3594,3597,3620,3604,3608,3594,3587,3588,3627,3626,3625,3600,3594,3610];
+
+var PORT_3 =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var PORT_4 =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var TOTAL_TDRS_LOGGED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,926125,723317,876586,1022071,981017,993271,859153,963452,998515,930955,836640,698342,799633,698588,1159799,1417491,1379592,1359383,1419001,1402637,1302930,1305601,1042720,1117983,1081832,1065481,1057558,1069234,1047566,1026314,1033279,1010204,1031677,1039156,1022793,979875,947297,990088,1051890,1083976,1102662,1126862,1141630,1126325,1059619,1077177,1054085,1014199,1058162,1079422,1070061,1077048,1058322,1054839,1025582,1038564,1040996,1013032,1007517,1038888,1084803,1043005,1090135,1023303,1070335,1035026,1038529,1015659,995924,995786,1006723,1018444,1022390,989404,990970,939887,949774,934002,968415,995044,967978,919637,993836,957870,999848,1016159,965322,1002107,1014531,1037585,1039202,1046348,998374,1038134,0];
+
+var TOTAL_GTP_CONTEXTS_AGED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8382,30602,17233,0,0,0,0,0,0,0,0,0,0,0,6594,33932,714,0,0,0,3947,8370,0,0,0,0,8233,0,3369,4946,0,0,0,0,0,6911,845,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3177,4309,0,0,16902,0];
+
+var TOTAL_GTP_CONTEXTS_CREATED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17657,15360,14618,15019,15669,16433,14480,14382,15930,17920,17342,16910,17787,26929,19137,14318,13990,13280,17052,17041,16330,16134,13506,11746,11129,10885,11381,11470,11038,11228,12352,11506,12098,12432,12060,11945,14016,15051,14997,14871,15815,14486,13216,12397,11833,11829,11710,11788,12099,12376,12990,12769,12293,12181,12257,13102,12434,12284,12322,12682,13044,12406,13367,12001,11367,10849,10614,10659,10856,10688,11134,11808,12502,12120,11609,11205,11218,12040,14169,14400,13399,13891,16136,14307,12981,12219,11134,11595,10953,11203,10703,10829,11442,12291,0];
+
+var TOTAL_GTP_CONTEXTS_UPDATED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21732,20531,20437,22025,23667,25181,22458,21073,22605,24891,24070,23424,25526,39232,24108,14764,14531,13189,18968,18893,18214,19041,17159,16592,15599,15228,16032,15840,14304,13735,14293,13600,13887,13905,14736,14495,14983,16053,16460,16924,17405,19119,20203,20197,20134,20761,20964,21096,21391,20972,21037,21309,20815,20763,20344,19669,19777,19939,19675,18398,18605,18077,18411,17775,17481,17188,16740,16799,16716,16068,15850,15278,15266,15072,15562,15712,15500,14783,15273,16035,15725,15299,16409,16412,17358,18313,17774,19510,19233,19730,19024,19438,20541,21658,0];
+
+var TOTAL_GTP_CONTEXTS_DELETED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13108,11687,11150,11344,12139,12887,11461,11176,11987,13572,13508,12892,13151,17231,10563,7362,7210,7104,9656,10471,11091,11281,10044,9315,9013,8914,9117,9269,8984,8979,9630,9127,9634,9734,9339,9318,10567,11209,11271,11127,11723,10783,9980,9594,9214,9350,9287,9311,9571,9724,10095,9983,9643,9595,9635,10275,9662,9620,9638,9869,10177,9798,10377,9446,9045,8759,8572,8698,8773,8637,8960,9426,9789,9478,9210,8945,8944,9359,10755,10907,10176,10605,11970,10628,9805,9376,8729,9139,8714,8874,8588,8745,9207,9643,0];
+
+var TOTAL_GTP_CONTEXTS_CURRENTLY_OPEN =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1984459,1985489,1896292,1835589,1825039,1828944,1835202,1842333,1852560,1864710,1873941,1883864,1897123,1912682,1933947,1967741,1848819,1852214,1899825,1936664,1964567,1972773,1921636,1885054,1884255,1884939,1886298,1871149,1870689,1868346,1855913,1858398,1859943,1861908,1851823,1850005,1847768,1840545,1845676,1851300,1856419,1862253,1866355,1869522,1871342,1872833,1874174,1875312,1876294,1877573,1878908,1880901,1882614,1884377,1885779,1887989,1891211,1893716,1895878,1898776,1903037,1907257,1911132,1914680,1917492,1919438,1920957,1922214,1923495,1925052,1926448,1928264,1930773,1933373,1935539,1936948,1938335,1940620,1943723,1947995,1951847,1955849,1960361,1966729,1971663,1974947,1977512,1979326,1980889,1979272,1964292,1964205,1965048,1930907,0];
+
+var TOTAL_GTP_C_DELETE_REQ_PACKETS =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13741,12216,11761,12042,12743,13521,12029,11822,12767,14235,14112,13448,13815,19604,13483,10105,9925,9634,12123,12668,12645,12709,10896,9824,9455,9286,9540,9661,9352,9324,9970,9433,9949,10061,9672,9605,10876,11559,11628,11461,12091,11148,10359,9960,9579,9716,9673,9695,9967,10115,10506,10374,10032,9984,10038,10656,10050,10031,10010,10238,10544,10159,10729,9796,9379,9080,8908,9020,9095,8936,9264,9738,10119,9789,9523,9243,9247,9671,11091,11260,10527,10930,12336,10954,10162,9719,9049,9491,9046,9190,8921,9053,9526,10031,0];
+
+var TOTAL_GTP_C_DELETE_RSP_PACKETS =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15840,13799,13111,13445,14218,15011,13298,13271,14526,16285,15991,15335,15903,22441,15941,12183,11823,11354,14448,14700,14412,14335,12020,10682,10139,10019,10358,10554,10231,10401,11347,10595,11194,11441,10963,11001,12798,13705,13753,13520,14320,12949,11734,11122,10649,10792,10674,10761,11062,11344,11904,11638,11154,11120,11162,12086,11322,11152,11214,11580,11978,11438,12227,10872,10336,9974,9720,9841,10019,9855,10293,10948,11508,11193,10721,10344,10348,11089,13094,13213,12257,12784,14706,12855,11578,10885,10021,10419,9933,10164,9770,9877,10477,11179,0];
+
+var TOTAL_GTP_C_CREATE_REQ_PACKETS =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18056,15610,14885,15384,15929,16710,14726,14722,16347,18252,17622,17189,18116,28112,21028,16311,15896,15013,18632,18352,17158,16888,13842,11897,11234,10993,11519,11589,11164,11409,12723,11654,12254,12712,12318,12106,14220,15286,15239,15076,16072,14676,13371,12530,11969,11964,11831,11913,12208,12630,13169,12910,12427,12408,12432,13262,12682,12422,12457,12841,13217,12552,13530,12129,11480,10957,10731,10777,10975,10800,11246,11949,12656,12289,11746,11325,11349,12187,14404,14605,13584,14071,16419,14510,13138,12352,11252,11703,11076,11330,10813,10935,11554,12410,0];
+
+var TOTAL_GTP_C_CREATE_RSP_PACKETS =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17720,15407,14658,15080,15721,16492,14530,14451,16014,17990,17399,16969,17855,27264,19546,14706,14361,13625,17376,17292,16499,16286,13588,11790,11162,10919,11421,11509,11071,11271,12476,11547,12143,12531,12163,11989,14063,15102,15046,14911,15859,14525,13250,12431,11868,11859,11736,11817,12127,12471,13032,12803,12331,12262,12317,13135,12529,12313,12354,12712,13080,12437,13394,12027,11386,10873,10636,10684,10881,10708,11157,11832,12529,12150,11634,11231,11238,12066,14206,14433,13434,13917,16178,14330,13006,12239,11151,11613,10973,11223,10719,10848,11460,12310,0];
+
+var TOTAL_NUMBER_TIMES_TDRS_QUEUE_WAS_FULL =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var DUPLICATE_GTP_PACKETS_V0 =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var DUPLICATE_GTP_PACKETS_V1 =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,6,6,6,5,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,5,5,4,4,4,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,5,0];
+
+var IP_FRAGMENTATION_LOWER_PERCENTAGE =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var GTPU_RATIO =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,0];
+
+var GTPC_RATIO =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var PERCENTAGE_PACKETS_DROPPED =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+
+var PointStartDate= Date.UTC(2012,1,5);
+
+var d = new Date(2012, 1, 5, 0, 0, 0, 0);
+
+//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+ 	// Chart generation
+
+
+
+	// Global chart options
+
+	Highcharts.setOptions({
+
+			chart: {  
+
+				zoomType: 'x',
+
+				events: {load: function(chart) {this.setTitle({text: 'Probe performance'});
+
+	                }
+
+	            }
+
+	        },
+			exporting: {
+                    enabled: true
+								},
+			navigation: {
+			
+					buttonOptions:{
+					symbolSize: 24
+						
+					}
+			},					
+						
+	        rangeSelector: {
+				 buttons: [{
+
+						type: 'all',
+
+						text: 'All'
+
+					}],
+				buttonSpacing: 2,	
+				inputEnabled: false,
+				selected: 0
+
+			},  
+xAxis: {
+
+				type: 'datetime',
+
+				dateTimeLabelFormats: {
+
+	                minute: '%Y-%m-%d<br/>%H:%M'
+
+	            },
+
+	            maxZoom:  60000 // one minute//3600 * 1000 // 1 hour
+
+				},
+		    tooltip: {
+                formatter: function() {
+                    var pThis = this,
+                        items = pThis.points || splat(pThis),
+                        xAxis = items[0].series.xAxis,
+                        x = pThis.x,
+                        isDateTime = xAxis && xAxis.options.type === 'datetime',
+                        series = items[0].series,
+                        s;
+
+                    // build the header
+                    s = ['<span style="font-size: 10px">' +
+                                        (isDateTime ? Highcharts.dateFormat('<b>%e %b %Y - %H:%M:%S</b>', x) : x) +
+                                        '</span>'];
+
+                    // build the values
+                    $.each(items, function(i, item) {
+                        series = item.series;
+                        if (item.point.options == undefined) {
+                            s += '<br/><span style="color: ' + item.series.color + '; font-weight:bold;">'+ item.series.name +'</span> = ' + item.y;
+                        }
+                        else {
+                            s += '<br/><span style="color: ' + item.series.color + '; font-weight:bold;">' + item.point.options.property + '</span> = ' + item.y;
+                        }
+                    });
+                    return s;
+                }
+            },
+			/*			
+			shared: true,
+					 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+					backgroundColor: "rgba(255, 255, 255, .85)",
+
+					borderColor: "auto",
+
+					borderRadius: 5,
+
+					borderWidth: 2,
+
+					crosshairs: true,
+
+					enabled: true,
+					 formatter: function(){
+						var point = this.points[0],
+							series = point.series,
+							format = '%A, %b %e, %Y, %H:%M', // with hours
+							 s;
+						
+						if (series.tooltipHeaderFormat) {
+							format = series.tooltipHeaderFormat;
+						}
+						
+				var s = '<b>' + Highcharts.dateFormat(format, this.x) + '</b><br />' 
+							 + Highcharts.numberFormat(this.points[0].y, 1) +'';
+							 
+						$.each(this.points, function(i, point) {
+						
+						s +=   this.points.percentage + '<br/>1 point= '+ point.y+
+						this.points.point+ '<br/>' + this.points.series+ '<br/>'
+						this.points.total+ '<br/>' + this.points.y+ '<br/>'
+						;
+						});
+						return s;
+					}
+				
+					//xDateFormat: ,
+
+					},
+*/
+
+			// Need to add Session Var Print here in JSP	
+
+			subtitle: { text: 'Customer + Hostname + Date Range' },
+
+		    legend: {
+	            enabled: true,
+	            align: "left",
+	            backgroundColor: '#FCFFC5',
+	            borderColor: 'black',
+	            borderWidth: 2,
+	            layout: "vertical",
+	            verticalAlign: "center",
+	            y: 0,
+				itemWidth: 150,
+	            shadow: true
+	        },
+
+	yAxis: [
+
+			{
+
+			// yAxis 0:  for plotting bytes
+
+			title: { style: { color: '#157CBE '} },min:0, offset: 20 ,},
+
+			// yAxis 1:  for plotting bytes
+
+			{
+
+			title: { style: { color: '#E57522 '} },min:0, offset: 20 
+
+			},
+
+			// yAxis 2: for plotting counts
+
+	        { title: { style: { color: '#157CBE'}},  min:0, opposite: true
+
+			 },	  
+
+		   {// yAxis 3: for plotting counts
+
+	         title: { style: { color: '#157CBE'}},  min:0, opposite: true},	  
+
+		   
+
+		   { // yAxis 4: for plotting %
+
+		   title: {style: { color: '#E57522'}, 
+
+			  opposite: true,
+
+			 min:0, // set minimum as 0 to stop negatives
+
+			 max: 100, // set max as 100 as this is a %
+
+			 offset: 100},
+
+	      }]
+
+		});
+
+
+
+	// Create the All in One
+
+	   var AllInOne_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'AllInOne_chart'},
+			
+			legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	       yAxis: [
+
+			{
+
+			// yAxis 0:  for plotting bytes
+
+			title: { text: 'NIC Speed: MB/s', style: { color: '#157CBE '} },min:0 },
+
+			// yAxis 1:  for plotting bytes
+
+			{
+
+			title: { text: 'TDR Count', style: { color: '#E57522 '} },min:0, offset: 100 
+
+			},
+
+			// yAxis 2: for plotting counts
+
+	        { title: { text: 'Context Count', style: { color: '#157CBE'}},  min:0, opposite: true
+
+			 },	  
+
+		   {// yAxis 3: for plotting counts
+
+	         title: { text: 'Count', style: { color: '#157CBE'}},  min:0, opposite: true},	  
+
+		   
+
+		   { // yAxis 4: for plotting %
+
+		   title: {text: '%', style: { color: '#E57522'}, },
+
+			  opposite: true,
+
+			 min:0, // set minimum as 0 to stop negatives
+
+			 max: 100, // set max as 100 as this is a %
+
+			 offset: 100
+
+	      }],
+
+		    series: [
+
+	        // NIC data range
+
+			{name: 'NIC Speed Mb/s',data:TOTAL_NIC_SPEED,yAxis: 0,pointStart: PointStartDate , pointInterval: 1 * 60 * 1000},
+
+			// TDR Count Range
+
+			{name: 'TDRs Logged' ,data:TOTAL_TDRS_LOGGED ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'TDR Queue' ,data:TOTAL_NUMBER_TIMES_TDRS_QUEUE_WAS_FULL ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			// Context Range
+
+			{name: 'Contexts Created' ,data:TOTAL_GTP_CONTEXTS_CREATED  ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Contexts Updated' ,data:TOTAL_GTP_CONTEXTS_UPDATED  ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Contexts Deleted' ,data:TOTAL_GTP_CONTEXTS_DELETED  ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Contexts Open' ,data:TOTAL_GTP_CONTEXTS_CURRENTLY_OPEN   ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			// GTP-C
+
+			{name: 'GTP-C Create Req.' ,data:TOTAL_GTP_C_CREATE_REQ_PACKETS,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Create Rsp.' ,data:TOTAL_GTP_C_CREATE_RSP_PACKETS,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Delete Req.' ,data:TOTAL_GTP_C_DELETE_REQ_PACKETS,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Delete Rsp.' ,data:TOTAL_GTP_C_DELETE_RSP_PACKETS ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			// Small count Range
+
+			{name: 'TDR Queue' ,data:TOTAL_NUMBER_TIMES_TDRS_QUEUE_WAS_FULL ,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Contexts Aged' ,data:TOTAL_GTP_CONTEXTS_AGED ,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Duplicate Packets V0' ,data:DUPLICATE_GTP_PACKETS_V0,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'Duplicate Packets V1' ,data:DUPLICATE_GTP_PACKETS_V1,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			// % Range
+
+			{name: '% Packets dropped' ,data:PERCENTAGE_PACKETS_DROPPED ,yAxis: 3,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-U Ratio' ,data:GTPU_RATIO ,yAxis: 3,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Ratio' ,data:GTPC_RATIO ,yAxis: 3,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: '% IP Frag. Lower' ,data:IP_FRAGMENTATION_LOWER_PERCENTAGE ,yAxis: 3,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			
+
+			  
+
+	       ]
+
+	        
+
+	    });
+
+
+
+
+
+	// Create the NIC Vs TDRs
+
+	   var NIC_vs_TDR_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'NIC_vs_TDR_chart',
+
+					events: {load: function(chart) {this.setTitle({text: 'NIC Speed Vs TDR Production'});
+
+	                }
+
+	            }},
+
+			legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+			
+
+				
+
+			
+
+	        yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'NIC Speed: MB/s', style: { color: '#157CBE '} },min:0 },
+
+			{// yAxis 0: for plotting counts
+
+	         title: { text: 'TDRs Logged: Count', style: { color: '#E57522'}},  min:0, opposite: true, offset: 20},	  
+
+		   { // yAxis 1: for plotting %
+
+		   title: {text: '% Packets Dropped', style: { color: '#D21377'}, },
+
+			  opposite: true,
+
+			 min:0, // set minimum as 0 to stop negatives
+
+			 max: 100, // set max as 100 as this is a %
+
+			 offset: 100
+
+			 
+
+	      }],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: 'Total Nic Speed',data:TOTAL_NIC_SPEED,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000, color: '#157CBE ' },
+
+			{name: 'Speed Port 1',data:PORT_1,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 2',data:PORT_2,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 3',data:PORT_3,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 4',data:PORT_4,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Total TDRs Logged' ,data:TOTAL_TDRS_LOGGED ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000, color: '#E57522 '},
+
+			{name: '% Packets Dropped ' ,data:PERCENTAGE_PACKETS_DROPPED ,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000, color: '#D21377 '}
+
+
+
+	       ]
+
+
+
+	        
+
+	    });
+
+
+
+		// NIC Chart
+
+	   var TOTAL_NIC_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'TOTAL_NIC_chart',
+
+				events: {load: function(chart) {this.setTitle({text: 'NIC Speed'});
+
+	                }
+
+	            }
+
+	    },
+
+			legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	        yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'Total NIC Speed: MB/s', style: { color: '#157CBE '} },min:0 , offset: 10},
+
+			{// yAxis 2: for plotting counts
+
+	         title: { text: 'NIC Speed Per port: MB/s', style: { color: '#E57522'}},  min:0, opposite: true, offset: 20}
+
+			 ],
+
+	        series: [
+
+	        {name: 'Total Nic Speed',data:TOTAL_NIC_SPEED,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000, color: '#157CBE ' },
+
+			{name: 'Speed Port 1',data:PORT_1,yAxis: 1,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 2',data:PORT_2,yAxis: 1,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 3',data:PORT_3,yAxis: 1,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'Speed Port 4',data:PORT_4,yAxis: 1,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+	       ]
+
+	        
+
+	    });
+
+
+
+	// TDRs Chart
+
+	     var TDR_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'TDR_chart',
+
+				zoomType: 'x',
+
+				events: {load: function(chart) {this.setTitle({text: 'TDR Production'});
+
+	                }
+
+	            }
+
+
+
+	        },
+
+				legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	    
+
+	        yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'TDRs Logged: Count', style: { color: '#157CBE '} },min:0 },
+
+			{// yAxis 2: for plotting counts
+
+	         title: { text: 'TDR queue full count', style: { color: '#E57522'}},  min:0, opposite: true, offset: 20}
+
+			],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: 'Total TDRs Logged',data:TOTAL_TDRS_LOGGED,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000, color: '#157CBE ' },
+
+			{name: 'TDR queue was full' ,data:TOTAL_NUMBER_TIMES_TDRS_QUEUE_WAS_FULL ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000, color: '#E57522 '}
+
+
+
+	       ]
+
+	        
+
+	    });
+
+
+
+	 	
+
+	// Create the GTP Contexts
+
+		 var GTP_Contexts_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'GTP_Contexts_chart',
+
+				events: {load: function(chart) {this.setTitle({text: 'GTP contexts'});
+
+	                }
+
+	            }
+
+
+
+	        },
+
+				legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+		yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'GTP Contexts Create/Update/Delete', style: { color: '#157CBE '} },min:0 },
+
+			{// yAxis 2: for plotting counts
+
+	         title: { text: 'GTP contexts Currently Open', style: { color: '#E57522'}},  min:0, opposite: true, offset: 20},	  
+
+		   { // yAxis £: for plotting % (usually)
+
+		   title: {text: 'GTP Contexts aged:', style: { color: '#D21377'}, },
+
+			 opposite: true,
+
+			 min:0, // set minimum as 0 to stop negatives
+
+			 offset: 100
+
+			 
+
+	      }],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: 'GTP Created',data:TOTAL_GTP_CONTEXTS_CREATED ,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000, color: '#157CBE ' },
+
+			{name: 'GTP Updated',data:TOTAL_GTP_CONTEXTS_UPDATED ,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP Deleted',data:TOTAL_GTP_CONTEXTS_DELETED ,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP Currently Open' ,data:TOTAL_GTP_CONTEXTS_CURRENTLY_OPEN  ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000, color: '#E57522 '},
+
+			{name: 'GTP Aging', data:TOTAL_GTP_CONTEXTS_AGED  ,yAxis: 2,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000, color: '#D21377 '}
+
+
+
+	       ]
+
+	        
+
+	    });
+
+		
+
+
+
+	// Create the GTP C Chart 
+
+		 var GTPC_CreateDelete_REQ_RSP_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'GTPC_CreateDelete_REQ_RSP_chart',
+
+				zoomType: 'x',
+
+				events: {load: function(chart) {this.setTitle({text: 'GTP-C Create & Delete: Requests and Responses'});
+
+	                }
+
+	            }
+
+
+
+	        },
+
+				legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	         yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'GTP-C Create Req/ RSP', style: { color: '#157CBE '} },min:0 },
+
+			{// yAxis 2: for plotting counts
+
+	         title: { text: 'GTP-C Delete Req/ RSP', style: { color: '#E57522'}},  min:0, opposite: true, offset: 20}],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: 'GTP-C Create Req.',data:TOTAL_GTP_C_CREATE_REQ_PACKETS ,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Create Rsp.',data:TOTAL_GTP_C_CREATE_RSP_PACKETS ,yAxis: 0,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Delete Req.' ,data:TOTAL_GTP_C_DELETE_REQ_PACKETS ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000},
+
+			{name: 'GTP-C Delete Rsp.' ,data:TOTAL_GTP_C_DELETE_RSP_PACKETS ,yAxis: 1,pointStart: PointStartDate,pointInterval: 1 * 60 * 1000}
+
+	     ]
+
+	        
+
+	    });
+
+		
+
+
+
+	// Create the GTPU_chart
+
+		 var GTPU_Ratio_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'GTPU_Ratio_chart',
+
+				events: {load: function(chart) {this.setTitle({text: 'GTPU Ratio'});
+
+	                }
+
+	            }
+
+
+
+	        },
+
+				legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	       yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'GTPU Ratio', style: { color: '#157CBE '} },min:0, max:100 },
+
+			],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: '% GTP-U ',data:GTPU_RATIO  ,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: '% GTP-C ',data:GTPC_RATIO  ,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000}
+
+	     ]
+
+	        
+
+	    });	
+
+		
+
+	// Create the GTPU_chart
+
+		 var GTP_DUPLICATES_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'GTP_DUPLICATES_chart',
+
+				events: {load: function(chart) {this.setTitle({text: 'GTP Duplicate Packets'});
+
+	                }
+
+	            }
+
+
+
+	        },
+
+				legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	    
+
+	       yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+		title: { text: 'GTP Duplicates', style: { color: '#157CBE '} },min:0, max:100 },
+
+			],
+
+		  series: [
+
+	        {name: '% GTP Duplicates V0',data:DUPLICATE_GTP_PACKETS_V0  ,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000},
+
+			{name: '% GTP Duplicates V1',data:DUPLICATE_GTP_PACKETS_V1  ,pointStart: PointStartDate, pointInterval: 1 * 60 * 1000}
+
+	     ]
+
+	       
+
+	  });		
+
+		
+
+	// Create the GTPU_chart
+
+		 var IP_FRAGMENTATION_chart = new Highcharts.StockChart({
+
+	        chart: {  renderTo: 'IP_FRAGMENTATION_chart',
+
+				events: {load: function(chart) {this.setTitle({text: 'IP Fragmentation Lower %'});
+
+	                }
+
+	            }
+
+			},
+
+			legend: { enabled: true},
+
+			xAxis:{ enabled: true},
+
+	        yAxis: [
+
+			{
+
+			// yAxis 1:  for plotting bytes
+
+			title: { text: 'IP Fragmentation Lower %', style: { color: '#157CBE '} },min:0, max:100 },
+
+			],
+
+			     
+
+	        
+
+	        series: [
+
+	        {name: 'IP Frag. Lower %',data:IP_FRAGMENTATION_LOWER_PERCENTAGE, pointStart: PointStartDate, pointInterval: 1 * 60 * 1000}
+
+	     ]
+
+	        
+
+	    });		
+
+		
+
+
+
+
+
+	
+
+
+
+});
+
+</script>
+
+
+
+        
+<style type="text/css">
+
+html, body
+{
+background:url(images/284.jpg);
+-moz-background-size:100% 100%; /* Firefox 3.6 */
+background-size:100% 100%;
+background-repeat:repeat;
+} 
+
+
+</style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<div id="Main_tabs"> 
+
+  
+
+    
+
+        <ul> 
+
+        <li><a href="#Main_tab"><span></span>Home</a></li>    
+        	<li><a href="#Statistics_tabs"><span></span>Statistics</a></li>
+			<img alt="The Now Factory Logo" src="images/eye_new.png" style="padding-left:42%;">
+			<img alt="The Now Factory Logo" src="images/TNFMON_logo.png">
+			<img alt="The Now Factory Logo" src="images/the-now-factory-logo.png">
+        </ul>
+
+       
+
+<div id="Main_tab">
+
+	<div id="search_accordion" style="height:100%">
+
+		<div>		
+
+		  <h3><a href="#">Statistics</a></h3>
+
+		 <div>
+
+		  <form  method="post" action="">
+
+				<fieldset>
+
+			<legend>Statistic Search</legend>
+
+			<table>
+
+			<tr><td>
+
+				<table>
+
+					<tr><td><label for="Customer">Customer:</label></td>
+
+						<td><select name="Customer" id="Customer"></select></td></tr>
+
+					<tr><td><label for="Site">Site:</label></td>	
+
+						<td><select name="Site" id="Site"></select></td></tr>
+
+					<tr><td><label for="StartDate">Start Date:</label></td>	
+
+						<td><input type="text" id="StartDate" /></td></tr>
+
+					<tr><td><label for="EndDate">End Date:</label></td>	
+
+						<td><input type="text" id="EndDate" /></td></tr>
+
+					<tr><td>
+
+						<input type="submit"  value="ValidateData"  id="v" name="submit" class="ValidateData"/>
+
+						<input type="reset" id="Reset" />
+
+					</td></tr>
+
+				</table>
+
+			</td>
+
+			<td>
+
+			<div id="flash"></div>
+
+			<div id="console"  class="ui-state-info ui-corner-all" ></div>
+
+				
+
+			</td>
+
+			</tr>
+
+			</table>
+
+				</fieldset>		
+
+			</form>
+
+			
+
+			</div>		
+
+		</div>
+
+		
+
+		 <div>
+
+		<h3><a href="#">Inventory Search</a></h3>
+
+		 <div>
+
+		<form id="themeform">
+
+		
+
+		<fieldset>
+
+		<legend>Inventory Search Form</legend>
+
+		<table>
+
+		<tr><td>
+
+		<label for="CustomerSelect">Choose a customer:</label>
+
+				<select name="CustomerSelect" id="CustomerSelect">
+
+				<option value="">None</option>
+
+				<optgroup label="TNF"><option value="TNF">TNF : TNF INTERNAL</option></optgroup><optgroup label="VFES"><option value="VFES">VFES : VODAFONE SPAIN</option></optgroup>
+
+		</select>
+
+		</td></tr>
+
+		<tr><td><input type="reset" /></td><td><input type="submit" value="Enter" /></td></tr>
+
+		
+
+		</table>
+
+		</fieldset>
+
+		</form>			
+
+		</div>
+
+		   </div>
+
+	</div>
+
+ 	</div>
+
+	
+
+    <div id="Statistics_tabs" style="height:100%">
+
+     <ul> 
+
+        <li><a href="#AllInOne_tab"><span>All</span></a></li>    
+
+       	<li><a href="#NIC_vs_TDR_tab"><span></span>NIC Vs TDR</a></li>
+
+       	<li><a href="#TOTAL_NIC_tab"><span></span>NIC</a></li>
+
+      	<li><a href="#TDR_tab"><span></span>TDRs</a></li>
+
+      	<li><a href="#GTP_Contexts_tab"><span>GTP contexts</span></a></li>    
+
+       	<li><a href="#GTPC_CreateDelete_REQ_RSP_tab"><span></span>GTP-C</a></li>
+
+       	<li><a href="#GTPU_Ratio_tab"><span></span>GTPU</a></li>
+
+      	<li><a href="#GTP_DUPLICATES_tab"><span></span>GTP Duplicates</a></li>
+
+      	<li><a href="#IP_FRAGMENTATION_tab"><span></span>IP Fragmentation</a></li>
+
+      	
+
+      </ul>
+
+			        <div id="AllInOne_tab">
+
+			        		<div id="AllInOne_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="NIC_vs_TDR_tab">
+
+							<div id="NIC_vs_TDR_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="TOTAL_NIC_tab">
+
+							<div id="TOTAL_NIC_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="TDR_tab">
+
+							<div id="TDR_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="GTP_Contexts_tab">
+
+							<div id="GTP_Contexts_chart"  style="width:90%"></div>
+
+						</div>
+
+						<div id="GTPC_CreateDelete_REQ_RSP_tab">
+
+							<div id="GTPC_CreateDelete_REQ_RSP_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="GTPU_Ratio_tab">
+
+							<div id="GTPU_Ratio_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="GTP_DUPLICATES_tab">
+
+			      			<div id="GTP_DUPLICATES_chart" style="width:90%"></div>
+
+						</div>
+
+						<div id="IP_FRAGMENTATION_tab"> 
+
+							<div id="IP_FRAGMENTATION_chart" style="width:90%"></div>
+
+			    		 </div> 
+
+			</div>
+
+ </div>
+
+ 
+
+</body>
+
+</html>

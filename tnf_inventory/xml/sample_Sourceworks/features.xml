@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+  
+    <!-- Trace output settings -->
+    <trace>
+        <trace_level>NOTICE</trace_level> <!-- CRITICAL, NOTICE, DEBUG or PEDANTIC -->
+        <console_output>no</console_output>
+        <path>./trace</path>
+        <prefix>trace_</prefix>
+        <max_size>2000000</max_size>
+    </trace>
+    
+    <!-- GSN logger settings -->
+    <gsn_logger>
+        <discover>yes</discover>
+        <path>./sgsns0.log</path>
+    </gsn_logger>
+    
+    <!-- Dacas running mode: ISP, default -->
+	<dacas_mode>default</dacas_mode>
+
+    <!-- Shall dacas process the packets or no -->
+    <process_packets>yes</process_packets>
+    
+    <!-- Shall dacas check the checksum for each packet or no -->
+    <checksum>no</checksum>
+    
+    <max_buffers>90000</max_buffers>
+    
+    <!-- Custom memory management -->
+    <custom_malloc>
+        <!-- Shall dacas track malloc operations or no -->
+        <enable>no</enable>
+        <!-- Maximum allowed memory volume -->
+        <max_allowed_volume>1048576</max_allowed_volume>
+        <!-- Enable embedded memory profiler -->
+        <memory_profiler>no</memory_profiler>
+    </custom_malloc>
+    
+    <!-- Statistics output settings -->
+    <statistics>
+        <path>./stats</path>
+        <prefix>stat_</prefix>
+        <!-- If size of current log more than max_size then new log file will create -->
+        <max_size>10000000</max_size>
+        <!-- This value need seconds as a time duration -->
+        <max_lifetime>60</max_lifetime>
+        <delimiter> ************************ </delimiter>
+    </statistics>
+    
+    <!-- Pcap dump output settings -->
+    <pcap_dump_file>
+        <log_file>no</log_file>
+        <prefix>pcap_dump_</prefix>
+        <path>.</path>
+        <max_size>10000</max_size>
+    </pcap_dump_file>
+    
+    <!-- Pcap error output settings -->
+    <pcap_error_file>
+        <log_file>no</log_file>
+        <prefix>pcap_err_</prefix>
+        <path>.</path>
+        <max_size>10000</max_size>
+        <protocol>
+            <ip>yes</ip>
+            <udp>yes</udp>
+            <gtp>yes</gtp>
+            <tcp>yes</tcp>
+            <wap>no</wap>
+            <dns>no</dns>
+            <radius>no</radius>
+            <snmp>no</snmp>
+            <ppp>no</ppp>
+	    </protocol>
+    </pcap_error_file>
+
+    <!-- Input settings -->
+    <input>
+      
+        <!-- type should be set to 'atm' to use the interphase atm card -->
+        <!-- type should be set to 'tnf' if using the now factory card. The 'path' parameter will be ignored for the moment -->
+        <type>file</type>
+        
+        <!-- Path to the pcap file or NIC device -->
+        <path>PCAP_FILE</path>
+      
+        <!--The read timeout is used to arrange that the read not necessarily return immediately when a packet is seen, 
+        but that it waits for some amount of time to allow more packets to arrive and to read multiple packets from the 
+        OS kernel in on operation. Not all platforms support a read timeout; on platforms that don't, the read timeout 
+        is ignored.-->
+        <read_timeout>0.5</read_timeout>
+        
+        <!-- napport numbering starts from 0 -->
+        <napport>0</napport>
+        
+        <sniffer>
+            <timestamp_normalization>no</timestamp_normalization>
+        </sniffer>
+        
+        <napfilter>
+            <!-- modify Feed creation to read here how many (it has to be 1 2 4 8 16 and so on)
+            for each Feed a new process has to be spawn passing it a different feed index
+            father is 0 then each child should have 0 < N < num_feed -->
+            <num_feeds>1</num_feeds>
+            <!-- filterfile is the file name where to find napatech filters
+            the file dont have to have empty line -->
+            <filterfile>filterfile.cfg</filterfile>
+        </napfilter>
+        
+        <tnfcard_config>
+            <!-- How many pagesized buffers are allocated receiving packets from the NIC -->
+            <recv_buffer_size>268435456</recv_buffer_size>
+            <!-- How many buffers are allocated for reinjected packets -->
+            <inject_buffer_size>9000</inject_buffer_size>
+            <!-- How many packets are moved from the kernel to the application in each bunch -->
+            <move_buffer_size>1000</move_buffer_size>
+        </tnfcard_config>
+        
+        <!-- Description of virtual circuits for ATM -->
+        <atm_vcs>
+            <vc vci="0" vpi="32"/>
+            <vc vci="0" vpi="31"/>
+        </atm_vcs>
+    </input>
+    
+    <!-- Sniffer message queue settings -->
+    <message_queue>
+        <high_watermark>5000</high_watermark>
+        <low_watermark>5</low_watermark>
+    </message_queue>
+    
+    <!-- Stack settings-->
+    <stack>
+        <ipv4lower>yes</ipv4lower>
+        <ipv6lower>yes</ipv6lower>
+        <tcplower>yes</tcplower>
+        <udplower>yes</udplower>
+        <gtp>yes</gtp>
+        <httplower>yes</httplower>
+        <wap>yes</wap>
+        <mms>yes</mms>
+        <rtsp>yes</rtsp>
+        <pop3>yes</pop3>
+        <pptp>yes</pptp>
+        <l2tp>yes</l2tp>
+        <greppp>yes</greppp>
+        <esp>yes</esp>
+        <imap>yes</imap>
+        <smtp>yes</smtp>
+        <ftp>yes</ftp>
+        <tcpupper>yes</tcpupper>
+        <udpupper>yes</udpupper>
+        <ipv4upper>yes</ipv4upper>
+        <ipv6upper>yes</ipv6upper>
+        <httpupper>yes</httpupper>
+        <radius>yes</radius>
+        <wv>yes</wv>
+        <ymsg>yes</ymsg>
+        <msn>yes</msn>
+        <dns>yes</dns>
+        <snmp>no</snmp>
+        <emule>yes</emule>
+        <gnutella>yes</gnutella>
+        <bittorrent>yes</bittorrent>
+        <mobileip>yes</mobileip>
+        <sip>yes</sip>
+        <megaco>yes</megaco>
+        <mpls>yes</mpls>
+        <smb>yes</smb>
+        <icmp>yes</icmp>
+        <rtp>yes</rtp>
+        <sctplower>yes</sctplower>
+        <rtmp>yes</rtmp>
+    </stack>
+
+    <pagebasedqoe>
+        <enable>yes</enable>
+        <imageurluri>www.w3.org/Icons/valid-html401</imageurluri>
+        <imagetypes>.gif,pf_icons,.jpg,.jpeg,.png,.ico,.wmv,.avi,.css,.bin,.zip,icache,.bmp</imagetypes>
+        <pagetypes>text/html,text/vnd.wap.wml,application/vnd.wap.wmlscriptc,application/vnd.wap.xhtml+xml,application/xhtml+xml,application/vnd.wap.multipart.mixed,multipart/mixed</pagetypes>
+    </pagebasedqoe>
+    
+    <netrofeed>
+        <log_record_delay>60</log_record_delay>
+        <handle_all_ports_tcp>yes</handle_all_ports_tcp>
+        <handle_all_ports_udp>yes</handle_all_ports_udp>
+        <gsn_groups_file>/apps/midas/etc/gsnmap.txt</gsn_groups_file>
+        <isp_groups_file>/apps/midas/etc/ispmap.txt</isp_groups_file>
+        <!-- Used to define how to interpret the udp flow. The following values can be used: 
+             IP_AND_PORT - all udp packets between two hosts which use the same ports belong 
+             to the same flow. 
+             IP_ONLY - all udp packets between two hosts belong to the same flow. 
+             PORT_ONLY - all udp packets with the same ports belong to the same flow. 
+             ONE_FLOW - all udp packets (among one context - gtp, global) are sniffed by dacas belong to the same flow. 
+             Any other value is incorrect, IP_AND_PORT will be used instead of. -->
+        <udp_flow_definition>IP_ONLY</udp_flow_definition>
+        <!-- Defines the packets needs to be counted by TCP netro. The available values are:
+             ALL - all packets needs to be counted (default).
+             PAYLOAD - only packets with payload will be counted.-->
+        <tcp_count_packets>PAYLOAD</tcp_count_packets>
+        <!-- Defines the bytes needs to be counted by TCP netro. The available values are:
+             ALL - count bytes from IP (upper if Gn).
+             PAYLOAD - count bytes from TCP payload (default).-->
+        <tcp_count_bytes>PAYLOAD</tcp_count_bytes>
+        <!-- Enable/Disable netro levels (disabled by default) --> 
+        <netro_udp_lower>no</netro_udp_lower>
+        <netro_udp_upper>yes</netro_udp_upper>
+        <netro_tcp_lower>yes</netro_tcp_lower>
+        <netro_tcp_upper>yes</netro_tcp_upper>
+        <netro_gre_upper>no</netro_gre_upper>
+        <netro_esp_upper>no</netro_esp_upper>
+        <netro_gtp>yes</netro_gtp>  <!-- enable GTP Control Plane 6022 Record -->
+         
+        <!-- Maximum allowed interval between acks. -->
+        <tput_max_ack_interval>5</tput_max_ack_interval>
+
+        <!-- yes - a netro udp object should be logged before to be destroyed;
+             no  - a netro udp object should NOT be logged before to be destroyed (default). -->   
+        <netro_udp_log_on_remove>yes</netro_udp_log_on_remove>
+        <imageurluri>www.w3.org/Icons/valid-html401</imageurluri>
+        <imagetypes>.gif,pf_icons,.jpg,.jpeg,.png,.ico,.wmv,.avi,.css,.bin,.zip,icache,.bmp</imagetypes>
+        <pagetypes>text/html,text/vnd.wap.wml,application/vnd.wap.wmlscriptc,application/vnd.wap.xhtml+xml,application/xhtml+xml,application/vnd.wap.multipart.mixed,multipart/mixed</pagetypes>
+        <pkt_distribution>
+            <size>0,160,640,1280,1500</size>
+            <interarrivaltime>0,2,5,7</interarrivaltime>
+        </pkt_distribution>
+    </netrofeed>
+    
+    <billshock>
+        <ports>80,8080</ports>
+        <enable>yes</enable>
+        <version>2</version> <!-- version 1 means billshock is compatible with 4_4_1, 2 mean compatible with 4_5_0 onwards, 2 is default -->
+        <timeout>60</timeout>
+    </billshock>
+    
+    <tcp_lost_events>
+        <enable>no</enable>
+    </tcp_lost_events>
+    
+    <voip>
+        <!-- how many new VoIP calls will have to be detected before purging -->
+        <purge_period>10000</purge_period>      
+        
+        <!-- minimum time for a VoIP call to be inactive before being deleted -->
+        <purge_timeout>60</purge_timeout>       
+        
+        <!-- maximum elements to be purged each time the purging process is launched -->
+        <purge_max_elems>5000</purge_max_elems> 
+    </voip>
+    
+    <gtp>
+        
+        <!-- "Gn" for GTPv0 and GTPv1 in Gn stack;
+             "S5S8" for GTPv2 and GTPv1 in S5/S8 LTE stack;
+             "IuPS" for IuPS and Gtpv1-U stack. -->
+        <version>Gn</version>
+    
+        <filter>
+            <!-- Set 'include' if you need to accept specified IMSIs/APNs and reject all other and
+                    set 'exclude' if you need to reject specified IMSIs/APNs and accept all other -->
+            <type>exclude</type>
+            <!--imsi>228018019165467</imsi-->
+            <!--apn>live.vodafone.com</apn-->
+        </filter>
+        
+        <pdp_context>
+            <high_watermark>200000</high_watermark>
+            <low_watermark>180000</low_watermark>
+            <saving_interval>600</saving_interval>
+            <save_format>shm</save_format> <!-- format of saving - "file" or "shm" (shared memory) -->
+            <trace_ageing>no</trace_ageing>
+            <save_session/> <!-- List of IMSI for which dacas saves sessionised pcaps -->
+        </pdp_context>
+        
+        <multi>
+            <type>thread</type> <!-- type of multitask approach - "process", "thread" or "dispatcher" -->
+            <num>0</num>        <!-- number of tasks --> 
+            <queue_size>48</queue_size> <!-- number of slots in communication queue -->
+            <slot_size>1048576</slot_size>   <!-- size of a slot. Default is 1MB -->
+            <blocking>yes</blocking>    <!-- if yes, main task will block when one of gtp tasks is busy -->
+        </multi>
+        
+        <qos>
+            <max_data_rate>2048000</max_data_rate>
+        </qos>
+        
+        <timeout>5000</timeout>
+        <!-- Path to file containing IP group labels. -->
+        <gw_groups_file>/apps/midas/etc/gwmap.txt</gw_groups_file>
+        
+    </gtp>
+    
+    <ipv4>
+        <high_watermark>15000</high_watermark>
+        <low_watermark>12000</low_watermark>
+    </ipv4>
+    
+    <tcp>
+    
+        <high_watermark>200000</high_watermark>
+        
+        <low_watermark>180000</low_watermark>
+        
+        <!-- how many new TCP connections will have to be detected before purging -->
+        <purge_period>10000</purge_period>      
+        
+        <!-- minimum time for a TCP Connection to be inactive before being deleted -->
+        <purge_timeout>20</purge_timeout>       
+        
+        <!-- maximum elements to be purged each time the purging process is launched -->
+        <purge_max_elems>10000</purge_max_elems> 
+        
+        <!-- size of hashmap used to store tcp flows (power of 2 recommended) -->
+        <map_size>65536</map_size>              
+
+        <!-- max number of frames out of order -->
+        <max_frame_out_order>100</max_frame_out_order>
+    </tcp>
+
+    <udp>
+        <!-- by default the settings are copied from TCP, we should understand what
+             how many UDP sessions we would like at the same time. -->
+        <high_watermark>200000</high_watermark>
+        <low_watermark>180000</low_watermark>
+
+        <!-- how many new UDP connections will have to be detected before purging -->
+        <purge_period>5000</purge_period>      
+        
+        <!-- minimum time for a UDP Connection to be inactive before being deleted -->
+        <purge_timeout>10</purge_timeout>       
+        
+        <!-- maximum elements to be purged each time the purging process is launched -->
+        <purge_max_elems>5000</purge_max_elems> 
+        
+        <!-- size of hashmap used to store udp flows (power of 2 recommended) -->
+        <map_size>65536</map_size>              
+    </udp>
+    
+    <rtsp>
+    
+        <ports>554</ports>
+        
+        <lost_packet_counter_thresholds>
+            <counter_0>32</counter_0>
+            <counter_1>64</counter_1>
+            <counter_2>96</counter_2>
+            <counter_3>128</counter_3>
+            <counter_4>160</counter_4>
+            <counter_5>192</counter_5>
+            <counter_6>224</counter_6>
+            <counter_7>256</counter_7>
+        </lost_packet_counter_thresholds>
+        
+        <jitter_threshold>1500</jitter_threshold>
+    </rtsp>
+    
+    <http>
+    
+        <ports>80,8080,8799</ports>
+        
+        <!--content>text,html,multipart,mms,wap,xml,smil,image</content-->
+        <content>text,html,multipart,mms</content>
+        
+        <dump>
+            <enabled>no</enabled>
+            <imgdumpfolder>./imgdump</imgdumpfolder>
+        </dump>
+        
+        <url>
+        
+            <!-- Switcher for URL dehash algorithm -->
+            <dehash_urls>yes</dehash_urls>
+            
+            <!-- List of URLs for which dehash algorithm is used -->
+            <url_filter id="0">http://85.205.208.156</url_filter>
+            <url_filter id="1">http://85.205.208.156:80</url_filter>
+            <url_filter id="2">http://live.vodafone.com</url_filter>
+            <url_filter id="3">http://live.vodafone.com/idserver/d</url_filter>
+            <url_filter id="10">http://85.205.208.150</url_filter>
+            
+            <!-- Size of chunk buffer for ungzip/deflate operations -->
+            <chunk>16384</chunk>
+
+            <!-- Switcher for check Error ID algorithm -->
+            <check_errorid>yes</check_errorid>
+            
+            <!-- List of Error IDs for which algorithm is used -->
+            <errorid_filter id="0">! - Problème technique</errorid_filter>
+            <errorid_filter id="1">! - Technische Störung</errorid_filter>
+            <errorid_filter id="2">! - Problema tecnico</errorid_filter>
+
+            <!-- Switcher for clickstrem feature -->
+            <clickstream>no</clickstream>
+
+            <!-- Anchor in HTML for the page's title -->
+            <title_filter>td class="H2L"</title_filter>
+            
+            <!-- List of anchors for the page's menu -->
+            <menu_item_filter id="0">live.vodafone.com</menu_item_filter>
+            <menu_item_filter id="1">85.205.208.150</menu_item_filter>
+            <menu_item_filter id="2">85.205.73.92</menu_item_filter>
+            <menu_item_filter id="3">vfd/Redirect?</menu_item_filter>
+            
+            <!-- Anchor for the domain -->
+            <domain_filter>http://live.vodafone.com/</domain_filter>
+            
+        </url>
+        
+        <!-- List of sub-strings are used in MMS-based URI -->
+        <mms_url>
+            <url_filter id="0">message-id=</url_filter>
+            <url_filter id="1">mms/wapenc?</url_filter>
+            <url_filter id="2">promms/servlets/</url_filter>
+            <url_filter id="3">mms.dtac</url_filter>
+        </mms_url>
+
+        <!-- text based fields such as url are truncated at the following value -->
+        <truncate_string>512</truncate_string>
+        
+    </http>
+    
+    <wv>
+        <ports>37004</ports>
+    </wv>
+    
+    <wap>
+        <ports>9201, 9202, 9203, 9206</ports>
+    </wap>
+    
+    <radius>
+        <ports>1646, 1812, 1813</ports>
+        <log_records>yes</log_records>
+    </radius>
+    
+    <ymsg>
+        <ports>5050</ports>
+    </ymsg>
+    
+    <msn>
+        <ports>1863</ports>
+    </msn>
+    
+    <dns>
+        <ports>53</ports>
+        <!-- Timeout threshold for DNS responses. (milliseconds) -->
+        <timeout_threshold>1000</timeout_threshold>
+        <log_success>no</log_success>
+        <!-- DNS cache saving timeout -->
+        <cache_timeout>600</cache_timeout>
+    </dns>
+    
+    <snmp>
+        <ports>161, 162</ports>
+    </snmp>        
+    
+    <emule>
+        <ports>4662, 4672</ports>
+    </emule>            
+    
+    <gnutella>
+        <ports>6346</ports>
+    </gnutella>            
+    
+    <bittorrent>
+        <ports>6881</ports>
+    </bittorrent>            
+    
+    <mobileip>
+        <ports>434</ports>
+    </mobileip>         
+    
+    <bgp>
+        <ports>179</ports>
+    </bgp>
+    
+    <sip>
+        <ports>5060</ports>
+    </sip>
+    
+    <megaco>
+        <ports>2944</ports>
+    </megaco>
+    
+    <h323_gk>
+        <ports>1719</ports>
+    </h323_gk>
+    
+    <pop3>
+        <ports>110</ports>
+        <max_server_reply_length>256</max_server_reply_length>
+    </pop3>
+    
+    <pptp>
+        <ports>1723</ports>
+    </pptp>
+    
+    <l2tp>
+        <ports>1701</ports>
+    </l2tp>
+    
+    <smtp>
+        <ports>25</ports>
+        <max_server_reply_length>256</max_server_reply_length>
+    </smtp>
+    
+    <imap>
+        <ports>143</ports>
+        <max_server_reply_length>256</max_server_reply_length>
+    </imap>
+    
+    <ftp>
+        <ports>21</ports>
+        <high_watermark>120</high_watermark>
+        <low_watermark>60</low_watermark>
+    </ftp>
+    
+    <smb>
+        <ports>445</ports>
+    </smb>
+
+    <rtp>
+        <!-- In seconds. Time interval between RTP records i.e. time-based trigger. -->
+        <log_record_interval>5</log_record_interval>
+        
+        <!-- In microseconds. If jitter for the packet less than -10000 we consider it as burst packet.
+        If jitter for the packet more than 10000 we need to consider this packet as the reference tick for the next packet.-->
+        <max_jitter_deviation>10000</max_jitter_deviation>
+
+        <!-- In microseconds. Maximum allowed jitter value (delay) for the packet to consider is as a good consequtive packet.-->
+        <max_jitter_good>150000</max_jitter_good>
+
+        <!-- In microseconds. Maximum allowed jitter value (delay) for the packet to consider is as a late packet.
+        Packets with jitters more than this value will be considered as missed packets.-->
+        <max_jitter_late>400000</max_jitter_late>
+    </rtp>
+
+    <diameter>
+        <!-- List of used DIAMETER ports. -->
+        <ports>3868,9030</ports>
+        <!-- In milliseconds. Timeout value for Diameter sessions. -->
+        <timeout>5000</timeout>
+        <!-- In elements. Number of elements after which ageing procedure will be started for authentication vectors. -->
+        <high_watermark>200000</high_watermark>
+        <!-- In elements. Number of elements, that will remain in storage after ageing. -->
+        <low_watermark>180000</low_watermark>
+        <!-- Format of saving authentication vectors - "file" or "shm" (shared memory) -->
+        <save_format>shm</save_format>
+        <!-- In milliseconds. Time interval of saving authentication vectors on disk -->
+        <save_interval>60000</save_interval>
+        <!-- Length of the session in session inspector. The value is in seconds. Default value is 1 hour (3600 sec). -->
+        <session_ttl>60</session_ttl>
+        <!-- Path to file containing IP group labels. -->
+        <ip_labels_file>/apps/midas/etc/iplabels.txt</ip_labels_file>
+    </diameter>
+
+    <s1ap>
+        <!-- List of used S1AP ports. -->
+        <ports>36412</ports>
+        <!-- In elements. Number of elements after which ageing procedure will be started for authentication vectors. -->
+        <high_watermark>2000000</high_watermark>
+        <!-- In elements. Number of elements, that will remain in storage after ageing. -->
+        <low_watermark>180000</low_watermark>
+        <!-- Format of saving authentication vectors - "file" or "shm" (shared memory) -->
+        <save_format>shm</save_format>
+        <!-- In milliseconds. Time interval of saving authentication vectors on disk -->
+        <save_interval>60000</save_interval>
+    </s1ap>
+    
+    <m3ua>
+        <ports>4003,7001,2905</ports>
+    </m3ua>
+
+    <rtmp>
+        <ports>80,1935</ports>
+    </rtmp>
+
+</features>

@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<title> Traffic Light Demo</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<link rel='stylesheet' type='text/css' href='spiderscript_complete_v1.0.8.20090939.css' />
+<script language='JavaScript' src='spiderscript_complete_v1.0.8.20090930.js' type='text/javascript'></script>
+
+
+		
+		<style type='text/css'>
+			
+		</style>
+		
+		
+		<script type='text/javascript'>
+		
+			var sequence = 	function(top,middle,bottom,delay)
+							{
+								this.top = (top) ? top : 'off';
+								this.middle = (middle) ? middle : 'off';
+								this.bottom = (bottom) ? bottom : 'off';
+								this.delay = (delay) ? delay : 5000;
+							};
+		
+			var sequences = [];			
+			sequences.add(new sequence('red','off','off',5000));
+			sequences.add(new sequence('red','amber','off',1500));
+			sequences.add(new sequence('off','off','green',5000));
+			sequences.add(new sequence('off','amber','off',2000));
+		
+			var seqi = 0;
+			function stepSequence()
+			{
+				var lightTop = $gc('togLightTop');
+				var lightMiddle = $gc('togLightMiddle');
+				var lightBottom = $gc('togLightBottom');
+				
+				var seq = sequences[seqi];
+					
+				if(lightTop && lightMiddle && lightBottom)
+				{
+					lightTop.selected(seq.top);
+					lightMiddle.selected(seq.middle);
+					lightBottom.selected(seq.bottom);
+				}
+			
+				
+				seqi++;
+				if(seqi >= $ln(sequences))
+				{
+					seqi = 0;
+				}
+				
+				$st(function(){stepSequence();},seq.delay);
+			}
+		
+		</script>
+		
+	</head>
+	
+	<body onLoad='stepSequence();'>
+		
+		<div class='content'>
+			
+<?php include('testQuery.php'); ?>
+<!-- Traffic Light --> 
+			<div class='r'>
+			
+				<div id="divTrafficLight" style="height:400px;width:200px;background-image:url(traffic_light.png);float:left;">
+				
+					<div ext="imagetoggle" id="togLightTop" style="margin-left:35px;margin-top:4px;float: left;display:none;" van="value">
+						
+						
+						
+						<?php 
+						
+						if($critical_issue_count > 0){
+						echo "<img src='traffic_light_red.png' value='red' selected/>";		
+						echo "<img src='traffic_light_off.png' value='off'/>";		
+						}
+						else{
+						echo "<img src='traffic_light_red.png' value='red'/>";		
+						echo "<img src='traffic_light_off.png' value='off' selected/>";		
+						}
+						?>
+					</div>
+
+					
+					<div ext='imagetoggle' id='togLightMiddle' style='margin-left:35px;margin-top:4px;float: left;display:none;' van='value'>
+					
+					<?php 
+						
+						if($warning_issue_count > 0){
+						echo"<img src='traffic_light_amber.png' value='amber' selected/>"		
+						echo "<img src='traffic_light_off.png' value='off' />"	
+						}
+						else{
+						echo "<img src='traffic_light_red.png' value='red'/>";		
+						echo "<img src='traffic_light_off.png' value='off' selected/>";		
+						}
+						?>
+							
+					</div>
+					
+					<div ext='imagetoggle' id='togLightBottom' style='margin-left:35px;margin-top:4px;float: left;display:none;' van='value'>
+					
+					<?php 
+						
+						if($critical_issue_count > 0){
+						echo "<img src='traffic_light_red.png' value='red' selected/>";		
+						echo "<img src='traffic_light_off.png' value='off'/>";		
+						}
+						else{
+						echo "<img src='traffic_light_red.png' value='red'/>";		
+						echo "<img src='traffic_light_off.png' value='off' selected/>";		
+						}
+						?>
+						<img src='traffic_light_green.png' value='green'/>		
+						<img src='traffic_light_off.png' value='off' selected/>		
+					</div>
+				
+				</div>
+						
+
+			
+			</div>
+			
+			
+		</div>
+	
+		
+	</body>
+</html>

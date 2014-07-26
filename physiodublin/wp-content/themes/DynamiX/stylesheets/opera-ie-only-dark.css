@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.accordion .section, .ui-tabs-panel, .ui-tabs .ui-tabs-nav li {background-image:url(images/gradient-h-dark.png) !important;background-position:top;background-repeat:repeat-x;}
+
+.post-gallery .panel.shadow-large, .post-gallery .panel.shadow-medium, .post-gallery .panel.shadow-small, .post-gallery .panel.shadow-xsmall,.grid-gallery .panel .container {background-color:#1b1b1b !important;}
+
+.splitter ul li a  {
+	color:#999;
+}
+
+.content-wrapper,.styledbox.general,.styledbox.help,.styledbox.information,.styledbox.warning,.styledbox.download,.columns.border,.gallery-wrap,div#object-nav.item-list-tabs,div#message {
+	box-shadow: 0px 2px 4px #151515;
+}

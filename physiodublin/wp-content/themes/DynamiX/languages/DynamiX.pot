@@ -1,0 +1,1957 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DynamiX\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-08 21:36-0000\n"
+"PO-Revision-Date: 2011-06-08 22:21-0000\n"
+"Last-Translator: \n"
+"Language-Team: CreativeWorkz <info@creativeworkz.co.uk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\Users\\creative_workz\\Documents\\Websites\\WP Themes\\DynamiX-Wordpress\\DynamiX\n"
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/404.php:43
+msgid "We're sorry but that page could not be found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:40
+msgid "Site Activity"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:55
+msgid "The public activity for everyone on this site."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:55
+#, php-format
+msgid "All Members (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:63
+msgid "The activity of my friends only."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:63
+#, php-format
+msgid "My Friends (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:71
+msgid "The activity of groups I am a member of."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:71
+#, php-format
+msgid "My Groups (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:78
+msgid "The activity I've marked as a favorite."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:78
+#, php-format
+msgid "My Favorites (<span>%s</span>)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:83
+msgid "Activity that I have been mentioned in."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:83
+#, php-format
+msgid "@%s Mentions"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:83
+#, php-format
+msgid "(%s new)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:93
+msgid "RSS"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:99
+msgid "No Filter"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:100
+msgid "Show Updates"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:101
+msgid "Show Blog Posts"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:102
+msgid "Show Blog Comments"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:105
+msgid "Show New Forum Topics"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:106
+msgid "Show Forum Replies"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:110
+msgid "Show New Groups"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:111
+msgid "Show New Group Memberships"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:115
+msgid "Show Friendship Connections"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity-stream.php:118
+msgid "Show New Members"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:112
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:116
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:118
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:120
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:112
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:116
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:118
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:120
+msgid "Archive for "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:114
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:114
+msgid "Posts Tagged"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:122
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:122
+msgid "Author Archive "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:124
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:124
+msgid "Blog Archives"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:377
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:383
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:593
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:599
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:447
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:453
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:664
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:670
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:75
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:379
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:385
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:594
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:600
+msgid "Read More"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:403
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:618
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:473
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:689
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:405
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:619
+msgid "Category:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:403
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:618
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:473
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:689
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:405
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:619
+msgid "No Comments"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:403
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:618
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:473
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:689
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:405
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:619
+msgid "Comment"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:403
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:618
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:473
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:689
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:112
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:405
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:619
+msgid "Comments"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:635
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:706
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:636
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:637
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:708
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:638
+msgid "Sorry, but there aren't any posts with this date."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:640
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:711
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:641
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/archive.php:642
+#: Themes\DynamiX-Wordpress\DynamiX/blog.php:713
+#: Themes\DynamiX-Wordpress\DynamiX/index.php:643
+msgid "No posts found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:22
+msgid "No Responses to"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:22
+msgid "One Response to"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:22
+msgid "% Responses to"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:56
+msgid "Leave a Comment "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:56
+#, php-format
+msgid "Leave a Comment to %s"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:63
+msgid "You must be logged in to post a comment."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:63
+msgid "Log in &raquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:70
+msgid "Logged in as"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:70
+msgid "Log out &raquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:75
+msgid "Name"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:75
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:78
+msgid "(required)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:78
+msgid "Email"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:78
+msgid "(will not be published)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/comments.php:89
+msgid "Submit"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:26
+msgid "My Favorites"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:27
+msgid "Accepted"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:28
+msgid "Rejected"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:29
+msgid "Show all comments for this thread"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:30
+msgid "Show all"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:31
+msgid "comments"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:32
+msgid "Close"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions-buddypress.php:33
+#, php-format
+msgid "%s is a unique identifier for %s that you can type into any message on this site. %s will be sent a notification and a link to your message any time you use it."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:345
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:359
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:361
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:361
+msgid "(Edit)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/functions.php:432
+msgid "Main Navigation"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/header.php:352
+#: Themes\DynamiX-Wordpress\DynamiX/searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:61
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:62
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:63
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:64
+msgid "Submit to"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:101
+msgid "Pages"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/page.php:105
+msgid "Edit this entry."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/search.php:42
+msgid "Search Results For: "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/search.php:42
+msgid "articles found"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/search.php:51
+msgid "No posts found. Try a different search? "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/single.php:340
+msgid "Edit"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/activity-loop.php:27
+msgid "Load More"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/activity-loop.php:37
+msgid "Sorry, there was no activity found. Please try a different filter."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:28
+msgid "Reply"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:33
+msgid "Mark as Favorite"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:33
+msgid "Favorite"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:35
+msgid "Remove Favorite"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:45
+msgid "In reply to"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:46
+msgid "View Thread / Permalink"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:46
+msgid "View"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:63
+msgid "Post"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/entry.php:63
+msgid "or press esc to cancel."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:7
+#, php-format
+msgid "You are mentioning %s in a new update, this user will be sent a notification of your message."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:19
+#, php-format
+msgid "What's new in %s, %s?"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:21
+#, php-format
+msgid "What's new %s?"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:33
+msgid "Post Update"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:38
+msgid "Post in"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/activity/post-form.php:41
+msgid "My Profile"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/blogs-loop.php:36
+msgid "Visit Blog"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/blogs-loop.php:59
+msgid "Sorry, there were no blogs found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/create.php:30
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:31
+msgid "Create a Blog"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/create.php:30
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:31
+msgid "Blogs Directory"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/create.php:41
+msgid "Blog registration is currently disabled"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:41
+#, php-format
+msgid "All Blogs (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:44
+#, php-format
+msgid "My Blogs (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:51
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:105
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:53
+msgid "Order By:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:53
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:107
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:55
+msgid "Last Active"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:54
+msgid "Newest"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/blogs/index.php:55
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:58
+msgid "Alphabetical"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:20
+msgid "Topic Title"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:21
+msgid "Latest Poster"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:24
+msgid "Posted In Group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:27
+msgid "Posts"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:28
+msgid "Freshness"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:41
+msgid "Permalink"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/forums-loop.php:79
+msgid "Sorry, there were no forum topics found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:32
+msgid "Group Forums Directory"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:32
+msgid "New Topic"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:49
+msgid "Post a New Topic:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:51
+msgid "Title:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:54
+msgid "Content:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:57
+msgid "Tags (comma separated):"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:60
+msgid "Post In Group Forum:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:72
+msgid "Post Topic"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:73
+msgid "Cancel"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:83
+#, php-format
+msgid "You are not a member of any groups so you don't have any group forums you can post in. To start posting, first find a group that matches the topic subject you'd like to start. If this group does not exist, why not <a href='%s'>create a new group</a>? Once you have joined or created the group you can post your topic in that group's forum."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:95
+#, php-format
+msgid "All Topics (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:98
+#, php-format
+msgid "My Topics (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:108
+msgid "Most Posts"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/forums/index.php:109
+msgid "Unreplied"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:30
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:32
+msgid "Create a Group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:30
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:32
+msgid "Groups Directory"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:49
+msgid "* Group Name"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:52
+msgid "* Group Description"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:68
+msgid "Enable comment wire"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:75
+msgid "Enable discussion forum"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:80
+#, php-format
+msgid "<strong>Attention Site Admin:</strong> Group forums require the <a href=\"%s\">correct setup and configuration</a> of a bbPress installation."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:88
+msgid "Privacy Options"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:92
+msgid "This is a public group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:94
+msgid "Any site member can join this group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:95
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:104
+msgid "This group will be listed in the groups directory and in search results."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:96
+msgid "Group content and activity will be visible to any site member."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:101
+msgid "This is a private group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:103
+msgid "Only users who request membership and are accepted can join the group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:105
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:114
+msgid "Group content and activity will only be visible to members of the group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:110
+msgid "This is a hidden group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:112
+msgid "Only users who are invited can join the group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:113
+msgid "This group will not be listed in the groups directory or search results."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:137
+msgid "Upload an image to use as an avatar for this group. The image will be shown on the main group page, and in search results."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:141
+msgid "Upload Image"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:145
+msgid "To skip the avatar upload process, hit the \"Next Step\" button."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:152
+msgid "Crop Group Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:154
+msgid "Avatar to crop"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:157
+msgid "Avatar preview"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:160
+msgid "Crop Image"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:198
+msgid "Select people to invite from your friends list."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:214
+msgid "Remove Invite"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:229
+msgid "Once you have built up friend connections you will be able to invite others to your group. You can send invites any time in the future by selecting the \"Send Invites\" option when viewing your new group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:247
+msgid "Previous Step"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:252
+msgid "Next Step"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:257
+msgid "Create Group and Continue"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/create.php:262
+msgid "Finish"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/groups-loop.php:29
+#, php-format
+msgid "active %s ago"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/groups-loop.php:57
+msgid "There were no groups found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:43
+#, php-format
+msgid "All Groups (%s)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:56
+msgid "Most Members"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/index.php:57
+msgid "Newly Created"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:16
+msgid "Group Name"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:19
+msgid "Group Description"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:25
+msgid "Notify group members of changes via email"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:26
+msgid "Yes"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:27
+msgid "No"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:32
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:100
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:34
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:52
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/blog-options.php:265
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/droppanel-options.php:373
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/footer-options.php:369
+msgid "Save Changes"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:119
+msgid "If you'd like to remove the existing avatar but not upload a new one, please use the delete avatar button."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:122
+msgid "Delete Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:132
+msgid "Crop Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:160
+msgid "Administrators"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:167
+msgid "Moderators"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:174
+msgid "Members"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:202
+msgid "(banned)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:202
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:208
+msgid "Kick and ban this member"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:202
+msgid "Remove Ban"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:208
+msgid "Kick &amp; Ban"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:208
+msgid "Promote to Mod"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:208
+msgid "Promote to Admin"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:221
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/members.php:51
+msgid "This group has no members."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:252
+msgid "Accept"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:258
+msgid "Reject"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:272
+msgid "There are no pending membership requests."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:289
+msgid "WARNING: Deleting this group will completely remove ALL content associated with it. There is no way back, please be careful with this option."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:292
+msgid "I understand the consequences of deleting this group."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/admin.php:297
+msgid "Delete Group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum.php:36
+msgid "You will auto join this group when you start a new topic."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/group-header.php:6
+msgid "Group Admins"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/group-header.php:14
+msgid "Group Mods"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/request-membership.php:4
+#, php-format
+msgid "You are requesting to become a member of the group '%s'."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/request-membership.php:7
+msgid "Comments (optional)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/request-membership.php:12
+msgid "Send Request"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/send-invites.php:60
+msgid "Send Invites"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:9
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:21
+msgid "Group Forum"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:9
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:21
+msgid "Group Forum Directory"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:24
+msgid "Edit Topic:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:46
+msgid "Edit Post:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/edit.php:67
+msgid "This topic does not exist."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:42
+#, php-format
+msgid "%s said %s ago:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:57
+msgid "Permanent link to this post"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:90
+msgid "You will auto join this group when you reply to this topic."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:95
+msgid "Add a reply:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:100
+msgid "Post Reply"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:111
+msgid "This topic is closed, replies are no longer accepted."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/groups/single/forum/topic.php:124
+msgid "There are no posts for this topic."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:23
+msgid "Shortcode:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:50
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:613
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:739
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:756
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:866
+msgid "Select Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:64
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:284
+msgid "Gallery Width:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:70
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:160
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:220
+msgid "Gallery Height:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:76
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:94
+msgid "Animation Transition:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:110
+msgid "Gallery Align:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:121
+msgid "Gallery Navigation:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:131
+msgid "Slides Timeout:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:142
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:183
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:202
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:242
+msgid "Gallery Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:153
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:213
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:277
+msgid "Enable Lightbox:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:166
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:226
+msgid "Image Width"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:172
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:232
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:290
+msgid "Image Height"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:194
+msgid "Animated Filtering"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:253
+msgid "Show Startup Mini Titles"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:262
+msgid "Auto Play"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:271
+msgid "Auto Play Timeout:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:299
+msgid "Image Effect"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:310
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:805
+msgid "Shadow Size"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:321
+msgid "Gallery ID:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:331
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:479
+msgid "Select Post Categories:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:347
+msgid "Select Slide Set:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:395
+msgid "Posts Limit:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:401
+msgid "Excerpt Word Limit:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:407
+msgid "Post Sort By"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:418
+msgid "Post Order By"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:428
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:603
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:650
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:731
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:748
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:781
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:858
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:881
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:894
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:907
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:945
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:981
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:1020
+msgid "Send Shortcode to Editor &raquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:438
+msgid "Layout:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:454
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:473
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:527
+msgid "Column 1 Content:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:460
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:479
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:533
+msgid "Column 2 Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:485
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:539
+msgid "Column 3 Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:499
+msgid "1/3 Column Content:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:505
+msgid "2/3 Column Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:511
+msgid "2/3 Column Position"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:545
+msgid "Column 4 Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:557
+msgid "1/4 Column Content:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:563
+msgid "3/4 Column Content"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:569
+msgid "3/4 Column Position"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:583
+msgid "Border:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:597
+msgid "Columns Height"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:627
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:964
+msgid "Box Width: <small class=\"description\">(Default 100%)</small>"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:633
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:958
+msgid "Box content:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:639
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:765
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:847
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:970
+msgid "Alignment:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:658
+msgid "Button Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:667
+msgid "Color:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:683
+msgid "Width:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:699
+msgid "Button URL:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:705
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:724
+msgid "Button Text:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:711
+msgid "Link Target:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:775
+msgid "Block Quote Text:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:789
+msgid "Select Effect:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:816
+msgid "Image Width:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:822
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:430
+msgid "Image Height:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:828
+msgid "Image URL:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:834
+msgid "Video URL:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:841
+msgid "Image ALT text:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:875
+msgid "Highlighted Text:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:888
+msgid "Enter Number of Tabs:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:901
+msgid "Enter Number of Panels:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:914
+msgid "Select List Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:924
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:997
+msgid "Select Color:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:939
+msgid "Enter Number of List Items:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:952
+msgid "Reveal Title:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:988
+msgid "Drop Cap Style:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/index.php:1014
+msgid "Drop Cap Text:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:37
+msgid "DynamiX Widget Image/Text gallery, use posts or a gallery slide set."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:43
+msgid "DynamiX Widget Gallery"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:424
+msgid "Title: (Optional)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:474
+msgid "Excerpt:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:506
+msgid "Timeout:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:511
+msgid "Content Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:520
+msgid "Image Effect:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:531
+msgid "Animation Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/custom-widgets.php:552
+msgid "Tween Type:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/gallery-creator.php:406
+msgid "Save Slide Set"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/adm/inc/the-excerpt-reloaded.php:83
+msgid "There is no excerpt because this is a protected post."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:5
+msgid "Home"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:23
+msgid "Archive by category "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:71
+msgid "Search results for "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:81
+msgid "Articles posted by "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:84
+msgid "Error "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/breadcrumbs.php:89
+msgid "Page"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/gallery-grid.php:114
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/gallery-grid.php:229
+msgid "Filter By: "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/gallery-grid.php:231
+msgid "All"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/shortcodes.php:2218
+msgid "Back to Top"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/sub-functions.php:58
+msgid "Contact Form Submission from "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/sub-functions.php:84
+msgid "Thanks"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/sub-functions.php:85
+msgid "Your email was successfully sent. Your enquiry will be dealt with as soon as possible."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/sub-functions.php:103
+msgid "Required fields not completed"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:41
+msgid "PageNavi"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:229
+msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:232
+msgid "&laquo; &laquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:233
+msgid "&raquo; &raquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:234
+msgid "&raquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:235
+msgid "&laquo;"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:236
+#: Themes\DynamiX-Wordpress\DynamiX/lib/inc/wp-pagenavi.php:237
+msgid " "
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/index.php:32
+msgid "Members Directory"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/index.php:55
+msgid "Newest Registered"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/members-loop.php:69
+msgid "Sorry, no members were found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/member-header.php:30
+msgid "Mention this user in a new public message, this will send the user a notification to get their attention."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/member-header.php:30
+msgid "Mention this User"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/member-header.php:36
+msgid "Send a private message to this user."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/member-header.php:36
+msgid "Send Private Message"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/friends/requests.php:36
+msgid "You have no pending friendship requests."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/groups/invites.php:11
+#, php-format
+msgid "%s members"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/groups/invites.php:34
+msgid "You have no outstanding group invites."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/compose.php:5
+msgid "Send To (Username or Friend's Name)"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/compose.php:14
+msgid "This is a notice to all users."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/compose.php:17
+msgid "Subject"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/compose.php:20
+msgid "Message"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/compose.php:28
+msgid "Send Message"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/messages-loop.php:31
+msgid "From:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/messages-loop.php:36
+msgid "To:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/messages-loop.php:42
+msgid "View Message"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/messages-loop.php:50
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/notices-loop.php:38
+msgid "Delete Message"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/messages-loop.php:68
+msgid "Sorry, no messages were found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/notices-loop.php:31
+msgid "Sent:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/notices-loop.php:49
+msgid "Sorry, no notices were found."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/single.php:11
+#, php-format
+msgid "Sent between %s and %s"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/single.php:63
+msgid "Send a Reply"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/messages/single.php:79
+msgid "Send Reply"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:1
+msgid "Change Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:7
+msgid "Your avatar will be used on your profile and throughout the site. If there is a <a href=\"http://gravatar.com\">Gravatar</a> associated with your account email we will use that, or you can upload an image from your computer."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:13
+msgid "Click below to select a JPG, GIF or PNG format photo from your computer and then click 'Upload Image' to proceed."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:22
+msgid "If you'd like to delete your current avatar but not upload a new one, please use the delete avatar button."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:23
+msgid "Delete My Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:32
+msgid "Crop Your New Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/change-avatar.php:56
+msgid "Your avatar will be used on your profile and throughout the site. To change your avatar, please create an account with <a href=\"http://gravatar.com\">Gravatar</a> using the same email address as you used to register with this site."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/edit.php:9
+#, php-format
+msgid "Editing '%s' Profile Group"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/members/single/profile/edit.php:61
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:133
+msgid "Clear"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:39
+msgid "Account Activated"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:44
+msgid "Your account was activated successfully! Your account details have been sent to you in a separate email."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:46
+msgid "Your account was activated successfully! You can now log in with the username and password you provided when you signed up."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:51
+msgid "Activate your Account"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:55
+msgid "Please provide a valid activation key."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:59
+msgid "Activation Key:"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/activate.php:63
+msgid "Activate"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:37
+msgid "Create an Account"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:41
+msgid "Registering for this site is easy, just fill in the fields below and we'll get a new account set up for you in no time."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:49
+msgid "Account Details"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:51
+msgid "Username"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:55
+msgid "Email Address"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:59
+msgid "Choose a Password"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:63
+msgid "Confirm Password"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:79
+msgid "Profile Details"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:196
+msgid "Blog Details"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:198
+msgid "Yes, I'd like to create a new blog"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:202
+msgid "Blog URL"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:211
+msgid "Blog Title"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:215
+msgid "I would like my blog to appear in search engines, and in public listings around this site"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:232
+msgid "Complete Sign Up"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:243
+msgid "Sign Up Complete!"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:248
+msgid "You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:250
+msgid "You have successfully created your account! Please log in using the username and password you have just created."
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:257
+msgid "Your Current Avatar"
+msgstr ""
+
+#: C:\Users\creative_workz\Documents\Websites\WP
+#: Themes\DynamiX-Wordpress\DynamiX/registration/register.php:258
+msgid "We've fetched an avatar for your new account. If you'd like to change this, why not upload a new one?"
+msgstr ""
+

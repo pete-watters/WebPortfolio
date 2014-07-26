@@ -1,0 +1,5 @@
+@charset "utf-8";
+#tabs ul li ul ul {left:198px;}
+.widget .blockquote_line, .widget .blockquote_quotes {width:100%;}
+.hoverimg,.hovervid {height:100%;zoom:1;max-height:100%;}
+.container.shadowreflection .hoverimg, .container.shadowreflection .hovervid,.container.reflection .hoverimg, .container.reflection .hovervid { background-position: 50% 30%; }

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"   "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>easyDocs Home</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+
+
+  <!-- Load JSON AJAX app object and initialise with main.js -->
+  <script type="text/javascript" src="JAVA_OBJECTS/clientData.js">  </script>
+  <!-- Load require-jquery.js and initialise with main.js -->
+	<script data-main="js/main" src="js/libs/require/require-jquery.js"></script>
+
+
+</head>
+<body>
+<!-- START Main page container - fluid row  -->
+<div class="row-fluid main-page-container">     
+  <!-- START HEADER row--> 
+  <div id="header" class="header row"> <!-- Gets loaded by easydocs.header.js -->
+    </div>
+  <!-- END HEADER row-->  
+
+  <!-- START Main content area - fluid row  -->
+  <div id="main-content-area" class="row-fluid">
+        
+        <!-- START Notification Area -->
+        <div id="workbench-notification"  class="span10 offset1 alert"> 
+          </div>
+          
+        <!-- Main content area - workbench  -->                     
+         <div id="workbench" class="span10 workbench">                             
+                 <!-- Start  workbench-navigation  -->
+                 <div id="workbench-navigation" class="workbench-navigation row"><!-- Gets loaded by easydocs.workBenchNavigation.js--></div>
+                 <!-- End  workbench-tabs  -->
+                 <!-- Start canvas  -->
+                  <div id="canvas" class="span9"> <!-- This canvas area is populated using backbone. defaults to templates/hmoe/main.html --> </div>
+                 <!-- End canvas  -->            
+                    <!-- START Right sidebar -->                  
+                  <div id="workbench-sidebar"><!-- Gets loaded by WorkBenchSidebar from templates/home/WorkBenchSidebar.html -->
+                        </div>
+                        <!-- END Right sidebar -->  
+          </div>
+          <!-- End workbench  -->
+
+  </div>
+  <!-- END Main content area - fluid row  -->
+  <!-- START FOOTER -->
+  <div id="footer"  class="row-fluid"></div>
+  <!-- END FOOTER -->
+
+</div>
+<!-- END Main page container - fluid row  -->
+<div id="myProfileModalDialog" class="modal hide fade" style="display: none; " aria-labelledby="uploadimgModalLabel">
+            <div class="modal-header">
+
+              <button class="close" data-dismiss="modal">×</button>
+                  <h3>My Profile</h3>
+            </div>
+            <div class="modal-body">
+
+              <!-- End boxhead -->                   
+                     <div id="profilerow1">
+                       <img src="images/avatar.jpg" alt="Your Avatar" id="profileavatar" />
+                       <ul class="rightavatar">
+                        <li><div class="thisisyou">This is You</div></li>
+                        <li><span class="minhead">Company: <strong>Nova LTD</strong></span></li>
+                          <li><span class="minhead">Last generated: <a href="" title="Generated Document" class="gendocument">document</a></span></li>
+                      </ul>
+                     </div>
+                     
+                     <ul id="profilerow2">
+                       <li>124<br /><span>Downloads</span></li>
+                       <li>248<br /><span>Favourites</span></li>
+                       <li>412<br /><span>Reported</span></li>
+                     </ul>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" data-dismiss="modal">Close</a>
+              <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+          </div>​
+<!-- END Main page container - fluid row  -->
+<div id="uploadimgModalDialog" class="modal hide fade" style="display: none;" aria-labelledby="uploadimgModalLabel">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">×</button>
+              <h3>Upload Logo</h3>
+            </div>
+            <div class="modal-body">
+
+            <h3>Choose a file to upload:</h3>
+              
+              <div class="fileinputs">
+                <input type="file" class="file" />
+                <div class="fakefile">
+                  <input />
+                  <img src="images/select_file.gif" />
+                </div>
+              </div>
+
+
+              <h3>How to upload your company logo logo</h3>
+              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+
+              
+
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" data-dismiss="modal">Close</a>
+              <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+          </div>​
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<script type='text/javascript'>
+var banners = ["images/traffic_light_green.png","images/traffic_light_off.png"];
+var bnrCntr = 0;
+var timer;
+function banCycle()
+{
+ if(++bnrCntr == 2)
+  bnrCntr = 0;
+ 
+ document.images.banner.src = banners[bnrCntr];
+ 
+ timer = setTimeout("banCycle()",1000);
+}
+function stopCycle()
+{
+ clearTimeout(timer);
+}
+ var banners1 = ["images/traffic_light_off.png","images/traffic_light_amber.png"];
+var bnrCntr1 = 0;
+var timer1;
+function banCycle1()
+{
+ if(++bnrCntr1 == 2)
+  bnrCntr1 = 0;
+ 
+ document.images.banner1.src = banners1[bnrCntr1];
+ 
+ timer1 = setTimeout("banCycle1()",1000);
+}
+function stopCycle1()
+{
+ clearTimeout1(timer1);
+}
+ var banners2 = ["images/traffic_light_off.png","images/traffic_light_red.png"];
+var bnrCntr2 = 0;
+var timer2;
+function banCycle2()
+{
+ if(++bnrCntr2 == 2)
+  bnrCntr2 = 0;
+ 
+ document.images.banner2.src = banners2[bnrCntr2];
+ 
+ timer2 = setTimeout("banCycle2()",1000);
+}
+function stopCycle2()
+{
+ clearTimeout2(timer2);
+}
+</script>
+
+</head>
+<body>
+<!--
+<table background="images/traffic_light.png" style="width:200px;height:400px">
+<tr><td><img src="images/traffic_light_green.png" name="banner"> </td></tr>
+<tr><td><img src="images/traffic_light_amber.png" name="banner"> </td></tr>
+<tr><td><img src="images/traffic_light_red.png" name="banner"> </td></tr>
+</table> -->
+
+<div style="background-image: url(images/traffic_light.png); height: 400px; width: 200px; ">
+
+<img src="images/traffic_light_green.png" name="banner" style="padding:10px 0px 0px 35px;"> 
+<img src="images/traffic_light_off.png" name="banner1" style="padding:0px 0px 0px 35px; "> 
+<img src="images/traffic_light_off.png" name="banner2" style="padding:0px 0px 0px 35px; "> 
+<!--
+Need seperate JavaScript for these
+<img src="images/traffic_light_red.png" name="banner" style="padding:0px 0px 0px 35px; "> -->
+</div>
+ 
+<form>
+ <input type="button" value="Cycle" name="Cycle" onclick="banCycle()">
+ <input type="button" value="Stop" name="Stop" onclick="stopCycle()">
+ <input type="button" value="Cycle1" name="Cycle1" onclick="banCycle1()">
+ <input type="button" value="Stop1" name="Stop1" onclick="stopCycle1()">
+ 
+ <input type="button" value="Cycle1" name="Cycle1" onclick="banCycle2()">
+ <input type="button" value="Stop1" name="Stop1" onclick="stopCycle2()">
+</form>
+</body>
+</html>

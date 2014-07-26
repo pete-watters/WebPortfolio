@@ -1,0 +1,387 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>A Map of New Zealand</title>
+    <style type="text/css">
+      .tooltip {
+        background-color:#ffffee;
+        font-weight:bold;
+        font-size:10px;
+        border:1px #c6c3a5 solid;
+      }
+      
+      .library-title-line {
+        font-weight:bold;
+        font-size:10px;
+        display:block;
+        
+      }      
+      .library-details-line {
+        font-size:10px;
+        display:block;
+      }      
+      
+    </style>
+
+    <script type="text/javascript">
+    //<![CDATA[
+    
+		/*
+		 * Fetch details from the server.
+		 */
+		function fetchDetails(id) {
+		
+		  // Obtain an XMLHttpRequest instance
+		  var req = GXmlHttp.create();
+		
+		  // Open an HTTP GET connection to the library details servlet.
+		  // Third parameter specifies request is asynchronous.
+		  req.open("GET", "/maps/LibraryDirectory?id="+id, true);
+		  // Set the handler function to receive callback notifications
+		  // from the request object
+		  req.onreadystatechange = getCallbackFunction(req, displayDetails);		  
+		  req.send(null);
+		}
+		
+		/*
+		 * Open the text info window for a given marker
+		 *
+		 */
+		function openInfoWindow(marker, id) {
+		   //
+		   // Fetch info from server
+		   //		   
+		   marker.openInfoWindowHtml("Loading details...");
+		   fetchDetails(id,marker);
+		}
+		
+		/*
+		 * Returns a function that waits for the specified XMLHttpRequest
+		 * to complete, then passes its XML response
+		 * to the given handler function.
+		 * req - The XMLHttpRequest whose state is changing
+		 * responseXmlHandler - Function to pass the XML response to
+		 */
+		function getCallbackFunction(req, processData) {
+		
+		  // Return an anonymous function that listens to the 
+		  // XMLHttpRequest instance
+		  return function () {
+		
+		    // If the request's status is "complete"
+		    if (req.readyState == 4) {
+		      if (req.status == 200) {
+		
+		        // Pass the XML payload of the response to the 
+		        // handler function
+		        processData(req.responseXML);
+		
+		      } else {
+		
+		        // An HTTP problem has occurred
+		        alert("HTTP error: "+req.status);
+		      }
+		    }
+		  }
+		}
+		
+		function getNodeValue(element) {
+		   var value = "";
+		   if ((element != null) && (element.firstChild != null)) {
+		       value = element.firstChild.nodeValue;
+		   }
+		   return value;
+		}
+		
+	
+		
+		function displayDetails(libraryDetailsXML) {
+		 	// Get the root "library" element from the document
+		 	var library = libraryDetailsXML.getElementsByTagName("library")[0];
+		 	var name = getNodeValue(library.getElementsByTagName("name")[0]);
+		 	var id = getNodeValue(library.getElementsByTagName("id")[0]);
+		 	var symbol = getNodeValue(libraryDetailsXML.getElementsByTagName("symbol")[0]);
+		 	var website = getNodeValue(libraryDetailsXML.getElementsByTagName("website")[0]);
+		 	var phone = getNodeValue(libraryDetailsXML.getElementsByTagName("phone")[0]);
+		 	var fax = getNodeValue(libraryDetailsXML.getElementsByTagName("fax")[0]);
+			
+		 	var address = library.getElementsByTagName("address")[0]
+		 	var address1 = getNodeValue(libraryDetailsXML.getElementsByTagName("line1")[0]);
+		 	var address2 = getNodeValue(libraryDetailsXML.getElementsByTagName("line2")[0]);
+		 	
+		 	var city = getNodeValue(libraryDetailsXML.getElementsByTagName("city")[0]);
+		 	var postcode = getNodeValue(libraryDetailsXML.getElementsByTagName("postcode")[0]);
+		 	
+			marker = getMarker(id);
+			marker.showMapBlowup();
+			var html = '<span class="library-title-line">'
+					   + name + ' (' + symbol + ')' 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + address1 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + address2 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + city + ' ' + postcode 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + '<a href="' + website + '">' + website + '</a>'
+			           +'</span>'
+			marker.openInfoWindowHtml(html);
+			
+			//marker.openInfoWindowHtml(name);
+		}
+		
+				
+    //]]>
+    </script>
+
+	<!-- GOOGLE MAPS -->
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAATjlq5e04CjtYAFELAT_MzhQT6W9ahK7sA22kHs_1YSzN-mRedxRoqguZ08pEVBcJstFh9DGuLt__Pw"
+      type="text/javascript"></script>
+                
+    <script type="text/javascript">
+    //<![CDATA[
+    
+        
+        var gmarkers = [];
+
+		function getMarker(id) {
+		   for (var i = 0; i <= gmarkers.length; i++) {
+		       var marker = gmarkers[i];
+		       if (marker.id == id) {
+		           return marker;
+		       }
+		   }
+		   return null;
+		}
+		
+		function load() {
+		    if (GBrowserIsCompatible()) {
+		      var i = 0;
+		      var baseIcon = new GIcon();
+		      baseIcon.iconSize=new GSize(12,12);
+		      baseIcon.shadowSize=new GSize(12,12);
+		      baseIcon.iconAnchor=new GPoint(6,6);
+		      baseIcon.infoWindowAnchor=new GPoint(6,6);
+		          
+		      var pinIcon = new GIcon(baseIcon, "images/reddot.gif", null, null);
+		
+		      // A function to create the marker and set up the event window
+		      function createLibraryMarker(point,name,id) {
+		      
+			    var baseIcon = new GIcon();
+			    baseIcon.iconSize=new GSize(20,12);
+			    baseIcon.shadowSize=new GSize(20,12);
+			    baseIcon.iconAnchor=new GPoint(10,6);
+			    baseIcon.infoWindowAnchor=new GPoint(10,0);
+		          
+		        var icon = new GIcon(baseIcon, "images/smaller-library-icon.gif", null, null);
+		      	
+		        var marker = new GMarker(point,icon);
+		        // === store the name so that the tooltip function can use it ===
+		        marker.tooltip = '<div class="tooltip">'+name+'</div>';
+		        marker.id = id;
+		        GEvent.addListener(marker, "click", function() {
+		            openInfoWindow(marker,"" + id);
+		        });
+		        gmarkers[i] = marker;
+		        
+		        i++;
+		        map.addOverlay(marker);
+		
+		        //  ======  The new marker "mouseover" and "mouseout" listeners  ======
+		        GEvent.addListener(marker,"mouseover", function() {
+		          showTooltip(marker);
+		        });        
+		        GEvent.addListener(marker,"mouseout", function() {
+				  tooltip.style.visibility="hidden"
+		        });        
+		      }
+		
+			  //
+			  // The list of library markers, loaded only once
+			  //		
+			  var libraryMarkers = null;
+			  
+			  function displayLibraries() {
+			    
+			  	if (libraryMarkers == null) {
+			  		loadLibraries();
+			  	} else {
+				  	displayLibrariesMarkers();
+			  	}
+			  }	
+			  
+			  /*
+			   * Load and display markers for all the libraries
+			   */
+			  function loadLibraries() {
+			      var request = GXmlHttp.create();
+			      request.open("GET", "/maps/LibraryDirectory?method=findAll", true);
+				  request.onreadystatechange = getCallbackFunction(request, processLibraryData);
+			      request.send(null);				  
+			  }
+			       
+			  /*
+			   * Process library XML data, store it in libraryMarkers, and display the markers
+			   */ 
+			  function processLibraryData(xmlDoc){
+			          // obtain the array of markers and loop through it
+			          libraryMarkers = xmlDoc.documentElement.getElementsByTagName("marker");
+			          displayLibrariesMarkers();
+			  }
+			  
+			  /*
+			   * Create markers for libraries
+			   */
+			  function displayLibrariesMarkers() {
+
+		          map.clearOverlays();
+		          for (var i = 0; i < libraryMarkers.length; i++) {
+		            // obtain the attribues of each marker
+		            var lat = parseFloat(libraryMarkers[i].getElementsByTagName("latitude")[0].firstChild.nodeValue);
+		            var lng = parseFloat(libraryMarkers[i].getElementsByTagName("longitude")[0].firstChild.nodeValue);
+		            var id = libraryMarkers[i].getElementsByTagName("id")[0].firstChild.nodeValue;
+		            var label = libraryMarkers[i].getElementsByTagName("name")[0].firstChild.nodeValue;
+		            createLibraryMarker(new GLatLng(lat,lng),label,id);
+		          }
+			  }		
+			  	  				  
+			  //
+			  // The list of city markers, loaded only once
+			  //
+			  var cityMarkers = null;
+			  
+			  function displayCities() {
+			  	if (cityMarkers == null) {
+			  		loadCities();
+			  	} else {
+				  	displayCityMarkers();
+			  	}
+			  }
+			  			  
+			  function loadCities() {
+			      // Read the data from data.xml
+			      var request = GXmlHttp.create();
+			      request.open("GET", "/maps/LibraryDirectory?method=findAllCities", true);
+				  request.onreadystatechange = getCallbackFunction(request, processCityData);
+			      request.send(null);
+			  }
+			  
+			  /**
+			   * Process the city list in XML form, store it in cityMarkers, 
+			   * and display the markers.
+			   */			  
+			  function processCityData(xmlDoc) {
+		          cityMarkers = xmlDoc.documentElement.getElementsByTagName("marker");			          
+		          displayCityMarkers();
+			  }
+			  
+			  function displayCityMarkers() {
+		          map.clearOverlays();
+		          for (var i = 0; i < cityMarkers.length; i++) {
+		            // obtain the attribues of each marker
+		            var lat = parseFloat(cityMarkers[i].getElementsByTagName("latitude")[0].firstChild.nodeValue);
+		            var lng = parseFloat(cityMarkers[i].getElementsByTagName("longitude")[0].firstChild.nodeValue);
+		            var id = cityMarkers[i].getElementsByTagName("id")[0].firstChild.nodeValue;
+		            var label = cityMarkers[i].getElementsByTagName("name")[0].firstChild.nodeValue;
+		            // create the marker
+		            createCityMarker(new GLatLng(lat,lng),label,id);
+		          }
+			  }
+			  			  
+		      function createCityMarker(point,name,id) {
+		      
+		        var marker = new GMarker(point,pinIcon);
+		        // === store the name so that the tooltip function can use it ===
+		        marker.tooltip = '<div class="tooltip">'+name+'</div>';
+		        marker.id = id;
+		        marker.point = point;
+		        GEvent.addListener(marker, "click", function(point) {
+		            map.setCenter(new GLatLng(marker.point.y,marker.point.x),10);
+		        });
+		        gmarkers[i] = marker;
+		        
+		        i++;
+		        map.addOverlay(marker);
+		
+		        //  ======  The new marker "mouseover" and "mouseout" listeners  ======
+		        GEvent.addListener(marker,"mouseover", function() {
+		          showTooltip(marker);
+		        });        
+		        GEvent.addListener(marker,"mouseout", function() {
+				  tooltip.style.visibility="hidden"
+		        });        
+		      }
+		
+		
+		      // ====== This function displays the tooltip ======
+		      function showTooltip(marker) {
+		      	tooltip.innerHTML = marker.tooltip;
+				var point=map.getCurrentMapType().getProjection().fromLatLngToPixel(map.fromDivPixelToLatLng(new GPoint(0,0),true),map.getZoom());
+				var offset=map.getCurrentMapType().getProjection().fromLatLngToPixel(marker.getPoint(),map.getZoom());
+				var anchor=marker.getIcon().iconAnchor;
+				var width=marker.getIcon().iconSize.width;
+				var height=tooltip.clientHeight;
+				var pos = new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(offset.x - point.x - anchor.x + width, offset.y - point.y -anchor.y -height)); 
+				pos.apply(tooltip);
+				tooltip.style.visibility="visible";
+		      }
+		
+		      // ===== This function is invoked when the mouse leaves an entry in the sidebar =====
+		      // It hides the tooltip      
+		      function mymouseout() {
+				tooltip.style.visibility="hidden";
+		      }
+		
+		      // create the map
+		      var map = new GMap2(document.getElementById("map"));
+		
+		      map.addControl(new GLargeMapControl());
+		      map.addControl(new GOverviewMapControl());
+		      map.enableDoubleClickZoom();
+		      map.setCenter(new GLatLng(-41.5, -187.5), 5);
+		
+		      // ====== set up marker mouseover tooltip div ======
+		      var tooltip = document.createElement("div");
+		      map.getPane(G_MAP_FLOAT_PANE).appendChild(tooltip);
+		      tooltip.style.visibility="hidden";
+
+			  displayCities();
+			  GEvent.addListener(map, "zoomend", function(oldZoom, newZoom) {
+			  	if ((oldZoom <= 8) && (newZoom > 8)) {
+			  		//
+			  		// Switch to city markers
+			  		//
+			  		displayLibraries();
+			  	} else if ((oldZoom > 8) && (newZoom <= 8)) {
+			  		//
+			  		// Switch to library markers
+			  		//
+			  		displayCities();
+			  	}
+			  	
+			  });
+		    }
+		
+		    else {
+		      alert("Sorry, the Google Maps API is not compatible with this browser");
+		    }
+		}
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()">
+     <div id="map" style="width: 300px; height: 420px"></div>
+    <noscript><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
+      However, it seems JavaScript is either disabled or not supported by your browser. 
+      To view Google Maps, enable JavaScript by changing your browser options, and then 
+      try again.
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+    <script type="text/javascript">
+      var visualization;
+	  
+	   var SourceworksSoftWare_JSONObject = {
+
+          cols: [
+       {id: 'cx_code', label: 'Customer', type: 'string'},
+            {id: 'site', label: 'Site', type: 'string'},
+            {id: 'Sourceworks_version', label: 'Sourceworks Version', type: 'string'},
+            {id: 'Sourceworks_md5sum', label: 'Sourceworks md5sum', type: 'string'},
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'},
+			{id: 'Sourceworks_version', label: 'Sourceworks Version', type: 'string'},
+            {id: 'Sourceworks_md5sum', label: 'Sourceworks md5sum', type: 'string'},
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'},
+        	{id: 'swriter_version', label: 'Swriter Version', type: 'string'},
+            {id: 'swriter_version', label: 'Swriter Type', type: 'string'},
+            {id: 'swriter_md5sum', label: 'Swriter md5sum', type: 'string'},
+            {id: 'LocalAgent_version', label: 'LocalAgent Version', type: 'string'},
+            {id: 'LocalAgent_version', label: 'LocalAgent md5sum', type: 'string'},   
+            {id: 'NETRO_UDP_LOWER', label: 'UDP Lower', type: 'string'},
+            {id: 'NETRO_UDP_UPPER', label: 'UDP Upper', type: 'string'},
+            {id: 'NETRO_TCP_LOWER', label: 'TCP Lower', type: 'string'},
+            {id: 'NETRO_TCP_UPPER', label: 'TCP Upper', type: 'string'},
+            {id: 'NETRO_ESP_UPPER', label: 'ESP Upper', type: 'string'},
+            {id: 'NETRO_GRE_UPPER', label: 'GRE Upper', type: 'string'},
+            {id: 'NETRO_GTP', label: 'GTP', type: 'string'},
+            {id: 'imei', label: 'IMEI', type: 'boolean'}, 
+            {id: 'ULI', label: 'ULI', type: 'boolean'},
+            {id: 'aran_feed', label: 'Aran Feed', type: 'string'},
+            {id: 'MoMo_feed', label: 'MoMo Feed', type: 'boolean'},
+            {id: 'record_format', label: 'Record Format', type: 'string'},
+            {id: 'http_record', label: 'HTTP Record', type: 'string'},        
+			{id: 'IPV4_LOWER', label: 'IP v4 Lower', type: 'boolean'},
+            {id: 'IPV4_UPPER', label: 'IP v4 Upper', type: 'boolean'}, 
+            {id: 'IPV6_LOWER', label: 'IP v6 Lower', type: 'boolean'},  
+            {id: 'IPV6_UPPER', label: 'IP v6 Upper', type: 'boolean'},
+            {id: 'HTTP_LOWER', label: 'HTTP Lower', type: 'boolean'},
+            {id: 'HTTP_UPPER', label: 'HTTP Upper', type: 'boolean'},  
+            {id: 'TCP_LOWER', label: 'TCP Lower', type: 'boolean'},   
+            {id: 'TCP_UPPER', label: 'TCP Upper', type: 'boolean'},
+            {id: 'UDP_LOWER', label: 'UDP Lower', type: 'boolean'},  
+            {id: 'UDP_UPPER', label: 'UDP Upper', type: 'boolean'} ,
+			{id: 'RADIUS', label: 'Radius', type: 'boolean'},   
+            {id: 'WV', label: 'WV', type: 'boolean'},   
+            {id: 'MSN', label: 'MSN', type: 'boolean'},   
+            {id: 'DNS', label: 'DNS', type: 'boolean'},   
+            {id: 'SNMP', label: 'SNMP', type: 'boolean'},   
+            {id: 'EMULE', label: 'EMULE', type: 'boolean'},   
+            {id: 'GNUTELLA', label: 'GNUTELLA', type: 'boolean'},   
+            {id: 'BITTORRENT', label: 'Bittorrent', type: 'boolean'},   
+            {id: 'MOILEIP', label: 'Mobile IP', type: 'boolean'},   
+            {id: 'SIP', label: 'SIP', type: 'boolean'},   
+            {id: 'H232_GK', label: 'H232 GK', type: 'boolean'},   
+            {id: 'MPLS', label: 'MPLS', type: 'boolean'},   
+            {id: 'BGP', label: 'BGP', type: 'boolean'},   
+            {id: 'SMB', label: 'SMB', type: 'boolean'},   
+            {id: 'ICMP', label: 'ICMP', type: 'boolean'}, 
+            {id: 'BILLSHOCK_ENABLED', label: 'Billshock', type: 'boolean'},         
+            {id: 'GTP', label: 'GTP', type: 'boolean'},   
+            {id: 'WAP', label: 'WAP', type: 'boolean'},   
+            {id: 'MMS', label: 'MMS', type: 'boolean'},   
+            {id: 'RTSP', label: 'RTSP', type: 'boolean'},  
+            {id: 'POP3', label: 'POP3', type: 'boolean'},   
+            {id: 'PPTP', label: 'PPTP', type: 'boolean'},   
+            {id: 'GREPP', label: 'GREPP', type: 'boolean'},   
+            {id: 'ESP', label: 'ESP', type: 'boolean'},   
+            {id: 'IMAP', label: 'IMAP', type: 'boolean'},   
+            {id: 'SMTP', label: 'SMTP', type: 'boolean'},   
+			{id: 'FTP', label: 'FTP', type: 'boolean'},       
+			{id: 'TYPE', label: ' Type', type: 'string'},
+            {id: 'TIMEZONE', label: 'Timezone', type: 'string'},        
+            {id: 'Sourceworks_TYPE', label: 'Sourceworks Flavour', type: 'string'},
+            {id: 'NO_OF_PROCESS_THREADS', label: 'Thread count', type: 'string'},
+            {id: 'SHM', label: 'SHM Value', type: 'string'},               
+            {id: 'QUEUE_SIZE', label: 'Queue Size', type: 'string'},                
+            {id: 'BLOCKING', label: 'Blocking', type: 'string'},                
+            {id: 'TCP_LOST_EVENTS', label: 'TCP Lost Events', type: 'string'},                
+            {id: 'TCP_AUTO_DETECT', label: 'TCP AutoDetect', type: 'string'},
+            {id: 'UDP_AUTO_DETECT', label: 'UDP AutoDetect', type: 'string'},
+            {id: 'ANDROID_AUTO_DETECT', label: 'Auto Detect Android', type: 'string'},               
+            {id: 'DEHASH_URLS', label: 'De-Hash URLs', type: 'string'},                
+            {id: 'PDP_HIGH_WATERMARK', label: 'PDP High Watermark', type: 'string'},                
+            {id: 'PDP_LOW_WATERMARK', label: 'PDP Low Watermark', type: 'string'},                
+            {id: 'CONTEXT_FORMAT', label: 'Context format', type: 'string'},
+			{id: 'CARD_NAME', label: 'Gn Card', type: 'string'},
+			{id: 'CARD_PORTS', label: 'Gn Interfaces', type: 'string'},        
+			{id: 'CARD_VERSION', label: 'Gn Firmware', type: 'string'},
+            {id: 'RAM', label: 'RAM + Kernel', type: 'string'},
+            {id: 'INTERNAL_DISK_SIZE', label: 'Internal Disc Size', type: 'string'},               
+            {id: 'INTERNAL_DISK_RAID', label: 'Internal Disc RAID', type: 'string'},                
+            {id: 'COUNT_EXTERNAL_DISKS', label: 'External Discs', type: 'string'},                
+            {id: 'EXTERNAL_DISK_RAID', label: 'External Disc RAID', type: 'string'},                
+            {id: 'EXTERNAL_DISK_PARTITION_SIZE', label: 'External Disc Partition Size', type: 'string'}          
+
+            ],
+
+            rows:   [
+			{"c":[	{"v":"VFPT"},
+					{"v":"Location"},
+					{"v":"IPTS 4.6.0.0"},
+					{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},
+					{"v":""},
+					{"v":"Dlauncher version here"},
+					{"v":"?"},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""}
+					]}]
+			
+			
+        };
+		
+		var dataTable = new google.visualization.DataTable(SourceworksSoftWare_JSONObject, 0.5);
+
+      function drawVisualization() {
+        var table1 = new google.visualization.Table(document.getElementById('table'));
+        table1.draw(dataTable, null);
+      
+        // Set columns in a data view.
+        var dataView1 = new google.visualization.DataView(dataTable);
+        dataView1.setColumns([0, 2]);
+      
+        var table2 = new google.visualization.Table(document.getElementById('table2'));
+        table2.draw(dataView1, null);
+      
+        // Set rows in a data view.
+        var dataView2 = new google.visualization.DataView(dataTable);
+        dataView2.setRows([0, 1, 3]);
+      
+        var table3 = new google.visualization.Table(document.getElementById('table3'));
+        table3.draw(dataView2, null);
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+	
+
+	
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div>Original Data Table</div>
+    <div id="table"></div>
+    <br />
+    <div>A Data View</div>
+    <div id="table2"></div>
+    <br />
+    <div>Another Data View</div>
+    <div id="table3"></div>
+  </body>
+</html>

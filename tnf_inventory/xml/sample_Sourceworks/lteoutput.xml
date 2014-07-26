@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+    <max_size>40000000</max_size> <!-- default max size of a tdr file -->
+    <max_lifetime>6000</max_lifetime> <!-- default max life time of a tdr -->
+    <delimiter>|</delimiter> <!-- tdr field delimiter -->
+    <time_based_records_lifetime>100</time_based_records_lifetime>
+    <buffer_size>1048576</buffer_size>
+    <use_thread>true</use_thread>
+
+    <!-- 'record_output' describes a record output type:
+        <record_output id="nn">
+            <type>file</type> 'file' or 'socket' (required)
+            <format>binary</format> 'binary' or 'text' (default=text)
+            <layout>xx</layout> corresponds to the 'id' of a 'record_layout' (required)
+            <filter>
+                <rat></rat>
+                <type></type> 'include' or 'exclude'
+                <mcc>888</mcc>  mcc to filter
+                <mnc>1</mnc> mnc to filter
+                <imsi></imsi> comma-separated list of imsis to filter
+                <apn></apn> comma-separated list of apns to filter
+                <imap4>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </imap4>
+                <pop3>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </pop3>
+                <smtp>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </smtp>
+            </filter>
+            <max_imsi_groups>nn</max_imsi_groups> (default=0)
+            if 'type' is 'file', then the following are relevant:
+            <path>./path/to/log/dir</path> (required)
+            <prefix>prefix_</prefix> (required; what to prefix each file with)
+            <max_size>nn</max_size> (maximum size to let log file grow to before rotating; defaults to <records/max_size>)
+            <max_lifetime>nn</max_lifetime> (maximum time [seconds] of a TDR; defaults to <records/max_lifetime>)
+            if 'type' is 'socket', then the following are relevant:
+            <remote_host>host.or.ip</remote_host> (required (if 'socket'); where to send TDRs to)
+            <remote_port>nn</remote_port> (required (if 'socket'); where to send TDRs to)
+        </record_output>
+    -->
+
+    <record_output id="0">
+        <type>file</type>
+        <layout>config/netrolayout_lte.xml</layout>
+        <path>./netrofeed</path>
+        <prefix>netro_</prefix>
+    </record_output>
+
+    <record_output id="1">
+        <type>file</type>
+        <format>binary</format>
+        <layout>config/netrolayout_lte.xml</layout>
+        <path>./blog</path>
+        <prefix>netrobin_</prefix>
+        <stream_server>no</stream_server><!-- The tag enables streaming if has 'yes' value -->
+    </record_output>
+</records>

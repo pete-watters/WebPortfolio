@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+                <meta http-equiv="refresh" content="600"> 
+		<title>TNF Midas+ Alarm Dashboard</title>
+		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery.marquee.js"></script>
+
+		<script type="text/javascript">
+			$(function(){
+				// Tabs
+				$('#tabs').tabs();
+				$('#tabs').tabs("rotate" , 15000 );
+			});
+		</script>
+                
+
+                <!-- Marquee scroll code -->
+	<script type="text/javascript">
+    <!--
+    $(function () {
+        // basic version is: $('div.demo marquee').marquee() - but we're doing some sexy extras
+           $('div.demo marquee').marquee('pointer').mouseover(function () {
+            $(this).trigger('stop');
+             }).mouseout(function () {
+              $(this).trigger('start');
+              }).mousemove(function (event) {
+                if ($(this).data('drag') == true) {
+                 this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
+                    }
+                  }).mousedown(function (event) {
+                  $(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+                  }).mouseup(function () {
+                         $(this).data('drag', false);
+                  });
+                  });
+                 //-->
+             </script>
+           <!-- End Marquee scroll code -->
+
+
+
+<?php
+include("googleMap_dynamic.php");
+?>
+<?php
+include("AlarmTable_JS.php");
+?>
+<?php
+include("marquee_JavaScript.php");
+?>
+
+
+
+	</head>
+	<body>
+    <?php
+include("marquee_DIV.php");
+?>
+    
+	<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Alarms</a></li>
+				<li><a href="#tabs-2">Map</a></li>
+                <li><a href="#tabs-3">Vodafone Ireland</a></li>
+                <li><a href="#tabs-4">T-Mobile USA</a></li> 
+                <li><a href="#tabs-5">Vodacom South Africa </a></li>
+                <li><a href="#tabs-6">Vodafone Italy</a></li> 
+                <li><a href="#tabs-7">Rogers</a></li> 
+               <li><a href="#tabs-8">Heartbeats</a></li>
+	</ul>
+            
+            <!-- Start tabs-1 -->
+			<div id="tabs-1" style="height:1200px;width:1200px;">
+                     
+					 <!-- This is the beginning of the area to hold the traffic lights -->
+                      <div id="content" align="center">
+                        <div class="container">
+                          <div class="inside">
+                            <div class="wrapper">
+                            
+                              <table>
+                               <tr>
+                               <td>
+                                <h2>Vodafone Ireland</h2><br />
+                                <img src="irish_flag.gif" /> <br />
+                                <!-- Vodafone Ireland Traffic Light --> 
+           						<iframe src ="VodafoneIrelandAlarmTrafficLight.php" width="100%" height="450" frameborder="0" align="middle">
+                                <p>Your browser does not support iframes.</p>
+                                </iframe>
+
+
+                                <?php include("VFI_HostCheck.php") ?>
+                               </td>
+                                
+                                <td>
+                                <h2>T-Mobile USA</h2><br />                                
+                                <img src="USA_flag.gif" /> <br />
+                                <!-- T-Mobile USA Traffic Light --> 
+                                <iframe src ="TmobileUSAAlarmTrafficLight.php" width="100%" height="450" frameborder="0">
+                                <p>Your browser does not support iframes.</p>
+                                </iframe>
+ 				<?php include("VFI_HostCheck.php") ?>
+                                </td>
+                            
+                               <td>
+                               <h2>Vodafone Italy</h2><br />        
+                                <img src="roman_flag.png" /> <br />
+                              
+                               <!-- Vodafone Italy Traffic Light --> 
+                               <iframe src ="VodafoneItalyAlarmTrafficLight.php" width="100%" height="450" frameborder="0">
+                               <p>Your browser does not support iframes.</p>
+                               </iframe>
+				<?php include("VFI_HostCheck.php") ?>
+                                 </td>
+                                
+                                <td>
+                                <h2>Vodacom</h2><br />
+                                <img src="SA_flag.gif" /> <br />
+                              <!-- Vodacom Traffic Light --> 
+                         <iframe src ="VodafoneSouthAfricaAlarmTrafficLight.php" width="100%" height="450" frameborder="0">
+                                <p>Your browser does not support iframes.</p>
+                                </iframe>
+		<?php include("VCOM_HostCheck.php") ?>
+
+		</td>
+								
+								 <td>
+                                <h2>Rogers</h2><br />
+                                <img src="canada_flag.gif" /> <br />
+                              <!-- Rogers Traffic Light --> 
+                                <iframe src ="RogersAlarmTrafficLight.php" width="100%" height="450" frameborder="0">
+                                <p>Your browser does not support iframes.</p>
+                                </iframe>
+                                <?php include("VFI_HostCheck.php") ?>
+			</td>
+                               </tr>
+                          	 </table>
+                          	 </div>
+                          </div>
+                       	</div>
+ 					</div>
+
+			 <!-- This is the beginning of the area to hold the traffic lights -->
+                                  
+            </div>
+            <!--End of tab 1 --> 
+            
+            <!-- Start of tab 2 -->
+			<div id="tabs-2" style="height:1200px;width:1200px;">
+            	<!-- Div reference for MAP defined in AlarmMap above -->
+            	<div id="AlarmMap" align="center"></div>         
+            </div>
+            <!-- End tabs 2 -->  
+             
+            
+            <!-- Start tabs-3 -->            
+            <div id="tabs-3" style="height:1200px;width:1200px;">
+
+                  <?php 
+                        include("VFI_HostCheck.php");
+                        ?>
+              <table cellpadding="0" cellspacing="0" border="0" class="display" id="VodafoneIreland_AlarmTable"  style="width:100%;">
+	               <thead>
+		       <tr>
+			<th>Severity Level</th>
+			<th>Customer</th>
+            <th>Host</th>
+			<th>Issue</th>
+			<th>Probe Alarm Time</th>
+			<th>TNF Recieve Time</th>
+		       </tr>
+	             </thead>
+	       <tbody>
+
+                  <?php
+			include("VFI_AlarmRow.php");
+			?>
+	      </tbody>
+              </table>
+               
+            </div>
+            <!-- End tabs-3 -->
+            
+            <!-- tabs-4 -->
+            <div id="tabs-4" style="height:1200px;width:1200px;">
+                            <?php
+                        include("TMUSA_HostCheck.php");
+                        ?>
+             
+
+ 
+              <table cellpadding="0" cellspacing="0" border="0" class="display" id="TmobileUSA_AlarmTable"  style="width:100%;">
+	               <thead>
+		       <tr>
+			<th>Severity Level</th>
+			<th>Customer</th>
+            <th>Host</th>
+			<th>Issue</th>
+			<th>Probe Alarm Time</th>
+			<th>TNF Recieve Time</th>
+		       </tr>
+	             </thead>
+	       <tbody>
+
+                  <?php
+			include("TMUSA_AlarmRow.php");
+			?>
+	      </tbody>
+              </table>
+            </div>
+            <!--End tabs-4 -->
+        
+            <!-- tabs-5 -->
+            <div id="tabs-5" style="height:1200px;width:1200px;">
+ 		<?php
+                        include("VCOM_HostCheck.php");
+                        ?>
+
+              <table cellpadding="0" cellspacing="0" border="0" class="display" id="VodafoneSA_AlarmTable"  style="width:100%;">
+	               <thead>
+		       <tr>
+			<th>Severity Level</th>
+			<th>Customer</th>
+            <th>Host</th>
+			<th>Issue</th>
+			<th>Probe Alarm Time</th>
+			<th>TNF Recieve Time</th>
+		       </tr>
+	             </thead>
+	       <tbody>
+
+                  <?php
+			include("VCOM_AlarmRow.php");
+			?>
+	      </tbody>
+              </table>
+            </div>
+            <!--End tabs-5 -->
+
+            <!-- tabs-6 -->
+            <div id="tabs-6" style="height:1200px;width:1200px;">
+		<?php
+                        include("VFIT_HostCheck.php");
+                        ?>
+	
+			<table cellpadding="0" cellspacing="0" border="0" class="display" id="VodafoneItaly_AlarmTable"  style="width:100%;">
+	               <thead>
+		       <tr>
+			<th>Severity Level</th>
+			<th>Customer</th>
+            <th>Host</th>
+			<th>Issue</th>
+			<th>Probe Alarm Time</th>
+			<th>TNF Recieve Time</th>
+		       </tr>
+	             </thead>
+	       <tbody>
+
+                  <?php
+		include("VFIT_AlarmRow.php");
+				?>
+
+	      </tbody>
+              </table>	
+           
+            </div>
+            <!--End tabs-6 -->
+            
+            
+            <div id="tabs-7" style="height:1200px;width:1200px;">
+                 <?php
+                        include("Rogers_HostCheck.php");
+                        ?>
+
+              <table cellpadding="0" cellspacing="0" border="0" class="display" id="Rogers_AlarmTable"  style="width:100%;">
+	               <thead>
+		       <tr>
+			<th>Severity Level</th>
+			<th>Customer</th>
+            <th>Host</th>
+			<th>Issue</th>
+			<th>Probe Alarm Time</th>
+			<th>TNF Recieve Time</th>
+		       </tr>
+	             </thead>
+	       <tbody>
+
+                  <?php
+			include("Rogers_AlarmRow.php");
+			?>
+	      </tbody>
+              </table>
+           
+            </div>
+              
+
+
+             <div id="tabs-8" style="height:1200px;width:1200px;">
+              
+                 <?php
+                        include("VFI_HostCheck.php");
+                        ?>
+		   <?php
+                        include("TMUSA_HostCheck.php");
+                        ?>
+                   <?php
+                        include("VFIT_HostCheck.php");
+                        ?>
+                   <?php
+                        include("VCOM_HostCheck.php");
+                        ?>
+		<?php
+                        include("Rogers_HostCheck.php");
+                        ?>
+
+              </tbody>
+              </table>
+
+            </div>
+
+          </div>
+	</body>
+</html>
+

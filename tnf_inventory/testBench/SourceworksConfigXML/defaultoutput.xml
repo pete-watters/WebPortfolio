@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+    <max_size>40000000</max_size> <!-- default max size of a tdr file -->
+    <max_lifetime>6000</max_lifetime> <!-- default max life time of a tdr -->
+    <delimiter>|</delimiter> <!-- tdr field delimiter -->
+    <time_based_records_lifetime>100</time_based_records_lifetime>
+    <buffer_size>1048576</buffer_size>
+    <use_thread>true</use_thread>
+
+    <!-- 'record_output' describes a record output type:
+        <record_output id="nn">
+            <type>file</type> 'file' or 'socket' (required)
+            <format>binary</format> 'binary' or 'text' (default=text)
+            <layout>xx</layout> corresponds to the 'id' of a 'record_layout' (required)
+            <filter>
+                <rat></rat>
+                <type></type> 'include' or 'exclude'
+                <mcc>888</mcc>  mcc to filter
+                <mnc>1</mnc> mnc to filter
+                <imsi></imsi> comma-separated list of imsis to filter
+                <apn></apn> comma-separated list of apns to filter
+                <imap4>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </imap4>
+                <pop3>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </pop3>
+                <smtp>
+                    <method type="exclude|include">comma separated case insensivity methods list</method> (optional)
+                    <server type="exclude|include">comma separated list of ip addresses</server> (optional)
+                </smtp>
+            </filter>
+            <max_imsi_groups>nn</max_imsi_groups> (default=0)
+            if 'type' is 'file', then the following are relevant:
+            <path>./path/to/log/dir</path> (required)
+            <prefix>prefix_</prefix> (required; what to prefix each file with)
+            <max_size>nn</max_size> (maximum size to let log file grow to before rotating; defaults to <records/max_size>)
+            <max_lifetime>nn</max_lifetime> (maximum time [seconds] of a TDR; defaults to <records/max_lifetime>)
+            if 'type' is 'socket', then the following are relevant:
+            <remote_host>host.or.ip</remote_host> (required (if 'socket'); where to send TDRs to)
+            <remote_port>nn</remote_port> (required (if 'socket'); where to send TDRs to)
+        </record_output>
+    -->
+
+    <record_output id="0">
+        <type>file</type>
+        <layout>config/commonlayout.xml,config/voiplayout.xml</layout>
+        <!-- <layout>./config/commonlayout.xml,./config/netrolayout.xml</layout> -->
+        <path>./log</path>
+        <prefix>midas_</prefix>
+        <!--<filter>-->
+        <!--    <imap4>-->
+        <!--        <method type="exclude">lIsT,nOOp</method>-->
+        <!--        <server type="include">192.168.210.70</server>-->
+        <!--    </imap4>-->
+        <!--    <smtp>-->
+        <!--        <method type="exclude">Ehlo,MaiL</method>-->
+        <!--        <server type="include">67.15.184.39</server>-->
+        <!--    </smtp>-->
+        <!--    <pop3>-->
+        <!--        <method type="exclude">user,Pass</method>-->
+        <!--        <server type="include">195.186.18.141</server>-->
+        <!--    </pop3>-->
+        <!--</filter>-->
+        <!--<max_imsi_groups>10</max_imsi_groups>-->
+    </record_output>
+
+    <record_output id="1">
+        <type>file</type>
+        <layout>config/netrolayout.xml</layout>
+        <path>./netrofeed</path>
+        <prefix>netro_</prefix>
+    </record_output>
+
+    <record_output id="2">
+        <type>file</type>
+        <format>binary</format>
+        <layout>config/commonlayout.xml</layout>
+        <path>./blog</path>
+        <prefix>midasbin_</prefix>
+        <stream_server>no</stream_server><!-- The tag enables streaming if has 'yes' value -->
+        
+        <server><!-- The section defines Streaming Server connection details -->
+            <host>127.0.0.1</host><!-- IP address of Streaming Server -->
+            <port>7500</port><!-- Streaming Server port number -->
+            <closed_key>4#7*HnVHJ124G$1!</closed_key><!-- Ciphering key used if security and cache/restore options enabled -->
+            <timeout>1</timeout><!-- Streaming operation timeout, if 0 the connection must be immediate -->
+            <security>yes</security><!-- Enables cyphering if has 'yes' value -->
+        </server>
+
+        <handshake><!-- The section defines handshake protocol options -->
+            <feed>netro</feed><!-- Feed name  -->
+            <probe>4.2.6</probe><!-- Probe identifier  -->
+        </handshake>
+
+        <cache><!-- The section defines the output cache base parameters -->
+            <size>1000000</size><!-- Output cache size, defined in TDRs  -->
+            <high_watermark>7200000</high_watermark><!-- Maximum TDR storage number  -->
+            <low_watermark>6800000</low_watermark><!-- Garanteed TDR storage number  -->
+            <dir>./cache</dir><!-- Specific folder for cache files. -->
+            <prefix>cache_</prefix><!-- Cache file prefix. -->
+            <extension>.bin</extension><!-- Cache file extension. -->
+            <compress>no</compress><!-- Cache files compression, hits performance -->
+            <zip_level>6</zip_level><!-- Compression level in 0-9 range, 9 is better and more slowly -->
+            <restore>yes</restore><!-- Reloading cache on application restart, hits security as predefined key used -->
+            <complete>no</complete><!-- Appends uncomplete cache files, assuring its size in TDR's -->
+            <disk_usage>90</disk_usage><!-- Disk usage percentage limit to prevent the disk overflow -->
+        </cache>
+
+    </record_output>
+    
+    <!-- uncoment the following section in order to enable
+            MobileMoments records -->       
+    <!--record_output id="3">
+        <type>file</type>
+        <layout>config/mmlayout.xml</layout>
+        <path>./reducednetro</path>
+        <prefix>netro_</prefix>
+    </record_output -->
+    <!-- end of MobileMoments record output -->
+
+
+    <!--<record_output id="4">
+        <type>file</type>
+        <layout>config/commonlayout.xml</layout>
+        <path>./log</path>
+        <prefix>midas_</prefix>
+        <filter>
+            <type>exclude</type>
+                <mcc>525</mcc>
+                <mnc>005</mnc>
+        </filter>
+    </record_output> -->
+
+    <!--<record_output id="5">
+        <type>file</type>
+        <layout>config/commonlayout.xml</layout>
+        <path>./reservedlog</path>
+        <prefix>midas_</prefix>
+    </record_output>
+
+    <record_output id="6">
+        <type>socket</type>
+        <layout>config/commonlayout.xml</layout>
+        <remote_host>localhost</remote_host>
+        <remote_port>5555</remote_port>
+    </record_output>    -->
+
+    <!-- Remove the dash character following record_output tag to enable gzip file output -->
+    <record_output- id="7">
+        <type>zip</type>
+        <format>binary</format>
+        <layout>config/commonlayout.xml</layout>
+        <path>./zlog</path>
+        <prefix>midasbin_</prefix>
+
+        <cache><!-- The section defines the output cache base parameters -->
+            <size>100000</size><!-- Output cache size, defined in TDRs  -->
+            <high_watermark>7200000</high_watermark><!-- Maximum TDR storage number  -->
+            <low_watermark>6800000</low_watermark><!-- Garanteed TDR storage number  -->
+            <dir>./netrozip</dir><!-- Specific folder for cache files. -->
+            <prefix>netro_</prefix><!-- Cache file prefix. -->
+            <extension>.bin</extension><!-- Cache file extension. -->
+            <compress>yes</compress><!-- Cache files compression, hits performance -->
+            <zip_level>6</zip_level><!-- Compression level in 0-9 range, 9 is better and more slowly -->
+            <complete>yes</complete><!-- Appends uncomplete cache files, assuring its size in TDR's -->
+            <disk_usage>90</disk_usage><!-- Disk usage percentage limit to prevent the disk overflow -->
+            <flush>1</flush><!-- Force cache flushing period in seconds -->
+        </cache>
+    </record_output->
+</records>

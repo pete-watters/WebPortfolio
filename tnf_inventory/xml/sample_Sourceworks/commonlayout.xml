@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_layout id="1.4.0">
+    <!-- Record 6001 is dropped for each HTTP transaction in one of the following cases:
+              * when client sends last ACK to server;
+              * at the end of TCP session;
+              * after PDP context has shut down;
+              * after raisin has shut down. -->
+    <record id="6001">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_REFERRER</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="40">ID_EXPECTED_REQUEST_DATA_SIZE</field>
+        <field id="41">ID_EXPECTED_RESPONSE_DATA_SIZE</field>
+        <field id="48">ID_BLANK</field>
+    </record>
+
+    <!-- BitTorrent -->
+    <record id="6032">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="15">ID_NUMBER_OF_UPLOADED_BYTES</field>
+        <field id="48">ID_BLANK</field>
+    </record>
+
+    <!-- eMule/eDonkey -->
+    <record id="6034">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="15">ID_REQUEST_TIMESTAMP</field>
+        <field id="48">ID_BLANK</field>
+    </record>
+
+    <!-- Record 6002 is dropped for each application record based on TCP. -->
+    <record id="6002">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_TCP_SYN_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="12">ID_PROBE_STATUS</field>
+        <field id="20">ID_TCP_SERVER_SETUP_TIME</field>
+        <field id="21">ID_TCP_CLIENT_SETUP_TIME</field>
+        <field id="43">ID_BLANK</field>
+    </record>
+
+    <!-- Record 5001 is dropped for each WTP/WSP transaction in one of the following cases:
+              * when client sends last ACK to server;
+              * at the end of WSP session;
+              * after PDP context has shut down;
+              * after raisin has shut down. -->
+    <record id="5001">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_REFERRER</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="25">ID_ABORT_CODE</field>
+        <field id="26">ID_WAP_REDIRECT_IPV4_ADDRESS</field>
+        <field id="27">ID_WAP_REDIRECT_PORT_NUMBER</field>
+        <field id="40">ID_EXPECTED_REQUEST_DATA_SIZE</field>
+        <field id="41">ID_EXPECTED_RESPONSE_DATA_SIZE</field>
+        <field id="48">ID_BLANK</field>
+    </record>
+    
+    <!-- Record 5002 is dropped for each application record based on WTP/WSP. -->
+    <record id="5002">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_CONNECTION_START_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_WAP_CONNECT_METHOD</field>
+        <field id="7">ID_URI</field>                        
+        <field id="9">ID_DOMAIN_NAME</field>            
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>            
+        <field id="13">ID_HEADERS_SIZE_REQ</field>            
+        <field id="15">ID_HEADERS_SIZE_RSP</field>                   
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_COOKIES</field>
+        <field id="19">ID_HTTP_REFERRER</field>                        
+        <field id="20">ID_TCP_SERVER_SETUP_TIME</field>              
+        <field id="21">ID_TCP_CLIENT_SETUP_TIME</field>                                   
+        <field id="31">ID_ABORT_CODE</field>
+        <field id="32">ID_WAP_REDIRECT_IPV4_ADDRESS</field>
+        <field id="33">ID_WAP_REDIRECT_PORT_NUMBER</field>               
+        <field id="43">ID_BLANK</field>                                            
+    </record>
+
+    <!-- Record 4000 is dropped every time when field "Content-Type" of HTTP request method POST equals
+          to "application/vnd.wap.mms-message". In this case HTTP request data represents m-send-req 
+          message of MMS protocol and HTTP response data corresponds to m-send-conf message of MMS 
+          protocol. Corresponding records 6001 and 5001 for this transaction don't drop. -->
+    <record id="4000">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>            
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>            
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>            
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_REFERRER</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>                        
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>                       
+        <field id="21">ID_MMS_MESSAGE_ID</field>                       
+        <field id="22">ID_MMS_TRANSACTION_ID</field>                                   
+        <field id="23">ID_MMS_RESPONSE_STATUS</field>                       
+        <field id="25">ID_ABORT_CODE</field>                                                            
+        <field id="48">ID_BLANK</field>                                            
+    </record>
+
+    <!-- Record 4001 drops every time when field "Content-Type" of HTTP request method GET equals 
+          to "application/vnd.wap.mms-message". In this case HTTP response data corresponds to 
+          m-retrieve-conf message of MMS protocol. Corresponding records 6001 and 5001 for this 
+          transaction don't drop. -->
+    <record id="4001">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_REFERRER</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="21">ID_MMS_MESSAGE_ID</field>
+        <field id="22">ID_MMS_TRANSACTION_ID</field>
+        <field id="23">ID_MMS_RESPONSE_STATUS</field>
+        <field id="25">ID_ABORT_CODE</field>
+        <field id="48">ID_BLANK</field>
+    </record>
+
+    <!-- Wireless Village record (6003) is logged in the following cases:
+            * parsing client or server packet fail
+            * server sends a response
+            * client sends MessageDelivered? (message delivered to client)
+        Note that WV can transfer multiple message in a single HTTP request/response.
+        This means that multiple 6003 records can be logged for a single packet. -->
+    <record id="6003">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>            
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>              
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_HTTP_REFERRER</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>                        
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>             
+        <field id="40">ID_EXPECTED_REQUEST_DATA_SIZE</field>
+        <field id="41">ID_EXPECTED_RESPONSE_DATA_SIZE</field>
+        <field id="42">ID_CHAT_MESSAGE_TYPE</field> 
+        <field id="43">ID_CHAT_STATUS</field> 
+        <field id="44">ID_LOGIN_DURATION</field> 
+        <field id="45">ID_SESSION_DURATION</field>             
+        <field id="48">ID_BLANK</field>                                            
+    </record>
+    
+    <!-- Yahoo messenger -->
+    <record id="6004">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_COMPLETE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="12">ID_PROBE_STATUS</field>            
+        <field id="48">ID_BLANK</field>                        
+        <!-- <field id="43">ID_PAYLOAD_SIZE</field>                                            
+        <field id="44">ID_CHAT_MESSAGE_TYPE</field>                                            
+        <field id="45">ID_CHAT_STATUS</field>                                            
+        <field id="46">ID_LOGIN_DURATION</field>
+        <field id="47">ID_SESSION_DURATION</field>
+        <field id="48">ID_LOGIN</field>
+        <field id="49">ID_OTHER_CHAT_PARTICIPANTS</field>
+        <field id="51">ID_YMSG_SERVICE</field>
+        <field id="55">ID_BLANK</field> -->                       
+    </record>
+    
+    <!-- MSN -->
+    <record id="6005">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_COMPLETE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="12">ID_PROBE_STATUS</field>            
+        <field id="48">ID_BLANK</field>
+        <!-- <field id="42">ID_MSN_MESSAGE_SIZE</field>                                            
+        <field id="43">ID_PAYLOAD_SIZE</field>                           
+        <field id="44">ID_CHAT_MESSAGE_TYPE</field>                                                        
+        <field id="46">ID_LOGIN_DURATION</field>
+        <field id="47">ID_SESSION_DURATION</field>
+        <field id="48">ID_LOGIN</field>
+        <field id="49">ID_OTHER_CHAT_PARTICIPANTS</field>
+        <field id="50">ID_METHOD_NAME</field>
+        <field id="55">ID_BLANK</field> -->
+    </record>
+    
+    <!-- Record 6006 is dropped for each POP3 transaction at the time client sends next POP3 request to server. -->
+    <record id="6006">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>                        
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>
+        <field id="19">ID_DOWNLOAD_TIME</field>            
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="47">ID_SESSION_DURATION</field>
+        <field id="48">ID_LOGIN</field>            
+    </record>
+    
+    <!-- Record 6007 is dropped for each IMAP4 transaction at the time client sends next IMAP4 request to server. -->
+    <record id="6007">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_COMPLETE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>            
+        <field id="12">ID_PROBE_STATUS</field>                        
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>            
+        <field id="19">ID_DOWNLOAD_TIME</field>            
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>            
+        <field id="47">ID_SESSION_DURATION</field>
+        <field id="48">ID_LOGIN</field>           
+    </record>
+
+    <!-- Record 6008 drops for each SMTP transaction at the time client sends next SMTP request to server.-->
+    <record id="6008">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_COMPLETE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>                                    
+        <field id="13">ID_HEADERS_SIZE_REQ</field>
+        <field id="14">ID_DATA_SIZE_REQ</field>            
+        <field id="15">ID_HEADERS_SIZE_RSP</field>
+        <field id="16">ID_DATA_SIZE_RSP</field>            
+        <field id="19">ID_UPLOAD_TIME</field>            
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>                        
+        <field id="47">ID_SESSION_DURATION</field>
+        <field id="48">ID_LOGIN</field>            
+    </record>
+    
+    <!-- Records 7000 describe RTSP session. Following commands are dropped:
+            * PLAY
+            * SETUP
+            * TEARDOWN
+            * PAUSE
+            * OPTIONS
+            * SET_PARAMETER -->
+    <record id="7000">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_COMPLETE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>
+        <field id="8">ID_HTTP_LOCATION</field>
+        <field id="9">ID_DOMAIN_NAME</field>
+        <field id="10">ID_SERVER_REPLY_CODE</field>
+        <field id="11">ID_SERVER_STATUS_CODE</field>
+        <field id="12">ID_PROBE_STATUS</field>                                    
+        <field id="19">ID_DOWNLOAD_TIME</field>                                     
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>                                                 
+        <field id="28">ID_USER_AGENT</field>                        
+        <field id="29">ID_DATA_SIZE_RSP</field>                        
+        <field id="30">ID_START_DOWNLOADING_TIMESTAMP</field>                        
+        <field id="31">ID_RTSP_PACKET_COUNTER_0</field>            
+        <field id="32">ID_RTSP_PACKET_COUNTER_1</field>            
+        <field id="33">ID_RTSP_PACKET_COUNTER_2</field>            
+        <field id="34">ID_RTSP_PACKET_COUNTER_3</field>            
+        <field id="35">ID_RTSP_PACKET_COUNTER_4</field>            
+        <field id="36">ID_RTSP_PACKET_COUNTER_5</field>            
+        <field id="37">ID_RTSP_PACKET_COUNTER_6</field>            
+        <field id="38">ID_RTSP_PACKET_COUNTER_7</field>                        
+        <field id="39">ID_RTSP_JITTER_COUNTER</field>         
+        <field id="48">ID_BLANK</field>        
+    </record>
+
+    <!-- Record 3016 is dropped for each PDP Create Context Response. -->        
+    <record id="3016">                                                                                                
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>            
+        <field id="3">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="5">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="6">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="7">ID_GTP_SGSN_MAC_ADDRESS</field>
+        <field id="8">ID_GTP_GGSN_MAC_ADDRESS</field>            
+        <field id="9">ID_GTP_IMSI</field>
+        <field id="10">ID_GTP_NSAPI</field>
+        <field id="11">ID_PROBE_STATUS</field>
+        <field id="12">ID_GTP_SEQUENCE_NUMBER</field>                                     
+        <field id="13">ID_GTP_TEID_REQ</field>                                                 
+        <field id="14">ID_GTP_TEID_DATA_I_REQ</field>
+        <field id="15">ID_GTP_TEID_CONTROL_PLANE_REQ</field>                        
+        <field id="16">ID_GTP_TEID_RSP</field>                        
+        <field id="17">ID_GTP_TEID_DATA_I_RSP</field>            
+        <field id="18">ID_GTP_TEID_CONTROL_PLANE_RSP</field>                
+        <field id="22">ID_GTP_QOS_DELAY_CLASS_REQ</field>            
+        <field id="23">ID_GTP_QOS_RELIABILITY_REQ</field>
+        <field id="24">ID_GTP_QOS_PEAK_THROUGHPUT_REQ</field>            
+        <field id="25">ID_GTP_QOS_PRECEDENCE_CLASS_REQ</field>            
+        <field id="26">ID_GTP_QOS_MEAN_THROUGHPUT_REQ</field>            
+        <field id="27">ID_GTP_APN</field>            
+        <field id="28">ID_GTP_SIGNALLING_GSN_IPV4_ADDRESS</field>
+        <field id="29">ID_GTP_MSISDN</field>            
+        <field id="30">ID_GTP_QOS_DELAY_CLASS_RSP</field>            
+        <field id="31">ID_GTP_QOS_RELIABILITY_RSP</field>            
+        <field id="32">ID_GTP_QOS_PEAK_THROUGHPUT_RSP</field>            
+        <field id="33">ID_GTP_QOS_PRECEDENCE_CLASS_RSP</field>            
+        <field id="34">ID_GTP_QOS_MEAN_THROUGHPUT_RSP</field>      
+        <field id="35">ID_GTP_END_USER_IPV4_ADDRESS</field>            
+        <field id="36">ID_GTP_CAUSE_RESPONSE_CODE</field>                    
+        <field id="38">ID_GTP_MCC</field>   
+        <field id="39">ID_GTP_MNC</field>   
+        <field id="40">ID_GTP_CELL_LAC</field>   
+        <field id="41">ID_GTP_RAC</field>
+        <field id="42">ID_GTP_CELL_ID</field>
+        <field id="45">ID_INTERNAL_TDR_VERSION</field>                       
+        <field id="46">ID_GTP_IMEISV</field>
+        <field id="47">ID_GTP_RAT_TYPE</field>
+        <field id="49">ID_BLANK</field>        
+    </record>
+
+    <!-- Record 3018 is dropped for each PDP Update Context Response. -->
+    <record id="3018">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>            
+        <field id="3">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="5">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="6">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="7">ID_GTP_SGSN_MAC_ADDRESS</field>
+        <field id="8">ID_GTP_GGSN_MAC_ADDRESS</field>            
+        <field id="9">ID_GTP_IMSI</field>
+        <field id="10">ID_GTP_NSAPI</field>
+        <field id="11">ID_PROBE_STATUS</field>                                    
+        <field id="12">ID_GTP_SEQUENCE_NUMBER</field>                                     
+        <field id="13">ID_GTP_TEID_REQ</field>
+        <field id="14">ID_GTP_TEID_DATA_I_REQ</field>                        
+        <field id="15">ID_GTP_TEID_CONTROL_PLANE_REQ</field>                        
+        <field id="16">ID_GTP_TEID_RSP</field>
+        <field id="17">ID_GTP_TEID_DATA_I_RSP</field>            
+        <field id="18">ID_GTP_TEID_CONTROL_PLANE_RSP</field>
+        <field id="22">ID_GTP_QOS_DELAY_CLASS_REQ</field>            
+        <field id="23">ID_GTP_QOS_RELIABILITY_REQ</field>            
+        <field id="24">ID_GTP_QOS_PEAK_THROUGHPUT_REQ</field>            
+        <field id="25">ID_GTP_QOS_PRECEDENCE_CLASS_REQ</field>            
+        <field id="26">ID_GTP_QOS_MEAN_THROUGHPUT_REQ</field>
+        <field id="27">ID_GTP_APN</field>                                 
+        <field id="29">ID_GTP_MSISDN</field>            
+        <field id="30">ID_GTP_QOS_DELAY_CLASS_RSP</field>            
+        <field id="31">ID_GTP_QOS_RELIABILITY_RSP</field>            
+        <field id="32">ID_GTP_QOS_PEAK_THROUGHPUT_RSP</field>            
+        <field id="33">ID_GTP_QOS_PRECEDENCE_CLASS_RSP</field>            
+        <field id="34">ID_GTP_QOS_MEAN_THROUGHPUT_RSP</field>      
+        <field id="35">ID_GTP_END_USER_IPV4_ADDRESS</field>            
+        <field id="36">ID_GTP_CAUSE_RESPONSE_CODE</field>                    
+        <field id="45">ID_INTERNAL_TDR_VERSION</field>                       
+        <field id="47">ID_GTP_RAT_TYPE</field>                       
+        <field id="49">ID_BLANK</field>        
+    </record>
+    
+    <!-- Record 3020 is dropped for each PDP Delete Context Response. -->
+    <record id="3020">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>            
+        <field id="3">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="5">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="6">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="7">ID_GTP_SGSN_MAC_ADDRESS</field>
+        <field id="8">ID_GTP_GGSN_MAC_ADDRESS</field>            
+        <field id="9">ID_GTP_IMSI</field>
+        <field id="10">ID_GTP_NSAPI</field>
+        <field id="11">ID_PROBE_STATUS</field>                                    
+        <field id="12">ID_GTP_SEQUENCE_NUMBER</field>                                     
+        <field id="13">ID_GTP_TEID_REQ</field>                                                 
+        <field id="16">ID_GTP_TEID_RSP</field>                                    
+        <field id="27">ID_GTP_APN</field>                                 
+        <field id="29">ID_GTP_MSISDN</field>                        
+        <field id="35">ID_GTP_END_USER_IPV4_ADDRESS</field>            
+        <field id="36">ID_GTP_CAUSE_RESPONSE_CODE</field>                    
+        <field id="45">ID_INTERNAL_TDR_VERSION</field>                       
+        <field id="49">ID_BLANK</field>        
+    </record>
+    
+    <!-- Record 3050 is dropped for each SGSN command. -->
+    <record id="3050">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_GTP_SGSN_CONTEXT_ACKNOWLEDGE_TIMESTAMP</field>
+        <field id="3">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="5">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="6">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="7">ID_GTP_SGSN_MAC_ADDRESS</field>
+        <field id="8">ID_GTP_GGSN_MAC_ADDRESS</field>            
+        <field id="9">ID_GTP_IMSI</field>
+        <field id="10">ID_GTP_NSAPI</field>
+        <field id="11">ID_PROBE_STATUS</field>                                    
+        <field id="12">ID_GTP_SEQUENCE_NUMBER</field>                                     
+        <field id="13">ID_GTP_TEID_REQ</field>             
+        <field id="15">ID_GTP_TEID_CONTROL_PLANE_REQ</field>                        
+        <field id="16">ID_GTP_TEID_RSP</field>                                  
+        <field id="18">ID_GTP_TEID_CONTROL_PLANE_RSP</field>                
+        <field id="19">ID_GTP_UPLINK_TEID_DATA_I</field>                
+        <field id="20">ID_GTP_UPLINK_TEID_CONTROL_PLANE</field>                
+        <field id="21">ID_GTP_TEID_DATA_II</field>                                        
+        <field id="27">ID_GTP_APN</field>                     
+        <field id="35">ID_GTP_END_USER_IPV4_ADDRESS</field>            
+        <field id="36">ID_GTP_CAUSE_RESPONSE_CODE</field>                    
+        <field id="37">ID_RESPONSE_TIMESTAMP</field>      
+        <field id="38">ID_GTP_MCC</field>   
+        <field id="39">ID_GTP_MNC</field>   
+        <field id="40">ID_GTP_LAC</field>   
+        <field id="41">ID_GTP_RAC</field>                                                                                                              
+        <field id="42">ID_GTP_CAUSE_ACKNOWLEDGE_CODE</field>     
+        <field id="45">ID_INTERNAL_TDR_VERSION</field>                       
+        <field id="49">ID_BLANK</field>                                              
+    </record>
+    
+    <!-- Record 3999 is dropped for each application record. -->
+    <record id="3999">
+        <field id="0">ID_RECORD_NAME</field>          
+        <field id="2">ID_REQUEST_TIMESTAMP</field>            
+        <field id="3">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="4">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="5">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="6">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="7">ID_GTP_SGSN_MAC_ADDRESS</field>
+        <field id="8">ID_GTP_GGSN_MAC_ADDRESS</field>            
+        <field id="9">ID_GTP_IMSI</field>
+        <field id="10">ID_GTP_NSAPI</field>                                                
+        <field id="11">ID_PROBE_STATUS</field>                                    
+        <field id="12">ID_GTP_SEQUENCE_NUMBER</field>                                     
+        <field id="13">ID_GTP_TEID_DATA_I_REQ</field>
+        <field id="16">ID_GTP_TEID_DATA_I_RSP</field>            
+        <field id="27">ID_GTP_APN</field>
+        <field id="28">ID_GTP_SIGNALLING_GSN_IPV4_ADDRESS</field>            
+        <field id="29">ID_GTP_MSISDN</field>
+        <field id="30">ID_GTP_QOS_DELAY_CLASS_RSP</field>
+        <field id="31">ID_GTP_QOS_RELIABILITY_RSP</field>            
+        <field id="32">ID_GTP_QOS_PEAK_THROUGHPUT_RSP</field>            
+        <field id="33">ID_GTP_QOS_PRECEDENCE_CLASS_RSP</field>            
+        <field id="34">ID_GTP_QOS_MEAN_THROUGHPUT_RSP</field>
+        <field id="35">ID_GTP_END_USER_IPV4_ADDRESS</field>                             
+        <field id="38">ID_GTP_MCC</field>   
+        <field id="39">ID_GTP_MNC</field>   
+        <field id="40">ID_GTP_CELL_LAC</field>   
+        <field id="41">ID_GTP_RAC</field>
+        <field id="42">ID_GTP_CELL_ID</field>
+        <field id="43">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>                       
+        <field id="44">ID_FIRST_TIME_FLAG</field>                       
+        <field id="45">ID_INTERNAL_TDR_VERSION</field>                                              
+        <field id="46">ID_GTP_IMEISV</field>                                              
+        <field id="47">ID_GTP_RAT_TYPE</field>                                              
+        <field id="49">ID_BLANK</field>        
+    </record>
+    
+    <!-- Record 3300 is dropped for each FTP request at the time client sends next
+          FTP request to server. -->
+    <record id="3300">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>          
+        <field id="11">ID_SERVER_STATUS_CODE</field>                        
+        <field id="12">ID_PROBE_STATUS</field>                        
+        <field id="20">ID_LOGIN_DURATION</field>
+        <field id="30">ID_START_DOWNLOADING_TIMESTAMP</field>                                   
+        <field id="48">ID_LOGIN</field>        
+    </record>
+    
+    <!-- Record 3301 is dropped in addition to record 3300 in case when FTP request supposes
+          data transmission from client to server (STOR) or vice versa (RETR). -->
+    <record id="3301">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_LOGIN_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="6">ID_METHOD_NAME</field>
+        <field id="7">ID_URI</field>          
+        <field id="10">ID_FTP_FILE_NAME</field> 
+        <field id="11">ID_SERVER_STATUS_CODE</field>                                  
+        <field id="12">ID_PROBE_STATUS</field>                                  
+        <field id="13">ID_NUMBER_OF_UPLOADED_PACKETS</field>                        
+        <field id="14">ID_NUMBER_OF_DOWNLOADED_PACKETS</field> 
+        <field id="15">ID_NUMBER_OF_UPLOADED_BYTES</field>                        
+        <field id="16">ID_NUMBER_OF_DOWNLOADED_BYTES</field> 
+        <field id="17">ID_FTP_TYPE</field>                        
+        <field id="18">ID_FTP_MODE</field> 
+        <field id="19">ID_DOWNLOAD_TIME</field>                        
+        <field id="20">ID_TIME_TO_FIRST_BYTE</field>             
+        <field id="40">ID_FTP_FILE_SIZE_UP</field>                        
+        <field id="41">ID_FTP_FILE_SIZE_DOWN</field>             
+        <field id="48">ID_BLANK</field>        
+    </record>
+
+    <!-- Record 3302 is dropped for each DNS transaction at the time server sends DNS query response.  -->
+    <record id="3302">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>
+        <field id="9">ID_DOMAIN_NAME</field>            
+        <field id="11">ID_SERVER_STATUS_CODE</field>                        
+        <field id="12">ID_PROBE_STATUS</field> 
+        <field id="19">ID_DNS_QUERY_DURATION</field> 
+        <field id="48">ID_BLANK</field>        
+    </record>
+    
+    <!-- Record 3303 is dropped for ICMP packet which is send by server at the time client fails to
+          establish TCP session ( as a resonse to client's ACK ). -->
+    <record id="3303">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_RESPONSE_TIMESTAMP</field>
+        <field id="2">ID_CLIENT_IP_ADDRESS</field>
+        <field id="3">ID_CLIENT_PORT_NUMBER</field>
+        <field id="4">ID_SERVER_IP_ADDRESS</field>
+        <field id="5">ID_SERVER_PORT_NUMBER</field>            
+        <field id="10">ID_ICMP_TYPE</field>                        
+        <field id="11">ID_ICMP_CODE</field> 
+        <field id="12">ID_PROBE_STATUS</field>                        
+        <field id="48">ID_BLANK</field>        
+    </record>
+
+    <!-- Page-based record are populating when user clicks on new page's link, when he is going away 
+          from current page. "The last page" case is populating when GTP context is closing. This last
+          record has duration from first page's GET to last image GET and not depends on GTP context
+          deletion time. -->
+    <record id="6013">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>
+        <field id="2">ID_GTP_IMSI</field>
+        <field id="3">ID_GTP_IMEISV</field>
+        <field id="4">ID_GTP_APN</field>
+        <field id="5">ID_GTP_RAT_TYPE</field>
+        <field id="6">ID_GTP_CELL_LAC</field>
+        <field id="7">ID_GTP_CELL_ID</field>
+        <field id="8">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="9">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="10">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="11">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="12">ID_CLIENT_IP_ADDRESS</field>
+        <field id="13">ID_CLIENT_PORT_NUMBER</field>
+        <field id="14">ID_SERVER_IP_ADDRESS</field>
+        <field id="15">ID_SERVER_PORT_NUMBER</field>
+        <field id="16">ID_GTP_END_USER_IPV4_ADDRESS</field>
+        <field id="17">ID_GTP_MSISDN</field>
+        <field id="18">ID_REQUEST_TIMESTAMP</field>
+        <field id="19">ID_METHOD_NAME</field>
+        <field id="20">ID_URI</field>
+        <field id="21">ID_DOMAIN_NAME</field>
+        <field id="22">ID_USER_AGENT</field>
+        <field id="23">ID_FIRST_TIME_FLAG</field>
+        <field id="24">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="25">ID_DOWNLOAD_TIME</field>
+        <field id="26">ID_UPLOAD_TIME</field>
+        <field id="27">ID_PAGE_BASED_QOE_BYTES_UP</field>
+        <field id="28">ID_PAGE_BASED_QOE_BYTES_DOWN</field>
+        <field id="29">ID_PAGE_BASED_QOE_EXPECTED_BYTES_UP</field>
+        <field id="30">ID_PAGE_BASED_QOE_EXPECTED_BYTES_DOWN</field>
+        <field id="31">ID_PAGE_BASED_QOE_THROUGHPUT_UP</field>
+        <field id="32">ID_PAGE_BASED_QOE_THROUGHPUT_DOWN</field>
+        <field id="33">ID_TCP_SERVER_SETUP_TIME</field>
+        <field id="34">ID_TCP_CLIENT_SETUP_TIME</field>
+        <field id="35">ID_SERVER_STATUS_CODE</field>
+        <field id="36">ID_PAGE_BASED_QOE_ATTEMPTS</field>
+        <field id="37">ID_PAGE_BASED_QOE_SUCCEEDED_ATTEMPTS</field>           <!--Number of transactions with status < 400-->
+        <field id="38">ID_PAGE_BASED_QOE_AVERAGE_THROUGHPUT_UP</field>
+        <field id="39">ID_PAGE_BASED_QOE_AVERAGE_THROUGHPUT_DOWN</field>
+        <field id="40">ID_PAGE_BASED_QOE_AVERAGE_UPLOAD_TIME</field>
+        <field id="41">ID_PAGE_BASED_QOE_AVERAGE_DOWNLOAD_TIME</field>
+        <field id="42">ID_PAGE_BASED_QOE_AVERAGE_TIME_TO_FIRST_BYTE</field>
+        <field id="43">ID_PAGE_BASED_QOE_AVERAGE_SERVER_SETUP_TIME</field>
+        <field id="44">ID_PAGE_BASED_QOE_AVERAGE_CLIENT_SETUP_TIME</field>
+        <field id="45">ID_PAGE_BASED_QOE_TOTAL_BYTES_UP</field>
+        <field id="46">ID_PAGE_BASED_QOE_TOTAL_BYTES_DOWN</field>
+        <field id="47">ID_PAGE_BASED_QOE_DURATION</field>                     <!--Duration of the page GET/POST-->
+        <field id="48">ID_PAGE_BASED_QOE_TOTAL_DURATION</field>               <!--Duration of the page and it's content (images, css etc)-->
+        <field id="49">ID_PAGE_BASED_QOE_TOTAL_THROUGHPUT_UP</field>
+        <field id="50">ID_PAGE_BASED_QOE_TOTAL_THROUGHPUT_DOWN</field>
+        <field id="51">ID_PROBE_STATUS</field>                 <!--Probe status of the page-->
+        <field id="52">ID_CONNECTION_STOP_TIMESTAMP</field>
+        <field id="53">ID_HTTP_REFERRER</field>
+    </record>
+
+    <!-- BillShock records are logged for each GTP context. Records are logged at configured periods 
+          and when GTP context is deleted. So for each GTP context at least one BillShock record is
+          generated. BillShock accumulates information on GTP context level, not on UDP or TCP 
+          connection level. Besides general GTP context fields the following data is collected:
+              * bytes up (TCP + UDP)
+              * bytes down (TCP + UDP)
+              * UDP up bytes
+              * UDP down bytes
+              * TCP up bytes
+              * TCP down bytes
+              * duration
+              * total throughput (TCP based)
+              * bytes per port
+          Duration is accumulated time of downloaded and uploaded TCP volumes. The time is retrieved
+          from Netro throughput algorithm. Total throughput is TCP based up and down throughput.
+          It is calculated by (TCP up + TCP down)/duration formula. Besides Billshock uses flow detection
+          algorithm and separates the traffic withing the context into services adding as much dynamic group 
+          of records as were services detected. Each group of records has following feilds:
+              * name of the service
+              * bytes up (TCP or UDP)
+              * bytes down (TCP or UDP)
+              * duration (TCP only)
+              * RTT (TCP only)
+              * retransmitted bytes up (TCP only)
+              * retransmitted bytes down (TCP only)
+          For UDP based protocols only bytes up/down are populated the rest of fields is zero.-->
+    <record id="6014">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="3">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="4">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="5">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="8">ID_GTP_IMSI</field>
+        <field id="9">ID_GTP_CONNECTION_START_TIMESTAMP</field>
+        <field id="10">ID_GTP_CONNECTION_STATUS</field>
+        <field id="11">ID_GTP_APN</field>
+        <field id="12">ID_GTP_END_USER_IPV4_ADDRESS</field>
+        <field id="13">ID_GTP_MSISDN</field>
+        <field id="14">ID_GTP_IMEISV</field>
+        <field id="15">ID_GTP_RAT_TYPE</field>
+        <field id="16">ID_GTP_CELL_LAC</field>
+        <field id="17">ID_GTP_CELL_ID</field>
+        <field id="18">ID_BILLSHOCK_TOTAL_BYTES_UP</field>                  <!-- The sum of UDP and TCP bytes up excluding TCP retransmitted bytes up-->
+        <field id="19">ID_BILLSHOCK_TOTAL_BYTES_DOWN</field>                <!-- The sum of UDP and TCP bytes down excluding TCP retransmitted bytes down-->
+        <field id="20">ID_BILLSHOCK_UDP_BYTES_UP</field>
+        <field id="21">ID_BILLSHOCK_UDP_BYTES_DOWN</field>
+        <field id="22">ID_BILLSHOCK_TCP_BYTES_UP</field>                    <!-- The volume of TCP bytes up excluding TCP retransmitted bytes up-->
+        <field id="23">ID_BILLSHOCK_TCP_BYTES_DOWN</field>                  <!-- The volume of TCP bytes down excluding TCP retransmitted bytes down-->
+        <field id="24">ID_BILLSHOCK_RETR_BYTES_UP</field>
+        <field id="25">ID_BILLSHOCK_RETR_BYTES_DOWN</field>
+        <field id="26">ID_BILLSHOCK_DURATION</field>                  <!-- The duration covers all TCP volumes including TCP retransmitted bytes -->
+        <field id="27">ID_BILLSHOCK_THROUGHPUT</field>          <!-- The throughput covers all TCP volumes including TCP retransmitted bytes -->
+        <field id="28">ID_BILLSHOCK_NUM_OF_SERVICES</field>
+        <field id="29">ID_BILLSHOCK_BYTES_BY_SERVICE</field>
+    </record>
+    
+    <!-- The 7023 record provides KPI's for each DIAMETER transaction. A 7023 record is produced for each DIAMETER response or:
+         - for incompleted transactions due to SCTP stream/session closure (probe status 2), 
+         - transaction time out (probe status 6),
+         - probe closure (probe status 1).  -->
+    <record id="7023">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_NETRO_START_TIMESTAMP</field>
+        <field id="2">ID_NETRO_END_TIMESTAMP</field>
+        <field id="3">ID_PROBE_STATUS</field>
+        <field id="4">ID_CLIENT_IP_ADDRESS</field>
+        <field id="5">ID_CLIENT_IP_GROUP</field>
+        <field id="6">ID_CLIENT_PORT_NUMBER</field>
+        <field id="7">ID_SERVER_IP_ADDRESS</field>
+        <field id="8">ID_SERVER_IP_GROUP</field>
+        <field id="9">ID_SERVER_PORT_NUMBER</field>
+        <field id="10">ID_SCTP_TSN</field>
+        <field id="11">ID_SCTP_SSN</field>
+        <field id="12">ID_DIAMETER_COMMAND_CODE</field>
+        <field id="13">ID_DIAMETER_VERSION</field>
+        <field id="14">ID_DIAMETER_MESSAGE_LENGTH_REQUEST</field>            
+        <field id="15">ID_DIAMETER_MESSAGE_LENGTH_RESPONSE</field>
+        <field id="16">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_REQUEST</field>
+        <field id="17">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_RESPONSE</field>
+        <field id="18">ID_DIAMETER_APPLICATION_ID</field>
+        <field id="19">ID_DIAMETER_HOP_BY_HOP</field>
+        <field id="20">ID_DIAMETER_END_TO_END</field>
+        <field id="21">ID_DIAMETER_ORIGIN_HOST_REQUEST</field>
+        <field id="22">ID_DIAMETER_ORIGIN_REALM_REQUEST</field>
+        <field id="23">ID_DIAMETER_DEST_HOST_REQUEST</field>
+        <field id="24">ID_DIAMETER_DEST_REALM_REQUEST</field>
+        <field id="25">ID_GTP_IMSI</field>
+        <field id="26">ID_GTP_IMEISV</field>
+        <field id="27">ID_DIAMETER_SOFTWARE_VERSION</field>
+        <field id="28">ID_GTP_MCC</field>      
+        <field id="29">ID_GTP_MNC</field>      
+        <field id="30">ID_DIAMETER_RAT_TYPE</field> 
+        <field id="31">ID_DIAMETER_RESULT_CODE</field> 
+        <field id="32">ID_DIAMETER_EXPERIMENTAL_RESULT_CODE</field> 
+        <field id="33">ID_DIAMETER_ULR_FLAGS</field> 
+        <field id="34">ID_DIAMETER_ULA_FLAGS</field> 
+        <field id="35">ID_DIAMETER_PUA_FLAGS</field> 
+        <field id="36">ID_DIAMETER_IDR_FLAGS</field> 
+        <field id="37">ID_DIAMETER_IDA_FLAGS</field> 
+        <field id="38">ID_DIAMETER_DSR_FLAGS</field> 
+        <field id="39">ID_DIAMETER_DSA_FLAGS</field> 
+        <field id="40">ID_DIAMETER_NOR_FLAGS</field> 
+        <field id="41">ID_DIAMETER_EUTRAN_REQUESTED_VECTORS</field> 
+        <field id="42">ID_DIAMETER_EUTRAN_RESPONSE_PREFFERED</field> 
+        <field id="43">ID_DIAMETER_UTRAN_REQUESTED_VECTORS</field> 
+        <field id="44">ID_DIAMETER_UTRAN_RESPONSE_PREFFERED</field> 
+        <field id="45">ID_DIAMETER_CANCELATION_TYPE</field> 
+        <field id="46">ID_DIAMETER_CONTEXT_ID</field> 
+    </record>
+
+    <!-- S1-MME 8000 record -->
+    <record id="8000">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_S1MME_MESSAE_TYPE</field>
+        <field id="4">ID_S1MME_TRANSACTION_TYPE</field>
+        <field id="5">ID_S1MME_HANDOVER_TYPE</field> 
+        <field id="6">ID_S1MME_NAS_EPS_UPDATE_TYPE</field> 
+        <field id="7">ID_S1MME_NAS_EPS_ATTACH_TYPE</field> 
+        <field id="8">ID_S1MME_NAS_EPS_DETACH_TYPE</field> 
+        <field id="9">ID_S1MME_NAS_PDN_CONNECTIVITY_REQUEST_TYPE</field> 
+        <field id="10">ID_S1MME_TRANSACTION_STATUS</field>
+        <field id="11">ID_PROBE_STATUS</field>
+        <field id="12">ID_S1MME_CAUSE_CLASS</field>
+        <field id="13">ID_S1MME_CAUSE_CODE</field>
+        <field id="14">ID_S1MME_MME_UE_S1AP_ID</field>
+        <field id="15">ID_S1MME_ENB_UE_S1AP_ID</field>
+        <field id="16">ID_S1MME_TRANSACTION_DIRECTION</field>
+        <field id="17">ID_CLIENT_IP_ADDRESS</field>
+        <field id="18">ID_CLIENT_PORT_NUMBER</field>
+        <field id="19">ID_SERVER_IP_ADDRESS</field>
+        <field id="20">ID_SERVER_PORT_NUMBER</field>
+        <field id="21">ID_S1MME_CLIENT_GROUP</field> 
+        <field id="22">ID_S1MME_SERVER_GROUP</field>
+        <field id="23">ID_S1MME_SGW_TEID_U</field>
+        <field id="24">ID_S1MME_ENB_TEID_U</field>
+        <field id="25">ID_S1MME_SGW_TEID_U_IP_ADDRESS</field>
+        <field id="26">ID_S1MME_ENB_TEID_U_IP_ADDRESS</field>
+        <field id="27">ID_S1MME_NAS_KEY_SET_IDENTIFIER</field> 
+        <field id="28">ID_S1MME_UE_NETWORK_SECURITY_ENCRYPTION_ALGORITHMS</field>
+        <field id="29">ID_S1MME_UE_NETWORK_SECURITY_INTEGRITY_PROTECTION_ALGORITHMS</field>
+        <field id="30">ID_S1MME_NAS_SELECTED_NAS_SECURITY_ALGORITHMS</field> 
+        <field id="31">ID_S1MME_NAS_IMSI</field> 
+        <field id="32">ID_S1MME_NAS_P_TMSI</field> 
+        <field id="33">ID_S1MME_NAS_MSISDN</field> 
+        <field id="34">ID_S1MME_NAS_IMEISV</field> 
+        <field id="35">ID_S1MME_NAS_MME_GROUP_ID</field> 
+        <field id="36">ID_S1MME_NAS_MME_GROUP_CODE</field> 
+        <field id="37">ID_S1MME_NAS_M_TMSI</field> 
+        <field id="38">ID_S1MME_NAS_APN</field> 
+        <field id="39">ID_S1MME_NAS_END_USER_IP_ADDRESS</field> 
+        <field id="40">ID_S1MME_NAS_EBI</field> 
+        <field id="41">ID_S1MME_NAS_LBI</field> 
+        <field id="42">ID_S1MME_NAS_MCC</field> 
+        <field id="43">ID_S1MME_NAS_MNC</field> 
+        <field id="44">ID_S1MME_NAS_TAC</field> 
+        <field id="45">ID_S1MME_NAS_LAC</field> 
+        <field id="46">ID_S1MME_NAS_RAC</field> 
+        <field id="47">ID_S1MME_NAS_CELL_ID</field> 
+        <field id="48">ID_S1MME_NAS_CELL_SAC</field> 
+        <field id="49">ID_S1MME_NUMBER_REQUESTED_ERAB_SETUP</field>
+        <field id="50">ID_S1MME_NUMBER_SUCCESSFUL_ERAB_SETUP</field>
+        <field id="51">ID_S1MME_NUMBER_REQUESTED_ERAB_RELEASED</field>
+        <field id="52">ID_S1MME_NUMBER_SUCCESSFUL_ERAB_RELEASED</field>
+        <field id="53">ID_S1MME_ERAB_FAILED_RELEASE_CAUSE_CLASS</field>
+        <field id="54">ID_S1MME_ERAB_FAILED_RELEASE_CAUSE_CODE</field>
+        <field id="55">ID_S1MME_ERAB_QOS_QCI</field>
+        <field id="56">ID_S1MME_ERAB_QOS_ARP_PL</field>
+        <field id="57">ID_S1MME_ERAB_QOS_ARP_PCI</field>
+        <field id="58">ID_S1MME_ERAB_QOS_ARP_PVI</field>
+        <field id="59">ID_S1MME_ERAB_QOS_MAX_BITRATE_DL</field>
+        <field id="60">ID_S1MME_ERAB_QOS_MAX_BITRATE_UL</field> 
+        <field id="61">ID_S1MME_ERAB_QOS_GUARANTEE_BITRATE_DL</field>
+        <field id="62">ID_S1MME_ERAB_QOS_GUARANTEE_BITRATE_UL</field>
+        <field id="63">ID_S1MME_NAS_EPS_QOS_QCI</field> 
+        <field id="64">ID_S1MME_NAS_EPS_QOS_MAX_BITRATE_UL</field> 
+        <field id="65">ID_S1MME_NAS_EPS_QOS_MAX_BITRATE_DL</field> 
+        <field id="66">ID_S1MME_NAS_EPS_QOS_GUARANTEED_BITRATE_UL</field> 
+        <field id="67">ID_S1MME_NAS_EPS_QOS_GUARANTEED_BITRATE_DL</field> 
+        <field id="68">ID_S1MME_NAS_EPS_QOS_MAX_BITRATE_UL_EXT</field> 
+        <field id="69">ID_S1MME_NAS_EPS_QOS_MAX_BITRATE_DL_EXT</field> 
+        <field id="70">ID_S1MME_NAS_EPS_QOS_GUARANTEED_BITRATE_UL_EXT</field> 
+        <field id="71">ID_S1MME_NAS_EPS_QOS_GUARANTEED_BITRATE_DL_EXT</field> 
+    </record>
+
+    <!-- The 6025 record provides KPI's for each DIAMETER transaction. A 6025 record is produced for each DIAMETER response or:
+         - for incompleted transactions due to TCP stream/session closure (probe status 2), 
+         - transaction time out (probe status 6),
+         - probe closure (probe status 1).  -->
+    <record id="6025">
+        <field id = "0">ID_RECORD_NAME</field>
+        <field id = "1">ID_NETRO_START_TIMESTAMP</field>
+        <field id = "2">ID_NETRO_END_TIMESTAMP</field>
+        <field id = "3">ID_NETRO_PROBE_STATUS</field>
+        <field id = "4">ID_CLIENT_IP_ADDRESS</field>
+        <field id = "5">ID_CLIENT_IP_GROUP</field>
+        <field id = "6">ID_SERVER_IP_ADDRESS</field>
+        <field id = "7">ID_SERVER_IP_GROUP</field>
+        <field id = "8">ID_CLIENT_PORT_NUMBER</field>
+        <field id = "9">ID_SERVER_PORT_NUMBER</field>
+        <field id = "10">ID_DIAMETER_COMMAND_CODE</field>
+        <field id = "11">ID_DIAMETER_VERSION</field>
+        <field id = "12">ID_DIAMETER_MESSAGE_LENGTH_REQUEST</field>
+        <field id = "13">ID_DIAMETER_MESSAGE_LENGTH_RESPONSE</field>
+        <field id = "14">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_REQUEST</field>
+        <field id = "15">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_RESPONSE</field>
+        <field id = "16">ID_DIAMETER_APPLICATION_ID</field>
+        <field id = "17">ID_DIAMETER_SERVICE_CONTEXT_ID</field>
+        <field id = "18">ID_DIAMETER_HOP_BY_HOP</field>
+        <field id = "19">ID_DIAMETER_END_TO_END</field>
+        <field id = "20">ID_DIAMETER_ORIGIN_HOST_REQUEST</field>
+        <field id = "21">ID_DIAMETER_ORIGIN_REALM_REQUEST</field>
+        <field id = "22">ID_DIAMETER_DEST_HOST_REQUEST</field>
+        <field id = "23">ID_DIAMETER_DEST_REALM_REQUEST</field>
+        <field id = "24">ID_DIAMETER_CC_REQ_TYPE</field>
+        <field id = "25">ID_DIAMETER_SUBSCRIPTION_ID_TYPE_1</field>
+        <field id = "26">ID_DIAMETER_SUBSCRIPTION_ID_DATA_1</field>
+        <field id = "27">ID_DIAMETER_SUBSCRIPTION_ID_TYPE_2</field>
+        <field id = "28">ID_DIAMETER_SUBSCRIPTION_ID_DATA_2</field>
+        <field id = "29">ID_DIAMETER_BEARER_ID</field>
+        <field id = "30">ID_DIAMETER_BEARER_OPERATION</field>
+        <field id = "31">ID_DIAMETER_END_USER_ADDRESS</field>
+        <field id = "32">ID_DIAMETER_TERMINATION_CAUSE</field>
+        <field id = "33">ID_DIAMETER_RAT_TYPE</field>
+        <field id = "34">ID_DIAMETER_USER_EQUIPMENT_INFO_TYPE</field>
+        <field id = "35">ID_DIAMETER_USER_EQUIPMENT_INFO_VALUE</field>
+        <field id = "36">ID_GTP_MCC</field>
+        <field id = "37">ID_GTP_MNC</field>
+        <field id = "38">ID_GTP_LAC</field>
+        <field id = "39">ID_GTP_RAC</field>
+        <field id = "40">ID_DIAMETER_3GPP_SAC_CELL_ID</field>
+        <field id = "41">ID_DIAMETER_3GPP_TAC</field>
+        <field id = "42">ID_DIAMETER_SGSN_ADDRESS</field>
+        <field id = "43">ID_DIAMETER_GGSN_ADDRESS</field>
+        <field id = "44">ID_DIAMETER_AN_GW_ADDRESS</field>
+        <field id = "45">ID_DIAMETER_CALLED_STATION_ID</field>
+        <field id = "46">ID_DIAMETER_PDN_CONNECTION_ID</field>
+        <field id = "47">ID_DIAMETER_ACCESS_NET_CHARGING_ID</field>
+        <field id = "48">ID_DIAMETER_PACKET_FILTER_ID</field>
+        <field id = "49">ID_DIAMETER_PACKET_FILTER_PRECEDENCE</field>
+        <field id = "50">ID_DIAMETER_PACKET_FILTER_CONTENT</field>
+        <field id = "51">ID_DIAMETER_TOS_TRAFFIC_CLASS</field>
+        <field id = "52">ID_DIAMETER_SPI</field>
+        <field id = "53">ID_DIAMETER_FLOW_DIRECTION</field>
+        <field id = "54">ID_DIAMETER_PACKET_FILTER_OPERATION</field>
+        <field id = "55">ID_DIAMETER_QOS_REQ_QCI</field>
+        <field id = "56">ID_DIAMETER_QOS_REQ_BANDWIDTH_UP</field>
+        <field id = "57">ID_DIAMETER_QOS_REQ_BANDWIDTH_DOWN</field>
+        <field id = "58">ID_DIAMETER_QOS_REQ_GBR_UP</field>
+        <field id = "59">ID_DIAMETER_QOS_REQ_GBR_DOWN</field>
+        <field id = "60">ID_DIAMETER_QOS_REQ_ARP</field>
+        <field id = "61">ID_DIAMETER_QOS_REQ_AMBR_UP</field>
+        <field id = "62">ID_DIAMETER_QOS_REQ_AMBR_DOWN</field>
+        <field id = "63">ID_DIAMETER_BEARER_QOS_REQ_QCI</field>
+        <field id = "64">ID_DIAMETER_BEARER_QOS_REQ_ARP</field>
+        <field id = "65">ID_DIAMETER_QOS_UPGRADE</field>
+        <field id = "66">ID_DIAMETER_IP_CAN_TYPE</field>
+        <field id = "67">ID_DIAMETER_RESULT_CODE</field>
+        <field id = "68">ID_DIAMETER_EVENT_TRIGGER</field>
+        <field id = "69">ID_DIAMETER_CHARGING_RULE_NAMES</field>
+        <field id = "70">ID_DIAMETER_CHARGING_RULE_BASE_NAMES</field>
+        <field id = "71">ID_DIAMETER_CHARGING_RULE_BEARER_IDS</field>
+        <field id = "72">ID_DIAMETER_SERVICE_IDENTIFIER</field>
+        <field id = "73">ID_DIAMETER_RATING_GROUP</field>
+        <field id = "74">ID_DIAMETER_METERING_METHOD</field>
+        <field id = "75">ID_DIAMETER_PRECEDENCE</field>
+        <field id = "76">ID_DIAMETER_RULE_FAILURE_CODE</field>
+        <field id = "77">ID_DIAMETER_ONLINE</field>
+        <field id = "78">ID_DIAMETER_OFFLINE</field>
+        <field id = "79">ID_DIAMETER_MONITORING_KEY</field>
+        <field id = "80">ID_DIAMETER_GRANTED_INPUT_OCTETS</field>
+        <field id = "81">ID_DIAMETER_GRANTED_OUTPUT_OCTETS</field>
+        <field id = "82">ID_DIAMETER_GRANTED_TOTAL_OCTETS</field>
+        <field id = "83">ID_DIAMETER_USED_INPUT_OCTETS</field>
+        <field id = "84">ID_DIAMETER_USED_OUTPUT_OCTETS</field>
+        <field id = "85">ID_DIAMETER_USED_TOTAL_OCTETS</field>
+        <field id = "86">ID_DIAMETER_USAGE_MONITORING_LEVEL</field>
+        <field id = "87">ID_DIAMETER_USAGE_MONITORING_REPORT</field>
+        <field id = "88">ID_DIAMETER_USAGE_MONITORING_SUPPORT</field>
+        <field id = "89">ID_DIAMETER_QOS_RSP_QCI</field>
+        <field id = "90">ID_DIAMETER_QOS_RSP_BANDWIDTH_UP</field>
+        <field id = "91">ID_DIAMETER_QOS_RSP_BANDWIDTH_DOWN</field>
+        <field id = "92">ID_DIAMETER_QOS_RSP_BEARER_ID</field>
+        <field id = "93">ID_DIAMETER_QOS_RSP_GBR_UP</field>
+        <field id = "94">ID_DIAMETER_QOS_RSP_GBR_DOWN</field>
+        <field id = "95">ID_DIAMETER_QOS_RSP_ARP</field>
+        <field id = "96">ID_DIAMETER_QOS_RSP_AMBR_UP</field>
+        <field id = "97">ID_DIAMETER_QOS_RSP_AMBR_DOWN</field>
+        <field id = "98">ID_DIAMETER_BEARER_QOS_RSP_QCI</field>
+        <field id = "99">ID_DIAMETER_BEARER_QOS_RSP_ARP</field>
+        <field id = "100">ID_DIAMETER_SESSION_RELEASE_CAUSE</field>
+        <field id = "101">ID_DIAMETER_ERROR_MESSAGE</field>
+        <field id = "102">ID_DIAMETER_ERROR_REPORTING_HOST</field>
+        <field id = "103">ID_DIAMETER_REAUTH_REQUEST_TYPE</field>
+        <field id = "104">ID_NETRO_RESPONSE_TIME</field>
+    </record>
+
+    <!-- The 6026 record provides KPI's for each DIAMETER transaction. A 6025 record is produced for each DIAMETER response or:
+         - for incompleted transactions due to TCP stream/session closure (probe status 2), 
+         - transaction time out (probe status 6),
+         - probe closure (probe status 1).  -->
+    <record id="6026">
+        <field id = "0">ID_RECORD_NAME</field>
+        <field id = "1">ID_NETRO_START_TIMESTAMP</field>
+        <field id = "2">ID_NETRO_END_TIMESTAMP</field>
+        <field id = "3">ID_NETRO_PROBE_STATUS</field>
+        <field id = "4">ID_CLIENT_IP_ADDRESS</field>
+        <field id = "5">ID_CLIENT_IP_GROUP</field>
+        <field id = "6">ID_SERVER_IP_ADDRESS</field>
+        <field id = "7">ID_SERVER_IP_GROUP</field>
+        <field id = "8">ID_CLIENT_PORT_NUMBER</field>
+        <field id = "9">ID_SERVER_PORT_NUMBER</field>
+        <field id = "10">ID_DIAMETER_COMMAND_CODE</field>
+        <field id = "11">ID_DIAMETER_VERSION</field>
+        <field id = "12">ID_DIAMETER_MESSAGE_LENGTH_REQUEST</field>
+        <field id = "13">ID_DIAMETER_MESSAGE_LENGTH_RESPONSE</field>
+        <field id = "14">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_REQUEST</field>
+        <field id = "15">ID_DIAMETER_MESSAGE_COMMAND_FLAGS_RESPONSE</field>
+        <field id = "16">ID_DIAMETER_APPLICATION_ID</field>
+        <field id = "17">ID_DIAMETER_SERVICE_CONTEXT_ID</field>
+        <field id = "18">ID_DIAMETER_HOP_BY_HOP</field>
+        <field id = "19">ID_DIAMETER_END_TO_END</field>
+        <field id = "20">ID_DIAMETER_ORIGIN_HOST_REQUEST</field>
+        <field id = "21">ID_DIAMETER_ORIGIN_REALM_REQUEST</field>
+        <field id = "22">ID_DIAMETER_DEST_HOST_REQUEST</field>
+        <field id = "23">ID_DIAMETER_DEST_REALM_REQUEST</field>
+        <field id = "24">ID_DIAMETER_CC_REQ_TYPE</field>
+        <field id = "25">ID_DIAMETER_SUBSCRIPTION_ID_TYPE_1</field>
+        <field id = "26">ID_DIAMETER_SUBSCRIPTION_ID_DATA_1</field>
+        <field id = "27">ID_DIAMETER_SUBSCRIPTION_ID_TYPE_2</field>
+        <field id = "28">ID_DIAMETER_SUBSCRIPTION_ID_DATA_2</field>
+        <field id = "29">ID_DIAMETER_USER_NAME</field>
+        <field id = "30">ID_DIAMETER_USER_EQUIPMENT_INFO_TYPE</field>
+        <field id = "31">ID_DIAMETER_USER_EQUIPMENT_INFO_VALUE</field>
+        <field id = "32">ID_DIAMETER_END_USER_ADDRESS</field>
+        <field id = "33">ID_DIAMETER_TERMINATION_CAUSE</field>
+        <field id = "34">ID_GTP_RAT_TYPE</field>
+        <field id = "35">ID_GTP_MCC</field>
+        <field id = "36">ID_GTP_MNC</field>
+        <field id = "37">ID_GTP_LAC</field>
+        <field id = "38">ID_GTP_RAC</field>
+        <field id = "39">ID_DIAMETER_3GPP_SAC_CELL_ID</field>
+        <field id = "40">ID_DIAMETER_3GPP_TAC</field>
+        <field id = "41">ID_DIAMETER_SGSN_ADDRESS</field>
+        <field id = "42">ID_DIAMETER_GGSN_ADDRESS</field>
+        <field id = "43">ID_DIAMETER_CALLED_STATION_ID</field>
+        <field id = "44">ID_DIAMETER_ACCESS_NET_CHARGING_ID</field>
+        <field id = "45">ID_DIAMETER_REQUESTED_ACTION</field>
+        <field id = "46">ID_DIAMETER_REQUESTED_TIME_UNITS</field>
+        <field id = "47">ID_DIAMETER_REQUESTED_MONETARY_UNITS</field>
+        <field id = "48">ID_DIAMETER_REQUESTED_SERVICE_SPECIFIC_UNITS</field>
+        <field id = "49">ID_DIAMETER_REQUESTED_INPUT_OCTETS</field>
+        <field id = "50">ID_DIAMETER_REQUESTED_OUTPUT_OCTETS</field>
+        <field id = "51">ID_DIAMETER_REQUESTED_TOTAL_OCTETS</field>
+        <field id = "52">ID_DIAMETER_SERVICE_IDENTIFIER</field>
+        <field id = "53">ID_DIAMETER_RATING_GROUP</field>
+        <field id = "54">ID_DIAMETER_USED_TIME_UNITS</field>
+        <field id = "55">ID_DIAMETER_USED_MONETARY_UNITS</field>
+        <field id = "56">ID_DIAMETER_USED_SERVICE_SPECIFIC_UNITS</field>
+        <field id = "57">ID_DIAMETER_USED_INPUT_OCTETS</field>
+        <field id = "58">ID_DIAMETER_USED_OUTPUT_OCTETS</field>
+        <field id = "59">ID_DIAMETER_USED_TOTAL_OCTETS</field>
+        <field id = "60">ID_DIAMETER_REPORTING_REASON</field>
+        <field id = "61">ID_DIAMETER_CHARGING_RULE_NAMES</field>
+        <field id = "62">ID_DIAMETER_UNIT_TYPE</field>
+        <field id = "63">ID_DIAMETER_NEGOTIATED_QOS_PROFILE</field>
+        <field id = "64">ID_DIAMETER_PDP_CONTEXT_TYPE</field>
+        <field id = "65">ID_DIAMETER_SERVICE_PARAMETER_TYPE</field>
+        <field id = "66">ID_DIAMETER_SERVICE_PARAMETER_VALUE</field>
+        <field id = "67">ID_DIAMETER_RESULT_CODE</field>
+        <field id = "68">ID_DIAMETER_QOS_RSP_BEARER_ID</field>
+        <field id = "69">ID_DIAMETER_GRANTED_TIME_UNITS</field>
+        <field id = "70">ID_DIAMETER_GRANTED_MONETARY_UNITS</field>
+        <field id = "71">ID_DIAMETER_GRANTED_SERVICE_SPECIFIC_UNITS</field>
+        <field id = "72">ID_DIAMETER_GRANTED_INPUT_OCTETS</field>
+        <field id = "73">ID_DIAMETER_GRANTED_OUTPUT_OCTETS</field>
+        <field id = "74">ID_DIAMETER_GRANTED_TOTAL_OCTETS</field>
+        <field id = "75">ID_DIAMETER_VALIDITY_TIME</field>
+        <field id = "76">ID_DIAMETER_CC_RESULT_CODE</field>
+        <field id = "77">ID_DIAMETER_CHECK_BALANCE_RESULT</field>
+        <field id = "78">ID_DIAMETER_UNIT_VALUE</field>
+        <field id = "79">ID_DIAMETER_COST_UNIT</field>
+        <field id = "80">ID_DIAMETER_CREDIT_CONTROL_FAILURE_HANDLING</field>
+        <field id = "81">ID_DIAMETER_DIRECT_DEBIT_FAILURE_HANDLING</field>
+        <field id = "82">ID_DIAMETER_FINAL_UNIT_ACTION</field>
+        <field id = "83">ID_DIAMETER_RESTRICTION_FILTER_RULE</field>
+        <field id = "84">ID_DIAMETER_REDIRECT_HOST</field>
+        <field id = "85">ID_DIAMETER_REAUTH_REQUEST_TYPE</field>
+        <field id = "86">ID_DIAMETER_ERROR_MESSAGE</field>
+        <field id = "87">ID_DIAMETER_ERROR_REPORTING_HOST</field>
+        <field id = "88">ID_NETRO_RESPONSE_TIME</field>
+    </record>
+                
+</record_layout>

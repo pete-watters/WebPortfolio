@@ -1,0 +1,123 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+    <script type="text/javascript">
+      var visualization;
+
+      var dataTable = new google.visualization.DataTable();
+     dataTable.addColumn('string', 'Server Id');dataTable.addColumn('string', 'Last Updated');dataTable.addColumn('string', 'Customer Code');dataTable.addColumn('string', 'Alias');dataTable.addColumn('string', 'Hostname');dataTable.addColumn('string', 'IP Address');dataTable.addColumn('string', 'Dacas Version');dataTable.addColumn('string', 'TDR Spec');dataTable.addColumn('string', 'Netrotdr Spec');dataTable.addColumn('string', 'Dlauncher Version');dataTable.addColumn('string', 'Swriter Version');dataTable.addColumn('string', 'Localagent Version');dataTable.addColumn('string', 'Classifier Version');dataTable.addColumn('string', 'Dacasbindec Version');dataTable.addColumn('string', 'Peak Nics');dataTable.addColumn('string', 'Box Version');dataTable.addColumn('string', 'Kernel Version');dataTable.addColumn('string', 'Numberofports');dataTable.addColumn('string', 'Nic Card Type');dataTable.addColumn('string', 'Nic Card Name');dataTable.addColumn('string', 'Nic Card Version');dataTable.addColumn('string', 'Nic Card Driver');dataTable.addColumn('string', 'Nic Card Speed');dataTable.addColumn('string', 'IPblaze Ko Size');dataTable.addColumn('string', 'IPblaze Ko Md5sum');dataTable.addColumn('string', 'Dacas MD5SUM');dataTable.addColumn('string', 'Dlauncher MD5SUM');dataTable.addColumn('string', 'Swriter MD5SUM');dataTable.addColumn('string', 'Localagent MD5SUM');dataTable.addColumn('string', 'Classifier MD5SUM');dataTable.addColumn('string', 'Dacasbindec MD5SUM');dataTable.addColumn('string', 'Time Zone');dataTable.addColumn('string', 'Shm Allocation');dataTable.addColumn('string', 'Dacas Flavour');dataTable.addColumn('string', 'Dacas Threads');dataTable.addColumn('string', 'Dacas Queue Size');dataTable.addColumn('string', 'Dacas Blocking');dataTable.addColumn('string', 'Dacas TCP Lost Events');dataTable.addColumn('string', 'Dacas TCP Auto Detect');dataTable.addColumn('string', 'Dacas UDP Auto Detect');dataTable.addColumn('string', 'Dacas Detect Android');dataTable.addColumn('string', 'Dacas Dehashurls');dataTable.addColumn('string', 'Dacas PDP Context Highwatermark');dataTable.addColumn('string', 'Dacas PDP Context Lowwatermark');dataTable.addColumn('string', 'Dacas PDP Context Save Format');dataTable.addColumn('string', 'Dacas Billshock Enabled');dataTable.addColumn('string', 'Dacas Netro UDP Lower');dataTable.addColumn('string', 'Dacas Netro UDP Upper');dataTable.addColumn('string', 'Dacas Netro TCP Lower');dataTable.addColumn('string', 'Dacas Netro TCP Upper');dataTable.addColumn('string', 'Dacas Netro Esp Upper');dataTable.addColumn('string', 'Dacas Netro Gre Upper');dataTable.addColumn('string', 'Dacas Netro Gtp');dataTable.addColumn('string', 'IPv4lower');dataTable.addColumn('string', 'IPv6lower');dataTable.addColumn('string', 'TCPlower');dataTable.addColumn('string', 'UDPlower');dataTable.addColumn('string', 'Gtp');dataTable.addColumn('string', 'Httplower');dataTable.addColumn('string', 'Wap');dataTable.addColumn('string', 'Mms');dataTable.addColumn('string', 'Rtsp');dataTable.addColumn('string', 'Pop3');dataTable.addColumn('string', 'Pptp');dataTable.addColumn('string', 'Grepp');dataTable.addColumn('string', 'Esp');dataTable.addColumn('string', 'Imap');dataTable.addColumn('string', 'Smtp');dataTable.addColumn('string', 'FTP');dataTable.addColumn('string', 'TCPupper');dataTable.addColumn('string', 'UDPupper');dataTable.addColumn('string', 'IPv4upper');dataTable.addColumn('string', 'IPv6upper');dataTable.addColumn('string', 'Httpupper');dataTable.addColumn('string', 'Radius');dataTable.addColumn('string', 'Wv');dataTable.addColumn('string', 'Ymsg');dataTable.addColumn('string', 'Msn');dataTable.addColumn('string', 'Dns');dataTable.addColumn('string', 'Snmp');dataTable.addColumn('string', 'Emule');dataTable.addColumn('string', 'Gnutella');dataTable.addColumn('string', 'Bittorrent');dataTable.addColumn('string', 'Moileip');dataTable.addColumn('string', 'Sip');dataTable.addColumn('string', 'H323 Gk');dataTable.addColumn('string', 'Mpls');dataTable.addColumn('string', 'Bgp');dataTable.addColumn('string', 'Smb');dataTable.addColumn('string', 'Icmp');dataTable.addColumn('string', 'Production');dataTable.addColumn('string', 'Status');dataTable.addColumn('string', 'Supportlevel');dataTable.addColumn('string', 'Localtimezone');dataTable.addColumn('string', 'Latest Reserved Log File Stamp');dataTable.addColumn('string', 'Today');dataTable.addColumn('string', 'External Disc Count');dataTable.addColumn('string', 'IPMItool Lan Print');
+dataTable.addRows(2);
+dataTable.setCell(0, 0, '1');dataTable.setCell(0, 1, '2012-02-01 10:45:09.0');dataTable.setCell(0, 2, 'TNF');dataTable.setCell(0, 3, 'H2REP2');dataTable.setCell(0, 4, 'H2REP2');dataTable.setCell(0, 5, '5.196.8.90');dataTable.setCell(0, 6, 'Dacas version 4.7.0.5 SVN Revision 10766 Base tag /srcw/dacas/tags/dacas_4.7.0.7.0/src Date 20111104');dataTable.setCell(0, 7, '1.4.1');dataTable.setCell(0, 8, '1.2.1');dataTable.setCell(0, 9, 'Dlauncher version 4.5.1.0 SVN Revision 8729 Build Date 20110412 Base Tag svn/srcw/dlauncher/tags Cha');dataTable.setCell(0, 10, '');dataTable.setCell(0, 11, '');dataTable.setCell(0, 12, '');dataTable.setCell(0, 13, '');dataTable.setCell(0, 14, 'PEAK_NIC');dataTable.setCell(0, 15, ' H2');dataTable.setCell(0, 16, '2.6.31-10-rt');dataTable.setCell(0, 17, '(0)');dataTable.setCell(0, 18, 'TNF');dataTable.setCell(0, 19, 'Name: ipb_oregon_2x10g_irn2022_lx155t_cp082_rel ipb_oregon_m10g ');dataTable.setCell(0, 20, 'Vers: 13.10.144 20110120-1553 lx155t');dataTable.setCell(0, 21, 'Driver build: release_nic_20110318-1527.tar.gz');dataTable.setCell(0, 22, '10G');dataTable.setCell(0, 23, '');dataTable.setCell(0, 24, '');dataTable.setCell(0, 25, '6e7308b4e68592684a7ed0bb619adfc4');dataTable.setCell(0, 26, '4d502df346ceb19828b7c41c79b3246c');dataTable.setCell(0, 27, '6ea1df9fedfd32a5655a148bd853bab2');dataTable.setCell(0, 28, 'd47405524fa36a054a6e71a610f36450');dataTable.setCell(0, 29, 'e9da8a4714a1be18717f627181f03a52');dataTable.setCell(0, 30, '55de093a9b2590129c9346d28641dc9c');dataTable.setCell(0, 31, 'PST');dataTable.setCell(0, 32, '1610612736');dataTable.setCell(0, 33, '');dataTable.setCell(0, 34, '');dataTable.setCell(0, 35, '');dataTable.setCell(0, 36, '');dataTable.setCell(0, 37, '');dataTable.setCell(0, 38, '');dataTable.setCell(0, 39, '');dataTable.setCell(0, 40, '');dataTable.setCell(0, 41, '');dataTable.setCell(0, 42, '');dataTable.setCell(0, 43, '');dataTable.setCell(0, 44, '');dataTable.setCell(0, 45, '');dataTable.setCell(0, 46, '');dataTable.setCell(0, 47, '');dataTable.setCell(0, 48, '');dataTable.setCell(0, 49, '');dataTable.setCell(0, 50, '');dataTable.setCell(0, 51, '');dataTable.setCell(0, 52, '');dataTable.setCell(0, 53, 'yes');dataTable.setCell(0, 54, 'yes');dataTable.setCell(0, 55, 'yes');dataTable.setCell(0, 56, 'yes');dataTable.setCell(0, 57, 'yes');dataTable.setCell(0, 58, 'yes');dataTable.setCell(0, 59, 'no');dataTable.setCell(0, 60, ' yes');dataTable.setCell(0, 61, 'yes');dataTable.setCell(0, 62, 'yes');dataTable.setCell(0, 63, 'yes');dataTable.setCell(0, 64, 'no');dataTable.setCell(0, 65, 'no');dataTable.setCell(0, 66, 'yes');dataTable.setCell(0, 67, 'yes');dataTable.setCell(0, 68, 'yes');dataTable.setCell(0, 69, 'yes');dataTable.setCell(0, 70, 'yes');dataTable.setCell(0, 71, 'yes');dataTable.setCell(0, 72, 'yes');dataTable.setCell(0, 73, 'yes');dataTable.setCell(0, 74, 'no');dataTable.setCell(0, 75, 'no');dataTable.setCell(0, 76, 'yes');dataTable.setCell(0, 77, 'yes');dataTable.setCell(0, 78, 'no');dataTable.setCell(0, 79, 'no');dataTable.setCell(0, 80, 'yes');dataTable.setCell(0, 81, 'yes');dataTable.setCell(0, 82, 'yes');dataTable.setCell(0, 83, 'no');dataTable.setCell(0, 84, 'yes');dataTable.setCell(0, 85, 'no');dataTable.setCell(0, 86, 'no');dataTable.setCell(0, 87, 'no');dataTable.setCell(0, 88, 'no');dataTable.setCell(0, 89, 'yes');dataTable.setCell(0, 90, ' ');dataTable.setCell(0, 91, '');dataTable.setCell(0, 92, '');dataTable.setCell(0, 93, '');dataTable.setCell(0, 94, 'Log File: Top_IMSI_iat4s Timestamp: 35506004 ');dataTable.setCell(0, 95, '20120130');dataTable.setCell(0, 96, '5');dataTable.setCell(0, 97, '');dataTable.setCell(1, 0, '3');dataTable.setCell(1, 1, '2012-02-01 11:17:59.0');dataTable.setCell(1, 2, 'TNF');dataTable.setCell(1, 3, 'MPPMASTER');dataTable.setCell(1, 4, 'MPPMASTER');dataTable.setCell(1, 5, '5.196.8.90');dataTable.setCell(1, 6, 'Dacas version 4.7.0.5 SVN Revision 10766 Base tag /srcw/dacas/tags/dacas_4.7.0.7.0/src Date 20111104');dataTable.setCell(1, 7, '1.4.1');dataTable.setCell(1, 8, '1.2.1');dataTable.setCell(1, 9, 'Dlauncher version 4.5.1.0 SVN Revision 8729 Build Date 20110412 Base Tag svn/srcw/dlauncher/tags Cha');dataTable.setCell(1, 10, '');dataTable.setCell(1, 11, '');dataTable.setCell(1, 12, '');dataTable.setCell(1, 13, '');dataTable.setCell(1, 14, 'PEAK_NIC');dataTable.setCell(1, 15, ' H2');dataTable.setCell(1, 16, '2.6.31-10-rt');dataTable.setCell(1, 17, '(0)');dataTable.setCell(1, 18, 'TNF');dataTable.setCell(1, 19, 'Name: ipb_oregon_2x10g_irn2022_lx155t_cp082_rel ipb_oregon_m10g ');dataTable.setCell(1, 20, 'Vers: 13.10.144 20110120-1553 lx155t');dataTable.setCell(1, 21, 'Driver build: release_nic_20110318-1527.tar.gz');dataTable.setCell(1, 22, '10G');dataTable.setCell(1, 23, '');dataTable.setCell(1, 24, '');dataTable.setCell(1, 25, '6e7308b4e68592684a7ed0bb619adfc4');dataTable.setCell(1, 26, '4d502df346ceb19828b7c41c79b3246c');dataTable.setCell(1, 27, '6ea1df9fedfd32a5655a148bd853bab2');dataTable.setCell(1, 28, 'd47405524fa36a054a6e71a610f36450');dataTable.setCell(1, 29, 'e9da8a4714a1be18717f627181f03a52');dataTable.setCell(1, 30, '55de093a9b2590129c9346d28641dc9c');dataTable.setCell(1, 31, 'PST');dataTable.setCell(1, 32, '1610612736');dataTable.setCell(1, 33, '');dataTable.setCell(1, 34, '');dataTable.setCell(1, 35, '');dataTable.setCell(1, 36, '');dataTable.setCell(1, 37, '');dataTable.setCell(1, 38, '');dataTable.setCell(1, 39, '');dataTable.setCell(1, 40, '');dataTable.setCell(1, 41, '');dataTable.setCell(1, 42, '');dataTable.setCell(1, 43, '');dataTable.setCell(1, 44, '');dataTable.setCell(1, 45, '');dataTable.setCell(1, 46, '');dataTable.setCell(1, 47, '');dataTable.setCell(1, 48, '');dataTable.setCell(1, 49, '');dataTable.setCell(1, 50, '');dataTable.setCell(1, 51, '');dataTable.setCell(1, 52, '');dataTable.setCell(1, 53, 'yes');dataTable.setCell(1, 54, 'yes');dataTable.setCell(1, 55, 'yes');dataTable.setCell(1, 56, 'yes');dataTable.setCell(1, 57, 'yes');dataTable.setCell(1, 58, 'yes');dataTable.setCell(1, 59, 'no');dataTable.setCell(1, 60, ' yes');dataTable.setCell(1, 61, 'yes');dataTable.setCell(1, 62, 'yes');dataTable.setCell(1, 63, 'yes');dataTable.setCell(1, 64, 'no');dataTable.setCell(1, 65, 'no');dataTable.setCell(1, 66, 'yes');dataTable.setCell(1, 67, 'yes');dataTable.setCell(1, 68, 'yes');dataTable.setCell(1, 69, 'yes');dataTable.setCell(1, 70, 'yes');dataTable.setCell(1, 71, 'yes');dataTable.setCell(1, 72, 'yes');dataTable.setCell(1, 73, 'yes');dataTable.setCell(1, 74, 'no');dataTable.setCell(1, 75, 'no');dataTable.setCell(1, 76, 'yes');dataTable.setCell(1, 77, 'yes');dataTable.setCell(1, 78, 'no');dataTable.setCell(1, 79, 'no');dataTable.setCell(1, 80, 'yes');dataTable.setCell(1, 81, 'yes');dataTable.setCell(1, 82, 'yes');dataTable.setCell(1, 83, 'no');dataTable.setCell(1, 84, 'yes');dataTable.setCell(1, 85, 'no');dataTable.setCell(1, 86, 'no');dataTable.setCell(1, 87, 'no');dataTable.setCell(1, 88, 'no');dataTable.setCell(1, 89, 'yes');dataTable.setCell(1, 90, ' ');dataTable.setCell(1, 91, '');dataTable.setCell(1, 92, '');dataTable.setCell(1, 93, '');dataTable.setCell(1, 94, 'Log File: Top_IMSI_iat4s Timestamp: 35506004 ');dataTable.setCell(1, 95, '20120130');dataTable.setCell(1, 96, '5');dataTable.setCell(1, 97, '');
+
+	 function drawVisualization() {
+        var FullTable = new google.visualization.Table(document.getElementById('FullTable'));
+       // FullTable.draw(dataTable, null);
+      
+        // Set columns in a data view.
+        var ProbeOverviewData = new google.visualization.DataView(dataTable);
+        ProbeOverviewData.setColumns([2,3,4,5,6,7,8,9,31]);
+        var ProbeOverviewTable = new google.visualization.Table(document.getElementById('ProbeOverviewTable'));
+        ProbeOverviewTable.draw(ProbeOverviewData, null);
+      
+	  // Set columns in a data view.
+        var ProbeSupportData = new google.visualization.DataView(dataTable);
+        ProbeSupportData.setColumns([2,3,90,91,92,93]);
+        var ProbeSupportTable = new google.visualization.Table(document.getElementById('ProbeSupportTable'));
+        ProbeSupportTable.draw(ProbeSupportData, null);
+      
+	  
+        // Set rows in a data view.
+        var ProbeSoftwareData = new google.visualization.DataView(dataTable);
+        ProbeSoftwareData.setColumns([2,3,6,7,8,9,10,11,12,13]);
+    	var ProbeSoftwareTable = new google.visualization.Table(document.getElementById('ProbeSoftwareTable'));
+        ProbeSoftwareTable.draw(ProbeSoftwareData, null);
+		
+		
+		var ProbeSoftwareMD5Data = new google.visualization.DataView(dataTable);
+        ProbeSoftwareMD5Data.setColumns([2,3,25,26,27,28,29,30]);
+    	var ProbeSoftwareMD5Table = new google.visualization.Table(document.getElementById('ProbeSoftwareMD5Table'));
+        ProbeSoftwareMD5Table.draw(ProbeSoftwareMD5Data, null);
+		
+		var ProbeSourceworksConfigData = new google.visualization.DataView(dataTable);
+        ProbeSourceworksConfigData.setColumns([2,3,33,34,35,36,37,38,39,40,41,42,43,44,45]);
+    	var ProbeSourceworksConfigTable = new google.visualization.Table(document.getElementById('ProbeSourceworksConfigTable'));
+        ProbeSourceworksConfigTable.draw(ProbeSourceworksConfigData, null);
+		
+		var ProbeSourceworksNetroData = new google.visualization.DataView(dataTable);
+        ProbeSourceworksNetroData.setColumns([2,3,46,47,48,49,50,51,52]);
+    	var ProbeSourceworksNetroTable = new google.visualization.Table(document.getElementById('ProbeSourceworksNetroTable'));
+        ProbeSourceworksNetroTable.draw(ProbeSourceworksNetroData, null);
+		
+		
+		var ProbeSourceworksServices1 = new google.visualization.DataView(dataTable);
+        ProbeSourceworksServices1.setColumns([2,3,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69]);
+    	var ProbeSourceworksServicesTable1 = new google.visualization.Table(document.getElementById('ProbeSourceworksServicesTable1'));
+        ProbeSourceworksServicesTable1.draw(ProbeSourceworksServices1, null);
+		
+		var ProbeSourceworksServices2 = new google.visualization.DataView(dataTable);
+        ProbeSourceworksServices2.setColumns([2,3,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]);
+    	var ProbeSourceworksServicesTable2 = new google.visualization.Table(document.getElementById('ProbeSourceworksServicesTable2'));
+        ProbeSourceworksServicesTable2.draw(ProbeSourceworksServices2, null);
+		
+		
+	// Set rows in a data view.
+        var ProbeHardwareData = new google.visualization.DataView(dataTable);
+        ProbeHardwareData.setColumns([2,3,14,16,17, 19, 18,20,21,22,23,24,32,96]);
+    	var ProbeHardwareTable = new google.visualization.Table(document.getElementById('ProbeHardwareTable'));
+        ProbeHardwareTable.draw(ProbeHardwareData, null);
+		
+	
+	// NIC Speed is 15
+	
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <!--
+	<div>Full Data Table</div>
+    <div id="FullTable"></div>-->
+    
+	<br />
+    <div>Sourceworks Probe Overview</div>
+    <div id="ProbeOverviewTable"></div>
+	 <br />
+    <div>Sourceworks Support Overview</div>
+    <div id="ProbeSupportTable"></div>
+	<br />
+    <div>Sourceworks Probe Software</div>
+    <div id="ProbeSoftwareTable"></div>
+	<br />
+    <div>Sourceworks Software MD5 sums</div>
+    <div id="ProbeSoftwareMD5Table"></div>
+	<br />
+    <div>Sourceworks Software Configuration</div>
+    <div id="ProbeSourceworksConfigTable"></div>
+    <div id="ProbeSourceworksNetroTable"></div>
+	
+	<br />
+    <div>Sourceworks Services Configuration</div>
+    <div id="ProbeSourceworksServicesTable1"></div>
+    <div id="ProbeSourceworksServicesTable2"></div>
+	<br />
+    <div>Sourceworks Probe Hardware</div>
+    <div id="ProbeHardwareTable"></div>
+	
+	
+  </body>
+</html>

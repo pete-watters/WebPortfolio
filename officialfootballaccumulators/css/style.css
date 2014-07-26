@@ -1,0 +1,220 @@
+/* from reset.css */
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var {background:transparent;border:0 none;font-size:100%;margin:0;padding:0;border:0;outline:0;vertical-align:top}
+ol, ul {list-style:none}
+blockquote, q {quotes:none}
+table, table td {padding:0;border:none;border-collapse:collapse}
+img {vertical-align:top}
+embed {vertical-align:top}
+* {border:none}
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block}
+mark, rp, rt, ruby, summary, time {display:inline}
+
+/**********************************************************************************/
+/* from layout.css */
+.main_content, .right_column{ float:left}
+.main_content{ width:600px}
+.right_column{ width:262px; height: 295px;}
+
+/* NB!! wrapper alignment - important for lots of stuff */
+.wrapper {width:100%;overflow:hidden}
+
+/* Global properties */
+body {	background:url(../images/bg_top.jpg) top repeat-x #fff;
+		border:0;
+		font:14px Tahoma, Geneva, sans-serif;
+		color:#4c4c4c;
+		line-height:20px;
+	}
+
+/* Global Structure */
+/* NB main area size */
+.main {margin:0 auto;width:1200px}
+
+.main_section {background:#fff}
+
+/* main layout */
+a {color:#000;text-decoration:underline;outline:none}
+a:hover {text-decoration:none}
+h2 {font-size:32px;color:#000;text-transform:uppercase;line-height:1.2em;padding:31px 0 20px 0;letter-spacing:-1px}
+h2 span {display:block;margin-top:-12px}
+h3 {font-size:27px;color:#000;line-height:1.2em;padding:14px 0 13px 0;letter-spacing:-2px}
+p {padding-bottom:20px}
+
+/* header */
+/* header height*/
+header {height: 9em;width:100%;overflow:hidden}
+#logo {display:block;background:url(../images/logo.jpg) no-repeat;width:101px;height:100px;text-indent:-9999px}
+
+.logo {padding: 1em 0 0 2em; display: inline-block;}
+
+#menu { padding: 0.25em 0 0 1em;}
+#menu li {float:left;padding-right:17px;background:url(../images/menu_line.jpg) right 0 no-repeat;margin-right:15px}
+#menu .end {background:none}
+#menu li a {display:block;font-size:15px;color:#fff;line-height:36px;text-transform:uppercase;text-decoration:none;height:40px}
+#menu li a:hover, #menu #menu_active a {color:#44fbfe}
+nav{
+	display: inline-block;
+}
+#icon {
+		padding: 1em 0em 0 0;
+		display: inline-block;
+	}
+#icon li {display: inline-block;}
+#icons {float:right;padding:20px 39px 0 0}
+#icons li {float:left;padding-left:11px}
+
+
+.pad_top2 {padding-top:7px}
+
+/* Intro secondary font */
+.font2 {font-size:22px;line-height:1.2em;color:#0055a2;padding:0 0 20px 0;letter-spacing:-1px;margin-top:-3px}
+.font2 span {display:block;margin-top:-6px}
+.font2 a {color:#0055a2;text-decoration:none}
+.font2 a:hover {color:#000}
+
+.box {
+		padding:5px 50px;
+		width: 90%;
+		min-height: 450px;
+	}
+/* footer lists */
+.list1 {margin-top:-12px}
+.list1 li {line-height:40px}
+.list1 li a {display:inline-block;background:url(../images/marker_1.gif) 0 2px no-repeat;padding-left:48px;color:#363636;text-decoration:none}
+.list1 li a:hover {background-position:0 -38px;color:#0055a2}
+.list2 {margin-top:-1px}
+.list2 li {font:14px Tahoma, Geneva, sans-serif;line-height:30px}
+.list2 li a {color:#4c4c4c;text-decoration:none;padding-left:10px;}
+.list2 li a:hover {color:#0055a2;background-position:0 -17px}
+
+/* date in latest news */
+.date {float:left;width:72px;height:50px;background:url(../images/date.gif) 0 0 no-repeat;margin-right:14px;font-size:34px;line-height:1.2em;padding-top:22px;text-align:center}
+
+
+/* footer */
+footer {
+		overflow: hidden;
+		padding-bottom: 10px;
+		background: url(../images/bg_footer_small.jpg) top repeat-x #fff;
+		font: 14px Tahoma, Geneva, sans-serif;
+	}
+footer a {color:#0055a2}
+footer a:hover {}
+
+.footer_article{ display: inline-block;} 
+
+.main_content_span{
+margin-left: 5em;
+}
+.freebet_span{
+margin-left: 8em;
+display:none; /* hide it then show it with JS on the homepage */
+}
+.freebet_thumbnail{
+	width: 200px;
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+.AdvertCarousel_300x250{
+	width:300px;
+}
+.AdvertCarousel_120x600 {
+		width: 125px;
+}
+/* hide arrows on auto sliders*/
+.AdvertCarousel_300x250 .carousel-control, .AdvertCarousel_120x600 .carousel-control{
+	display:none;
+}
+
+.my-hero-unit{
+	margin-bottom: 0px;
+	padding: 0.25em;
+}
+
+/* Bet Calculator*/
+.betCalculator-formRow {
+	margin-left: 0px;
+}
+
+.betCalculator-resultContainer{
+	margin: 0.2em;
+	display:none;
+}
+.betCalculator-resultText{
+	font-weight: bold;
+}
+.betCalculator-formRowLeft {
+margin-left: 0px;
+
+}
+.betCalculator-formRowRight, .betCalculator-formRowRightDecimal, .betCalculator-formRowRightOdds {
+margin-left: 20px;
+}
+
+/* Betting offer table */
+.latestBetting-table{
+	width: 85%;
+}
+.latestBetting-table tbody tr{
+	cursor:pointer;
+}
+
+.latestBetting-headerBackground{
+	position:relative; 
+	background: url(../images/latestBetOffers_tableHead.jpg); 
+	height:26px;
+}
+.latestBetting-headerText{
+	position: absolute; 
+	bottom: 0.2em; 
+	left: 1em; 
+	font-weight: bold; 
+	color: white; 
+}
+
+.latestBetting-affiliateImage, .latestBetting-affiliateOffer, .latestBetting-affiliateArrow{
+	display: inline-block;
+}
+
+
+.latestBetting-affiliateImage{
+	width:5em; 
+}
+
+.latestBetting-affiliateOffer{
+	width:7em; 
+	font-size:11px; 
+}
+.latestBetting-affiliateArrow{
+	width: 23px;
+	background: url(../images/greenArrow.png);
+	height: 23px;
+} 
+
+
+/* News feed */
+.feed-item-title a , .nav-tabs>li>a{
+	font-family: 'Telex',sans-serif;
+	font-weight: bold;
+	line-height: 20px;
+	color: #317eac; 
+	text-rendering: optimizelegibility;
+	margin: 0 0 5px;
+    text-decoration: none;
+}
+
+.feed-item-desc{
+	overflow: hidden;
+	zoom: 1;
+}
+.rss2html-note{
+	display: none;
+}
+
+
+/* free bet banners*/
+.freeBetRow{
+	padding: 0.2em;
+ }

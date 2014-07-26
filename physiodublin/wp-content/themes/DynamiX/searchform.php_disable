@@ -1,0 +1,6 @@
+<form method="get" id="searchform" action="<?php bloginfo('url'); ?>">
+	<fieldset>
+	<input type="text" value="<?php _e('Search', 'DynamiX' ); ?>" name="s" id="s" style="color:#acacac;" onfocus="if(this.value == '<?php _e('Search', 'DynamiX' ); ?>') {this.value = '', this.style.color = '#484848';}" onblur="if (this.value == '') {this.value = '<?php _e('Search', 'DynamiX' ); ?>', this.style.color ='#acacac';}" />
+	<input type="submit" id="searchsubmit" value="&nbsp;" />
+	</fieldset>
+</form>

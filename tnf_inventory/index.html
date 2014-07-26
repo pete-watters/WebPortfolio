@@ -1,0 +1,1427 @@
+<html>
+
+<head>
+
+<!--  Inclue deader file with all css/ js  -->
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="icon" href="images/favicon.gif" type="image/gif"> 
+
+	
+
+<title>TNFMON CEM Analysis</title>
+
+
+
+<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="js/highstock.js"></script>   
+
+<!-- Form style JS. select elements taken out....-->
+
+<script type="text/javascript" src="js/custom-form.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.7.1.custom.css" />
+
+<style type="text/css" title="currentStyle">
+		    @import "css/DataTables.css";
+		</style>
+
+<link type="text/css" rel="stylesheet" href="css/style.css" /> 
+
+<!-- Date range picker -->
+		<script type="text/javascript" src="js/date.js"></script>
+		<script type="text/javascript" src="js/daterangepicker.jQuery.js"></script>
+		<link rel="stylesheet" href="css/ui.daterangepicker.css" type="text/css" />
+
+<!-- Include jQuery declarations -->
+
+<script type="text/javascript">
+
+$(function(){
+
+	// Tabs
+
+	$('#Main_tabs').tabs();
+
+	$('#Statistics_tabs').tabs();
+
+	$('#Inventory_tabs').tabs();
+
+	$('#CustomerMatrix_tabs').tabs();
+
+	$("#search_accordion").accordion({ header: "h3" });
+
+	
+	// New New new 
+	
+	
+	// New New New
+	
+
+});
+
+</script>
+
+
+<!-- Search Form Definitions -->
+<!-- Include Servlet that sets up select List -->
+<!--  ComboBox Population -->
+
+<script type="text/javascript">
+
+
+
+var SiteData = [{"Customer"   : "","Site"  : ['']},{"Customer"   : "TNF:TNF INTERNAL","Site"  : ['1:H2REP2:Sandyford', '3:MPPMASTER:Sandyford']}, {"Customer"   : "","Site"  : ['']},{"Customer"   : "VFES:VODAFONE SPAIN","Site"  : ['2:ALCOBENDASTRIAL:Somewhere in Spain']}]
+
+;
+
+$(function() { // create an array to be referenced by state name
+
+		state = [] ;
+
+		for(var i=0; i<SiteData.length; i++) {	state[SiteData[i].Customer] = SiteData[i].Site ;
+
+				 								}
+
+			});
+
+
+ // populate Customer select box
+$(function() {
+
+ // populate Customer select box
+
+ var options = '' ;
+
+ for (var i = 0; i < SiteData.length; i++) {
+
+  options += '<option value="' + SiteData[i].Customer + '">' + SiteData[i].Customer + '</option>'; 
+
+ }
+
+ $("#Customer").html(options);   // populate select box with array
+
+
+
+ // selecting state (change) will populate Site select box
+
+ $("#Customer").bind("change",
+
+   function() {
+
+    $("#Site").children().remove() ;          // clear select box
+
+    var options = '' ;
+
+    for (var i = 0; i < state[this.value].length; i++) { 
+
+     options += '<option value="' + state[this.value][i] + '">' + state[this.value][i] + '</option>'; 
+
+    }
+
+    $("#Site").html(options);   // populate select box with array
+
+   }            // bind function end
+
+ );             // bind end 
+
+
+
+ // Form pressed to search Stats
+
+$(".ValidateData").click(function() {
+
+	// get vaues from form and set dataString
+
+	var Customer = $("#Customer").val();
+
+	var Site = $("#Site").val();
+
+	var StartDate = $("#StartDate").val();
+
+	var EndDate = $("#EndDate").val();
+
+	var dataString = "Customer="+ Customer+"&Site="+Site+"&StartDate="+StartDate+"&EndDate="+EndDate;
+
+		
+
+	if(Customer == ""){		
+
+		alert("Please Choose a customer");		
+
+		}
+
+	else{		
+
+		$("#flash").show();
+
+		$("#flash").fadeIn(400).html('<img src="images/ajax-loader.gif" align="absmiddle">&nbsp;<span class="loading">Loading Comment...</span>');
+
+	$.ajax({
+
+	    	type: "POST",
+
+     	    url: "AJAX_ValidateData.jsp",
+
+			data: dataString,
+
+			cache: false,
+
+			success: function(data){$("#flash").hide();			
+
+			$("#console").empty();
+
+			$("#console").append(data);}
+
+  			});
+
+		}			
+
+		return false;
+
+	});
+
+		
+
+$("#StartDate").daterangepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+//$("#StartDate").daterangepicker();
+
+$("#EndDate").datepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+
+
+
+$("form").form();	});
+
+  </script>
+
+<!-- Search Form Definitions -->
+
+
+
+
+<!-- Include jQuery declarations -->
+
+<!-- jQuery & jQuery UI Declarations -->
+
+
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+ <script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+<!--Main Table to replace all others and generate views -->	
+	 <script type="text/javascript">
+      var visualization;
+	  
+	   var SourceworksSoftWare_JSONObject = {
+
+          cols: [
+       {id: 'cx_code', label: 'Customer', type: 'string'},
+            {id: 'site', label: 'Site', type: 'string'},
+            {id: 'Sourceworks_version', label: 'Sourceworks Version', type: 'string'},
+            {id: 'Sourceworks_md5sum', label: 'Sourceworks md5sum', type: 'string'},
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'},
+			{id: 'Sourceworks_version', label: 'Sourceworks Version', type: 'string'},
+            {id: 'Sourceworks_md5sum', label: 'Sourceworks md5sum', type: 'string'},
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'},
+        	{id: 'swriter_version', label: 'Swriter Version', type: 'string'},
+            {id: 'swriter_version', label: 'Swriter Type', type: 'string'},
+            {id: 'swriter_md5sum', label: 'Swriter md5sum', type: 'string'},
+            {id: 'LocalAgent_version', label: 'LocalAgent Version', type: 'string'},
+            {id: 'LocalAgent_version', label: 'LocalAgent md5sum', type: 'string'},   
+            {id: 'NETRO_UDP_LOWER', label: 'UDP Lower', type: 'string'},
+            {id: 'NETRO_UDP_UPPER', label: 'UDP Upper', type: 'string'},
+            {id: 'NETRO_TCP_LOWER', label: 'TCP Lower', type: 'string'},
+            {id: 'NETRO_TCP_UPPER', label: 'TCP Upper', type: 'string'},
+            {id: 'NETRO_ESP_UPPER', label: 'ESP Upper', type: 'string'},
+            {id: 'NETRO_GRE_UPPER', label: 'GRE Upper', type: 'string'},
+            {id: 'NETRO_GTP', label: 'GTP', type: 'string'},
+            {id: 'imei', label: 'IMEI', type: 'boolean'}, 
+            {id: 'ULI', label: 'ULI', type: 'boolean'},
+            {id: 'aran_feed', label: 'Aran Feed', type: 'string'},
+            {id: 'MoMo_feed', label: 'MoMo Feed', type: 'boolean'},
+            {id: 'record_format', label: 'Record Format', type: 'string'},
+            {id: 'http_record', label: 'HTTP Record', type: 'string'},        
+			{id: 'IPV4_LOWER', label: 'IP v4 Lower', type: 'boolean'},
+            {id: 'IPV4_UPPER', label: 'IP v4 Upper', type: 'boolean'}, 
+            {id: 'IPV6_LOWER', label: 'IP v6 Lower', type: 'boolean'},  
+            {id: 'IPV6_UPPER', label: 'IP v6 Upper', type: 'boolean'},
+            {id: 'HTTP_LOWER', label: 'HTTP Lower', type: 'boolean'},
+            {id: 'HTTP_UPPER', label: 'HTTP Upper', type: 'boolean'},  
+            {id: 'TCP_LOWER', label: 'TCP Lower', type: 'boolean'},   
+            {id: 'TCP_UPPER', label: 'TCP Upper', type: 'boolean'},
+            {id: 'UDP_LOWER', label: 'UDP Lower', type: 'boolean'},  
+            {id: 'UDP_UPPER', label: 'UDP Upper', type: 'boolean'} ,
+			{id: 'RADIUS', label: 'Radius', type: 'boolean'},   
+            {id: 'WV', label: 'WV', type: 'boolean'},   
+            {id: 'MSN', label: 'MSN', type: 'boolean'},   
+            {id: 'DNS', label: 'DNS', type: 'boolean'},   
+            {id: 'SNMP', label: 'SNMP', type: 'boolean'},   
+            {id: 'EMULE', label: 'EMULE', type: 'boolean'},   
+            {id: 'GNUTELLA', label: 'GNUTELLA', type: 'boolean'},   
+            {id: 'BITTORRENT', label: 'Bittorrent', type: 'boolean'},   
+            {id: 'MOILEIP', label: 'Mobile IP', type: 'boolean'},   
+            {id: 'SIP', label: 'SIP', type: 'boolean'},   
+            {id: 'H232_GK', label: 'H232 GK', type: 'boolean'},   
+            {id: 'MPLS', label: 'MPLS', type: 'boolean'},   
+            {id: 'BGP', label: 'BGP', type: 'boolean'},   
+            {id: 'SMB', label: 'SMB', type: 'boolean'},   
+            {id: 'ICMP', label: 'ICMP', type: 'boolean'}, 
+            {id: 'BILLSHOCK_ENABLED', label: 'Billshock', type: 'boolean'},         
+            {id: 'GTP', label: 'GTP', type: 'boolean'},   
+            {id: 'WAP', label: 'WAP', type: 'boolean'},   
+            {id: 'MMS', label: 'MMS', type: 'boolean'},   
+            {id: 'RTSP', label: 'RTSP', type: 'boolean'},  
+            {id: 'POP3', label: 'POP3', type: 'boolean'},   
+            {id: 'PPTP', label: 'PPTP', type: 'boolean'},   
+            {id: 'GREPP', label: 'GREPP', type: 'boolean'},   
+            {id: 'ESP', label: 'ESP', type: 'boolean'},   
+            {id: 'IMAP', label: 'IMAP', type: 'boolean'},   
+            {id: 'SMTP', label: 'SMTP', type: 'boolean'},   
+			{id: 'FTP', label: 'FTP', type: 'boolean'},       
+			{id: 'TYPE', label: ' Type', type: 'string'},
+            {id: 'TIMEZONE', label: 'Timezone', type: 'string'},        
+            {id: 'Sourceworks_TYPE', label: 'Sourceworks Flavour', type: 'string'},
+            {id: 'NO_OF_PROCESS_THREADS', label: 'Thread count', type: 'string'},
+            {id: 'SHM', label: 'SHM Value', type: 'string'},               
+            {id: 'QUEUE_SIZE', label: 'Queue Size', type: 'string'},                
+            {id: 'BLOCKING', label: 'Blocking', type: 'string'},                
+            {id: 'TCP_LOST_EVENTS', label: 'TCP Lost Events', type: 'string'},                
+            {id: 'TCP_AUTO_DETECT', label: 'TCP AutoDetect', type: 'string'},
+            {id: 'UDP_AUTO_DETECT', label: 'UDP AutoDetect', type: 'string'},
+            {id: 'ANDROID_AUTO_DETECT', label: 'Auto Detect Android', type: 'string'},               
+            {id: 'DEHASH_URLS', label: 'De-Hash URLs', type: 'string'},                
+            {id: 'PDP_HIGH_WATERMARK', label: 'PDP High Watermark', type: 'string'},                
+            {id: 'PDP_LOW_WATERMARK', label: 'PDP Low Watermark', type: 'string'},                
+            {id: 'CONTEXT_FORMAT', label: 'Context format', type: 'string'},
+			{id: 'CARD_NAME', label: 'Gn Card', type: 'string'},
+			{id: 'CARD_PORTS', label: 'Gn Interfaces', type: 'string'},        
+			{id: 'CARD_VERSION', label: 'Gn Firmware', type: 'string'},
+            {id: 'RAM', label: 'RAM + Kernel', type: 'string'},
+            {id: 'INTERNAL_DISK_SIZE', label: 'Internal Disc Size', type: 'string'},               
+            {id: 'INTERNAL_DISK_RAID', label: 'Internal Disc RAID', type: 'string'},                
+            {id: 'COUNT_EXTERNAL_DISKS', label: 'External Discs', type: 'string'},                
+            {id: 'EXTERNAL_DISK_RAID', label: 'External Disc RAID', type: 'string'},                
+            {id: 'EXTERNAL_DISK_PARTITION_SIZE', label: 'External Disc Partition Size', type: 'string'}          
+
+            ],
+
+            rows:   [
+			{"c":[	{"v":"VFPT"},
+					{"v":"Location"},
+					{"v":"IPTS 4.6.0.0"},
+					{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},
+					{"v":""},
+					{"v":"Dlauncher version here"},
+					{"v":"?"},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""},
+					{"v":""}
+					]}]
+			
+			
+        };
+		
+		var dataTable = new google.visualization.DataTable(SourceworksSoftWare_JSONObject, 0.5);
+
+      function drawVisualization() {
+        var table1 = new google.visualization.Table(document.getElementById('table'));
+        table1.draw(dataTable, null);
+      
+        // Set columns in a data view.
+        var dataView1 = new google.visualization.DataView(dataTable);
+        dataView1.setColumns([0, 2]);
+      
+        var table2 = new google.visualization.Table(document.getElementById('table2'));
+        table2.draw(dataView1, null);
+      
+        // Set rows in a data view.
+        var dataView2 = new google.visualization.DataView(dataTable);
+        dataView2.setRows([0, 1, 3]);
+      
+        var table3 = new google.visualization.Table(document.getElementById('table3'));
+        table3.draw(dataView2, null);
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+	
+	
+<!-- Sourceworks Software table -->
+    <script type="text/javascript">
+
+    function drawVisualization() {
+
+      var SourceworksSoftWare_JSONObject = {
+
+          cols: [
+
+            {id: 'cx_code', label: 'Customer', type: 'string'},
+
+            {id: 'site', label: 'Site', type: 'string'},
+
+            {id: 'Sourceworks_version', label: 'Sourceworks Version', type: 'string'},
+
+            {id: 'Sourceworks_md5sum', label: 'Sourceworks md5sum', type: 'string'},
+
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'}
+
+            ],
+
+            rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IPTS 4.6.0.0"},{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},{"v":""},{"v":"Dlauncher version here"},{"v":"?"}]}]
+			
+			
+        };
+
+      var SourceworksSoftWareData = new google.visualization.DataTable(SourceworksSoftWare_JSONObject, 0.5);
+
+      SourceworksSoftWareVisualization = new google.visualization.Table(document.getElementById('SourceworksSoftWare_table'));
+
+      SourceworksSoftWareVisualization.draw(SourceworksSoftWareData , {'allowHtml': true});
+
+    }
+
+    google.setOnLoadCallback(drawVisualization);
+
+    </script>
+<!-- Sourceworks Netro Software table -->
+    <script type="text/javascript">
+
+     function drawVisualization() {
+
+       var NetroData_JSONObject = {
+
+           cols: [
+
+             {id: 'cx_code', label: 'Customer', type: 'string'},
+
+             {id: 'site', label: 'Site', type: 'string'},
+
+             {id: 'swriter_version', label: 'Swriter Version', type: 'string'},
+
+             {id: 'swriter_version', label: 'Swriter Type', type: 'string'},
+
+             {id: 'swriter_md5sum', label: 'Swriter md5sum', type: 'string'},
+
+             {id: 'LocalAgent_version', label: 'LocalAgent Version', type: 'string'},
+
+             {id: 'LocalAgent_version', label: 'LocalAgent md5sum', type: 'string'}      
+
+                 ],
+
+  rows: [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]}]
+
+		};     
+
+       var NetroData = new google.visualization.DataTable(NetroData_JSONObject, 0.5);
+
+       NetroDatavisualization = new google.visualization.Table(document.getElementById('NetroSoftWare_table'));
+
+       NetroDatavisualization.draw(NetroData , {'allowHtml': true});
+
+     }
+
+     google.setOnLoadCallback(drawVisualization);
+
+     </script>  
+<!-- Netro Services -->
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var NetroServices_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: '_NETRO_UDP_LOWER', label: 'UDP Lower', type: 'string'},
+
+                {id: '_NETRO_UDP_UPPER', label: 'UDP Upper', type: 'string'},
+
+                {id: '_NETRO_TCP_LOWER', label: 'TCP Lower', type: 'string'},
+
+                {id: '_NETRO_TCP_UPPER', label: 'TCP Upper', type: 'string'},
+
+                {id: '_NETRO_ESP_UPPER', label: 'ESP Upper', type: 'string'},
+
+                {id: '_NETRO_GRE_UPPER', label: 'GRE Upper', type: 'string'},
+
+                {id: '_NETRO_GTP', label: 'GTP', type: 'string'}
+
+				    ],
+
+                
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]}]
+
+
+
+};
+
+         var NetroServicesData = new google.visualization.DataTable(NetroServices_JSONObject, 0.5);
+
+          NetroServicesvisualization = new google.visualization.Table(document.getElementById('NetroServices_table'));
+
+          NetroServicesvisualization.draw(NetroServicesData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>    
+    <script type="text/javascript">
+
+      function drawVisualization() {
+
+        // Create and populate the data table.
+
+        var RecordOutput_JSONObject = {
+
+            cols: [
+
+              {id: 'cx_code', label: 'Customer', type: 'string'},
+
+              {id: 'site', label: 'Site', type: 'string'},
+
+              {id: 'imei', label: 'IMEI', type: 'boolean'}, 
+
+              {id: 'ULI', label: 'ULI', type: 'boolean'},
+
+              {id: 'aran_feed', label: 'Aran Feed', type: 'string'},
+
+              {id: 'MoMo_feed', label: 'MoMo Feed', type: 'boolean'},
+
+              {id: 'record_format', label: 'Record Format', type: 'string'},
+
+              {id: 'http_record', label: 'HTTP Record', type: 'string'}      
+
+                  ],
+
+   rows: 	      [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IMEI bool"},{"v":"ULI bool"},{"v":"Aran Feed"},{"v":"_MOMO_FEED"},{"v":"_RECORD_FORMAT"},{"v":"_HTTP_RECORD"}]}]
+          };
+
+        var RecordOutputData = new google.visualization.DataTable(RecordOutput_JSONObject, 0.5);
+
+        RecordOutputvisualization = new google.visualization.Table(document.getElementById('RecordOutput_table'));
+
+        RecordOutputvisualization.draw(RecordOutputData , {'allowHtml': true});
+
+      }    google.setOnLoadCallback(drawVisualization);
+
+</script>  
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var SourceworksServices_JSONObject1 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},                 
+
+               {id: '_IPV4_LOWER', label: 'IP v4 Lower', type: 'boolean'},
+
+               {id: '_IPV4_UPPER', label: 'IP v4 Upper', type: 'boolean'}, 
+
+               {id: '_IPV6_LOWER', label: 'IP v6 Lower', type: 'boolean'},  
+
+               {id: '_IPV6_UPPER', label: 'IP v6 Upper', type: 'boolean'},
+
+               {id: '_HTTP_LOWER', label: 'HTTP Lower', type: 'boolean'},
+
+               {id: '_HTTP_UPPER', label: 'HTTP Upper', type: 'boolean'},  
+
+               {id: '_TCP_LOWER', label: 'TCP Lower', type: 'boolean'},   
+
+               {id: '_TCP_UPPER', label: 'TCP Upper', type: 'boolean'},
+
+               {id: '_UDP_LOWER', label: 'UDP Lower', type: 'boolean'},  
+
+               {id: '_UDP_UPPER', label: 'UDP Upper', type: 'boolean'} 
+
+                  ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":1},{"v":1},{"v":1},{"v":1},{"v":0},{"v":1},{"v":0},{"v":1},{"v":1},{"v":1}]}]
+		};
+
+       
+
+         var SourceworksServicesData1 = new google.visualization.DataTable(SourceworksServices_JSONObject1, 0.5);
+
+       
+
+         // Create and draw the visualization.
+
+         SourceworksServicesvisualization1 = new google.visualization.Table(document.getElementById('SourceworksServices_table1'));
+
+         SourceworksServicesvisualization1.draw(SourceworksServicesData1 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+ <!-- Sourceworks Services 2 -->      
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var SourceworksServices_JSONObject2 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},              
+
+               {id: '_RADIUS', label: 'Radius', type: 'boolean'},   
+
+               {id: '_WV', label: 'WV', type: 'boolean'},   
+
+               {id: '_MSN', label: 'MSN', type: 'boolean'},   
+
+               {id: '_DNS', label: 'DNS', type: 'boolean'},   
+
+               {id: '_SNMP', label: 'SNMP', type: 'boolean'},   
+
+               {id: '_EMULE', label: 'EMULE', type: 'boolean'},   
+
+               {id: '_GNUTELLA', label: 'GNUTELLA', type: 'boolean'},   
+
+               {id: '_BITTORRENT', label: 'Bittorrent', type: 'boolean'},   
+
+               {id: '_MOILEIP', label: 'Mobile IP', type: 'boolean'},   
+
+               {id: '_SIP', label: 'SIP', type: 'boolean'},   
+
+               {id: '_H232_GK', label: 'H232 GK', type: 'boolean'},   
+
+               {id: '_MPLS', label: 'MPLS', type: 'boolean'},   
+
+               {id: '_BGP', label: 'BGP', type: 'boolean'},   
+
+               {id: '_SMB', label: 'SMB', type: 'boolean'},   
+
+               {id: '_ICMP', label: 'ICMP', type: 'boolean'} 
+
+               
+
+                   ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":1},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0}]}]
+	
+		};
+
+       
+
+         var SourceworksServicesData2 = new google.visualization.DataTable(SourceworksServices_JSONObject2, 0.5);
+
+       
+
+         // Create and draw the visualization.
+
+         SourceworksServicesvisualization2 = new google.visualization.Table(document.getElementById('SourceworksServices_table2'));
+
+         SourceworksServicesvisualization2.draw(SourceworksServicesData2 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+
+          <!-- Sourceworks Services 3 -->      
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var SourceworksServices_JSONObject3 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},     
+
+               {id: '_BILLSHOCK_ENABLED', label: 'Billshock', type: 'boolean'},         
+
+               {id: '_GTP', label: 'GTP', type: 'boolean'},   
+
+               {id: '_WAP', label: 'WAP', type: 'boolean'},   
+
+               {id: '_MMS', label: 'MMS', type: 'boolean'},   
+
+               {id: '_RTSP', label: 'RTSP', type: 'boolean'},  
+
+               {id: '_POP3', label: 'POP3', type: 'boolean'},   
+
+               {id: '_PPTP', label: 'PPTP', type: 'boolean'},   
+
+               {id: '_GREPP', label: 'GREPP', type: 'boolean'},   
+
+               {id: '_ESP', label: 'ESP', type: 'boolean'},   
+
+               {id: '_IMAP', label: 'IMAP', type: 'boolean'},   
+
+               {id: '_SMTP', label: 'SMTP', type: 'boolean'},   
+
+               {id: '_FTP', label: 'FTP', type: 'boolean'}      
+
+                   ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":1},{"v":1}]}]
+		};
+
+         var SourceworksServicesData3 = new google.visualization.DataTable(SourceworksServices_JSONObject3, 0.5);
+
+         // Create and draw the visualization.
+
+         SourceworksServicesvisualization3 = new google.visualization.Table(document.getElementById('SourceworksServices_table3'));
+
+         SourceworksServicesvisualization3.draw(SourceworksServicesData3 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+
+<!-- Sourceworks Configuration Table -->       
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var SourceworksConfiguration_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: '_TYPE', label: ' Type', type: 'string'},
+
+                {id: '_TIMEZONE', label: 'Timezone', type: 'string'},        
+
+                {id: '_Sourceworks_TYPE', label: 'Sourceworks Flavour', type: 'string'},
+
+                {id: '_NO_OF_PROCESS_THREADS', label: 'Thread count', type: 'string'},
+
+                {id: '_SHM', label: 'SHM Value', type: 'string'},               
+
+                {id: '_QUEUE_SIZE', label: 'Queue Size', type: 'string'},                
+
+                {id: '_BLOCKING', label: 'Blocking', type: 'string'},                
+
+                {id: '_TCP_LOST_EVENTS', label: 'TCP Lost Events', type: 'string'},                
+
+                {id: '_TCP_AUTO_DETECT', label: 'TCP AutoDetect', type: 'string'},
+
+                {id: '_UDP_AUTO_DETECT', label: 'UDP AutoDetect', type: 'string'},
+
+                {id: '_ANDROID_AUTO_DETECT', label: 'Auto Detect Android', type: 'string'},               
+
+                {id: '_DEHASH_URLS', label: 'De-Hash URLs', type: 'string'},                
+
+                {id: '_PDP_HIGH_WATERMARK', label: 'PDP High Watermark', type: 'string'},                
+
+                {id: '_PDP_LOW_WATERMARK', label: 'PDP Low Watermark', type: 'string'},                
+
+                {id: '_CONTEXT_FORMAT', label: 'Context format', type: 'string'}
+
+                ],
+
+                
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"H1 Midas+ . Kernel Version: 2.6.22-15"},{"v":"UTC"},{"v":"thread"},{"v":"0"},{"v":"3221225472 1610612736"},{"v":"48"},{"v":"48"},{"v":"No"},{"v":"Yes"},{"v":"No"},{"v":"No"},{"v":"Yes"},{"v":"200000"},{"v":"180000"},{"v":"shm"}]}] 
+	 
+};
+
+         var SourceworksConfigurationData = new google.visualization.DataTable(SourceworksConfiguration_JSONObject, 0.5);
+
+          SourceworksConfigurationvisualization = new google.visualization.Table(document.getElementById('SourceworksConfiguration_table'));
+
+          SourceworksConfigurationvisualization.draw(SourceworksConfigurationData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+<!--  Hardware table -->
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var HardWare_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: '_CARD_NAME', label: 'Gn Card', type: 'string'},
+
+                {id: '_CARD_PORTS', label: 'Gn Interfaces', type: 'string'},        
+
+                {id: '_CARD_VERSION', label: 'Gn Firmware', type: 'string'},
+
+                {id: 'RAM', label: 'RAM + Kernel', type: 'string'},
+
+                {id: 'INTERNAL_DISK_SIZE', label: 'Internal Disc Size', type: 'string'},               
+
+                {id: 'INTERNAL_DISK_RAID', label: 'Internal Disc RAID', type: 'string'},                
+
+                {id: 'COUNT_EXTERNAL_DISKS', label: 'External Discs', type: 'string'},                
+
+                {id: 'EXTERNAL_DISK_RAID', label: 'External Disc RAID', type: 'string'},                
+
+                {id: 'EXTERNAL_DISK_PARTITION_SIZE', label: 'External Disc Partition Size', type: 'string'}
+
+                ],
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Name: ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g  TNF"},{"v":"(0)"},{"v":"Vers: 13.10.40 20100505-1217 lx155tDriver build: release_nic_20101117-1431.tar.gz"},{"v":"KERNEL2.6.22-15-serverSHM3221225472 1610612736"},{"v":"INTERNAL DISC SIZE"},{"v":"INTERNAL DISC RAID"},{"v":"COUNT EXTERNAL DISCS"},{"v":"EXTERNAL DISC RAID TYPE"},{"v":"EXTERNAL DISC PARTITION SIZE"}]}]
+	 
+	 
+	 
+};
+
+         var HardWareData = new google.visualization.DataTable(HardWare_JSONObject, 0.5);
+
+          HardWarevisualization = new google.visualization.Table(document.getElementById('HardWare_table'));
+
+          HardWarevisualization.draw(HardWareData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+<!--   Support Table -->
+
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var SupportInfo_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: '_STATUS', label: 'Support Status', type: 'string'},
+
+                {id: '_SUPPORT_LEVEL', label: 'Support Level', type: 'string'},        
+
+                {id: '_SUPPORT_DESCRIPTION', label: 'Description', type: 'string'}
+
+                ],
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Active"},{"v":"Bronze"},{"v":"Coverage: 24/7 "}]}]
+};
+
+         var SupportInfoData = new google.visualization.DataTable(SupportInfo_JSONObject, 0.5);
+
+          SupportInfovisualization = new google.visualization.Table(document.getElementById('SupportInfo_table'));
+
+          SupportInfovisualization.draw(SupportInfoData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+
+<!-- Inventory Traffic Light -->
+    
+<script type='text/javascript'>
+var banners = ["images/traffic_light_green.png","images/traffic_light_off.png"];
+var bnrCntr = 0;
+var timer;
+function banCycle()
+{
+if(++bnrCntr == 2)
+bnrCntr = 0;
+document.images.banner.src = banners[bnrCntr];
+timer = setTimeout("banCycle()",1000);
+}
+function stopCycle()
+{
+clearTimeout(timer);
+}
+var banners1 = ["images/traffic_light_off.png","images/traffic_light_amber.png"];
+var bnrCntr1 = 0;
+var timer1;
+function banCycle1()
+{
+if(++bnrCntr1 == 2)
+bnrCntr1 = 0;
+document.images.banner1.src = banners1[bnrCntr1];
+timer1 = setTimeout("banCycle1()",1000);
+}
+function stopCycle1()
+{
+clearTimeout1(timer1);
+}
+var banners2 = ["images/traffic_light_off.png","images/traffic_light_red.png"];
+var bnrCntr2 = 0;
+var timer2;
+function banCycle2()
+{
+if(++bnrCntr2 == 2)
+bnrCntr2 = 0;
+document.images.banner2.src = banners2[bnrCntr2];
+timer2 = setTimeout("banCycle2()",1000);
+}
+function stopCycle2()
+{
+clearTimeout2(timer2);
+} 
+</script>
+
+<!-- Customer Matrix Data Tables -->
+
+
+		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#ProbeInformationDataTable').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers"
+				});
+				
+			} );
+		</script>
+	   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.1', {packages: ['controls']});
+    </script>	
+<!-- Customer Matrix Dashboard -->		
+		 <script type="text/javascript">
+      function drawVisualization() {
+        // Prepare the data
+        var data = google.visualization.arrayToDataTable([
+          ['Customer', 'Probe', 'Sites', 'ProbeCount','Card Type', 'Card Ports','Peak data rate (Gbps)','SourceWorks version','Netrofeed','Xmine','Touchpoint','Other'],
+          ['Vodafone Spain' , 'H2', 7, 16,'','','','','','','',''],
+          ['Tmobile USA', 'H2', 20, 21,'','','','','','','',''],
+          ['TNF', 'H1', 1, 1,'','','','','','','','']
+        ]);  
+        
+        // Define a slider control for the Age column.
+        var slider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'control1',
+          'options': {
+            'filterColumnLabel': 'Sites',
+          'ui': {'labelStacking': 'vertical'}
+          }
+        });
+      
+        // Define a category picker control for the Probe column
+        var categoryPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'control2',
+          'options': {
+            'filterColumnLabel': 'Probe',
+            'ui': {
+            'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false
+            }
+          }
+        });
+      
+        // Define a Pie chart
+        var pie = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'probeCountPie',
+          // Instruct the piechart to use colums 0 3
+          // from the 'data' DataTable.
+          'view': {'columns': [0, 3]}
+        });
+		
+        // Define a table
+        var table = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'CustomerMatrixDashboardTable'
+        });
+      
+        // Create a dashboard
+        new google.visualization.Dashboard(document.getElementById('CustomerMatrixDashboard')).
+            // Establish bindings, declaring the both the slider and the category
+            // picker will drive both charts.
+            bind([slider, categoryPicker], [pie, table]).
+            // Draw the entire dashboard.
+            draw(data);
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+<!-- New new new -->
+</head>
+
+<body>
+
+<div id="Main_tabs"> 
+    <ul> 
+	<li><a href="#Main_tab"><span></span>Home</a></li>    
+    <li><a href="#Inventory"><span></span>Inventory</a></li>    
+    <li><a href="#CustomerMatrix"><span></span>CustomerMatrix</a></li>     
+	</ul>
+
+<div id="Main_tab">
+
+	<div id="search_accordion" style="height:80%">
+
+		<div>		
+
+		  <h3><a href="#">Statistics</a></h3>
+
+		 <div>
+
+		  <form  method="post" action="">
+
+				<fieldset>
+
+			<legend>Statistic Search</legend>
+
+			<table>
+
+			<tr><td>
+
+				<table>
+
+					<tr><td><label for="Customer">Customer:</label></td>
+
+						<td><select name="Customer" id="Customer"></select></td></tr>
+
+					<tr><td><label for="Site">Site:</label></td>	
+
+						<td><select name="Site" id="Site"></select></td></tr>
+
+					<tr><td><label for="StartDate">Start Date:</label></td>	
+
+						<td><input type="text" id="StartDate" /></td></tr>
+
+					<tr><td><label for="EndDate">End Date:</label></td>	
+
+						<td><input type="text" id="EndDate" /></td></tr>
+
+					<tr><td>
+
+						<input type="submit"  value="ValidateData"  id="v" name="submit" class="ValidateData"/>
+
+						<input type="reset" id="Reset" />
+
+					</td></tr>
+
+				</table>
+
+			</td>
+
+			<td>
+
+			<div id="flash"></div>
+
+			<div id="console"  class="ui-state-info ui-corner-all" ></div>
+
+				
+
+			</td>
+
+			</tr>
+
+			</table>
+
+				</fieldset>		
+
+			</form>
+
+			
+
+			</div>		
+
+		</div>
+
+		
+
+		 <div>
+
+		<h3><a href="#">Inventory Search</a></h3>
+
+		 <div>
+
+		<form id="themeform">
+
+		
+
+		<fieldset>
+
+		<legend>Inventory Search Form</legend>
+
+		<table>
+
+		<tr><td>
+
+		<label for="CustomerSelect">Choose a customer:</label>
+
+				<select name="CustomerSelect" id="CustomerSelect">
+
+				<option value="">None</option>
+
+				<optgroup label="TNF"><option value="TNF">TNF : TNF INTERNAL</option></optgroup><optgroup label="VFES"><option value="VFES">VFES : VODAFONE SPAIN</option></optgroup>
+
+		</select>
+
+		</td></tr>
+
+		<tr><td><input type="reset" /></td><td><input type="submit" value="Enter" /></td></tr>
+
+		
+
+		</table>
+
+		</fieldset>
+
+		</form>			
+
+		</div>
+
+		   </div>
+
+	</div>
+
+		        
+
+   			
+
+ 	</div>
+
+
+	
+<!--Inventory tab -->	
+<div id="Inventory">
+   	<div id="Inventory_tabs"  style="height:80%"> 
+
+		<ul> 
+		<li><a href="#ConnectionDetails_tab"><span></span>Connection</a></li> 
+		<li><a href="#Software_tab"><span></span>Software</a></li>    
+		<li><a href="#Hardware_tab"><span></span>Hardware</a></li> 
+		<li><a href="#SourceworksServices_tab"><span></span>Services</a></li> 	
+		<li><a href="#SourceworksRecordOutputs_tab"><span></span>Record Outputs</a></li> 
+		<li><a href="#SourceworksConfigFile_tab"><span></span>Configuration</a></li> 	
+		<li><a href="#SourceworksScripts_tab"><span></span>Scripts</a></li> 	
+		<li><a href="#SourceworksSystemHealth_tab"><span></span>System Health</a></li> 	
+		<li><a href="#Alarms_tab"><span></span>Alarms</a></li> 
+	   </ul>  
+	   
+	  	<div id="ConnectionDetails_tab">
+		 <div>Original Data Table</div>
+    <div id="table"></div>
+    <br />
+    <div>A Data View</div>
+    <div id="table2"></div>
+    <br />
+    <div>Another Data View</div>
+    <div id="table3"></div>
+		</div>
+		
+		
+		<div id="Software_tab">
+		  <div id="SourceworksSoftWare_table"></div>            
+
+		</div>
+		
+		
+		<div id="Hardware_tab">
+				
+									<div id="HardWare_table" ></div>
+		</div>
+		
+		<div id="SourceworksServices_tab">
+		
+		<div id="SourceworksServices_table1" ></div>	
+									<div id="SourceworksServices_table2" ></div>
+									<div id="SourceworksServices_table3" ></div>		
+									
+	</div>
+	
+	<div id="SourceworksRecordOutputs_tab">
+	
+									<div id="RecordOutput_table" ></div>
+								
+	</div>
+
+	
+		<div id="SourceworksConfigFile_tab">
+			<iframe src="testBench/SourceworksConfigXML/" style="height:400px;width:1200px"></iframe>
+			
+			<ul>
+			<li><a href="testBench/SourceworksConfigXML/detection.xml" target="_blank"> detection.xml</a></li>
+			</ul>
+		</div>
+	
+	<div id="SourceworksScripts_tab">
+	
+	</div>
+	<div id="SourceworksSystemHealth_tab">
+	
+	</div>
+	
+	<div id="Alarms_tab">
+				<div style="background-image: url(images/traffic_light.png); height: 400px; width: 200px; ">
+
+							<img src="images/traffic_light_green.png" name="banner" style="padding:10px 0px 0px 35px;"> 
+							<img src="images/traffic_light_off.png" name="banner1" style="padding:0px 0px 0px 35px; "> 
+							<img src="images/traffic_light_off.png" name="banner2" style="padding:0px 0px 0px 35px; "> 
+							<!--
+							Need seperate JavaScript for these
+							<img src="images/traffic_light_red.png" name="banner" style="padding:0px 0px 0px 35px; "> -->
+							</div>
+							 
+							<form>
+							 <input type="button" value="Cycle" name="Cycle" onclick="banCycle()">
+							 <input type="button" value="Stop" name="Stop" onclick="stopCycle()">
+							 <input type="button" value="Cycle1" name="Cycle1" onclick="banCycle1()">
+							 <input type="button" value="Stop1" name="Stop1" onclick="stopCycle1()">
+							 
+							 <input type="button" value="Cycle1" name="Cycle1" onclick="banCycle2()">
+							 <input type="button" value="Stop1" name="Stop1" onclick="stopCycle2()">
+							</form>
+		</div>
+</div>	
+
+
+</div>
+	
+	
+	<!--Customer Matrix tab -->
+<div id="CustomerMatrix" style="height:90%">
+	<div id="CustomerMatrix_tabs"> 
+
+		<ul> 
+		<li><a href="#CustomerMatrixTable_tab"><span></span>Table</a></li> 
+		<li><a href="#CustomerMatrixDashboard_tab"><span></span>Dashboard</a></li>		
+	   </ul>  
+	   
+	   
+	   <div id="CustomerMatrixTable_tab">
+						
+					   
+			<table cellpadding="0" cellspacing="0" border="0" class="display" id="ProbeInformationDataTable">
+				<thead>
+					<tr>
+						<th>Customer</th>
+						<th>Probe version</th>
+						<th>Card Type</th>
+						<th>Card Ports</th>
+						<th>Peak data rate (Gbps)</th>
+						<th>SourceWorks version</th>
+						<th>Netrofeed</th>
+						<th>Xmine</th>
+						<th>Touchpoint</th>
+						<th>Other</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="gradeX">
+						<td>Vodafone Spain</td>
+						<td>H2 KERNEL2.6.22-15-server</td>
+						<td class="center">TNF 10G -ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g TNF</td>
+						<td class="center">4</td>
+						<td class="center">7 Gb/s</td>
+						<td class="center">Sourceworks 5.0</td>
+						<td>Enabled. ASCII</td>
+						<td class="center">Disabled. Binary.</td>
+						<td class="center">Enabled. ASCII.</td>
+						<td class="center"></td>
+					</tr>
+					<tr class="gradeC">
+						<td>T-Mobile </td>
+						<td>H2 KERNEL2.6.22-15-server</td>
+						<td class="center">TNF 10G -ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g </td>
+						<td class="center">2</td>
+						<td class="center">2.6 Gb/s</td>
+						<td class="center">Sourceworks 4.6.0.0</td>
+						<td>Enabled. ASCII</td>
+						<td class="center">Disabled. Binary.</td>
+						<td class="center">Enabled. ASCII.</td>
+						<td class="center"></td>
+					</tr>
+					<tr class="gradeA">
+						<td>TNF Ireland</td>
+						<td>H1</td>
+						<td class="center">Napatech 1G</td>
+						<td class="center">1</td>
+						<td class="center">50 Mb/s</td>
+						<td class="center">Sourceworks 4.9.0.0</td>
+						<td>Enabled. ASCII</td>
+						<td class="center">Disabled. Binary.</td>
+						<td class="center">Enabled. ASCII.</td>
+						<td class="center"></td>
+					</tr>
+				
+				</tbody>
+			</table>	
+				
+		</div>
+		
+<div id="CustomerMatrixDashboard_tab">
+	<div id="CustomerMatrixDashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width:40%; font-size: 0.9em;'>
+            <div id="control1"></div>
+            <div id="control2"></div>
+            <div id="control3"></div>
+          </td>
+          <td style='width:60%'>
+            <div style="float: left;" id="probeCountPie"></div>
+            <div style="float: left;" id="CustomerMatrixDashboardTable"></div>
+            
+          </td>
+        </tr>
+      </table>
+    </div>			  
+				
+		</div>
+		
+		
+		
+	</div>
+	
+	
+</div>
+
+
+<!--End of Main tabs -->
+ </div>
+
+ 
+
+
+
+</body>
+
+</html>

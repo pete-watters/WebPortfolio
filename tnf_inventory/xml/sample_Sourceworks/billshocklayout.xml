@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BillShock records are logged for each GTP context. Records are logged at configured periods
+      and when GTP context is deleted. So for each GTP context at least one BillShock record is
+      generated. BillShock accumulates information on GTP context level, not on UDP or TCP 
+      connection level. Besides general GTP context fields the following data is collected:
+          * bytes up (TCP + UDP)
+          * bytes down (TCP + UDP)
+          * UDP up bytes
+          * UDP down bytes
+          * TCP up bytes
+          * TCP down bytes
+          * duration
+          * total throughput (TCP based)
+          * bytes per port
+      Duration is accumulated time of downloaded and uploaded TCP volumes. The time is retrieved
+      from Netro throughput algorithm. Total throughput is TCP based up and down throughput.
+      It is calculated by (TCP up + TCP down)/duration formula. Besides Billshock uses flow detection
+      algorithm and separates the traffic withing the context into services adding as much dynamic group 
+      of records as were services detected. Each group of records has following feilds:
+          * name of the service
+          * bytes up (TCP or UDP)
+          * bytes down (TCP or UDP)
+          * duration (TCP only)
+          * RTT (TCP only)
+          * retransmitted bytes up (TCP only)
+          * retransmitted bytes down (TCP only)
+      For UDP based protocols only bytes up/down are populated the rest of fields is zero.-->
+<record_layout id="billshock">
+    <record id="6014">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="3">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="4">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="5">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="8">ID_GTP_IMSI</field>
+        <field id="9">ID_GTP_CONNECTION_START_TIMESTAMP</field>
+        <field id="10">ID_GTP_CONNECTION_STATUS</field>
+        <field id="11">ID_GTP_APN</field>
+        <field id="12">ID_GTP_END_USER_IPV4_ADDRESS</field>
+        <field id="13">ID_GTP_MSISDN</field>
+        <field id="14">ID_GTP_IMEISV</field>
+        <field id="15">ID_GTP_RAT_TYPE</field>
+        <field id="16">ID_GTP_CELL_LAC</field>
+        <field id="17">ID_GTP_CELL_ID</field>
+        <field id="18">ID_BILLSHOCK_TOTAL_BYTES_UP</field>                  <!-- The sum of UDP and TCP bytes up excluding TCP retransmitted bytes up-->
+        <field id="19">ID_BILLSHOCK_TOTAL_BYTES_DOWN</field>                <!-- The sum of UDP and TCP bytes down excluding TCP retransmitted bytes down-->
+        <field id="20">ID_BILLSHOCK_UDP_BYTES_UP</field>
+        <field id="21">ID_BILLSHOCK_UDP_BYTES_DOWN</field>
+        <field id="22">ID_BILLSHOCK_TCP_BYTES_UP</field>                    <!-- The volume of TCP bytes up excluding TCP retransmitted bytes up-->
+        <field id="23">ID_BILLSHOCK_TCP_BYTES_DOWN</field>                  <!-- The volume of TCP bytes down excluding TCP retransmitted bytes down-->
+        <field id="24">ID_BILLSHOCK_RETR_BYTES_UP</field>
+        <field id="25">ID_BILLSHOCK_RETR_BYTES_DOWN</field>
+        <field id="26">ID_BILLSHOCK_DURATION</field>                  <!-- The duration covers all TCP volumes including TCP retransmitted bytes -->
+        <field id="27">ID_BILLSHOCK_THROUGHPUT</field>          <!-- The throughput covers all TCP volumes including TCP retransmitted bytes -->
+        <field id="28">ID_BILLSHOCK_NUM_OF_SERVICES</field>
+        <field id="29">ID_BILLSHOCK_BYTES_BY_SERVICE</field>
+    </record>
+</record_layout>

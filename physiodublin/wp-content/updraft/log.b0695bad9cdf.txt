@@ -1,0 +1,94 @@
+0000.000 Opened log file at time: Sat, 02 Mar 2013 21:13:45 +0000
+0000.001 UpdraftPlus: 1.4.29 WordPress: 3.5.1 PHP: 5.3.21 (Linux lh11.dnsireland.com 2.6.32-279.22.1.el6.x86_64 #1 SMP Wed Feb 6 03:10:46 UTC 2013 x86_64) PHP Max Execution Time: 900 ZipArchive::addFile exists: Y
+0000.001 Free space on disk containing Updraft's temporary directory: 1219843.9 Mb
+0000.002 Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.002 Processed schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.003 Backup run: resumption=0, nonce=b0695bad9cdf, begun at=1362258825, job type: backup
+0000.003 Scheduling a resumption (1) after 300 seconds in case this run gets aborted
+0000.004 Creation of backups of directories: beginning
+0000.004 Beginning creation of dump of plugins
+0000.388 Created plugins zip - file size is 445.6 Kb in 0.4 s (1163 Kb/s)
+0000.388 Beginning creation of dump of themes
+0000.507 Zip: backup_2013-03-02-2113_My_Blog_b0695bad9cdf-themes.zip.tmp: 100 files added (size: 801 Kb)
+0000.593 Created themes zip - file size is 1019.7 Kb in 0.2 s (4980 Kb/s)
+0000.594 Beginning creation of dump of uploads
+0000.595 ERROR: Zip failure: /*Could not create*/ uploads zip: code=-1
+0000.595 An error condition has occurred for the first time on this run
+0000.595 Beginning backup of other directories found in the content directory
+0000.596 Looking for candidates to back up in: /home/peterjwa/public_html/portfolio/physiodublin/wp-content
+0000.596 others: index.php: skipping: excluded by options
+0000.596 others: updraft: skipping: this is the updraft directory
+0000.596 others: plugins: skipping: this is the plugins directory
+0000.597 others: uploads: skipping: this is the uploads directory
+0000.597 others: upgrade: skipping: excluded by options
+0000.597 others: themes: skipping: this is the themes directory
+0000.597 No backup of other directories: there was nothing found to back up
+0000.598 Saving backup status to database (elements: 4)
+0000.599 Beginning creation of database dump
+0000.600 Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0000.600 Table wp_commentmeta: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_commentmeta.table.gz)
+0000.602 Table wp_comments: Total rows added: 1 in 0.00 seconds
+0000.602 Table wp_comments: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_comments.table.gz)
+0000.603 Table wp_links: Total rows added: 0 in 0.00 seconds
+0000.603 Table wp_links: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_links.table.gz)
+0000.635 Table wp_options: Total rows added: 146 in 0.03 seconds
+0000.636 Table wp_options: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_options.table.gz)
+0000.638 Table wp_postmeta: Total rows added: 1 in 0.00 seconds
+0000.638 Table wp_postmeta: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_postmeta.table.gz)
+0000.640 Table wp_posts: Total rows added: 3 in 0.00 seconds
+0000.640 Table wp_posts: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_posts.table.gz)
+0000.641 Table wp_term_relationships: Total rows added: 1 in 0.00 seconds
+0000.641 Table wp_term_relationships: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_term_relationships.table.gz)
+0000.642 Table wp_term_taxonomy: Total rows added: 1 in 0.00 seconds
+0000.643 Table wp_term_taxonomy: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_term_taxonomy.table.gz)
+0000.644 Table wp_terms: Total rows added: 1 in 0.00 seconds
+0000.644 Table wp_terms: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_terms.table.gz)
+0000.645 Table wp_usermeta: Total rows added: 14 in 0.00 seconds
+0000.645 Table wp_usermeta: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_usermeta.table.gz)
+0000.647 Table wp_users: Total rows added: 1 in 0.00 seconds
+0000.647 Table wp_users: finishing file (backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_users.table.gz)
+0000.647 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_commentmeta.table.gz: adding to final database dump
+0000.648 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_comments.table.gz: adding to final database dump
+0000.648 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_links.table.gz: adding to final database dump
+0000.648 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_options.table.gz: adding to final database dump
+0000.658 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_postmeta.table.gz: adding to final database dump
+0000.658 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_posts.table.gz: adding to final database dump
+0000.659 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_term_relationships.table.gz: adding to final database dump
+0000.659 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_term_taxonomy.table.gz: adding to final database dump
+0000.660 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_terms.table.gz: adding to final database dump
+0000.660 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_usermeta.table.gz: adding to final database dump
+0000.661 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db-table-wp_users.table.gz: adding to final database dump
+0000.661 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db.gz: finished writing out complete database file (16 Kb)
+0000.662 Saving backup history
+0000.662 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0000.662 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0000.663 Requesting backup of the files that were not successfully uploaded
+0000.663 Cloud backup selection: 
+0000.663 Beginning dispatch of backup to remote
+0000.663 Resume backup (b0695bad9cdf, 0): finish run
+0000.664 There were errors in the uploads, so the 'resume' event is remaining scheduled
+0000.664 No email will/can be sent - the user has not configured an email address.
+0000.664 The backup has not finished; a resumption is scheduled within 5 minutes
+0000.000 Opened log file at time: Sat, 02 Mar 2013 21:18:47 +0000
+0000.000 UpdraftPlus: 1.4.29 WordPress: 3.5.1 PHP: 5.3.21 (Linux lh11.dnsireland.com 2.6.32-279.22.1.el6.x86_64 #1 SMP Wed Feb 6 03:10:46 UTC 2013 x86_64) PHP Max Execution Time: 900 ZipArchive::addFile exists: Y
+0000.000 Free space on disk containing Updraft's temporary directory: 1219841.3 Mb
+0000.001 Backup run: resumption=1, nonce=b0695bad9cdf, begun at=1362258825, job type: backup
+0000.001 Scheduling a resumption (2) after 300 seconds in case this run gets aborted
+0000.001 Creation of backups of directories: already finished
+0000.003 Saving backup status to database (elements: 6)
+0000.003 Database dump: Creation was completed already
+0000.003 Saving backup history
+0000.004 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0000.004 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0000.004 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-uploads.zip: Note: This file was not marked as successfully uploaded, but does not exist on the local filesystem
+0000.005 Recording as successfully uploaded: backup_2013-03-02-2113_My_Blog_b0695bad9cdf-uploads.zip (28a8685086a59ca85e770361bc6bce43)
+0000.005 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-others.zip: Note: This file was not marked as successfully uploaded, but does not exist on the local filesystem
+0000.005 Recording as successfully uploaded: backup_2013-03-02-2113_My_Blog_b0695bad9cdf-others.zip (a36f03a4fe824e5827feeaaf93715ac3)
+0000.006 backup_2013-03-02-2113_My_Blog_b0695bad9cdf-db.gz: db: This file has not yet been successfully uploaded: will queue
+0000.006 Requesting backup of the files that were not successfully uploaded
+0000.006 Cloud backup selection: 
+0000.006 Beginning dispatch of backup to remote
+0000.006 Resume backup (b0695bad9cdf, 1): finish run
+0000.007 There were no errors in the uploads, so the 'resume' event is being unscheduled
+0000.008 No email will/can be sent - the user has not configured an email address.
+0000.008 The backup apparently succeeded and is now complete

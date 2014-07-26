@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For MobileMoments, a special 'reduced' Netro feed is made available.
+        This feed contains only 6021 records (no 6022 records) and a reduced
+        number of fields. -->
+<record_layout id="mm">
+    <record id="6021">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_NETRO_APPLICATION</field>
+        <field id="2">ID_NETRO_PROTOCOL</field>
+        <field id="3">ID_NETRO_RECORD_REASON</field>
+        <field id="4">ID_NETRO_START_TIMESTAMP</field>
+        <field id="5">ID_NETRO_END_TIMESTAMP</field>
+        <field id="6">ID_GTP_MSISDN</field>
+        <field id="7">ID_GTP_IMSI</field>
+        <field id="8">ID_NETRO_ALL_BYTES_UP</field>
+        <field id="9">ID_NETRO_ALL_BYTES_DOWN</field>
+        <field id="10">ID_NETRO_BYTES_TOTAL</field>
+        <field id="11">ID_TCP_CLIENT_SETUP_TIME</field>
+        <field id="12">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="13">ID_NETRO_DOWNLOAD_TIME</field>
+        <field id="14">ID_NETRO_UPLOAD_TIME</field>
+        <field id="15">ID_NETRO_APPLICATION_ATTEMPTS</field>
+        <field id="16">ID_GTP_APN</field>
+        <field id="17">ID_NETRO_HOSTNAME</field>
+        <field id="18">ID_GTP_IMEISV</field>
+        <field id="19">ID_GTP_CELL_LAC</field>
+        <field id="20">ID_GTP_CELL_ID</field>
+        <field id="21">ID_NETRO_PAGEURI</field>
+        <field id="22">ID_NETRO_USER_AGENT</field>
+        <field id="23">ID_BLANK</field>
+        <field id="24">ID_NETRO_PAGE_ATTEMPTS</field>
+        <field id="25">ID_NETRO_SERVICE</field> 
+        <field id="26">ID_GTP_MCC</field>
+        <field id="27">ID_GTP_MNC</field>
+    </record>
+</record_layout>

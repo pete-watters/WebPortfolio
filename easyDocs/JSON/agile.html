@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
+
+<script type="text/javascript">
+    $.getJSON("data.php", function(data) {
+        $(document).ready(function(){
+
+            var testObj = data; 
+
+
+            $("#portfolio_carousel").html("eeeeeeeeeeeeeeee" + testObj.toString());
+
+
+            });
+    });
+
+ </script>
+</head>
+
+<body>
+<div id="portfolio_carousel" class="agileCarouselStyle"></div>
+<div id="blog_carousel" class="agileCarouselStyle"></div>
+<div id="projects_carousel" class="agileCarouselStyle"></div>
+
+</body>
+</html>

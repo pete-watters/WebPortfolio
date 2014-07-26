@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+        <title>DataTables example</title>
+		<style type="text/css" title="currentStyle">
+		    @import "css/DataTables.css";
+			@import "css/themes/ui-lightness/jquery-ui-1.8.4.custom.css";
+		</style>
+		
+		<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#mytable').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers",
+					"sAjaxSource": 'load.php'
+				});
+				$('#mytable tbody').delegate("tr", "click", rowClick);
+				
+				function refresh()
+				{
+				   var url = "load.php";
+				   // poptable2.php is the same as poptable.php, but with an extra row
+				   $.get(url, function(data) { doRefresh(data) });
+				}
+
+
+				function doRefresh(data)
+				{
+				   // jQuery.get() checked the MIME type, and parsed the JSON for us - data is an object
+				   
+				   oTable.fnClearTable();
+				   if (data.aaData.length)
+					  oTable.fnAddData(data.aaData);
+				   oTable.fnDraw();
+				}
+				
+				
+			} );
+		</script>
+	</head>
+	<body>
+        	<div id="data_table_div">		
+            <div id="data_table_container">
+			
+<table id="mytable" >
+<thead>
+<tr><th>One</th><th>Two</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>	
+			</div>
+		</div>
+		
+		<button onclick="refresh();">Click to refresh</button>
+		
+	</body>
+</html>

@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CHANGE LOG 
+4_7_0_0 Release  (Jun 2011) - B.MacNamara
+Disabled <sort_interval> attribute to disable loadbalancing by default
+Moved existing specific HTTP rules top of order within HTTP Detector
+Added additional specific HTTP rules within HTTP Detector (specific content stores, video and audio applications, web applications)
+Moved catch-all HTTP rules to bottom within HTTP Detector
+Changed FLASH rule to include ONLY application/shockwave-flash content type , and renamed to flash_applications for clarity
+Changed application service mapping for flash_applications from streaming applications to web applications 
+Changed HTTP Video rule to contain all video/ content types
+Added HTTP Audio rule containing all audio/ content types
+Removed HTTP Streaming rule and moved *stream* content type to HTTP Downloading rule (this is octet-stream content which is typically NOT media streaming , just binary files - oftern exe or zip files)
+Updated HTTP Downloading rule to incorporate *stream* content-type and content-disposition attachments
+Renamed port rule 1935 to flash_rtmp
+Renamed port rule 4659 and 4659 from 'playstation 2' to to 'playstation network' for consistency with 'playstation network' HTTP rule
+Renamed port rule 3074 to XBoxLive for consistency with XBoxLive HTTP rule
+Added new application-service mappings for new rules
+Updated application-service mappings for renamed rules
+Added new ports rules for Viber traffic 
+Added new application-service mappings for Viber
+Removed 'Skype IM' from application-service mappings as there is no rule for this
+Renamed all of 'skype-login', 'skype-sms/event', skype-search' to 'skype' as they have no real meaning as an application
+Addded rule for whatsapp jabber
+Added application service mapping for whatsapp jabber
+Addded rule for speedtest.net upload test
+Renamed existing rule for speedtest.net to 'speedtest.net download test' 
+Added application service mapping for speedtest.net applications
+Added rules for viber http app traffic
+Added rules for whatsapp http app traffic
+Added rules for Apple Adative HTTP Video
+Added application service mapping for Apple Adative HTTP Video
+Added rules for Apple Push Notifications
+Added application service mapping for Apple Push Notifications
+Added rules for PingChat
+Added application service mapping for PingChat
+Updated Twitter rule to add twitpic.com
+Updated whatsapp http rule to add addtional rule for host whatsapp.net
+Fixed typo in pandora audio rule
+Updated windows marketplace, google maps, adult video rules
+Added rule for google
+Added application service mapping for google
+Added port based rule for tibia (game)
+Added rule for myspace
+Added application service mapping for myspace
+Added application service mapping for tibia
+Added Local HTTP based rules section for some Spanish TV iPlayer Sites
+Added rtsp_rtp rules based on new rtsp_rtp_detector
+Added application service mapping for rtsp_rtp applications
+NOTE:  the rtsp_rtp_detector section is only comaptible with SOURCEWORKS RELEASE 4.6.2 Onwards - please diable it if this detection file is used with 4.6.1 or earlier
+Added rule for facebook video
+Added application service mapping for facebook video
+
+4_7_1_0 Release  (Aug 2011) - F.Pose/B.MacNamara
+Added update_interval tag for detection root tag - default value 5 mins (300 seconds)
+Added update_interval tag for stat_detection tag - default value 5 mins (300 seconds) 
+Added protocol to port based rules for viber in tcp and udp detectors, removed viber ports form generic port mapping section
+Included rtp payload type 0 in rtp audio rule
+Included uri /speedtest/upload.jsp in speedtest.net upload rule
+Included user agents Twitter,Tweetdeck in Twitter rule
+Included additional rules for emule in tcp detector
+Included rule for ntp in udp detector
+Added a http rule for icq/oscar same as one in tcp detector
+Added http rule and service mapping for veoh video 
+Added http rule and service mapping HBOGo video
+Added http rule and service mapping for getjar appstore
+Added http rule and service mapping for clubpenguin
+Added http rule and service mapping for popcap games
+Added http rule and service mapping for zynga games
+Added http rule and service mapping for crowdstar games
+Added http rule and service mapping for kakaotalk
+Added http rule and service mapping for instagram
+Added http rule and service mapping for linkedin
+Added http rule and service mapping for flickr
+Added http rule and service mapping for photobucket
+Added http rule and service mapping for picasa
+Added http rule and service mapping for yfrog
+Added http rule and service mapping for yahoo browsing
+Added http rule and service mapping for msn browsing
+Added http and dns/https rule and service mapping for yahoo webmail
+Added http rule dns/https and service mapping for msn webmail
+Added http rule dns/https and service mapping for aol webmail
+Added additional dns/https rule for gmail
+Added http rule and service mapping for google plus
+Updated youtube video (google video) rule to include video.google domain
+Renamed flash_rtmp to rtmp for clarity
+Removed existing skype rules as they are superceded by new statistical detection model 
+Added rule and for mxit in tcp detector
+-->
+
+
+<detection>
+
+    <!-- Re-read detection.xml config file each X specified seconds. "0" means - read config once at startup. -->        
+    <update_interval>300</update_interval>
+
+    <!-- Switcher for TCP detection algorithm -->
+    <tcp_auto_detect_protocol>yes</tcp_auto_detect_protocol>
+    
+    <!-- Ageing settings for TCP detection objects -->
+    <tcp_auto_detect_ageing>
+        <high_watermark>20000</high_watermark>
+        <low_watermark>18000</low_watermark>
+    </tcp_auto_detect_ageing>
+
+    <!-- maximum size of queue storing tcp flows without payload before detection -->
+    <tcp_auto_queue_size>30</tcp_auto_queue_size>
+    
+    <!-- Switcher for UDP detection algorithm -->
+    <udp_auto_detect_protocol>yes</udp_auto_detect_protocol>
+    
+    <!-- Switcher for full-packet Android search algorithm-->
+    <detect_android>no</detect_android>
+
+    <stat_detection>
+        <!-- Enable statistical detection-->
+        <enable>yes</enable>
+        <!-- Process already detected flows-->
+        <process_detected>no</process_detected>
+        <!-- Numbers of processed packets in each direction-->
+        <packets_num>20</packets_num>
+        <!-- Re-read statdetection.xml config file each X specified seconds. "0" means - read config once at startup. -->        
+        <update_interval>300</update_interval>
+    </stat_detection>
+
+    <http_service_detector>
+        <!-- Sort interval in seconds - not used by default-->
+        <!-- <sort_interval>600</sort_interval> -->
+
+    <!-- ##### LOCAL SPANISH RULES - THESE WILL BE PROCESED FIRST - PLEASE COMMENT OUT OR REMOVE THESE RULES for other deployments ######## -->
+
+        <!-- RTVE Alacarta Video tagged by -->
+         <rule service="rtve alacarta video">
+            <white host="rtve.es" content_type="video/"/>
+        </rule>
+         <rule service="rtve alacarta video">
+            <white uri="/rtve" content_type="video/"/>
+        </rule>
+
+        <!-- Cuatro Play Video tagged by -->
+         <rule service="cuatro play video">
+            <white host="ondemand.cuatro" content_type="video/"/>
+        </rule>
+
+        <!-- Telecino Video tagged by -->
+         <rule service="telecino video">
+            <white host="telecino.es" content_type="video/"/>
+        </rule>
+
+    <!-- ##### END OF LOCAL RULES -############ -->
+
+        <rule service="google talk">
+            <white user_agent="Google Talk"/>
+        </rule>
+        <rule service="mms">
+            <white content_type="application/vnd.wap.mms-message"/>
+        </rule>
+        <!-- Bittorent request rule -->
+        <rule service="bittorrent">
+            <white user_agent="BitTorrent,Azureus,uTorrent"/>
+        </rule>
+        <!-- Bittorent response rule (OR relationship with the appropriate request rule) -->
+        <rule service="bittorrent">
+            <white content_type="application/x-bittorrent"/>
+        </rule>
+        <rule service="gnutella">
+            <white user_agent="LimeWire,BearShare,Phex"/>
+        </rule>
+        <rule service="qik">
+            <white host="qik.com"/>
+        </rule>
+        <rule service="ebuddy">
+            <white host="ebuddy.com"/>
+        </rule>
+        <rule service="twitter">
+            <white host="twitter.com,twimg.com,twitpic.com"/>
+        </rule>
+        <rule service="twitter">
+            <white user_agent="Twitter,Tweetdeck"/>
+        </rule>
+        <rule service="MicrosoftUpdates">
+            <white host="download.windowsupdate.com,autoupdate.windowsmedia.com,update.microsoft.com,download.microsoft.com,ntservicepack.microsoft.com,au.download.windowsupdate.com,m1.2mdn.net,m1.emea.2mdn.net,msgr.dlservice.microsoft.com,test.stats.update.microsoft.com,windowsupdate.microsoft.com,www.download.microsoft.com,www.download.windowsupdate.com,www.update.microsoft.com,www.windowsupdate.microsoft.com"/>
+        </rule>
+        <rule service="MicrosoftUpdates">
+            <white user_agent="Windows-Update-Agent"/>
+        </rule>
+        <rule service="GoogleUpdates">
+            <white user_agent="Google Update" host="cr-tools.clients.google.com,tools.google.com"/>
+        </rule>
+        <rule service="SymantecUpdates">
+            <white host="liveupdate.symantecliveupdate.com,liveupdate.symantec.com,ratings-wrs.symantec.com,definitions.symantec.com"/>
+        </rule>
+        <rule service="McAfeeUpdates">
+            <white host="download.mcafee.com"/>
+        </rule>
+        <rule service="AdobeUpdates">
+            <white host="download.adobe.com,download.macromedia.com,ardownload.adobe.com,fpdownload.adobe.com,fpdownload.macromedia.com"/>
+        </rule>
+        <rule service="GarminUpdates">
+            <white host="downloads.garmin.com"/>
+        </rule>
+        <rule service="AvastUpdates">
+            <white host="avast.com"/>
+        </rule>
+        <rule service="AppleUpdates">
+            <white host="appldnld.apple.com.edgesuite.net,swcdn.apple.com,swquery.apple.com"/>
+        </rule>
+        <rule service="SkypeUpdates">
+            <white user_agent="Skype" host="ui.skype.com"/>
+        </rule>
+        <rule service="AVGUpdates">
+            <white host="check.sanasecurity.com,update.avg.com,guru.avg.com,downloadfree.avg.com"/>
+        </rule>
+        <rule service="SonyUpdates">
+            <white host="update.playstation.net"/>
+        </rule>
+        <rule service="UbuntuUpdates">
+            <white user_agent="Ubuntu APT/HTTP"/>
+        </rule>
+        <rule service="WiiConnect24">
+            <white user_agent="WiiConnect24"/>
+        </rule>
+        <rule service="XboxLive">
+            <white user_agent="Xbox Live Client"/>
+        </rule>
+     
+
+    <!-- !!!!!!!!!! Webmail Rules !!!!!!!!!!!!!!! -->
+
+        <!-- Yahoo Mail tagged by (does not include https traffic)-->
+        <rule service="yahoo webmail">
+            <white host="mail.yahoo"/>
+        </rule>
+
+        <!-- AOL Mail tagged by (does not include https traffic)-->
+        <rule service="aol webmail">
+            <white host="mail.aol"/>
+        </rule>
+
+        <!-- MSN Live Hotmail Mail tagged by (does not include https traffic)-->
+        <rule service="msn webmail">
+            <white host="mail.live.com,hotmail.com"/>
+        </rule>
+
+        <!-- GMail tagged by (does not include https traffic)-->
+        <rule service="gmail">
+            <white host="mail.google.com,googlemail.com"/>
+        </rule>
+
+    <!-- !!!!!!!!!! AppStore Rules !!!!!!!!!!!!!!! -->
+
+        <!-- iTunes tagged by  -->
+        <rule service="itunes">
+            <white user_agent="iTunes" host="phobos.apple.com,itunes.apple.com"/>
+        </rule>
+
+        <!-- Android Market tagged by  -->
+        <rule service="android market">
+            <white user_agent="Android-Market"/>
+        </rule>
+
+        <!-- Blackberry Appworld tagged by either of these 2 rules -->
+        <rule service="blackberry appworld">
+            <white user_agent="AppWorld"/>
+        </rule>
+        <rule service="blackberry appworld">
+            <white host="appworld.blackberry.com"/>
+        </rule>
+
+        <!-- Windowslive Marketplace tagged by either of these 2 rules -->
+        <rule service="windowslive marketplace">
+            <white user_agent="Skymarket"/>
+        </rule>
+        <rule service="windowslive marketplace">
+            <white host="marketplace.windowsmobile,marketplace.windowsphone"/>
+        </rule>
+
+        <!-- Getjar AppStore tagged by -->
+        <rule service="getjar appstore">
+            <white host="m.getjar,getjar.com"/>
+        </rule>
+
+    <!-- !!!!!!!!!! Streaming (Video) Rules !!!!!!!!!!!!!!! -->
+
+        <!-- Youtube Video tagged by either of these 3 rules -->
+        <rule service="youtube video">
+            <white host="youtube.,ytimg.com" content_type="video/"/>
+        </rule>
+        <rule service="youtube video">
+            <white user_agent="youtube" content_type="video/"/>
+        </rule>
+
+        <!--  youtube "google video" (same as youtube) tagged by-->
+        <rule service="youtube video">
+            <white host="googlevideo,video.google" content_type="video/"/>
+        </rule>
+
+
+        <!-- Netflix Video tagged by -->
+        <rule service="netflix video">
+            <white host="netflix,lcdn.nflx" content_type="video/,audio/,text/plain"/>
+        </rule>
+
+        <!-- CNN Video tagged by (Note: Does not include  CNN Live TV -->
+        <rule service="cnn video">
+            <white host="cdn.turner.com" content_type="video/"/>
+        </rule>
+
+        <!-- Dailymotion Video tagged by -->
+        <rule service="dailymotion video">
+            <white host="dailymotion.com" content_type="video/"/>
+        </rule>
+
+        <!-- Vimeo Video tagged by -->
+        <rule service="vimeo video">
+            <white host="vimeo.com" content_type="video/"/>
+        </rule>
+
+        <!-- Skyplayer Video tagged by (Includes Live TV and VOD) -->
+        <rule service="skyplayer video">
+            <white host="skyabr,content.mobile-tv.sky.com,vodclips.sky.com" content_type="video/,text/plain"/>
+        </rule>
+
+        <!-- MSN/BING Video tagged by -->
+        <rule service="bing video">
+            <white host="msnvid" content_type="video/"/>
+        </rule>
+
+        <!-- Metacafe Video tagged by -->
+        <rule service="metacafe video">
+            <white host="mccont.com" content_type="video/"/>
+        </rule>
+
+        <!-- Megavideo Video tagged by -->
+        <rule service="megavideo video">
+            <white host="megavideo" content_type="video/"/>
+        </rule>
+
+        <!-- Divxstage Video tagged by -->
+        <rule service="divxstage video">
+            <white host="divxstage.net" content_type="video/"/>
+        </rule>
+
+        <!-- StageVu Video tagged by -->
+        <rule service="stagevu video">
+            <white host="stagevu.com" content_type="video/"/>
+        </rule>
+
+        <!-- Movshare Video tagged by -->
+        <rule service="movshare video">
+            <white host="movshare" content_type="video/"/>
+        </rule>
+        
+        <!-- Facebook Video tagged by -->
+        <rule service="facebook video">
+            <white host="fbcdn" content_type="video/,octet-stream"/>
+        </rule>
+
+        <!-- Veoh Video tagged by -->
+        <rule service="veoh video">
+            <white host="veoh" content_type="video/"/>
+        </rule>
+
+        <!-- HBOGo Video tagged by -->
+        <rule service="HBOGo video">
+            <white host="hbogo" content_type="video/"/>
+        </rule>
+
+        <!-- adult Video tagged by -->
+        <rule service="adult video">
+            <white host="youporn.com,redtube.com,pornhub.com,videobox.com,tube8.com,spankwire,porn,xxx,xvideo,sex,brazzers"  content_type="video/,octet-stream"/>
+        </rule>
+
+
+
+    <!-- !!!!!!!!!! Streaming (Audio) Rules !!!!!!!!!!!!!!! -->
+
+        <!-- Pandora Radio tagged by either of these 2 rules -->
+        <rule service="pandora audio">
+            <white user_agent="pandora,Pandora"  content_type="audio/,octet-stream"/>
+        </rule>
+        <rule service="pandora audio">
+            <white host=".pandora.com"  content_type="audio/,octet-stream"/>
+        </rule>
+
+        <!-- Slacker radio tagged by either of these 2 rules -->
+        <rule service="slacker audio">
+            <white user_agent="slack,Slack"  content_type="audio/"/>
+        </rule>
+        <rule service="slacker audio">
+            <white host=".slacker.com"  content_type="audio/"/>
+        </rule>
+
+        <!-- Last.fm radio tagged by either of these 2 rules -->
+        <rule service="lastfm audio">
+            <white host="last.fm" content_type="audio/"/>
+        </rule>
+
+        <!-- Grooveshark radio tagged by either of these 2 rules -->
+        <rule service="grooveshark audio">
+            <white host="grooveshark.com" content_type="audio/"/>
+        </rule>
+
+    <!-- !!!!!!!!!! Web Applications Rules !!!!!!!!!!!!!!! -->
+
+        <!-- Google Maps tagged by -->
+        <rule service="google maps">
+            <white host="maps.google.,mobilemaps.clients.google."/>
+        </rule>
+
+        <!-- Google Earth tagged by -->
+        <rule service="google earth">
+            <white user_agent="GoogleEarth"/>
+        </rule>
+
+        <!-- Bing Maps tagged by -->
+        <rule service="bing maps">
+            <white host="tiles.virtualearth.net"/>
+        </rule>
+        <rule service="bing maps">
+            <white uri="bing.com/maps"/>
+        </rule>
+
+        <!-- Navteq Map24 Maps tagged by -->
+        <rule service="navteq map24 maps">
+            <white host="map24.com"/>
+        </rule>
+
+        <!-- Ovi Maps tagged by -->
+        <rule service="ovi maps">
+            <white host="maps.ovi.com,maps.svc.ovi.com"/>
+        </rule>
+
+        <!-- Yahoo Maps tagged by  -->
+        <rule service="yahoo maps">
+            <white host=".yimg.com" uri="/tl?"/>
+        </rule>
+
+
+        <!-- Facebook tagged by -->
+        <rule service="facebook">
+            <white host="facebook.,.fb.,applatform.com,zynga.com,fbcdn,fb.link.nokia.com,farmville.com"/>
+        </rule>
+
+
+        <!-- MySpace tagged by -->
+        <rule service="myspace">
+            <white host=".myspace.com,myspacecdn"/>
+        </rule>
+
+        <!-- Google Plus tagged by (does not include https traffic)-->
+        <rule service="google plus">
+            <white host="plus.google"/>
+        </rule>
+
+        <!-- Google tagged by 
+        THIS RULE SHOULD BE PLACED BELOW ALL OTHER GOOGLE SPECIFIC RULES (GOOGLE MAPS , GOOGLE EARTH etc.) AND BEFORE  HTTP BROWSING RULE-->
+        <rule service="google">
+            <white host="google"/>
+        </rule>
+
+        <!-- Speedtest.net tagged by -->
+        <rule service="speedtest.net download test">
+            <white uri="/speedtest/random"/>
+        </rule>
+
+        <rule service="speedtest.net upload test">
+            <white uri="/speedtest/upload.php,/speedtest/upload.jsp"/>
+        </rule>
+
+        <!-- Viber App Traffic tagged by -->
+        <rule service="viber">
+            <white user_agent="Viber/"/>
+        </rule>
+
+        <!-- WhatsApp App HTTP Traffic tagged by either of these 2 rules -->
+        <rule service="whatsapp">
+            <white host="whatsapp.net"/>
+        </rule>
+        <rule service="whatsapp">
+            <white user_agent="WhatsApp/"/>
+        </rule>
+        
+        <!-- PingChat tagged by  -->
+        <rule service="pingchat">
+            <white user_agent="PingChat"/>
+        </rule>
+
+        <!-- ICQ/OSCAR tagged by  -->
+        <rule service="icq">
+            <white host="login.icq.com,login.oscar.aol.com,http.proxy.icq.com,aimhttp.oscar.aol.com"/>
+        </rule>
+
+        <!-- Instagram tagged by either of these 2 rules -->
+        <rule service="instagram">
+            <white host="instagram.com,instagr.am"/>
+        </rule>
+        <rule service="instagram">
+            <white user_agent="Instagram"/>
+        </rule>
+
+        <!-- KakaoTalk tagged by either of these 2 rules -->
+        <rule service="kakaotalk">
+            <white host="talk.kakao"/>
+        </rule>
+        <rule service="kakaotalk">
+            <white user_agent="KakaoTalk,com.kakao.talk"/>
+        </rule>
+
+        <!-- LinkedIn tagged by either of these 2 rules -->
+        <rule service="linkedin">
+            <white host="linkedin."/>
+        </rule>
+        <rule service="linkedin">
+            <white user_agent="LinkedIn"/>
+        </rule>
+
+        <!--Flickr tagged by  -->
+        <rule service="flickr">
+            <white host=".flickr.com"/>
+        </rule>
+
+        <!--Photobucket tagged by  -->
+        <rule service="photobucket">
+            <white host=".photobucket.com"/>
+        </rule>
+
+        <!--Picassa tagged by  -->
+        <rule service="picasa">
+            <white host="picasaweb.google.com"/>
+        </rule>
+
+        <!--yFrog tagged by  -->
+        <rule service="yfrog">
+            <white host="yfrog.com"/>
+        </rule>
+
+        <!-- Yahoo Browsing tagged by (does not include https traffic)-->
+        <rule service="yahoo browsing">
+            <white host=".yahoo."/>
+        </rule>
+
+        <!-- MSN Bing  Browsing tagged by (does not include https traffic)-->
+        <rule service="msn browsing">
+            <white host="windowslive.,.msn.,microsoft.com,passport.net,bing.com"/>
+        </rule>
+
+
+        <!-- !!!!!!!!!! Gaming Rules !!!!!!!!!!!!!!! -->
+        <!-- Playstation Network tagged by either of these 2 rules -->
+        <rule service="playstation network">
+            <white user_agent="PS3,Playstation"/>
+        </rule>
+        <rule service="playstation network">
+            <white host=".playstation.net"/>
+        </rule>
+
+        <!-- 2 additional rules for WiiConnect tagged by either of these 2 rules -->
+        <rule service="WiiConnect24">
+            <white user_agent="Wii"/>
+        </rule>
+        <rule service="WiiConnect24">
+            <white host="shop.wii.com,conntest.nintendo"/>
+        </rule>
+
+        <!-- Clubpenguin game tagged by -->
+        <rule service="clubpenguin">
+            <white host="clubpenguin"/>
+        </rule>
+
+        <!--popcap games tagged by  -->
+        <rule service="popcap games">
+            <white host="popcap.com"/>
+        </rule>
+
+        <!--crowdstar games tagged by  -->
+        <rule service="crowdstar games">
+            <white host=".crowdstar"/>
+        </rule>
+
+        <!--zynga games tagged by  -->
+        <rule service="zynga games">
+            <white host="zgncdn,zynga.com"/>
+        </rule>
+
+    <!-- !!!!!!!!!! General HTTP Content Type (Catch-All) Rules !!!!!!!!!!!!!!! -->
+
+        <!-- All Other Apple Adaptive HTTP Video Streaming tagged by
+        THIS RULE SHOULD BE PLACED BELOW ALL OTHER SPECIFIC VIDEO APPLICATION RULES AND ABOVE THE HTTP VIDEO RULE-->
+        <rule service="Apple Adaptive HTTP Video">
+            <white  uri=".ts" content_type="video/mp2t"/>
+        </rule>
+
+        <!-- All Other HTTP Video tagged by
+        THIS RULE SHOULD BE PLACED BELOW ALL OTHER SPECIFIC VIDEO APPLICATION RULES -->
+        <rule service="HTTP Video">
+            <white content_type="video/"/>
+        </rule>
+
+        <!-- All Other HTTP Audio tagged by
+        THIS RULE SHOULD BE PLACED BELOW ALL OTHER SPECIFIC AUDIO APPLCIATION RULES -->
+        <rule service="HTTP Audio">
+            <white content_type="audio/"/>
+        </rule>
+
+        <!-- THIS RULE SHOULD BE PLACED BELOW ALL OTHER SPECIFIC VIDEO & AUDIO APPLCITAION RULES -->     
+        <rule service="flash_applications">
+            <white content_type="application/x-shockwave-flash"/>
+        </rule>
+
+        <!-- THIS RULE SHOULD BE PLACED BELOW ALL OTHER HTTP Web Application RULES -->
+        <!-- HTTP browsing tagged by either of these 2 rules (Note: 2 rules implemented for performance reasons) -->
+        <rule service="HTTP Browsing">
+            <white content_type="image/"/>
+        </rule>
+        <rule service="HTTP Browsing">
+            <white content_type="text/html,text/sgml,text/plain,text/css,text/javascript,text/vnd.wap.wml,text/xml,application/x-javascript,multipart/mixed,application/vnd.wap.multipart.mixed,application/xhtml+xml,application/vnd.wap.xhtml+xml,application/vnd.wap.wmlscriptc,text/x-cross-domain-policy"/>
+        </rule>
+
+        <!-- HHTTP DOWNLOADING - THIS RULE SHOULD BE PLACED BELOW ALL OTHER HTTP RULES  -->
+        <rule service="HTTP Downloading">
+            <white content_type="stream" content_disposition="attachment,Attachment"/>
+        </rule>
+
+        <!-- HTTP DOWNLOADING - THIS RULE SHOULD BE PLACED BELOW ALL OTHER HTTP RULES -->
+        <rule service="HTTP Downloading">
+            <white content_disposition="attachment,Attachment"/>
+        </rule>
+
+    </http_service_detector>
+
+
+<!-- TCP and UDP Detector Rule Logic... -->
+    <!--  
+            Defines the protocols detection rules, which can be used by Netro to determine the application type for rtsp and associated rtp flows
+            Supported matches:
+            "host" - rtsp hostname
+            "user_agent" rtsp useragent
+            "payload_type" - rtp payload type
+        -->
+
+    <rtsp_rtp_detector>
+        <rule host="youtube.com">youtube video</rule>
+        <rule payload_type="0-18">rtp audio</rule>
+        <rule payload_type="25,26,28,31,32,34">rtp video</rule>
+        <rule payload_type="33">rtp audio video</rule>
+        <rule payload_type="96-127">rtp dynamic</rule>
+    </rtsp_rtp_detector>
+
+
+<!-- TCP and UDP Detector - RTMP Rule Logic... -->
+    <!--  
+            Defines the protocols detection rules, which can be used by Netro to determine the application type for rtmp flows
+            Supported matches:
+            "tc_url" - rtmp connection tcUrl parameter
+            "page_url" - rtmp connection pageUrl parameter
+            "swf_url" - rtmp connection swfUrl parameter
+            "stream_name" - rtmp play streamName parameter
+        -->
+
+    <rtmp_detector>
+        <!--rule swf_url="example.com">example</rule-->
+    </rtmp_detector>
+
+
+  <!-- TCP and UDP Detector Rule Logic... -->
+    <!--
+            Defines the protocols detection rules, which can be used by Netro to determine the payload type.
+
+            <rule
+                length="payload length"
+                src_port="tcp/udp src port number in host byte order"
+                dst_port="tcp/udp dst port number in host byte order"
+                next_packet_for="protocol name" - chain for step-by-step detection (ie xml -> jabber)
+                action="detect|continue" - what should be done whent rule is passed (detect by default). In case of continue the next packet in the stream will be used for detection.
+                text_xx="sign1,sign2,sign3,etc" - comma separated text signs, where xx is ofset in bytes (relative to payuload's start)
+                data_xx="data1,data2,data3,etc" - comma separated data signs (hex sequences), where xx is ofset in bytes (relative to payuload's start)
+                There is three specia pre-defined offsets:
+                    start - equal to text_0, data_0
+                    middle - anywhere in the middle
+                    end - ends with 
+            >protocol name</rule> 
+
+            Common rules:
+            comma separated values in textx/datas are combined using "OR" - means one of signs
+            text_XX/data_XX/length/ports are combined using "AND" - means all the signs
+
+        -->
+
+    <tcp_protocol_detector>
+  
+        <!-- BitTorrent -->
+        <rule data_0="13" text_1="BitTorrent protocol">bittorrent</rule>
+        <rule text_start="GET /webseed?info_hash=,GET /data?fid=,GET /announce?info_hash">bittorrent</rule>
+        <rule text_start="GET " text_middle="Azureus,BitTorrent,BTWebClient">bittorrent</rule>
+
+        <!-- Ajport -->
+        <rule text_start="ajprot" data_6="0D0A">ajprot</rule>
+
+        <!-- Icecast -->
+        <rule text_start="SOURCE " text_middle="ice-">icecast</rule>
+
+        <!-- MXit-->
+        <rule dst_port="9119">mxit</rule>
+
+        <!-- Jabber file transfer -->
+        <rule text_start="&lt;iq to=,&lt;iq type=" text_middle="port=">jabber-file-transfer</rule>
+
+        <!-- Jabber (xmpp) chain -->
+        <rule next_packet_for="xml" text_middle="xmlns:stream='http://etherx.jabber.org/streams',xmlns:stream=&quot;http://etherx.jabber.org/streams&quot;">jabber</rule>
+        <rule text_start="&lt;?xml version=" text_end="?&gt;" action="continue">xml</rule>
+        <rule text_start="&lt;?xml version=,&lt;stream:stream to=,&lt;stream:stream from=" text_middle="whatsapp">whatsapp</rule>    
+        <rule text_start="&lt;?xml version=,&lt;stream:stream to=" text_middle="xmlns:stream='http://etherx.jabber.org/streams',xmlns:stream=&quot;http://etherx.jabber.org/streams&quot;">jabber</rule>
+        
+        <!-- FTP -->
+        <rule text_start="220 " text_middle="FTP" data_end="0D0A,0A">ftp</rule>
+        
+        <!-- SMTP -->
+        <rule text_start="220 " text_middle="SMTP" dataa_end="0D0A,0A">smtp</rule>
+        
+        <!-- POP3 -->
+        <rule text_start="OK,+OK" data_end="0D0A,0A">pop3</rule>
+       
+        <!-- HTTP - fallback rule for when auto-detect is off - not used normally-->
+        <rule text_start="GET,POST,OPTION" text_middle="HTTP">HTTP Generic</rule>
+
+        <!-- Ebuddy fallback rule for when auto-detect is off - not used normally -->
+        <rule text_start="GET,POST" text_middle="ebuddy.com">ebuddy</rule>
+        
+        <!-- Qik - fallback rule for when auto-detect is off - not used normally -->
+        <rule text_start="GET,POST" text_middle="qik.com">qik</rule>
+
+        <!-- Gnutella - fallback rule for when auto-detect is off - not used normally -->
+        <rule text_start="GNUTELLA CONNECT/">gnutella</rule>
+        <rule text_middle="User-Agent: LimeWire">gnutella</rule>
+        <rule text_middle="User-Agent: BearShare">gnutella</rule>
+        <rule text_middle="User-Agent: Phex">gnutella</rule>
+
+        <!-- IPP -->
+        <rule text_middle=" ipp://,application/ipp">ipp</rule>
+
+        <!-- ARES -->
+        <rule length="6" data_start="03005A">ares</rule>
+
+        <!-- filetopia chain -->
+        <rule next_packet_for="filetopia-2" length="4-100" data_start="039A" data_3="22,23">filetopia</rule>
+        <rule next_packet_for="filetopia-1" length="100-1500" data_start="039A" data_3="22,23" action="continue">filetopia-2</rule>
+        <rule length="50-70" data_start="039A" data_3="22" data_end="2B" action="continue">filetopia-1</rule>
+
+        <rule length="5-1500" dst_port="443" text_middle="update.microsoft.com">MicrosoftUpdates</rule>
+        
+        <!-- WhatsApp -->
+        <rule length="1" data_0="57" dst_port="443">whatsapp</rule>
+        <rule length="1" data_0="57" dst_port="8443">whatsapp</rule>
+        <rule length="1" data_0="57">whatsapp</rule>
+
+        <!-- SSLv2 and SSLv3-->
+
+        <!-- WhatsApp over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" data_start="1603" data_2="00,01,02" text_middle="whatsapp.net">whatsapp</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" data_2="0103" data_4="00,01,02" text_middle="whatsapp.net">whatsapp</rule>
+
+        <!-- HTTP over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" dst_port="443,8443,9443" data_start="1603" data_2="00,01,02">https</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" dst_port="443,8443,9443" data_2="0103" data_4="00,01,02">https</rule>
+        
+        <!-- Gmail over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" data_start="1603" data_2="00,01,02" text_middle="gmail">gmail</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" data_2="0103" data_4="00,01,02" text_middle="gmail">gmail</rule>
+        
+        <!-- IMAP over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" dst_port="993" data_start="1603" data_2="00,01,02">imaps</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" dst_port="993" data_2="0103" data_4="00,01,02">imaps</rule>
+        
+        <!-- POP3 over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" dst_port="995" data_start="1603" data_2="00,01,02">pop3s</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" dst_port="995" data_2="0103" data_4="00,01,02">pop3s</rule>
+        
+        <!-- SMTP over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" dst_port="465" data_start="1603" data_2="00,01,02">smtps</rule>
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="40-1500" dst_port="465" data_2="0103" data_4="00,01,02">smtps</rule>
+        
+        <!-- Google Talk over SSLv2 or SSLv3 -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" text_middle="talk.google.com">googletalk</rule>
+        
+        <!-- Server Hello -->
+        <rule next_packet_for="sslv3-hello,sslv2-hello" length="5-1500" data_start="1603" data_2="00,01,02">sslv3</rule>
+        <rule next_packet_for="sslv2-hello,sslv3-hello" length="40-1500" data_2="0103" data_4="00,01,02">sslv2</rule>
+        
+        <!-- Client Hello -->
+        <rule length="5-1500" data_start="1603" data_2="00,01,02" action="continue">sslv3-hello</rule>
+        <rule length="40-1500" data_2="0103" data_4="00,01,02" action="continue">sslv2-hello</rule>
+ 
+        <!-- OSCAR (ICQ) -->
+        <rule length="10-1500" data_0="2A" data_1="01" data_6="0000000001">icq</rule>
+        <rule length="10-1500" data_0="2A" data_1="02" data_6="0004" data_8="0006,000c">icq</rule>
+        <!-- When HTTP handler on - it will not work, special logic to detect OSCAR in HTTP required. -->
+        <rule length="40-1500" text_start="CONNECT " text_middle="login.icq.com:443 HTTP/1.,login.oscar.aol.com:5190 HTTP/1.">icq</rule>
+        <rule length="43-1500" text_start="GET http://http.proxy.icq.com/hello HTTP/1.">icq</rule>
+        <rule length="46-1500" text_start="GET http://aimhttp.oscar.aol.com/hello HTTP/1.">icq</rule>
+
+        <!-- World Of Warcraft -->
+        <rule length="41-69" dst_port="3724" text_4="WoW">wow</rule>
+        <rule length="41-69" dst_port="3724" text_5="WoW">wow</rule>
+
+        <!-- Dcplusplus -->
+        <rule text_middle="$MyNick,$Lock EXTENDEDPROTOCOL">dcplusplus</rule>
+        
+        <!-- E-Mule and E-Donkey -->
+        <rule next_packet_for="edonkey-hello" length="10-1500" data_0="E3">emule</rule>
+        <rule next_packet_for="emule-hello" length="10-1500" data_0="C5">emule</rule>
+        <rule next_packet_for="emulec-hello" length="10-1500" data_0="D4">emule</rule>
+        <rule length="10-1500" data_0="E3" data_5="01" action="continue">edonkey-hello</rule>
+        <rule length="10-1500" data_0="C5" data_5="01" action="continue">emule-hello</rule>
+        <rule length="10-1500" data_0="D4" data_5="01" action="continue">emulec-hello</rule>
+
+        <!-- Viber control ports-->
+        <rule dst_port="5242">viber</rule>
+        <rule dst_port="4244">viber</rule>
+
+
+    </tcp_protocol_detector>
+    
+    <udp_protocol_detector>
+        
+        <!-- Manolito -->
+        <rule length="20" data_start="3B4DD9" data_16="EDBB">manolito</rule>
+        <rule length="25" data_start="3E4A" data_20="092F" data_22="20">manolito</rule>
+        <rule dst_port="41170">manolito</rule>
+
+        <!-- Then Blackberry RTP client receives normal packets -->
+        <rule next_packet_for="blackberry-rtp" data_0="80" data_1="C8,C9">rtcp</rule>
+        <rule next_packet_for="blackberry-rtp" data_0="80">rtp</rule>
+        <!-- Weird Blackberry RTP client sends this info to server first -->
+        <rule length="128" data_start="10000000" action="continue">blackberry-rtp</rule>
+
+        <rule dst_port="137" data_0="80">netbios</rule>
+        <rule src_port="4672" data_0="80">emule</rule>
+        <rule src_port="4662" data_0="80">emule</rule>
+        <rule data_0="80" data_1="C8,C9">rtcp</rule>
+        <rule data_0="80">rtp</rule>
+
+        <!-- E-Mule and E-Donkey -->
+        <rule length="6-100" data_0="E3,C5,D4" data_1="9A,96,92,94,98,A2">emule</rule>
+        
+        <!-- NTP -->
+        <rule length="48" dst_port="123">ntp</rule>
+        <rule length="48" src_port="123">ntp</rule>
+
+        <!-- Viber voice ports-->
+        <rule dst_port="5243">viber</rule>
+
+    </udp_protocol_detector>
+
+    <!-- renaming sessions in whole GTP/L2TP context based on the DNS name -->
+     <!--<context_dns_rename-->
+        <!--rule dns="example.com" transport="tcp,udp" timeout="120">example</rule-->
+        <!--rule application="https" dns="example.com" transport="tcp,udp" timeout="120">example</rule-->
+     <!--/context_dns_rename-->
+
+    <dns_cache_detection>
+        <!-- Attributes     
+            dns - comma-separated lis  of DNS (mandatory)
+            transport - comma-separated list of transports (tcp and/or udp, sctp will be supported in the next versions) (optonal, missing - all transports)
+            application - comma separated list of applications to be renamed (optional):
+                "*" - mathces to ALL application
+                "" or missed - matches to UNTAGGED applications
+                "app1,app2..." -mathces to app1,app2...
+            timetolive - time to live in seconds that overvrites TTL in appropriate DNS transactions
+        -->
+        <!-- Rules for Webmail applications over HTTPS-->
+        <rule dns="mail.google.com" transport="tcp,udp" application="https" timetolive="3600">gmail</rule>
+        <rule dns="mail.yahoo.com,us.mg5.mail.yahoo.com" transport="tcp,udp" application="https" timetolive="3600">yahoo webmail</rule>
+        <rule dns="mail.aol.com,webmail.aol.com,cdn.webmail.aol.com" transport="tcp,udp" application="https" timetolive="3600">aol webmail</rule>
+        <rule dns="mail.live.com,hotmail.com" transport="tcp,udp" application="https" timetolive="3600">msn webmail</rule>
+    </dns_cache_detection>
+
+    <misc_detection>
+        <!-- APN based rule for tag all UNDETECTED traffic. Triggered last.
+             wildcards are supported for APN, * can be used anywhere in the string:
+             apn="*blackberry*" etc. -->
+        <rule apn="blackberry">blackberry services</rule>
+    </misc_detection>
+
+    <application_service_map>
+        <service app_id="imap">email</service>
+        <service app_id="imap4">email</service>
+        <service app_id="imaps">email</service>
+        <service app_id="pop3">email</service>
+        <service app_id="pop3s">email</service>
+        <service app_id="smtp">email</service>
+        <service app_id="smtps">email</service>
+        <service app_id="ftp">file transfer</service>
+        <service app_id="http downloading">file transfer</service>
+        <service app_id="sftp">file transfer</service>
+        <service app_id="skype">voice over ip</service>
+        <service app_id="http">web applications</service>
+        <service app_id="http browsing">web applications</service>
+        <service app_id="http generic">web applications</service>
+        <service app_id="http-alt">web applications</service>
+        <service app_id="https">web applications</service>
+        <service app_id="nntp">web applications</service>
+        <service app_id="twitter">web applications</service>
+        <service app_id="wap">web applications</service>
+        <service app_id="xml">web applications</service>
+        <service app_id="wiiconnect24">gaming</service>
+        <service app_id="wow">gaming</service>
+        <service app_id="xboxlive">gaming</service>
+        <service app_id="playstation network">gaming</service>
+        <service app_id="ebuddy">messaging</service>
+        <service app_id="icq">messaging</service>
+        <service app_id="msn">messaging</service>
+        <service app_id="wv">messaging</service>
+        <service app_id="ymsg">messaging</service>
+        <service app_id="mms">mobile messaging</service>
+        <service app_id="mobileip-agent">mobile protocols</service>
+        <service app_id="mobileip">mobile protocols</service>
+        <service app_id="bgp">network operation</service>
+        <service app_id="dns">network operation</service>
+        <service app_id="ipp">network operation</service>
+        <service app_id="l2tp">network operation</service>
+        <service app_id="pptp">network operation</service>
+        <service app_id="radius">network operation</service>
+        <service app_id="smb">network operation</service>
+        <service app_id="snmp">network operation</service>
+        <service app_id="ajprot">peer to peer</service>
+        <service app_id="ares">peer to peer</service>
+        <service app_id="bittorrent">peer to peer</service>
+        <service app_id="dcplusplus">peer to peer</service>
+        <service app_id="edonkey">peer to peer</service>
+        <service app_id="emule">peer to peer</service>
+        <service app_id="filetopia">peer to peer</service>
+        <service app_id="gnutella">peer to peer</service>
+        <service app_id="jabber">peer to peer</service>
+        <service app_id="jabber-file-transfer">peer to peer</service>
+        <service app_id="manolito">peer to peer</service>
+        <service app_id="sslv2-hello">security</service>
+        <service app_id="sslv2">security</service>
+        <service app_id="sslv3-hello">security</service>
+        <service app_id="sslv3">security</service>
+        <service app_id="flash_applications">web applications</service>
+        <service app_id="http streaming">streaming applications</service>
+        <service app_id="http video">streaming applications</service>
+        <service app_id="icecast">streaming applications</service>
+        <service app_id="qik">streaming applications</service>
+        <service app_id="rdt">streaming applications</service>
+        <service app_id="rtcp">streaming applications</service>
+        <service app_id="rtp">streaming applications</service>
+        <service app_id="rtsp">streaming applications</service>
+        <service app_id="tcp">uncategorised ip traffic</service>
+        <service app_id="udp">uncategorised ip traffic</service>
+        <service app_id="adobeupdates">updates</service>
+        <service app_id="appleupdates">updates</service>
+        <service app_id="avastupdates">updates</service>
+        <service app_id="avgupdates">updates</service>
+        <service app_id="garminupdates">updates</service>
+        <service app_id="googleupdates">updates</service>
+        <service app_id="mcafeeupdates">updates</service>
+        <service app_id="skypeupdates">updates</service>
+        <service app_id="sonyupdates">updates</service>
+        <service app_id="symantecupdates">updates</service>
+        <service app_id="ubuntuupdates">updates</service>
+        <service app_id="microsoftupdates">updates</service>
+        <service app_id="google talk">voice over ip</service>
+        <service app_id="h.323">voice over ip</service>
+        <service app_id="sip">voice over ip</service>
+        <service app_id="skype">voice over ip</service>
+        <service app_id="itunes">app stores</service>
+        <service app_id="android market">app stores</service>
+        <service app_id="blackberry appworld">app stores</service>
+        <service app_id="windowslive marketplace">app stores</service>
+        <service app_id="getjar appstore">app stores</service>
+        <service app_id="youtube video">streaming applications</service>
+        <service app_id="netflix video">streaming applications</service>
+        <service app_id="cnn video">streaming applications</service>
+        <service app_id="dailymotion video">streaming applications</service>
+        <service app_id="vimeo video">streaming applications</service>
+        <service app_id="skyplayer video">streaming applications</service>
+        <service app_id="bing video">streaming applications</service>
+        <service app_id="metacafe video">streaming applications</service>
+        <service app_id="megavideo video">streaming applications</service>
+        <service app_id="divxstage video">streaming applications</service>
+        <service app_id="stagevu video">streaming applications</service>
+        <service app_id="movshare video">streaming applications</service>
+        <service app_id="adult video">streaming applications</service>
+        <service app_id="rtmp">streaming applications</service>
+        <service app_id="bbciplayer">streaming applications</service>
+        <service app_id="cnn live tv">streaming applications</service>
+        <service app_id="veoh video">streaming applications</service>
+        <service app_id="HBOGo video">streaming applications</service>
+        <service app_id="pandora audio">streaming applications</service>
+        <service app_id="slacker audio">streaming applications</service>
+        <service app_id="lastfm audio">streaming applications</service>
+        <service app_id="grooveshark audio">streaming applications</service>
+        <service app_id="http audio">streaming applications</service>
+        <service app_id="google maps">web applications</service>
+        <service app_id="google earth">web applications</service>
+        <service app_id="bing maps">web applications</service>
+        <service app_id="navteq map24 maps">web applications</service>
+        <service app_id="ovi maps">web applications</service>
+        <service app_id="yahoo maps">web applications</service>
+        <service app_id="facebook">web applications</service>
+        <service app_id="speedtest.net download test">test applications</service>
+        <service app_id="speedtest.net upload test">test applications</service>
+        <service app_id="viber">voice over ip</service>
+        <service app_id="viber http">voice over ip</service>
+        <service app_id="whatsapp">messaging</service>
+        <service app_id="whatsapp sslv2-hello">messaging</service>
+        <service app_id="whatsapp sslv3-hello">messaging</service>
+        <service app_id="kakaotalk">messaging</service>
+        <service app_id="mxit">messaging</service>
+        <service app_id="Apple Adaptive HTTP Video">streaming applications</service>
+        <service app_id="pingchat">messaging</service>
+        <service app_id="apple-push">web applications</service>
+        <service app_id="google">web applications</service>
+        <service app_id="tibia">gaming</service>
+        <service app_id="clubpenguin">gaming</service>
+        <service app_id="popcap games">gaming</service>
+        <service app_id="crowdstar games">gaming</service>
+        <service app_id="zynga games">gaming</service>
+        <service app_id="myspace">web applications</service>
+        <service app_id="rtp audio">streaming applications</service>
+        <service app_id="rtp video">streaming applications</service>
+        <service app_id="rtp audio video">streaming applications</service>
+        <service app_id="rtp dynamic">streaming applications</service>
+        <service app_id="facebook video">streaming applications</service>
+        <service app_id="instagram">web applications</service>
+        <service app_id="flickr">web applications</service>
+        <service app_id="photobucket">web applications</service>
+        <service app_id="picasa">web applications</service>
+        <service app_id="yfrog">web applications</service>
+        <service app_id="linkedin">web applications</service>
+        <service app_id="yahoo browsing">web applications</service>
+        <service app_id="msn browsing">web applications</service>
+        <service app_id="google plus">web applications</service>
+        <service app_id="gmail">email</service>
+        <service app_id="yahoo webmail">email</service>
+        <service app_id="msn webmail">email</service>
+        <service app_id="aol webmail">email</service>
+        <service app_id="bbc iplayer">streaming applications</service>
+        <service app_id="cnn live tv">streaming applications</service>
+        <service app_id="espnstar video">streaming applications</service>
+        <service app_id="nbc video">streaming applications</service>
+        <service app_id="">other</service>
+
+<!-- LOCAL SPANISH MAPPINGS - PLEASE COMMENT OUT OR REMOVE THESE RULES for other deployments -->
+        <service app_id="rtve alacarta video">streaming applications</service>
+        <service app_id="cuatro play video">streaming applications</service>
+        <service app_id="telecino video">streaming applications</service>
+
+    </application_service_map>
+ 
+	<netro_port_binding> 
+        <port id="20">ftp</port>
+        <port id="21">ftp</port>
+        <port id="25">smtp</port>
+        <port id="53">dns</port>
+        <port id="67">bootstrap</port>
+        <port id="80">HTTP Generic</port>
+        <port id="110">pop3</port>
+        <port id="119">nntp</port>
+        <port id="137">netbios</port>
+        <port id="138">netbios</port>
+        <port id="139">netbios</port>
+        <port id="143">imap</port>
+        <port id="161">snmp</port>
+        <port id="162">snmp</port>
+        <port id="434">mobileip-agent</port>
+        <port id="443">https</port>
+        <port id="500">isakmp</port>
+        <port id="554">rtsp</port>
+        <port id="993">imaps</port>
+        <port id="995">pop3s</port>
+        <port id="1646">radius</port>
+        <port id="1812">radius</port>
+        <port id="1813">radius</port>
+        <port id="1863">msn</port>
+        <port id="1900">ssdp</port>
+        <!-- note that port 1935 is rtmp which is used by flash players for media streaming -->        
+        <port id="1935">rtmp</port>
+        <port id="2269">mikey</port>
+        <!-- xbox relabelled to XBoxLive for consistency with HTTP rule -->      
+        <port id="3074">XBoxLive</port>
+        <!-- playstation 2 relabelled to playstation network for consistency with HTTP rule -->    
+        <port id="4658">playstation network</port>
+        <port id="4659">playstation network</port>
+        <port id="4662">emule</port>
+        <port id="4672">emule</port>
+        <port id="5050">ymsg</port>
+        <port id="5060">sip</port>
+        <port id="5061">sip</port>
+        <port id="5351">nat</port>
+        <port id="5355">llmnr</port>
+        <port id="6346">gnutella</port>
+        <port id="6347">gnutella</port>
+        <port id="6881">bittorrent</port>
+        <port id="8080">HTTP Generic</port>
+        <port id="9200">wap</port>
+        <port id="9201">wap</port>
+        <port id="9202">wap</port>
+        <port id="9203">wap</port>
+        <port id="9204">wap</port>
+        <port id="9205">wap</port>
+        <port id="9206">wap</port>
+        <port id="9207">wap</port>
+       <!-- <port id="19310">blackberry</port> -->
+       <!-- <port id="19311">blackberry</port> -->
+        <port id="37004">wv</port>
+        <port id="1919">pingchat</port>
+        <port id="5223">apple-push</port>
+        <port id="7171">tibia</port>
+
+    </netro_port_binding>
+</detection>

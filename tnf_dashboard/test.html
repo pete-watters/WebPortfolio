@@ -1,0 +1,238 @@
+<script type="text/javascript">
+window.onload = function() {
+var drawingCanvas = document.getElementById('myDrawing');
+// Check the element is in the DOM and the browser supports canvas
+if(drawingCanvas && drawingCanvas.getContext) {
+// Initaliase a 2-dimensional drawing context
+var context = drawingCanvas.getContext('2d');
+// Added to draw Grid
+for (var x = 0; x < 800; x += 80) {
+context.moveTo(x, 0);
+context.lineTo(x, 400);
+}
+for (var y = 0; y < 400; y += 40) {
+context.moveTo(0, y);
+context.lineTo(800, y);
+}
+context.strokeStyle = "#eee";
+context.stroke();
+// End of Grid
+//draw X axis:
+context.beginPath();
+context.moveTo(0, 400);
+context.lineTo(800, 400);
+//draw scale on x axis
+for (var x = 0; x < 880; x += 80) {
+context.moveTo(x, 405);
+context.lineTo(x, 400);
+context.lineTo(x, 395);
+}
+for (var x = 0; x < 880; x += 80) {
+var percent = x/8;
+context.font = "bold 12px sans-serif";
+context.fillText(percent, x,390);
+context.closePath();
+}
+// draw Y axis
+context.moveTo(0, 0);
+context.lineTo(0, 400);
+context.strokeStyle = "#000";
+context.stroke();
+//draw scale on y axis
+for (var y = 0; y < 440; y += 40) {
+context.moveTo(0, y);
+context.lineTo(5, y);
+context.strokeStyle = "#000";
+context.stroke();
+}
+var percentLabel = 110;
+for (var y = 0; y < 440; y += 40) {
+if (percentLabel > 0) {
+percentLabel = percentLabel -10;
+}
+var percent = y/4;
+context.font = "bold 12px sans-serif";
+context.fillText(percentLabel, 10, y);
+context.closePath();
+}
+// Axis Labels
+context.font = "bold 12px sans-serif";
+context.fillText("X", 790, 380);
+context.fillText("Y", 40, 10);
+context.closePath();
+//end Axis labels
+// Axis label Arrows
+// X arrow
+context.moveTo(780, 380);
+context.lineTo(750, 380);
+context.moveTo(780, 380);
+context.lineTo(770, 370);
+context.moveTo(780, 380);
+context.lineTo(770, 390);
+context.strokeStyle = "#000";
+context.stroke();
+// Y arrow
+context.moveTo(40, 20);
+context.lineTo(40, 60);
+context.moveTo(40, 20);
+context.lineTo(30, 30);
+context.moveTo(40, 20);
+context.lineTo(50, 30);
+context.strokeStyle = "#000";
+context.stroke();
+// origin
+context.fillStyle = "#CC0033";
+context.beginPath();
+context.arc(0,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(384,144,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(440,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(344,140,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(280,124,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(352,168,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(280,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(584,268,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(656,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(432,188,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(384,172,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(488,228,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(704,348,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(440,152,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(560,280,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(608,312,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(496,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(592,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(512,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(648,300,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(472,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(400,200,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(664,328,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(400,180,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(616,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(544,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(560,400,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.fillStyle = "#009966";
+context.beginPath();
+context.arc(408,156,5,0,Math.PI*2,true);
+context.closePath();
+context.fill();
+context.beginPath();
+context.moveTo(160,80);
+context.lineTo(500,380);
+context.closePath();
+context.strokeStyle = "#CC0033"
+context.stroke();
+context.beginPath();
+context.moveTo(560,80);
+context.lineTo(700,380);
+context.closePath();
+context.strokeStyle = "#0033CC"
+context.stroke();
+}
+}
+</script>

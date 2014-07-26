@@ -1,0 +1,102 @@
+
+<form id="betCalculatorForm" class="form-horizontal well">
+        <fieldset>
+          <div class="betCalculator-formRow row">
+              <div class="betCalculator-formRowLeft span2">
+                <!-- Stake entry -->
+                <label for="stake">Stake</label>        
+                <input class="span2" type="number" id="betCalculatorStake">
+
+                  <!-- Bet type select -->
+                  <label for="betType">Bet Type</label>                
+                  <select id="betCalculatorBetType" class="span2">
+                    <optgroup label="Basic Bets">
+                      <option value="Single">Single</option>
+                      <option value="Double">Double</option>
+                      <option value="Treble">Treble</option>
+                      <option value="Accumulator">Accumulator</option>
+                    </optgroup>
+                    <optgroup label="Full Covers">
+                      <option value="Trixie">Trixie</option>
+                      <option value="Double">Double</option>
+                      <option value="Treble">Treble</option>
+                      <option value="Accumulator">Accumulator</option>
+                    </optgroup>
+                  </select>             
+              
+              </div>
+
+          <!-- Odds Entry rows buttons -->   
+          <div class="betCalculator-formRowRight span5">
+            <div class="betCalculator-formRowRightDecimal row">
+
+
+              <ul id="bettingTab" class="nav nav-tabs">
+                <li class="active"><a href="#Fraction" data-toggle="tab">Fraction</a></li>
+                <li><a href="#Decimal" data-toggle="tab">Decimal</a></li>
+              </ul>
+
+              <div id="bettingTabContent" class="tab-content">
+                  <div id="Fraction" class="tab-pane fade in active">
+                    <div class="betCalculator-formRowRightOdds row">                
+                       <div class="input-prepend input-append">               
+                          <span class="add-on">Odds</span>
+                          <input class="fractionNumerator-0 span1" id="appendedPrependedInput" type="number">
+                          <span class="add-on">/</span>
+                          <input class="fractionDenominator-0 span1" type="number">
+                           <select class="fractionBetOutcome-0 span2"><option>Win</option><option>Lose</option></select>  
+                        </div>
+                    </div>  
+                     <div class="betCalculator-formRowRightOdds row">                
+                       <div class="input-prepend input-append">               
+                          <span class="add-on">Odds</span>
+                          <input class="fractionNumerator-1 span1" id="appendedPrependedInput" type="number">
+                          <span class="add-on">/</span>
+                          <input class="fractionDenominator-1 span1" type="number">
+                          <select class="fractionBetOutcome-1 span2"><option>Win</option><option>Lose</option></select>  
+                        </div>
+                    </div>        
+                  </div>
+                  <div class="tab-pane fade" id="Decimal">
+                        <div class="input-prepend input-append">               
+                              <span class="add-on">Odds</span>
+                              <input class="span1" id="appendedPrependedInput" type="number">
+                            <select class="span2">
+                                  <option>Win</option>
+                                  <option>Lose</option>           
+                            </select>  
+                            </div>
+                  </div>
+              
+            </div>
+                  <!-- Odds type--> 
+               <!--   <label class="radio inline">
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Fraction
+                  </label>
+                  <label class="radio inline">
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Decimal
+                  </label>
+                -->
+
+                </div>
+                     
+                    
+
+              </div>     
+              <div class="span3">    
+                  <div class="betCalculator-resultContainer alert alert-success">
+                      <div id="betCalculator-resultText-Stake" class="betCalculator-resultText">Stake: </div>
+                      <div id="betCalculator-resultText-Return" class="betCalculator-resultText">Return:</div>
+                      <div id="betCalculator-resultText-Profit" class="betCalculator-resultText">Profit:</div>
+                  </div> 
+              </div>
+        </div>      
+        <!-- Submit buttons --> 
+        <div class="form-actions">
+          <button id="betCalculatorSubmit" type="submit" class="btn btn-primary">Calculate</button>
+          <button type="reset" class="btn">Clear</button>
+        </div>
+
+
+        </fieldset>
+      </form>

@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>A Map of New Zealand</title>
+    <style type="text/css">
+      .tooltip {
+        background-color:#ffffee;
+        font-weight:bold;
+        font-size:10px;
+        border:1px #c6c3a5 solid;
+      }
+      
+      .library-title-line {
+        font-weight:bold;
+        font-size:10px;
+        display:block;
+        
+      }      
+      .library-details-line {
+        font-size:10px;
+        display:block;
+      }      
+      
+    </style>
+
+    <script type="text/javascript">
+    //<![CDATA[
+		/*
+		 * Returns a new XMLHttpRequest object, or false if this browser
+		 * doesn't support it
+		 */
+		function newXMLHttpRequest() {
+		
+		  var xmlreq = false;
+		
+		  if (window.XMLHttpRequest) {
+		
+		    // Create XMLHttpRequest object in non-Microsoft browsers
+		    xmlreq = new XMLHttpRequest();
+		
+		  } else if (window.ActiveXObject) {
+		
+		    // Create XMLHttpRequest via MS ActiveX
+		    try {
+		      // Try to create XMLHttpRequest in later versions
+		      // of Internet Explorer
+		
+		      xmlreq = new ActiveXObject("Msxml2.XMLHTTP");
+		
+		    } catch (e1) {
+		
+		      // Failed to create required ActiveXObject
+		
+		      try {
+		        // Try version supported by older versions
+		        // of Internet Explorer
+		
+		        xmlreq = new ActiveXObject("Microsoft.XMLHTTP");
+		
+		      } catch (e2) {
+		
+		        // Unable to create an XMLHttpRequest with ActiveX
+		      }
+		    }
+		  }
+		
+		  return xmlreq;
+		}
+
+		/*
+		 * Fetch details from the server.
+		 */
+		function fetchDetails(id) {
+		
+		  // Obtain an XMLHttpRequest instance
+		  var req = newXMLHttpRequest();
+		
+		  // Set the handler function to receive callback notifications
+		  // from the request object
+		  var handlerFunction = getReadyStateHandler(req, displayDetails);
+		  req.onreadystatechange = handlerFunction;
+		  
+		  // Open an HTTP POST connection to the library details servlet.
+		  // Third parameter specifies request is asynchronous.
+		  req.open("POST", "http://localhost:8080/MapDemo/libraryDetails", true);
+		
+		  // Specify that the body of the request contains form data
+		  req.setRequestHeader("Content-Type", 
+		                       "application/x-www-form-urlencoded");
+		
+		  // Send form encoded data stating that I want to add the 
+		  // specified item to the cart.
+		  req.send("id="+id);
+		}
+		
+		/*
+		 * Open the text info window for a given marker
+		 *
+		 */
+		function openInfoWindow(marker, id) {
+		   //
+		   // Fetch info from server
+		   //		   
+		   marker.openInfoWindowHtml("Loading details...");
+		   fetchDetails(id,marker);
+		}
+		
+		/*
+		 * Returns a function that waits for the specified XMLHttpRequest
+		 * to complete, then passes its XML response
+		 * to the given handler function.
+		 * req - The XMLHttpRequest whose state is changing
+		 * responseXmlHandler - Function to pass the XML response to
+		 */
+		function getReadyStateHandler(req, responseXmlHandler) {
+		
+		  // Return an anonymous function that listens to the 
+		  // XMLHttpRequest instance
+		  return function () {
+		
+		    // If the request's status is "complete"
+		    if (req.readyState == 4) {
+		      if (req.status == 200) {
+		
+		        // Pass the XML payload of the response to the 
+		        // handler function
+		        responseXmlHandler(req.responseXML);
+		
+		      } else {
+		
+		        // An HTTP problem has occurred
+		        alert("HTTP error: "+req.status);
+		      }
+		    }
+		  }
+		}
+		
+		function getNodeValue(element) {
+		   var value = "";
+		   if ((element != null) && (element.firstChild != null)) {
+		       value = element.firstChild.nodeValue;
+		   }
+		   return value;
+		}
+		
+		function displayDetails(libraryDetailsXML) {
+
+		 	// Get the root "library" element from the document
+		 	var library = libraryDetailsXML.getElementsByTagName("com.wakaleo.samples.ajax.domain.Library")[0];
+		 	var name = getNodeValue(library.getElementsByTagName("name")[0]);
+		 	var id = getNodeValue(library.getElementsByTagName("id")[0]);
+		 	var symbol = getNodeValue(library.getElementsByTagName("symbol")[0]);
+		 	var website = getNodeValue(library.getElementsByTagName("website")[0]);
+		 	var phone = getNodeValue(library.getElementsByTagName("phone")[0]);
+		 	var fax = getNodeValue(library.getElementsByTagName("fax")[0]);
+			
+		 	var address = library.getElementsByTagName("address")[0]
+		 	var address1 = getNodeValue(address.getElementsByTagName("line1")[0]);
+		 	var address2 = getNodeValue(address.getElementsByTagName("line2")[0]);
+		 	
+		 	var city = getNodeValue(address.getElementsByTagName("city")[0]);
+		 	var postcode = getNodeValue(address.getElementsByTagName("postcode")[0]);
+			marker = getMarker(id);
+			marker.showMapBlowup();
+			var html = '<span class="library-title-line">'
+					   + name + ' (' + symbol + ')' 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + address1 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + address2 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + city + ' ' + postcode 
+			           +'</span>'
+			           + '<span class="library-details-line">'
+					   + '<a href="' + website + '">' + website + '</a>'
+			           +'</span>'
+			marker.openInfoWindowHtml(html);
+			
+			//marker.openInfoWindowHtml(name);
+		}
+		
+				
+    //]]>
+    </script>
+
+	<!-- GOOGLE MAPS -->
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAATjlq5e04CjtYAFELAT_MzhRMQx9Xr8VPU9ZMu5nGzMA6HFs1MBTJS10gJfr7sytCFvSL-DJxeK2tNQ"
+            type="text/javascript"></script>
+            
+    <script type="text/javascript">
+    //<![CDATA[
+        var gmarkers = [];
+
+		function getMarker(id) {
+		   for (var i = 0; i <= gmarkers.length; i++) {
+		       var marker = gmarkers[i];
+		       if (marker.id == id) {
+		           return marker;
+		       }
+		   }
+		   return null;
+		}
+		
+    function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(-41.5, -187.5), 5);
+        map.addControl(new GSmallMapControl());
+        map.addControl(new GOverviewMapControl());
+        var point = new GLatLng(-41.28, -185.22);
+        marker = new GMarker(point);
+        map.addOverlay(marker)
+        GEvent.addListener(marker, "click", function() {
+            marker.openInfoWindowHtml("<p>More details</p>");
+        });        
+      }
+    }
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()">
+     <div id="map" style="width: 300px; height: 420px"></div>
+    <noscript><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
+      However, it seems JavaScript is either disabled or not supported by your browser. 
+      To view Google Maps, enable JavaScript by changing your browser options, and then 
+      try again.
+    </noscript>
+  </body>
+</html>

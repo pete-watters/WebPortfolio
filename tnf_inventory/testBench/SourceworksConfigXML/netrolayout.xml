@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The 6021 record provides KPI's of User-plane session data. From the second a user starts 
+        a session on the network, 6021 Netro records provide information of every site browsed, 
+        application used as well as data providing metrics of the users experience such as 
+        'ID_TCP_SERVER_SETUP_TIME', 'ID_NETRO_DOWNLOAD_TIME', 'ID_TIME_TO_FIRST_BYTE' etc. -->
+<record_layout id="netro">
+    <record id="6021">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_NETRO_APPLICATION</field>
+        <field id="2">ID_NETRO_PROTOCOL</field>
+        <field id="3">ID_NETRO_RECORD_REASON</field>
+        <field id="4">ID_NETRO_START_TIMESTAMP</field>
+        <field id="5">ID_NETRO_END_TIMESTAMP</field>
+        <field id="6">ID_NETRO_RECORD_SEQ_NUMBER</field>
+        <field id="8">ID_NETRO_SGSN_GROUP</field>
+        <field id="9">ID_NETRO_GGSN_GROUP</field>
+        <field id="10">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="11">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="12">ID_CLIENT_IP_ADDRESS</field>
+        <field id="13">ID_SERVER_IP_ADDRESS</field>
+        <field id="14">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="15">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="16">ID_CLIENT_PORT_NUMBER</field>
+        <field id="17">ID_SERVER_PORT_NUMBER</field>
+        <field id="18">ID_GTP_MSISDN</field>
+        <field id="19">ID_GTP_IMSI</field>
+        <field id="20">ID_NETRO_PACKETS_UP</field>
+        <field id="21">ID_NETRO_PACKETS_DOWN</field>
+        <field id="22">ID_NETRO_PACKETS_TOTAL</field>
+        <field id="23">ID_NETRO_ALL_BYTES_UP</field>
+        <field id="24">ID_NETRO_ALL_BYTES_DOWN</field>
+        <field id="25">ID_NETRO_BYTES_TOTAL</field>
+        <field id="26">ID_NETRO_TCP_PACKETS_LOST_UP</field>
+        <field id="27">ID_NETRO_TCP_PACKETS_LOST_DOWN</field>
+        <field id="28">ID_NETRO_TCP_PACKETS_RETRANSMITTED_UP</field>
+        <field id="29">ID_NETRO_TCP_PACKETS_RETRANSMITTED_DOWN</field>
+        <field id="30">ID_TCP_SERVER_SETUP_TIME</field>
+        <field id="31">ID_TCP_CLIENT_SETUP_TIME</field>
+        <field id="32">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="33">ID_TCP_RTT</field>
+        <field id="34">ID_NETRO_DOWNLOAD_TIME</field>
+        <field id="35">ID_NETRO_UPLOAD_TIME</field>
+        <field id="36">ID_NETRO_UPLOAD_THROUGHPUT</field>
+        <field id="37">ID_NETRO_DOWNLOAD_THROUGHPUT</field>
+        <field id="38">ID_NETRO_TOTAL_THROUGHPUT</field>
+        <field id="39">ID_NETRO_APPLICATION_RTT</field>
+        <field id="40">ID_NETRO_APPLICATION_ATTEMPTS</field>
+        <field id="41">ID_NETRO_APPLICATION_STATUS_CODES</field>
+        <field id="42">ID_NETRO_PAGEURI</field>
+        <field id="43">ID_NETRO_PAGE_ATTEMPTS</field>
+        <field id="44">ID_GTP_APN</field>
+        <field id="45">ID_NETRO_HOSTNAME</field>
+        <field id="46">ID_NETRO_USER_AGENT</field>
+        <field id="47">ID_GTP_RAT_TYPE</field>
+        <field id="48">ID_GTP_IMEISV</field>
+        <field id="49">ID_GTP_CELL_LAC</field>
+        <field id="50">ID_GTP_CELL_ID</field>
+        <field id="51">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>
+        <field id="52">ID_NETRO_SERVICE</field>
+        <field id="53">ID_GTP_MCC</field>
+        <field id="54">ID_GTP_MNC</field>
+        <field id="55">ID_NETRO_DNS_RESPONSE_TIME</field>
+        <field id="56">ID_NETRO_BYTES_UP</field>
+        <field id="57">ID_NETRO_BYTES_DOWN</field>
+        <field id="58">ID_GTP_QOS_REQ_ARP</field>      
+        <field id="59">ID_GTP_QOS_REQ_THP</field>      
+        <field id="60">ID_GTP_QOS_RSP_ARP</field>      
+        <field id="61">ID_GTP_QOS_RSP_THP</field> 
+        <field id="62">ID_NETRO_CONTENT_TYPE</field>      
+    </record>
+
+    <!-- The 6022 Netro record provides KPI's of Control-Plane session data. A 6022 record is produced each 
+            time a PDP context is Created, Updated or Deleted.  -->
+    <record id="6022">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_NETRO_START_TIMESTAMP</field>
+        <field id="2">ID_NETRO_END_TIMESTAMP</field>
+        <field id="3">ID_GTP_MSISDN</field>
+        <field id="4">ID_GTP_IMSI</field>
+        <field id="5">ID_GTP_END_USER_IPV4_ADDRESS</field>            
+        <field id="6">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="7">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="8">ID_NETRO_SGSN_GROUP</field>
+        <field id="9">ID_NETRO_GGSN_GROUP</field>
+        <field id="10">ID_NETRO_GTP_TRANSACTION_TYPE</field>
+        <field id="11">ID_GTP_CAUSE_RESPONSE_CODE</field>
+        <field id="12">ID_NETRO_GTP_RESPONSE_TIME</field>
+        <field id="13">ID_GTP_APN</field>
+        <field id="14">ID_BLANK</field>
+        <field id="15">ID_NETRO_GTP_TRANSACTION_ID</field>
+        <field id="16">ID_GTP_RAT_TYPE</field> 
+        <field id="17">ID_GTP_IMEISV</field>
+        <field id="18">ID_GTP_CELL_LAC</field>
+        <field id="19">ID_GTP_CELL_ID</field>
+        <field id="20">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>
+        <field id="21">ID_GTP_MCC</field>      
+        <field id="22">ID_GTP_MNC</field>      
+        <field id="23">ID_GTP_QOS_REQ_ARP</field>      
+        <field id="24">ID_GTP_QOS_REQ_THP</field>      
+        <field id="25">ID_GTP_QOS_RSP_ARP</field>      
+        <field id="26">ID_GTP_QOS_RSP_THP</field>       
+    </record>
+    
+    <!-- The 6024 ISP record describes each activity on ISP control plane such as tunnel establishing/closure/authorization etc. -->
+    <record id="6024">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_NETRO_START_TIMESTAMP</field>
+        <field id="2">ID_NETRO_END_TIMESTAMP</field>
+        <field id="3">ID_NETRO_CALLING_STATION_ID</field>
+        <field id="4">ID_BLANK</field>
+        <field id="5">ID_END_USER_ADDRESS</field>            
+        <field id="6">ID_CLIENT_IP_ADDRESS</field>
+        <field id="7">ID_SERVER_IP_ADDRESS</field>
+        <field id="8">ID_CLIENT_PORT_NUMBER</field>
+        <field id="9">ID_SERVER_PORT_NUMBER</field>
+        <field id="10">ID_NETRO_TRANSACTION_TYPE</field>
+        <field id="11">ID_NETRO_CAUSE_CODE</field>
+        <field id="12">ID_NETRO_RESPONSE_TIME</field>
+        <!--<field id="13">ID_LAC_GROUP</field>
+        <field id="14">ID_LNS_GROUP</field>-->
+        <field id="14">ID_BLANK</field>
+        <!--<field id="15">ID_RADIUS_TERM_CAUSE</field>-->
+    </record>
+
+</record_layout>
+

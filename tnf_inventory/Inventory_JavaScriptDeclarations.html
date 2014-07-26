@@ -1,0 +1,834 @@
+<!-- Include jQuery declarations -->
+
+<!-- jQuery & jQuery UI Declarations -->
+
+		<script type="text/javascript">
+
+			$(function(){
+
+				// Accordions
+
+				$("#individual_accordion").accordion({ header: "h3" });
+
+				$("#ProbeSoftware_accordion").accordion({ header: "h3" });
+
+				$("#ProbeHardware_accordion").accordion({ header: "h3" });
+
+				$("#ProbeConnectionDetails_accordion").accordion({ header: "h3" });
+
+				$("#ProbeDacasServices_accordion").accordion({ header: "h3" });
+
+				$("#ProbeDacasConfiguration_accordion").accordion({ header: "h3" });
+
+				$("#TNF_BrowseCustomers_accordion").accordion({ header: "h3" });
+
+
+			
+
+			
+
+			$(document).ready(function() {
+
+				oTable = $('#ProbeInfo_DataTable').dataTable({
+
+					"bJQueryUI": true,
+
+					"sPaginationType": "full_numbers",
+
+						"aoColumns": [
+
+							null,
+
+							null,
+
+							null,
+
+							null,
+
+							null,
+
+							null,
+
+							null,
+
+							null							
+
+						],
+
+						"bLengthChange": false	
+
+						
+
+				});
+
+			} );
+
+
+
+	
+
+		</script>
+
+		
+
+
+
+		  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+    <script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+<!-- Probe Connection Table -->
+
+   <script type="text/javascript">
+
+     function drawVisualization() {
+
+       var probeConnectionDetails_JSONObject = {
+
+           cols: [
+
+             {id: 'cx_code', label: 'Customer', type: 'string'},
+
+             {id: 'site', label: 'Site', type: 'string'},
+
+             {id: 'hostname', label: 'Hostname', type: 'string'},
+
+             {id: 'ip', label: 'IP', type: 'string'},
+
+             {id: 'rmm_ip', label: 'RMM IP', type: 'string'},
+
+                 ],
+
+            rows: [{"c":[{"v":"Vodafone Portugal:VFPT"},{"v":"Location"},{"v":"dacas"},{"v":"10.128.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"Vodafone Portugal:VFPT"},{"v":"Location"},{"v":"dacas"},{"v":"10.16.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"Vodafone Portugal:VFPT"},{"v":"Location"},{"v":"ranha"},{"v":"10.130.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"Vodafone Portugal:VFPT"},{"v":"Location"},{"v":"alfr01tnf"},{"v":"10.2.37.198"},{"v":"RMM IP ADDRESS"}]}]
+
+				};
+
+       var probeConnectionDetailsData = new google.visualization.DataTable(probeConnectionDetails_JSONObject, 0.5);
+
+       probeConnectionDetailsVisualization= new google.visualization.Table(document.getElementById('probeConnectionDetails_table'));
+
+       probeConnectionDetailsVisualization.draw(probeConnectionDetailsData , {'allowHtml': true});
+
+     }
+
+     google.setOnLoadCallback(drawVisualization);
+
+     </script>
+
+<!-- Dacas Software table -->
+
+    <script type="text/javascript">
+
+    function drawVisualization() {
+
+      var DacasSoftWare_JSONObject = {
+
+          cols: [
+
+            {id: 'cx_code', label: 'Customer', type: 'string'},
+
+            {id: 'site', label: 'Site', type: 'string'},
+
+            {id: 'dacas_version', label: 'Dacas Version', type: 'string'},
+
+            {id: 'dacas_md5sum', label: 'Dacas md5sum', type: 'string'},
+
+            {id: 'netroVersion', label: 'Netro Version', type: 'string'},
+
+            {id: 'dlauncherVersion', label: 'DLAUNCER Version', type: 'string'} ,           
+
+            {id: 'LocalAgent', label: 'LocalAgent Version', type: 'string'}
+
+            ],
+
+            rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IPTS 4.6.0.0"},{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},{"v":""},{"v":"Dlauncher version here"},{"v":"?"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IPTS 4.6.0.0"},{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},{"v":""},{"v":"Dlauncher version here"},{"v":"?"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IPTS 4.6.0.0"},{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},{"v":""},{"v":"Dlauncher version here"},{"v":"?"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IPTS 4.6.0.0"},{"v":"e4f1bfd13e2ae5c52bdd1063d40b367e"},{"v":""},{"v":"Dlauncher version here"},{"v":"?"}]}]
+
+        };
+
+      var DacasSoftWareData = new google.visualization.DataTable(DacasSoftWare_JSONObject, 0.5);
+
+      DacasSoftWareVisualization = new google.visualization.Table(document.getElementById('probeDacasSoftWare_table'));
+
+      DacasSoftWareVisualization.draw(DacasSoftWareData , {'allowHtml': true});
+
+    }
+
+    google.setOnLoadCallback(drawVisualization);
+
+    </script>
+
+    
+
+<!-- Dacas Netro Software table -->
+
+    <script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+    <script type="text/javascript">
+
+     function drawVisualization() {
+
+       var NetroData_JSONObject = {
+
+           cols: [
+
+             {id: 'cx_code', label: 'Customer', type: 'string'},
+
+             {id: 'site', label: 'Site', type: 'string'},
+
+             {id: 'swriter_version', label: 'Swriter Version', type: 'string'},
+
+             {id: 'swriter_version', label: 'Swriter Type', type: 'string'},
+
+             {id: 'swriter_md5sum', label: 'Swriter md5sum', type: 'string'},
+
+             {id: 'LocalAgent_version', label: 'LocalAgent Version', type: 'string'},
+
+             {id: 'LocalAgent_version', label: 'LocalAgent md5sum', type: 'string'}      
+
+                 ],
+
+  rows: [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"x"},{"v":"swriter type socket / shm"},{"v":"d5ccffbfd600556f3397bf4a3924e7c2"},{"v":"?"},{"v":"3a6d614880c682824ae9d8a58184037c"}]}]
+
+		};     
+
+       var NetroData = new google.visualization.DataTable(NetroData_JSONObject, 0.5);
+
+       NetroDatavisualization = new google.visualization.Table(document.getElementById('probeNetroSoftWare_table'));
+
+       NetroDatavisualization.draw(NetroData , {'allowHtml': true});
+
+     }
+
+     google.setOnLoadCallback(drawVisualization);
+
+     </script>  
+
+     
+
+ <!--  NetroServices table -->
+
+<script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var probeNetroServices_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: 'PROBE_NETRO_UDP_LOWER', label: 'UDP Lower', type: 'string'},
+
+                {id: 'PROBE_NETRO_UDP_UPPER', label: 'UDP Upper', type: 'string'},
+
+                {id: 'PROBE_NETRO_TCP_LOWER', label: 'TCP Lower', type: 'string'},
+
+                {id: 'PROBE_NETRO_TCP_UPPER', label: 'TCP Upper', type: 'string'},
+
+                {id: 'PROBE_NETRO_ESP_UPPER', label: 'ESP Upper', type: 'string'},
+
+                {id: 'PROBE_NETRO_GRE_UPPER', label: 'GRE Upper', type: 'string'},
+
+                {id: 'PROBE_NETRO_GTP', label: 'GTP', type: 'string'}
+
+				    ],
+
+                
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"No"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"},{"v":"Yes"}]}]
+
+
+
+};
+
+         var probeNetroServicesData = new google.visualization.DataTable(probeNetroServices_JSONObject, 0.5);
+
+          probeNetroServicesvisualization = new google.visualization.Table(document.getElementById('probeNetroServices_table'));
+
+          probeNetroServicesvisualization.draw(probeNetroServicesData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>    
+
+     
+
+     
+
+<!--  Record outputs - needs to be improved and updated -->     
+
+ <script type="text/javascript"> google.load('visualization', '1', {packages: ['table']});</script>
+
+    <script type="text/javascript">
+
+      function drawVisualization() {
+
+        // Create and populate the data table.
+
+        var probeRecordOutput_JSONObject = {
+
+            cols: [
+
+              {id: 'cx_code', label: 'Customer', type: 'string'},
+
+              {id: 'site', label: 'Site', type: 'string'},
+
+              {id: 'imei', label: 'IMEI', type: 'boolean'}, 
+
+              {id: 'ULI', label: 'ULI', type: 'boolean'},
+
+              {id: 'aran_feed', label: 'Aran Feed', type: 'string'},
+
+              {id: 'MoMo_feed', label: 'MoMo Feed', type: 'boolean'},
+
+              {id: 'record_format', label: 'Record Format', type: 'string'},
+
+              {id: 'http_record', label: 'HTTP Record', type: 'string'}      
+
+                  ],
+
+   rows: 	      [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IMEI bool"},{"v":"ULI bool"},{"v":"Aran Feed"},{"v":"PROBE_MOMO_FEED"},{"v":"PROBE_RECORD_FORMAT"},{"v":"Probe_HTTP_RECORD"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IMEI bool"},{"v":"ULI bool"},{"v":"Aran Feed"},{"v":"PROBE_MOMO_FEED"},{"v":"PROBE_RECORD_FORMAT"},{"v":"Probe_HTTP_RECORD"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IMEI bool"},{"v":"ULI bool"},{"v":"Aran Feed"},{"v":"PROBE_MOMO_FEED"},{"v":"PROBE_RECORD_FORMAT"},{"v":"Probe_HTTP_RECORD"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"IMEI bool"},{"v":"ULI bool"},{"v":"Aran Feed"},{"v":"PROBE_MOMO_FEED"},{"v":"PROBE_RECORD_FORMAT"},{"v":"Probe_HTTP_RECORD"}]}]
+
+          };
+
+        var probeRecordOutputData = new google.visualization.DataTable(probeRecordOutput_JSONObject, 0.5);
+
+        probeRecordOutputvisualization = new google.visualization.Table(document.getElementById('probeRecordOutput_table'));
+
+        probeRecordOutputvisualization.draw(probeRecordOutputData , {'allowHtml': true});
+
+      }    google.setOnLoadCallback(drawVisualization);
+
+</script>  
+
+
+
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table']});</script>
+
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var probeDacasServices_JSONObject1 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},                 
+
+               {id: 'PROBE_IPV4_LOWER', label: 'IP v4 Lower', type: 'boolean'},
+
+               {id: 'PROBE_IPV4_UPPER', label: 'IP v4 Upper', type: 'boolean'}, 
+
+               {id: 'PROBE_IPV6_LOWER', label: 'IP v6 Lower', type: 'boolean'},  
+
+               {id: 'PROBE_IPV6_UPPER', label: 'IP v6 Upper', type: 'boolean'},
+
+               {id: 'PROBE_HTTP_LOWER', label: 'HTTP Lower', type: 'boolean'},
+
+               {id: 'PROBE_HTTP_UPPER', label: 'HTTP Upper', type: 'boolean'},  
+
+               {id: 'PROBE_TCP_LOWER', label: 'TCP Lower', type: 'boolean'},   
+
+               {id: 'PROBE_TCP_UPPER', label: 'TCP Upper', type: 'boolean'},
+
+               {id: 'PROBE_UDP_LOWER', label: 'UDP Lower', type: 'boolean'},  
+
+               {id: 'PROBE_UDP_UPPER', label: 'UDP Upper', type: 'boolean'} 
+
+                  ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":1},{"v":1},{"v":1},{"v":1},{"v":0},{"v":1},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":1},{"v":1},{"v":1},{"v":1},{"v":0},{"v":1},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":1},{"v":1},{"v":1},{"v":1},{"v":0},{"v":1},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":1},{"v":1},{"v":1},{"v":1},{"v":0},{"v":1},{"v":0},{"v":1},{"v":1},{"v":1}]}]
+
+		};
+
+       
+
+         var probeDacasServicesData1 = new google.visualization.DataTable(probeDacasServices_JSONObject1, 0.5);
+
+       
+
+         // Create and draw the visualization.
+
+         probeDacasServicesvisualization1 = new google.visualization.Table(document.getElementById('probeDacasServices_table1'));
+
+         probeDacasServicesvisualization1.draw(probeDacasServicesData1 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+
+ <!-- Dacas Services 2 -->      
+
+ <script type="text/javascript">google.load('visualization', '1', {packages: ['table']});</script>
+
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var probeDacasServices_JSONObject2 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},              
+
+               {id: 'PROBE_RADIUS', label: 'Radius', type: 'boolean'},   
+
+               {id: 'PROBE_WV', label: 'WV', type: 'boolean'},   
+
+               {id: 'PROBE_MSN', label: 'MSN', type: 'boolean'},   
+
+               {id: 'PROBE_DNS', label: 'DNS', type: 'boolean'},   
+
+               {id: 'PROBE_SNMP', label: 'SNMP', type: 'boolean'},   
+
+               {id: 'PROBE_EMULE', label: 'EMULE', type: 'boolean'},   
+
+               {id: 'PROBE_GNUTELLA', label: 'GNUTELLA', type: 'boolean'},   
+
+               {id: 'PROBE_BITTORRENT', label: 'Bittorrent', type: 'boolean'},   
+
+               {id: 'PROBE_MOILEIP', label: 'Mobile IP', type: 'boolean'},   
+
+               {id: 'PROBE_SIP', label: 'SIP', type: 'boolean'},   
+
+               {id: 'PROBE_H232_GK', label: 'H232 GK', type: 'boolean'},   
+
+               {id: 'PROBE_MPLS', label: 'MPLS', type: 'boolean'},   
+
+               {id: 'PROBE_BGP', label: 'BGP', type: 'boolean'},   
+
+               {id: 'PROBE_SMB', label: 'SMB', type: 'boolean'},   
+
+               {id: 'PROBE_ICMP', label: 'ICMP', type: 'boolean'} 
+
+               
+
+                   ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":1},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":1},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":1},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":1},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0}]}]
+
+		};
+
+       
+
+         var probeDacasServicesData2 = new google.visualization.DataTable(probeDacasServices_JSONObject2, 0.5);
+
+       
+
+         // Create and draw the visualization.
+
+         probeDacasServicesvisualization2 = new google.visualization.Table(document.getElementById('probeDacasServices_table2'));
+
+         probeDacasServicesvisualization2.draw(probeDacasServicesData2 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+
+       
+
+          <!-- Dacas Services 3 -->      
+
+ <script type="text/javascript">google.load('visualization', '1', {packages: ['table']});</script>
+
+   <script type="text/javascript">
+
+       function drawVisualization() {
+
+         // Create and populate the data table.
+
+         var probeDacasServices_JSONObject3 = {
+
+             cols: [
+
+               {id: 'cx_code', label: 'Customer', type: 'string'},
+
+               {id: 'site', label: 'Site', type: 'string'},     
+
+               {id: 'PROBE_BILLSHOCK_ENABLED', label: 'Billshock', type: 'boolean'},         
+
+               {id: 'PROBE_GTP', label: 'GTP', type: 'boolean'},   
+
+               {id: 'PROBE_WAP', label: 'WAP', type: 'boolean'},   
+
+               {id: 'PROBE_MMS', label: 'MMS', type: 'boolean'},   
+
+               {id: 'PROBE_RTSP', label: 'RTSP', type: 'boolean'},  
+
+               {id: 'PROBE_POP3', label: 'POP3', type: 'boolean'},   
+
+               {id: 'PROBE_PPTP', label: 'PPTP', type: 'boolean'},   
+
+               {id: 'PROBE_GREPP', label: 'GREPP', type: 'boolean'},   
+
+               {id: 'PROBE_ESP', label: 'ESP', type: 'boolean'},   
+
+               {id: 'PROBE_IMAP', label: 'IMAP', type: 'boolean'},   
+
+               {id: 'PROBE_SMTP', label: 'SMTP', type: 'boolean'},   
+
+               {id: 'PROBE_FTP', label: 'FTP', type: 'boolean'}      
+
+                   ],
+
+    rows:   [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":1},{"v":1}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":0},{"v":0},{"v":0},{"v":1},{"v":1},{"v":1}]}]
+
+		};
+
+         var probeDacasServicesData3 = new google.visualization.DataTable(probeDacasServices_JSONObject3, 0.5);
+
+         // Create and draw the visualization.
+
+         probeDacasServicesvisualization3 = new google.visualization.Table(document.getElementById('probeDacasServices_table3'));
+
+         probeDacasServicesvisualization3.draw(probeDacasServicesData3 , {'allowHtml': true});
+
+       }
+
+       google.setOnLoadCallback(drawVisualization);
+
+       </script>
+
+<!-- Dacas Configuration Table -->       
+
+<script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var probeDacasConfiguration_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: 'PROBE_TYPE', label: 'Probe Type', type: 'string'},
+
+                {id: 'PROBE_TIMEZONE', label: 'Timezone', type: 'string'},        
+
+                {id: 'PROBE_DACAS_TYPE', label: 'Dacas Flavour', type: 'string'},
+
+                {id: 'PROBE_NO_OF_PROCESS_THREADS', label: 'Thread count', type: 'string'},
+
+                {id: 'PROBE_SHM', label: 'SHM Value', type: 'string'},               
+
+                {id: 'PROBE_QUEUE_SIZE', label: 'Queue Size', type: 'string'},                
+
+                {id: 'PROBE_BLOCKING', label: 'Blocking', type: 'string'},                
+
+                {id: 'PROBE_TCP_LOST_EVENTS', label: 'TCP Lost Events', type: 'string'},                
+
+                {id: 'PROBE_TCP_AUTO_DETECT', label: 'TCP AutoDetect', type: 'string'},
+
+                {id: 'PROBE_UDP_AUTO_DETECT', label: 'UDP AutoDetect', type: 'string'},
+
+                {id: 'PROBE_ANDROID_AUTO_DETECT', label: 'Auto Detect Android', type: 'string'},               
+
+                {id: 'PROBE_DEHASH_URLS', label: 'De-Hash URLs', type: 'string'},                
+
+                {id: 'PROBE_PDP_HIGH_WATERMARK', label: 'PDP High Watermark', type: 'string'},                
+
+                {id: 'PROBE_PDP_LOW_WATERMARK', label: 'PDP Low Watermark', type: 'string'},                
+
+                {id: 'PROBE_CONTEXT_FORMAT', label: 'Context format', type: 'string'}
+
+                ],
+
+                
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"H1 Midas+ Probe. Kernel Version: 2.6.22-15"},{"v":"UTC"},{"v":"thread"},{"v":"0"},{"v":"3221225472 1610612736"},{"v":"48"},{"v":"48"},{"v":"No"},{"v":"Yes"},{"v":"No"},{"v":"No"},{"v":"Yes"},{"v":"200000"},{"v":"180000"},{"v":"shm"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"H1 Midas+ Probe. Kernel Version: 2.6.22-15"},{"v":"UTC"},{"v":"thread"},{"v":"0"},{"v":"1610612736"},{"v":"48"},{"v":"48"},{"v":"No"},{"v":"Yes"},{"v":"No"},{"v":"No"},{"v":"Yes"},{"v":"200000"},{"v":"180000"},{"v":"shm"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"H1 Midas+ Probe. Kernel Version: 2.6.22-15"},{"v":"UTC"},{"v":"thread"},{"v":"0"},{"v":"1610612736"},{"v":"48"},{"v":"48"},{"v":"No"},{"v":"Yes"},{"v":"No"},{"v":"No"},{"v":"Yes"},{"v":"200000"},{"v":"180000"},{"v":"shm"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"H2 Midas+ Probe. Kernel Version: 2.6.31-rt"},{"v":"UTC"},{"v":"thread"},{"v":"0"},{"v":"3221225472"},{"v":"48"},{"v":"48"},{"v":"No"},{"v":"Yes"},{"v":"No"},{"v":"No"},{"v":"Yes"},{"v":"200000"},{"v":"180000"},{"v":"shm"}]}]
+
+};
+
+         var probeDacasConfigurationData = new google.visualization.DataTable(probeDacasConfiguration_JSONObject, 0.5);
+
+          probeDacasConfigurationvisualization = new google.visualization.Table(document.getElementById('probeDacasConfiguration_table'));
+
+          probeDacasConfigurationvisualization.draw(probeDacasConfigurationData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+
+
+
+
+<!--  Hardware table -->
+
+<script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var probeHardWare_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: 'PROBE_CARD_NAME', label: 'Gn Card', type: 'string'},
+
+                {id: 'PROBE_CARD_PORTS', label: 'Gn Interfaces', type: 'string'},        
+
+                {id: 'PROBE_CARD_VERSION', label: 'Gn Firmware', type: 'string'},
+
+                {id: 'RAM', label: 'RAM + Kernel', type: 'string'},
+
+                {id: 'INTERNAL_DISK_SIZE', label: 'Internal Disc Size', type: 'string'},               
+
+                {id: 'INTERNAL_DISK_RAID', label: 'Internal Disc RAID', type: 'string'},                
+
+                {id: 'COUNT_EXTERNAL_DISKS', label: 'External Discs', type: 'string'},                
+
+                {id: 'EXTERNAL_DISK_RAID', label: 'External Disc RAID', type: 'string'},                
+
+                {id: 'EXTERNAL_DISK_PARTITION_SIZE', label: 'External Disc Partition Size', type: 'string'}
+
+                ],
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Name: ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g  TNF"},{"v":"(0)"},{"v":"Vers: 13.10.40 20100505-1217 lx155tDriver build: release_nic_20101117-1431.tar.gz"},{"v":"KERNEL2.6.22-15-serverSHM3221225472 1610612736"},{"v":"INTERNAL DISC SIZE"},{"v":"INTERNAL DISC RAID"},{"v":"COUNT EXTERNAL DISCS"},{"v":"EXTERNAL DISC RAID TYPE"},{"v":"EXTERNAL DISC PARTITION SIZE"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Name: ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g  TNF"},{"v":"(0)"},{"v":"Vers: 13.10.54 20100701-1053 lx155tDriver build: release_nic_20100427-1048.tar.gz"},{"v":"KERNEL2.6.22-15-serverSHM1610612736"},{"v":"INTERNAL DISC SIZE"},{"v":"INTERNAL DISC RAID"},{"v":"COUNT EXTERNAL DISCS"},{"v":"EXTERNAL DISC RAID TYPE"},{"v":"EXTERNAL DISC PARTITION SIZE"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Name: ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g  TNF"},{"v":"(0)"},{"v":"Vers: 13.10.40 20100505-1217 lx155tDriver build: release_nic_20100427-1048.tar.gz"},{"v":"KERNEL2.6.22-15-serverSHM1610612736"},{"v":"INTERNAL DISC SIZE"},{"v":"INTERNAL DISC RAID"},{"v":"COUNT EXTERNAL DISCS"},{"v":"EXTERNAL DISC RAID TYPE"},{"v":"EXTERNAL DISC PARTITION SIZE"}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Name: ipb_oregon_2x10g_irn2022_lx155t ipb_oregon_m10g  TNF"},{"v":"(0)"},{"v":"Vers: 13.10.54 20100701-1053 lx155tDriver build: release_nic_20100629-1506.tar.gz"},{"v":"KERNEL2.6.31-10-rtSHM3221225472"},{"v":"INTERNAL DISC SIZE"},{"v":"INTERNAL DISC RAID"},{"v":"COUNT EXTERNAL DISCS"},{"v":"EXTERNAL DISC RAID TYPE"},{"v":"EXTERNAL DISC PARTITION SIZE"}]}]
+
+};
+
+         var probeHardWareData = new google.visualization.DataTable(probeHardWare_JSONObject, 0.5);
+
+          probeHardWarevisualization = new google.visualization.Table(document.getElementById('probeHardWare_table'));
+
+          probeHardWarevisualization.draw(probeHardWareData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+
+
+<!--  Probe Support Table -->
+
+<script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+  <script type="text/javascript">
+
+        function drawVisualization() {
+
+          // Create and populate the data table.
+
+          var probeSupportInfo_JSONObject = {
+
+              cols: [
+
+                {id: 'cx_code', label: 'Customer', type: 'string'},
+
+                {id: 'site', label: 'Site', type: 'string'},         
+
+                {id: 'PROBE_STATUS', label: 'Support Status', type: 'string'},
+
+                {id: 'PROBE_SUPPORT_LEVEL', label: 'Support Level', type: 'string'},        
+
+                {id: 'PROBE_SUPPORT_DESCRIPTION', label: 'Description', type: 'string'}
+
+                ],
+
+     rows:  [{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Active"},{"v":"Bronze"},{"v":"Coverage: 24/7 "}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Active"},{"v":"Bronze"},{"v":"Coverage: 24/7 "}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Active"},{"v":"Bronze"},{"v":"Coverage: 24/7 "}]},{"c":[{"v":"VFPT"},{"v":"Location"},{"v":"Active"},{"v":"Bronze"},{"v":"Coverage: 24/7 "}]}]
+
+};
+
+         var probeSupportInfoData = new google.visualization.DataTable(probeSupportInfo_JSONObject, 0.5);
+
+          probeSupportInfovisualization = new google.visualization.Table(document.getElementById('probeSupportInfo_table'));
+
+          probeSupportInfovisualization.draw(probeSupportInfoData , {'allowHtml': true});
+
+        }
+
+        google.setOnLoadCallback(drawVisualization);
+
+</script>
+
+
+
+
+
+<!--Accordion side menu tables -->
+
+    <script type="text/javascript">
+
+      google.load('visualization', '1', {packages: ['table']});
+
+    </script>
+
+   <script type="text/javascript">
+
+     function drawVisualization() {
+
+       // Create and populate the data table.
+
+       var probeConnectionDetailsSmall_JSONObject = {
+
+           cols: [
+
+             {id: 'site', label: 'Site', type: 'string'},
+
+             {id: 'ip', label: 'IP', type: 'string'},
+
+            {id: 'rmm_ip', label: 'RMM IP', type: 'string'},
+
+                 ],
+
+            rows: [{"c":[{"v":"VFPT"},{"v":"10.128.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"VFPT"},{"v":"10.16.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"VFPT"},{"v":"10.130.37.97"},{"v":"RMM IP ADDRESS"}]},{"c":[{"v":"VFPT"},{"v":"10.2.37.198"},{"v":"RMM IP ADDRESS"}]}]
+
+
+
+				};
+
+                 
+
+     
+
+       var probeConnectionDetailsSmallData = new google.visualization.DataTable(probeConnectionDetailsSmall_JSONObject, 0.5);
+
+     
+
+       // Create and draw the visualization.
+
+       probeConnectionDetailsSmallVisualization= new google.visualization.Table(document.getElementById('probeConnectionDetailsSmall_table'));
+
+       probeConnectionDetailsSmallVisualization.draw(probeConnectionDetailsSmallData , {'allowHtml': true});
+
+     }
+
+
+
+     google.setOnLoadCallback(drawVisualization); 
+
+     </script> 
+
+     
+
+     <!-- Probe location Google Map -->
+
+     <!-- Probe location maps -->
+
+	  <script type="text/javascript">
+
+      google.load("visualization", "1", {packages:["map"]});
+
+      google.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('number', 'Lat');
+
+        data.addColumn('number', 'Lon');
+
+        data.addColumn('string', 'Name');
+
+        data.addColumn('string', 'Address');
+
+        data.addRows(4);
+
+        data.setCell(0, 0, 38.731294);
+
+        data.setCell(0, 1, -9.207855);
+
+        data.setCell(0, 2, 'VFPT Alfragide');
+
+        data.setCell(1, 0, 41.280777);
+
+        data.setCell(1, 1, -7.865699);
+
+        data.setCell(1, 2, 'VFPT Boavista');
+
+        data.setCell(2, 0, 38.698857);
+
+        data.setCell(2, 1, -9.417196);
+
+        data.setCell(2, 2, 'VFPT Matinha');
+
+        data.setCell(3, 0, 39.875);
+
+        data.setCell(3, 1, -8.684444);
+
+        data.setCell(3, 2, 'VFPT Ranha');
+
+       
+
+
+
+
+
+		var map_table = new google.visualization.Table(document.getElementById('map_table_div'));
+
+        map_table.draw(data);
+
+
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+
+        map.draw(data, {showTip: true});
+
+      }
+
+    </script>
+
+     

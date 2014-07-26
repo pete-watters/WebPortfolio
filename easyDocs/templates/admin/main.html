@@ -1,0 +1,90 @@
+<!-- START TOPSECTION -->
+ <div id="topsection" class="top-myfolder">
+  
+      <div id="uploadlogo">
+        <a data-toggle="modal"  href="#uploadimgModalDialog" role="button" title="Upload Logo" id="uploadbtn"  data-toggle="modal">
+        <div id="uploadimg"></div></a>
+      </div>
+  
+
+
+        <div id="myfolder-overview">
+          Hi Alan, This is you!
+            <br />
+            <span id="underwelcome">All your details in one place!</span>
+            <div class="progress-container">
+            	 Profile Completion: 45%
+               <div id="progressbar" class="progress progress-striped active">
+                <div  class="bar" style="width: 45%;"></div>
+              </div>
+                     
+               
+            </div>
+        </div>
+  
+      <div id="myprofile-chart">
+         <div class="chart-head">Document Breakdown</div>
+         <img src="images/chart.png" alt="Chart" width="150px" />
+      </div>
+ </div>
+<!-- END TOPSECTION -->	
+
+
+<!-- START ANSWERS LIST -->
+<div id="doclist">
+    <div class="title">
+      <img class="titleIcon" alt="" src="images/answers.png">
+      <h1>My Answers</h1>
+      	 <form action="" class="myfolder-search">
+
+
+<input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="[&quot;Peter&quot;,&quot;Alaska&quot;,&quot;Alan&quot;,&quot;Patrick&quot;]" onclick="this.value=''" value="Search through your answers here..." onblur="formDefault(this)" name="search">
+
+             <input type="submit" value="" name="find">
+         </form>
+    </div>
+
+
+
+
+
+      <div class="btn-group document-display-views">
+        <button class="btn" title="List view"><i class="icon-list"></i> </button>
+        <button class="btn" title="Small Icon view"><i class="icon-th"></i> </button>
+        <button class="btn" title="Large Icon view"><i class="icon-th-large"></i> </button>
+      </div>
+
+      
+<ul class="thumbnails answers-list">
+<!-- TODO: Fill this with loop -->
+
+
+<% _.each(questions, function(question){ %>
+<li>
+  <div class="thumbnail-row">
+
+          <dl class="well well-large">
+            <dt>Title:</dt>
+            <dd><%= question.get("title") %></dd>
+            <dt>Answered by:</dt>
+            <dd><%= question.get("answered_by") %></dd>
+            <dt>Date:</dt>
+            <dd><%= question.get("date") %></dd>
+            <dt>Your Answer:</dt>
+            <dd><%= question.get("answer") %></dd>
+          </dl>
+  </div>
+  <button class="btn btn-primary" type="button">Edit</button>
+  
+  </li>
+                           <% }); %>
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+ 

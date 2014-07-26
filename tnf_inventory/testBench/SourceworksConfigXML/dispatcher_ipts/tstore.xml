@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localagent>
+    <probe_name>alfragide</probe_name> <!-- Name of this particular probe -->
+    <trace>
+        <log_trace>yes</log_trace> <!-- Log standard information -->
+        <error_trace>yes</error_trace> <!-- Log error messages -->
+        <debug_trace>no</debug_trace> <!-- Log debug messages -->
+        <orb_trace>0</orb_trace> <!-- ORB Trace level.(0-40, with 40 being the most verbose) -->
+    </trace>
+
+    <masteragent>
+        <master_ip>netrodb</master_ip> <!-- IP address of Master Agent -->
+        <master_port>1151</master_port> <!-- Port of Master Agent -->
+        <login>
+            <name>storage</name> <!-- Login name for connection to Master Agent -->
+            <password>storage</password> <!-- Login password for connection to Master Agent -->
+        </login>
+    </masteragent>
+
+    <!-- Indexing/pcap details: directories are comma separated -->
+    <indexing>
+        <index_input>/d0/work/index,/d1/work/index,/d2/work/index,/d3/work/index,/d4/work/index</index_input>
+        <index_output>/d0/index,/d1/index,/d2/index,/d3/index,/d4/index</index_output>
+        <ipcap_input>/d0/pcap1/pcap,/d1/pcap1/pcap,/d2/pcap1/pcap,/d3/pcap1/pcap,/d4/pcap1/pcap</ipcap_input>
+        <ipcap_output>/d0/ipcap,/d1/ipcap,/d2/ipcap,/d3/ipcap,/d4/ipcap</ipcap_output>
+        <period>30</period> <!-- Frequency of check for indexing -->
+        <index_hours>5</index_hours> <!-- Amount of index hours to keep in memory -->
+        <pre_index_hours>24</pre_index_hours> <!-- On startup of localagent, the amount of index hours loaded into memory -->
+        <hedge_hours>2</hedge_hours> <!-- Remove this many index hours from memory once hours increase above index_hours -->
+    </indexing>
+
+    <ageing>
+        <period>30</period> <!-- Frequency of check for ageing -->
+        <flat_path>/tmp/pcap/</flat_path> <!-- Path for ageing flat (not zoned) pcaps. Currently not used so set to invalid directory -->
+        <threshold>10</threshold> <!-- When percentage of free disk space goes below threshold, ageing is forced -->
+        <day_limit>15</day_limit> <!-- Ageing is forced for all indices/pcaps older than this limit -->
+        <age_hours>2</age_hours> <!-- Amount of hours to age indices by when ageing is invoked when disk threshold is breached -->
+    </ageing>
+
+    <packetviewing>
+        <tool>wireshark</tool> <!-- Tool to invoke sessionized pcap trace -->
+        <user>cinnara</user> <!-- Username of invoker of packet viewer -->
+        <chdir>/home/cinnara</chdir> <!-- Directory packet viewer is invoked from -->
+    </packetviewing>
+
+    <!-- ServiceManager monitors these paths for mediation details. This currently needs to end in a "," -->
+    <service_files>/opt/cinnara/vedia/reports/servicerates/daily/*log,/opt/cinnara/vedia/reports/usagerates/domain/*log,/opt/cinnara/vedia/reports/usagerates/domain/hourly/*log,/opt/cinnara/vedia/reports/usagerates/protocol/daily/*log,/opt/cinnara/vedia/reports/usagerates/protocol/hourly/*log,</service_files> 
+
+</localagent>
+

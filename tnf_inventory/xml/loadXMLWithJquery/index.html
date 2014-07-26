@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Load XML With jQuery</title>
+    <script src="jquery-1.2.6.js" type="text/javascript"></script>
+    <script src="jParse.js" type="text/javascript"></script>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+    
+    $(document).ready(function()
+      {
+        $.get('detection.xml', function(d){
+      //  $('body').append('<h1> Recommended Web Development Books </h1>');
+        $('body').append('<dl />');
+
+        $(d).find('detection').each(function(){
+
+            var $book = $(this); 
+            var description = $book.find('update_interval').text();
+           
+            var html = '<dd>';
+            html += '<p> update_interval:' + description + '</p>' ;
+            html += '</dd>';
+
+            $('dl').append($(html));
+            
+            $('.loadingPic').fadeOut(1400);
+        });
+    });
+});
+
+
+$(document).ready(function(){
+$.ajax({
+    type: "GET",
+    url: "detection.xml",
+    dataType: "xml",
+    success: function(xml) {
+        $(xml).find('detection').each(function(index){
+            var provider = $(this).find('update_interval').text();
+            var channel = $(this).find('update_interval').text();
+            var hd = $(this).find('update_interval').text();
+                $('.box ul').append('<li>'+channel+'</li>');
+        });
+    }
+});
+});
+
+
+function start(){
+    jQuery('#jparse-meta').html('<img alt="Content Loading" src="ajax-loader.gif" />');
+}
+function finish(){
+    jQuery('#jparse-meta').remove();
+}
+$(function(){
+    $('#ajax-cont').jParse({
+        ajaxOpts: {url: 'detection.xml'},
+        elementTag: ['title', 'link', 'description', 'slash:comments', 'comments'],
+        output: ' <div class="feed-entry"><h4><a href="jpet01">jpet00</a></h4><p><a href="jpet4">jpet03 Comment(s)</a><p>jpet02</p></p></div>',
+        precallback: start,
+        callback: finish
+    });
+});
+    </script>
+<script>
+var xml = "<xml></xml>";
+$("#xml").html(xml);
+</script>
+
+
+</head>
+<body>
+<div id='box'>
+<ul>
+
+</ul>
+</div>
+
+
+
+<div id="xml"></div>
+
+<iframe src="http://localhost/Inventory/xml/loadXMLWithJquery/index.htmlhttp://localhost/Inventory/xml/loadXMLWithJquery/index.html" style="height:400px;width:1200px"></iframe>
+
+</body>
+</html>

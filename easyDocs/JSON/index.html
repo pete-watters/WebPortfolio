@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/libs/bootstrap/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
+
+<script type="text/javascript">
+ function getVars(){
+
+    $.getJSON("test_data.php", function(data) {
+
+    });
+
+ }   
+
+
+        $(document).ready(function(data){
+
+
+
+                 var dataGet = getVars;
+
+        console.log(dataGet + data);
+
+
+            $("#JSON").html( data);
+
+
+
+            });
+ </script>
+</head>
+
+<body>
+<div id="JSON" class=""></div>
+<div id="" class=""></div>
+<div id="" class=""></div>
+
+</body>
+</html>

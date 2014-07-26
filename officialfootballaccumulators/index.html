@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"ng-app="myApp">
+<head>
+	<!-- CSS -->
+	<!-- responsive bootstrap
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	-->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+<title>Official Football Accumulators</title>
+	<meta charset="utf-8">	
+	
+	
+</head>
+
+<body>
+	<!-- Top Section-->
+	<div class="row">
+		<div class="span12">
+		<!-- header -->
+		<header>
+			<div class="wrapper">
+				
+				
+				<div class="logo"><a href="#home" id="logo">Official Football Accumulators</a></div>
+				
+				<nav>
+				
+					<ul id="menu">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#freeBets">Free Bets</a></li>
+						<li><a href="#betCalculator">Bet Calculator</a></li>
+						<li><a href="#forum">Forum</a></li>
+						<li><a href="#liveScore">Scores</a></li>
+						<li><a href="#liveOdds">Odds</a></li>
+						<li><a href="#games">Games</a></li>
+						<li class="end"><a href="#news">News</a></li>
+					</ul>
+
+				</nav>
+				<ul id="icon">
+					<li><a href="https://www.facebook.com/OfficialFootballAccumulators" target="_blank"><img src="images/facebookIcon_30x30.png" alt=""></a></li>
+					<li><a href="https://twitter.com/O_F_A_"  target="_blank"><img src="images/twitterIcon_30x30.jpg" alt=""></a></li>
+				</ul>
+
+
+			</div>
+			<div class="wrapper">
+			</div>				
+		</header>
+			<!-- / header -->
+		 </div>
+	  </div>
+
+
+<div class="row main_section">
+<!-- content -->		
+		<div class="box span12">
+			<div class="row">
+						<!-- NB: this needs to be span12 to fit forum, games etc. -->
+						<div class="span12 main_content_span">
+						<!-- Main content --> 									
+						<!-- NB - main part that gets changed by angular -->
+						  <div ng-view></div>
+						</div>
+			</div>
+			<div class="row">
+				<div class="span12 freebet_span">
+				<!-- Include Thumbnails file -->
+				  <div ng-include="'partials/widgets/freebet_thumbnails.html'" ></div>
+				</div>
+			</div>
+		</div>
+<!-- content -->
+	</div>
+	<!-- Include footer file -->
+	  <div ng-include="'partials/footer.html'" ></div>
+	
+</body>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<!-- OFA API -->
+	<script src="js/api/OfficialFootballAccumulators_V1.0.js"></script>
+	
+
+	<!-- Angular.js includes  -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+
+	<!-- needed for Livescore flash-->
+	<a href="http://www.livescore.in/american-football/" title="Live Scores Football" target="_blank">Live Scores Football</a>
+</html>

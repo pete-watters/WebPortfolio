@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Statistical Detector Rule Logic... -->
+    <!--  
+            Defines the protocols detection rules.
+            Supported names:
+            "Transport"                       - Transport type 1 - TCP, 2 - UDP (32-bit unsigned)
+            "FirstBytesHistogramUp"           - First packet bytes histogram up (vector, size should be 256)
+            "FirstBytesHistogramDown"         - First packet bytes histogram down (vector, size should be 256)
+            "DirectionChangeRate"             - Direction changing frequency (float-point)
+            "BytesUpDownRatio"                - Bytes up percentage (float-point)
+            "PacketsUpDownRatio"              - Packets up percentage (float-point)
+            "AvgPacketSize"                   - Average packet size (32-bit unsigned)
+            "VarPacketSize"                   - Packet size variance (32-bit unsigned)
+            "FirstBytesHash"                  - Hash of the first bytes (32-bit unsigned)
+            "HashEqualityRating"              - Rating, calculated on packets with equal first bytes hashes (32-bit unsigned)
+            "FirstPacketEntropy"              - First packet entropy (floating-point)
+            "AvgInterPacketDelay"             - Average inter-packet delay (floating-point)
+            "VarInterPacketDelay"             - Inter-packet delay variance (floating-point)
+            "FirstPacketSize"                 - First packet size (32-bit unsigned)
+    
+            about histograms                  - can contain full histogram vector (256 semicolon-separated values) or approximation 
+                                                data vector (3 semicolon-separated values or ranges or groups of ranges)
+                                                In case of approximation data vector weight attribute must be vector of 
+                                                comma-separated values.
+            Example of approximation data vector
+                <attribute name="FirstBytesHistogramUp" weight="1,0,1">0-0.01;0;0.7-0.8,0.4-0.5</attribute>
+                in this example approximation coefficient k will be checked against range 0-0.01 with weight 1        
+                                                          b will not be checked (weight is 0)
+                                                          p will be checked against ranges 0.7-0.8 or 0.4-0.5 with weight 1
+                            
+      
+            weight                            - sets the weight for the particular attribute. If weight = 0 attribute doesn't affect
+                                                the results of the detection. Value of weight < 0 defines the attributes, that must be
+                                                checked for exact match
+     -->
+<stat_detection>
+    <protocol_models>
+        <protocol_model name="skype">
+            <rules>
+                <!-- Common rule for UDP-based skype -->
+                <rule>
+                    <attribute name="Transport" weight="-1">2</attribute>
+                    <attribute name="HashEqualityRating">5-50</attribute>
+                    <attribute name="FirstPacketEntropy">4-8</attribute>
+                    <attribute name="AvgInterPacketDelay">0-1</attribute>
+                    <attribute name="VarInterPacketDelay">0-1</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,0,1">0.03-0.06;0;0.6-0.9</attribute>
+                </rule>
+                <!-- Exceptional rule for UDP skype with big entropy and big hash equality, probably it's wrong -->
+                <rule>
+                    <attribute name="Transport" weight="-1">2</attribute>
+                    <attribute name="HashEqualityRating">5-75</attribute>
+                    <attribute name="FirstPacketEntropy">6-8</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,0,1">0.03-0.06;0;0.6-0.9</attribute>
+                </rule>
+                <!-- Common rule for TCP-based skype with similar packets up/down ratio -->
+                <rule>
+                    <attribute name="Transport" weight="-1">1</attribute>
+                    <attribute name="HashEqualityRating">0-5</attribute>
+                    <attribute name="FirstPacketEntropy">5-8</attribute>
+                    <attribute name="PacketsUpDownRatio">40-60</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,1,1">0.01-0.04;-0.2--0.21;0.4-0.8</attribute>
+                    <attribute name="FirstBytesHistogramDown" weight="1,1,1">0.01-0.04;-0.2--0.21;0.4-0.8</attribute>
+                </rule>
+                <!-- Common rule for TCP-based skype with similar volumes up/down ratio -->
+                <rule>
+                    <attribute name="Transport" weight="-1">1</attribute>
+                    <attribute name="HashEqualityRating">0-5</attribute>
+                    <attribute name="FirstPacketEntropy">5-8</attribute>
+                    <attribute name="BytesUpDownRatio">40-60</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,1,1">0.01-0.04;-0.2--0.21;0.4-0.8</attribute>
+                    <attribute name="FirstBytesHistogramDown" weight="1,1,1">0.01-0.04;-0.2--0.21;0.4-0.8</attribute>
+                </rule>
+            </rules>
+        </protocol_model>
+        <protocol_model name="bittorrent">
+            <rules>
+                <!-- Common rule for UDP-based bittorrent -->
+                <rule>
+                    <attribute name="Transport" weight="-1">2</attribute>
+                    <attribute name="HashEqualityRating">75-100</attribute>
+                    <attribute name="FirstPacketEntropy">5-8</attribute>
+                    <attribute name="AvgInterPacketDelay">0-0.5</attribute>
+                    <attribute name="VarInterPacketDelay">0-0.5</attribute>
+                    <attribute name="FirstPacketSize">50-250</attribute>
+                    <attribute name="AvgPacketSize">50-250</attribute>
+                    <attribute name="VarPacketSize">0-100</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,0,1">0.05-0.06;0;0.7-0.8</attribute>
+                </rule>
+                <!-- Rule for UDP-based bittorrent where clients are exchanging service information using single packet flow -->
+                <rule>
+                    <attribute name="Transport" weight="-1">2</attribute>
+                    <attribute name="HashEqualityRating" weight="-1">0</attribute>
+                    <attribute name="FirstPacketEntropy">5-8</attribute>
+                    <attribute name="FirstPacketSize">50-250</attribute>
+                    <attribute name="FirstBytesHistogramUp" weight="1,0,1">0.05-0.06;0;0.7-0.8</attribute>
+                </rule>
+            </rules>
+        </protocol_model>
+    </protocol_models>
+</stat_detection>

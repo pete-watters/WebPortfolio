@@ -1,0 +1,409 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itworx\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-03 16:34+0100\n"
+"PO-Revision-Date: 2011-02-03 16:37+0100\n"
+"Last-Translator: Andreas Wilthil <support@itworx.no>\n"
+"Language-Team:  <mail@itworx.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Bookmarks: 1,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# 404 page title
+#: 404.php:19
+msgid "Can not find page"
+msgstr "Finner ikke gitt!"
+
+#: archive.php:13
+msgid "Tag:"
+msgstr "Tagget som "
+
+#: archive.php:21
+msgid "Searchresult for"
+msgstr "Søkeresultat for"
+
+#: archive.php:26
+#, fuzzy
+msgid " - "
+msgstr " - "
+
+#: archive.php:28
+msgid "articles"
+msgstr "artikler"
+
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Denne posten er passordbeskyttet. Skriv inn passord for å lese kommentarer."
+
+#: comments.php:49
+msgid "Leave a reply"
+msgstr "Legg igjen en kommentar"
+
+#: comments.php:56
+msgid "You must be logged in to post a comment."
+msgstr "Du må være logget inn for å legge inn en kommentar"
+
+#: comments.php:63
+msgid "Logged in as:"
+msgstr "Logget inn som:"
+
+#: comments.php:63
+msgid "Log out"
+msgstr "Logg ut"
+
+#: comments.php:68
+#: functions.php:1498
+#: functions.php:1555
+msgid "Name"
+msgstr "Navn"
+
+#: comments.php:68
+msgid "required"
+msgstr "Påkrevet"
+
+#: comments.php:71
+#: functions.php:1568
+msgid "Email"
+msgstr "E-post"
+
+#: comments.php:71
+msgid "(will not be published)"
+msgstr "(vil ikke bli publisert)"
+
+#: comments.php:71
+msgid "(required)"
+msgstr "(påkrevet)"
+
+#: comments.php:74
+msgid "Website"
+msgstr "Nettside"
+
+#: comments.php:82
+msgid "Submit comment"
+msgstr "Legg inn kommentar"
+
+#: footer.php:17
+#: header.php:270
+msgid "Search"
+msgstr "Søk"
+
+#: functions.php:836
+msgid "Comment is awaiting moderation"
+msgstr "Kommentaren venter på godkjenning av moderator"
+
+#: functions.php:838
+msgid "By"
+msgstr "Av"
+
+#: functions.php:842
+msgid "Edit comment"
+msgstr "Endre"
+
+#: functions.php:844
+msgid "Reply"
+msgstr "Svar"
+
+#: functions.php:1181
+msgid "at"
+msgstr "den"
+
+#: functions.php:1184
+#: functions.php:1717
+#: functions.php:1827
+#: functions.php:1950
+#: functions.php:2055
+#: functions.php:2200
+#: functions.php:2214
+#: search.php:38
+msgid "Read more"
+msgstr "Les mer"
+
+#: functions.php:1261
+#: functions.php:1305
+msgid "Answer"
+msgstr "Svar"
+
+#: functions.php:1263
+#: functions.php:1308
+msgid "regards"
+msgstr "Med vennlig hilsen"
+
+#: functions.php:1499
+msgid "Please enter your name"
+msgstr "Vennligst skriv inn navnet ditt"
+
+#: functions.php:1507
+msgid "Please enter an email adress"
+msgstr "Vennligst skriv inn e-post adresse"
+
+#: functions.php:1510
+msgid "Please enter a valid email adress"
+msgstr "Vennligst skriv inn gyldig e-post adresse"
+
+#: functions.php:1518
+msgid "Please enter a comment"
+msgstr "Vennligst skriv inn melding"
+
+#: functions.php:1581
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#: functions.php:1586
+msgid "Message"
+msgstr "Melding"
+
+#: functions.php:1603
+msgid "Submit"
+msgstr "Send"
+
+#: functions.php:1612
+msgid "Thank you!"
+msgstr "Takk for at du tok kontakt med oss."
+
+#: functions.php:1612
+msgid "We will come back to you as soon as we can"
+msgstr "Vi vil ta kontakt med deg så fort vi kan. Vennligst tillat inntil to virkedager."
+
+#: functions.php:2027
+msgid "Posted on "
+msgstr "Publisert den "
+
+#: functions.php:2036
+msgid "Posted by"
+msgstr "Publisert av"
+
+#: functions.php:2040
+msgid "in category"
+msgstr "i kategori"
+
+#: functions.php:2115
+msgid "Home"
+msgstr "Hjem"
+
+#: functions.php:2119
+msgid "You are here: "
+msgstr "Du er her:"
+
+#: functions.php:2182
+msgid "page"
+msgstr "side"
+
+#: functions.php:2201
+#: functions.php:2215
+msgid "Read post"
+msgstr "Les bloginnlegg"
+
+#: functions.php:2202
+#: functions.php:2216
+msgid "See project"
+msgstr "Se prosjekt"
+
+#: functions.php:2203
+#: functions.php:2217
+msgid "Read testimonial"
+msgstr "Les testimonial"
+
+#: functions.php:2204
+#: functions.php:2218
+msgid "Read story"
+msgstr "Les nyhetssak"
+
+#: page.php:36
+msgid "Edit"
+msgstr "Editer"
+
+#: lib/admin/tinymceColumns/popup.php:13
+#: lib/admin/tinymceContactform/popup.php:13
+#: lib/admin/tinymceGallery/popup.php:13
+msgid "You are not allowed to be here"
+msgstr "Du har ikke lov å være her"
+
+#: lib/functions/registerPosttypes.php:10
+msgid "Portfolio"
+msgstr "Jobber"
+
+#: lib/functions/registerPosttypes.php:43
+msgid "Slides"
+msgstr ""
+
+#: lib/functions/registerPosttypes.php:44
+msgid "Slide"
+msgstr ""
+
+#: lib/functions/registerPosttypes.php:77
+msgid "Testimonials"
+msgstr ""
+
+#: lib/functions/registerPosttypes.php:78
+msgid "Testimonial"
+msgstr ""
+
+#: lib/functions/registerPosttypes.php:99
+#: lib/functions/registerPosttypes.php:100
+msgid "News"
+msgstr "Nyheter"
+
+#: lib/functions/registerPosttypes.php:121
+#: lib/functions/registerPosttypes.php:122
+msgid "FAQ"
+msgstr "Spørsmål og svar"
+
+#: lib/functions/registerPosttypes.php:152
+msgid "Events"
+msgstr "Begivenheter"
+
+#: lib/functions/registerPosttypes.php:153
+msgid "Event"
+msgstr "Begivenhet"
+
+#: lib/functions/registerPosttypes.php:154
+#: lib/functions/registerPosttypes.php:155
+#: lib/functions/registerPosttypes.php:157
+msgid "Add New Event"
+msgstr "Lett til begivenhet"
+
+#: lib/functions/registerPosttypes.php:156
+msgid "Edit Event"
+msgstr "Editer begivenhet"
+
+#: lib/functions/registerPosttypes.php:158
+msgid "View Event"
+msgstr "Se begivenhet"
+
+#: lib/functions/registerPosttypes.php:159
+msgid "Search Event"
+msgstr "Søk begivenhet"
+
+#: lib/functions/registerPosttypes.php:160
+msgid "No events found"
+msgstr "Ingen begivenheter funnet"
+
+#: lib/functions/registerPosttypes.php:161
+msgid "No events found in trash"
+msgstr "Ingen begivenheter funnet i søppelkassen"
+
+#: lib/functions/theme-functions.php:380
+msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
+msgstr "Side %CURRENT_PAGE% av %TOTAL_PAGES%"
+
+#: lib/functions/theme-functions.php:383
+msgid "&laquo; First"
+msgstr "&laquo; Første"
+
+#: lib/functions/theme-functions.php:384
+msgid "Last &raquo;"
+msgstr "Siste &raquo;"
+
+#: lib/widgets/phi-latestposts.php:41
+msgid "Displays a list of recent posts"
+msgstr ""
+
+#: lib/widgets/phi-latestposts.php:47
+msgid "PHI - LATEST POSTS"
+msgstr "PHI // SISTE POSTS"
+
+#: lib/widgets/phi-latestposts.php:169
+msgid "Latest posts"
+msgstr "Siste blogginnlegg"
+
+#: lib/widgets/phi-latestposts.php:178
+msgid "Title:"
+msgstr "Tittel"
+
+#: lib/widgets/phi-latestposts.php:184
+msgid "Number of posts:"
+msgstr "Antall innlegg:"
+
+#: lib/widgets/phi-latestposts.php:201
+msgid "Show excerpt"
+msgstr "Vis ingress"
+
+#: lib/widgets/phi-latestposts.php:206
+msgid "Show image"
+msgstr "Vil bilde"
+
+#: lib/widgets/phi-pageteaser.php:41
+msgid "A widget that displays page content, and child pages"
+msgstr "En widget som viser sideinnhold fra en valgs side(page)"
+
+#: lib/widgets/phi-pageteaser.php:47
+msgid "PHI // INSERT PAGE"
+msgstr ""
+
+#: lib/widgets/phi-pageteaser.php:112
+msgid "Page title"
+msgstr "Sidetittel"
+
+#: lib/widgets/phi-subpagelist.php:41
+msgid "Displays a list of child pages"
+msgstr "Viser en liste med undersider"
+
+#: lib/widgets/phi-subpagelist.php:47
+msgid "PHI // SUB PAGE LIST"
+msgstr ""
+
+#: lib/widgets/phi-subpagelist.php:118
+msgid "Subpages"
+msgstr "Undersider"
+
+#: lib/widgets/phi-testimonial.php:41
+msgid "Displays a random testimonial"
+msgstr "Viser en tilfeldig testimonial"
+
+#: lib/widgets/phi-testimonial.php:47
+msgid "PHI // TESTIMONIAL WIDGET"
+msgstr ""
+
+#: lib/widgets/phi_tags.php:41
+msgid "Displays a list of tags"
+msgstr "Viser en liste av tagger"
+
+#: lib/widgets/phi_tags.php:47
+msgid "PHI // TAGS LIST"
+msgstr ""
+
+#: lib/widgets/phi_tags.php:118
+msgid "Tags"
+msgstr "Tagger"
+
+#: lib/widgets/phi_tags.php:133
+msgid "Maximum number of tags to display:"
+msgstr "Maksimalt antall tagger som skal vises"
+
+#~ msgid "Displays a list of posts from a chosen category"
+#~ msgstr "Jaddah"
+
+#~ msgid "Hide excerpt"
+#~ msgstr "Skjul ingress"
+
+#~ msgid "Hide image"
+#~ msgstr "Skjul bilde"
+
+#~ msgid "Hide publish date"
+#~ msgstr "Skjul publiseringsdato"
+
+#~ msgid "Hide post comments"
+#~ msgstr "Skul kommentarer"
+
+#~ msgid "Exclude posts by id. Separate with commas"
+#~ msgstr "Exclude posts by id. Separate with commas"
+
+#~ msgid "says"
+#~ msgstr "sier"
+
+#~ msgid "Wohooooooo"
+#~ msgstr "Wofd"
+
+#~ msgid "Regards"
+#~ msgstr "Med vennlig hilsen"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 kommentar"
+
+#~ msgid "% Comments"
+#~ msgstr "% kommentarer"

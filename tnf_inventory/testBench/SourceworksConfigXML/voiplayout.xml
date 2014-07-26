@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_layout id="voip">
+
+    <!-- Record 7500 is dropped for each RTP flow each 5 seconds or when call is finished. -->
+    <record id="7500">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_CLIENT_IP_ADDRESS</field>
+        <field id="2">ID_CLIENT_PORT_NUMBER</field>
+        <field id="3">ID_SERVER_IP_ADDRESS</field>
+        <field id="4">ID_SERVER_PORT_NUMBER</field>
+        <field id="5">ID_SLICE_START_TIMESTAMP</field>
+        <field id="6">ID_SLICE_END_TIMESTAMP</field>
+        <field id="7">ID_CLIENT_JITTER_DEVIATION</field>
+        <field id="8">ID_CLIENT_JITTER_SMOOTHED</field>
+        <field id="9">ID_SERVER_JITTER_DEVIATION</field>
+        <field id="10">ID_SERVER_JITTER_SMOOTHED</field>
+        <field id="11">ID_PROBE_STATUS</field>
+        <field id="12">ID_RTP_UP_PACKETS</field>
+        <field id="13">ID_RTP_DOWN_PACKETS</field>
+        <field id="14">ID_RTP_UP_DUPLICATED_PACKETS</field>
+        <field id="15">ID_RTP_DOWN_DUPLICATED_PACKETS</field>
+        <field id="16">ID_RTP_UP_BYTES</field>
+        <field id="17">ID_RTP_DOWN_BYTES</field>
+        <field id="18">ID_NETRO_UPLOAD_THROUGHPUT</field>
+        <field id="19">ID_NETRO_DOWNLOAD_THROUGHPUT</field>
+        <field id="20">ID_RTP_UP_OUT_OF_SEQUENCE_PACKETS</field>
+        <field id="21">ID_RTP_DOWN_OUT_OF_SEQUENCE_PACKETS</field>
+        <field id="22">ID_RTP_CONSECUTIVE_GOOD_PACKETS_UP</field>
+        <field id="23">ID_RTP_CONSECUTIVE_GOOD_PACKETS_DOWN</field>
+        <field id="24">ID_RTP_LATE_PACKETS_UP</field>
+        <field id="25">ID_RTP_LATE_PACKETS_DOWN</field>
+        <field id="26">ID_RTP_MISSED_PACKETS_UP</field>
+        <field id="27">ID_RTP_MISSED_PACKETS_DOWN</field>
+        <field id="28">ID_RTP_R_FACTOR_UP</field>
+        <field id="29">ID_RTP_R_FACTOR_DOWN</field>
+        <field id="30">ID_RTP_MOS_UP</field>
+        <field id="31">ID_RTP_MOS_DOWN</field>
+        <field id="32">ID_RTP_NETWORK_OVERLOAD_UP</field>
+        <field id="33">ID_RTP_NETWORK_OVERLOAD_DOWN</field>
+        <field id="34">ID_RTP_DIFF_SERV_UP</field>
+        <field id="35">ID_RTP_DIFF_SERV_DOWN</field>
+        <field id="36">ID_RTP_DURATION</field>
+        <field id="37">ID_RTP_MEDIA_TYPE</field>
+        <field id="38">ID_RTP_MEDIA_PROTOCOL</field>
+        <field id="39">ID_RTP_MEDIA_CODEC</field>
+        <field id="40">ID_RTP_SAMPLE_RATE</field>
+        <field id="41">ID_RTP_PACKETS_INTERVAL</field>
+        <field id="42">ID_RTP_CALL_ID</field>
+        <field id="43">ID_RTP_CONTROL_PLANE_TYPE</field>
+        <field id="44">ID_RTP_FROM_UID</field>
+        <field id="45">ID_RTP_FROM_DOMAIN</field>
+        <field id="46">ID_RTP_TO_UID</field>
+        <field id="47">ID_RTP_TO_DOMAIN</field>
+        <field id="48">ID_RTP_RECORD_REASON</field>
+        <field id="49">ID_RTP_SLICE_NUM</field>
+    </record>
+    
+    <!-- SIP call setup -->
+    <record id="3304">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_METHOD_NAME</field>
+        <field id="8">ID_SIP_CALL_CONTEXT</field>
+        <field id="9">ID_SIP_FROM_UID</field>
+        <field id="10">ID_SIP_FROM_DOMAIN</field>
+        <field id="11">ID_SIP_TO_UID</field>
+        <field id="12">ID_SIP_TO_DOMAIN</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_SIP_VIA_SENTBY</field>
+        <field id="15">ID_SIP_VIA_ORIGIN</field>
+        <field id="16">ID_SIP_CALL_ID</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_LOCAL_RTP_IP</field>
+        <field id="19">ID_LOCAL_RTP_PORT</field>
+        <field id="20">ID_REMOTE_RTP_IP</field>
+        <field id="21">ID_REMOTE_RTP_PORT</field>
+        <field id="22">ID_SIP_TIME_TO_ANSWER</field>
+        <field id="23">ID_SIP_RING_DURATION_TIME</field>
+        <field id="24">ID_SIP_CALL_SETUP_TIME</field>
+    </record>
+
+    <!-- SIP call teardown -->
+    <record id="3305">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_METHOD_NAME</field>
+        <field id="8">ID_SIP_CALL_CONTEXT</field>
+        <field id="9">ID_SIP_FROM_UID</field>
+        <field id="10">ID_SIP_FROM_DOMAIN</field>
+        <field id="11">ID_SIP_TO_UID</field>
+        <field id="12">ID_SIP_TO_DOMAIN</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_SIP_VIA_SENTBY</field>
+        <field id="15">ID_SIP_VIA_ORIGIN</field>
+        <field id="16">ID_SIP_CALL_ID</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_LOCAL_RTP_IP</field>
+        <field id="19">ID_LOCAL_RTP_PORT</field>
+        <field id="20">ID_REMOTE_RTP_IP</field>
+        <field id="21">ID_REMOTE_RTP_PORT</field>
+        <field id="22">ID_SIP_SESSION_DURATION_TIME</field>
+        <field id="23">ID_SIP_SESSION_DISCONNECT_DELAY</field>
+        <field id="24">ID_SIP_POST_PICKUP_DELAY</field>
+        <field id="25">ID_SIP_CALL_SIGNALLING_LATENCY</field>
+        <field id="26">ID_SIP_REASON_CODE</field>
+        <field id="27">ID_SIP_REASON_TEXT</field>
+    </record>
+       
+    <!-- SIP-T call setup -->
+    <record id="3306">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_METHOD_NAME</field>
+        <field id="8">ID_SIP_CALL_CONTEXT</field>
+        <field id="9">ID_SIP_FROM_UID</field>
+        <field id="10">ID_SIP_FROM_DOMAIN</field>
+        <field id="11">ID_SIP_TO_UID</field>
+        <field id="12">ID_SIP_TO_DOMAIN</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_SIP_VIA_SENTBY</field>
+        <field id="15">ID_SIP_VIA_ORIGIN</field>
+        <field id="16">ID_SIP_CALL_ID</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_LOCAL_RTP_IP</field>
+        <field id="19">ID_LOCAL_RTP_PORT</field>
+        <field id="20">ID_REMOTE_RTP_IP</field>
+        <field id="21">ID_REMOTE_RTP_PORT</field>
+        <field id="22">ID_SIP_TIME_TO_ANSWER</field>
+        <field id="23">ID_SIP_RING_DURATION_TIME</field>
+        <field id="24">ID_SIP_CALL_SETUP_TIME</field>
+        <field id="25">ID_SIPT_ISUP_CIC</field>
+        <field id="26">ID_SIPT_ISUP_CALLING_PARTY_CATEGORY</field>
+        <field id="27">ID_SIPT_ISUP_CALLING_PARTY_NUMBER</field>
+        <field id="28">ID_SIPT_ISUP_CALLED_PARTY_NUMBER</field>
+    </record>
+
+    <!-- SIP-T call teardown -->
+    <record id="3307">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_METHOD_NAME</field>
+        <field id="8">ID_SIP_CALL_CONTEXT</field>
+        <field id="9">ID_SIP_FROM_UID</field>
+        <field id="10">ID_SIP_FROM_DOMAIN</field>
+        <field id="11">ID_SIP_TO_UID</field>
+        <field id="12">ID_SIP_TO_DOMAIN</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_SIP_VIA_SENTBY</field>
+        <field id="15">ID_SIP_VIA_ORIGIN</field>
+        <field id="16">ID_SIP_CALL_ID</field>
+        <field id="17">ID_USER_AGENT</field>
+        <field id="18">ID_LOCAL_RTP_IP</field>
+        <field id="19">ID_LOCAL_RTP_PORT</field>
+        <field id="20">ID_REMOTE_RTP_IP</field>
+        <field id="21">ID_REMOTE_RTP_PORT</field>
+        <field id="22">ID_SIP_SESSION_DURATION_TIME</field>
+        <field id="23">ID_SIP_SESSION_DISCONNECT_DELAY</field>
+        <field id="24">ID_SIP_POST_PICKUP_DELAY</field>
+        <field id="25">ID_SIP_CALL_SIGNALLING_LATENCY</field>
+        <field id="26">ID_SIP_REASON_CODE</field>
+        <field id="27">ID_SIP_REASON_TEXT</field>
+        <field id="28">ID_SIPT_ISUP_CIC</field>
+        <field id="29">ID_SIPT_ISUP_CALLING_PARTY_CATEGORY</field>
+        <field id="30">ID_SIPT_ISUP_CALLING_PARTY_NUMBER</field>
+        <field id="31">ID_SIPT_ISUP_CALLED_PARTY_NUMBER</field>
+        <field id="32">ID_SIPT_ISUP_CAUSE_INDICATOR_VALUE</field>
+    </record>
+    
+    <!-- SIP register -->
+    <record id="3308">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_METHOD_NAME</field>
+        <field id="8">ID_SIP_CALL_CONTEXT</field>
+        <field id="9">ID_URI</field>
+        <field id="10">ID_SIP_FROM_UID</field>
+        <field id="11">ID_SIP_FROM_DOMAIN</field>
+        <field id="12">ID_SIP_TO_UID</field>
+        <field id="13">ID_SIP_TO_DOMAIN</field>
+        <field id="14">ID_PROBE_STATUS</field>
+        <field id="15">ID_SIP_VIA_SENTBY</field>
+        <field id="16">ID_SIP_VIA_ORIGIN</field>
+        <field id="17">ID_SIP_CALL_ID</field>
+        <field id="18">ID_USER_AGENT</field>
+        <field id="19">ID_SIP_CONTACT</field>
+        <field id="20">ID_SIP_REGISTER_EXPIRY</field>
+        <field id="21">ID_SIP_DIGEST_REALM</field>
+    </record>
+
+    <!-- Megaco call setup -->
+    <record id="9004">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_MEGACO_CALL_CONTEXT</field>
+        <field id="8">ID_MEGACO_DIALLED_DIGITS</field>
+        <field id="9">ID_MEGACO_PHYSICAL_TERMINATION_ID</field>
+        <field id="10">ID_MEGACO_COMMAND</field>
+        <field id="11">ID_MEGACO_MEDIA_GATEWAY_ID</field>
+        <field id="12">ID_MEGACO_CONTEXT_ID</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_LOCAL_RTP_IP</field>
+        <field id="15">ID_LOCAL_RTP_PORT</field>
+        <field id="16">ID_REMOTE_RTP_IP</field>
+        <field id="17">ID_REMOTE_RTP_PORT</field>
+        <field id="18">ID_MEGACO_DIAL_TONE_DELAY</field>
+        <field id="19">ID_MEGACO_CALL_SETUP_TIME</field>
+        <field id="20">ID_MEGACO_TIME_TO_ANSWER</field>
+    </record>
+    
+    <!-- Megaco call teardown -->
+    <record id="9005">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_REQUEST_TIMESTAMP</field>
+        <field id="2">ID_RESPONSE_TIMESTAMP</field>
+        <field id="3">ID_CLIENT_IP_ADDRESS</field>
+        <field id="4">ID_CLIENT_PORT_NUMBER</field>
+        <field id="5">ID_SERVER_IP_ADDRESS</field>
+        <field id="6">ID_SERVER_PORT_NUMBER</field>
+        <field id="7">ID_MEGACO_CALL_CONTEXT</field>
+        <field id="8">ID_MEGACO_DIALLED_DIGITS</field>
+        <field id="9">ID_MEGACO_PHYSICAL_TERMINATION_ID</field>
+        <field id="10">ID_MEGACO_COMMAND</field>
+        <field id="11">ID_MEGACO_MEDIA_GATEWAY_ID</field>
+        <field id="12">ID_MEGACO_CONTEXT_ID</field>
+        <field id="13">ID_PROBE_STATUS</field>
+        <field id="14">ID_LOCAL_RTP_IP</field>
+        <field id="15">ID_LOCAL_RTP_PORT</field>
+        <field id="16">ID_REMOTE_RTP_IP</field>
+        <field id="17">ID_REMOTE_RTP_PORT</field>
+        <field id="18">ID_MEGACO_RING_TONE_DELAY</field>
+        <field id="19">ID_MEGACO_CALL_DURATION</field>
+        <field id="20">ID_MEGACO_TIME_TO_ANSWER</field>
+    </record>
+
+</record_layout>

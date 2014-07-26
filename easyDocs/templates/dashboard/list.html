@@ -1,0 +1,225 @@
+<ul>
+  <% _.each(projects, function(project){ %>
+   <li><%= project.get("name") %> - <%= project.get("score") %></li> 
+  <% }); %>
+</ul>
+
+
+
+
+   <!-- START TOPSECTION -->
+     <div id="topsection" class="top-myfolder">
+	  
+	  <div id="myfolder-chart">
+	  <div class="chart-head">Document Breakdown</div>
+	  <img src="images/chart.png" alt="Chart" width="150" />
+	  </div>
+	  
+	  <div id="myfolder-overview">
+	 Overview
+	  <br />
+	  <span id="underwelcome">Find and access all of your documents easily and in the one place.</span>
+	  </div>
+	  
+	  <div id="overall-docinfo">
+	    <div id="overall-head">Overall Document info</div>
+		  <span class="overall-downloads">Number of Documents: <strong>154</strong></span>
+		  <span class="overall-last">Last generated: <a href="" title="Document name">document</a></span>
+	  </div>
+	 </div>
+   <!-- END TOPSECTION -->	
+
+  
+  <!-- START DOCUMENT LIST -->
+   <div id="doclist">
+   <div class="title"><img class="titleIcon" alt="" src="images/myfolder2.png"><h1>My Folder</h1>
+      	 <form action="" class="myfolder-search">
+         <input type="text" onclick="this.value=''" value="Search through your generated documents here..." onblur="formDefault(this)" name="search">
+         <input type="submit" value="" name="find">
+    </form>
+   </div>
+   </div>
+
+
+   <ul class="thumbnails">
+	  <li class="span2">
+	    <div class="thumbnail">
+	      <img src="images/thumbs/2.jpg" alt="Thumbnail">
+	      <h3>Lorem ipsum dolor sit ames</h3>	     
+	      	<blockquote class="thumbnail-description-blockquote">			
+			  <small>Created by:<cite title="Source Title">Alan Hayes</cite></small>
+			  <small>Partner:<cite title="Source Title">ESA</cite></small>
+			  <small>Downloads:<cite title="Source Title">34</cite></small>
+			</blockquote>
+
+			  			<button class="btn btn-block">View</button>
+						<button class="btn btn-primary btn-block">Download</button>
+	    </div>
+	</li>
+	   <li class="span2">
+	    <div class="thumbnail">
+	      <img src="images/thumbs/4.jpg" alt="Thumbnail">
+	      <h3>Lorem ipsum dolor sit ames</h3>	     
+	      	<blockquote class="thumbnail-description-blockquote">			
+			  <small>Created by:<cite title="Source Title">Alan Hayes</cite></small>
+			  <small>Partner:<cite title="Source Title">ESA</cite></small>
+			  <small>Downloads:<cite title="Source Title">34</cite></small>
+			</blockquote>
+
+			  			<button class="btn btn-block">View</button>
+						<button class="btn btn-primary btn-block">Download</button>
+	    </div>
+	</li>
+	 <li class="span2">
+	    <div class="thumbnail">
+	      <img src="images/thumbs/4.jpg" alt="Thumbnail">
+	      <h3>Lorem ipsum dolor sit ames</h3>	     
+	      	<blockquote class="thumbnail-description-blockquote">			
+			  <small>Created by:<cite title="Source Title">Alan Hayes</cite></small>
+			  <small>Partner:<cite title="Source Title">ESA</cite></small>
+			  <small>Downloads:<cite title="Source Title">34</cite></small>
+			</blockquote>
+
+			  			<button class="btn">View</button>
+						<button class="btn btn-primary">Download</button>
+	    </div>
+	</li>
+	 <li class="span2">
+	    <div class="thumbnail">
+	      <img src="images/thumbs/5.jpg" alt="Thumbnail">
+	      <h3>Lorem ipsum dolor sit ames</h3>	     
+	      	<blockquote class="thumbnail-description-blockquote">			
+			  <small>Created by:<cite title="Source Title">Alan Hayes</cite></small>
+			  <small>Partner:<cite title="Source Title">ESA</cite></small>
+			  <small>Downloads:<cite title="Source Title">34</cite></small>
+			</blockquote>
+
+			  			<button class="btn">View</button>
+						<button class="btn btn-primary">Download</button>
+	    </div>
+	</li> 
+	<li class="span2">
+	    <div class="thumbnail">
+	      <img src="images/thumbs/6.jpg" alt="Thumbnail">
+	      <h3>Lorem ipsum dolor sit ames</h3>	     
+	      	<blockquote class="thumbnail-description-blockquote">			
+			  <small>Created by:<cite title="Source Title">Alan Hayes</cite></small>
+			  <small>Partner:<cite title="Source Title">ESA</cite></small>
+			  <small>Downloads:<cite title="Source Title">34</cite></small>
+			</blockquote>
+
+			  			<button class="btn">View</button>
+						<button class="btn btn-primary">Download</button>
+	    </div>
+	</li>
+	</ul>
+
+   <ul class="documents-list myfolder-list">
+    <li>
+	<img src="images/thumbs/2.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Created by: <strong>Alan Hayes</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	<span>Downloads: <strong>34</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	
+    <li>
+	<img src="images/thumbs/3.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	    <li>
+	<img src="images/thumbs/4.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	    <li>
+	<img src="images/thumbs/5.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	    <li>
+	<img src="images/thumbs/7.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	    <li>
+	<img src="images/thumbs/6.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+	
+	 <li>
+	<img src="images/thumbs/1.jpg" alt="Thumbnail" />
+	<a href="" title="Title">Lorem ipsum dolor sit ames</a>
+	<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+	<div class="list-details">
+	<span>Popularity: <strong>Very Popular</strong></span>
+	<span>Downloads: <strong>364</strong></span>
+	<span>Partner: <strong>ESA</strong></span>
+	</div>
+	<a class="generate" href="" title="View"><div class="view-img"></div></a>
+	<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+	</li>
+   </ul>
+
+   <div class="pagination">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</div>
+  </div>
+
+		 
+	 

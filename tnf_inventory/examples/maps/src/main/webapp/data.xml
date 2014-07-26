@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+  <marker>
+    <id>3</id>
+    <name>Auckland University of Technology Library</name>
+    <latitude>-36.87</latitude>
+    <longitude>185.22</longitude>
+  </marker>
+
+  <marker>
+    <id>5</id>
+    <name>Auckland War Memorial Library</name>
+    <latitude>-36.77</latitude>
+    <longitude>185.92</longitude>
+  </marker>
+  <marker>
+
+    <id>7</id>
+    <name>Library of ChristChurch</name>
+    <latitude>-43.53333</latitude>
+    <longitude>172.63333</longitude>
+  </marker>
+  <marker>
+    <id>2</id>
+
+    <name>Meteorological Service of New Zealand (MetService) Library</name>
+    <latitude>-41.08</latitude>
+    <longitude>185.52</longitude>
+  </marker>
+  <marker>
+    <id>4</id>
+    <name>Auckland City Library</name>
+
+    <latitude>-36.27</latitude>
+    <longitude>185.22</longitude>
+  </marker>
+  <marker>
+    <id>8</id>
+    <name>Library of Hamilton</name>
+    <latitude>-45.88</latitude>
+
+    <longitude>170.48</longitude>
+  </marker>
+  <marker>
+    <id>6</id>
+    <name>Library of Dunedin</name>
+    <latitude>-45.88</latitude>
+    <longitude>170.48</longitude>
+
+  </marker>
+  <marker>
+    <id>1</id>
+    <name>New Zealand National Library</name>
+    <latitude>-41.28</latitude>
+    <longitude>185.22</longitude>
+  </marker>
+
+</list>
+<!-- 
+<markers>
+	<marker lat="-41.28" lng="-185.22" name="New Zealand National Library" 
+	        id="1" />
+	<marker lat="-41.35" lng="-185.22" name="Meteorological Service of New Zealand (MetService) Library" id="2"/>
+	<marker lat="-36.87" lng="-185" name="Auckland University of Technology Library" id="3"/>
+</markers>
+ -->

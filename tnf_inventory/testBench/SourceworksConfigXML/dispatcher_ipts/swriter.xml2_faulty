@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swriter>
+
+    <trace_file>/d0/swriter.log</trace_file> <!-- Defaults to ./swriter.log. Set to "screen" to print on screen -->
+
+    <statistics>
+        <path>/d0/stats</path> <!-- Directory in which the stat_"timestamp".log file will be written -->
+        <period>60</period> <!-- period in seconds to write stats -->
+        <max_size>40000000</max_size> <!-- Max size of statistics file before it will be rolled over -->
+        <check_perf>no</check_perf> <!-- Enable performance checking in stats -->
+    </statistics>
+
+    <!-- Details on interface between dacas & swriter:
+         unix:<socket_file>
+         shm:<shm_segment>
+         tcp:<port>
+         udp:<port>
+    -->
+    <bind>shm:0</bind> 
+
+
+    <!-- index_path: Indices will be written to index dir inside specified directory -->
+    <index_path>/d0/work</index_path>
+
+    <pcap_writing>
+        <!-- path: path to where pcaps will be written by swriter.         
+                 1. If threads = 0, this represents direct pcap writing directory 
+                 2. If threads > 0:                                               
+                    (2a) Single path: Thread number will be added (e.g. /d0/pcap and 2 threads will become /d0/pcap1,/d0/pcap2)
+                    (2b) Composed path: One path for each thread (e.g. /d0/pcap1:/d0/pcap2:/d0/pcap3)
+        -->
+        <path>/d0/pcap</path>
+
+        <!-- Max size of raw pcap written in MB (If greater than 0, raw pcap writing will be enabled instead of sessionized writing -->
+        <pcap_size>1500000000</pcap_size>
+
+        <!-- Size of buffer for zoned writing to pcap -->
+        <buff_len>65536</buff_len>
+
+        <!-- Write modes:
+             0: Normal write
+             1: Compressed write (gzip)
+             2: AIO write (asynchronous)
+             3: None (no writing to disk, for testing only)
+        -->
+        <write_mode>0</write_mode>
+    </pcap_writing>
+
+    <threading>
+        <num>1</num> <!-- Number of threads setup for writing files to disk. If 0, main thread writes -->
+        <queue_size>1000</queue_size> <!-- Amount of slots in circular buffer for communication between main thread and writing threads -->
+    </threading>
+
+    <!-- Watermarks for open files pool. NOTE: These values are not currently utilized when threading/num > 0 -->
+    <file_handlers>
+        <high_watermark>3000</high_watermark>
+        <low_watermark>2700</low_watermark>
+    </file_handlers>
+
+    <session_handlers>
+        <high_watermark>1000</high_watermark>
+        <low_watermark>800</low_watermark>
+        <!-- how many new session packets will bedetected before purging -->
+        <purge_period>200</purge_period>      
+        
+        <!-- minimum time for a session to be inactive before being deleted -->
+        <purge_timeout>60</purge_timeout>       
+        
+        <!-- maximum elements to be purged each time the purging process is launched -->
+        <purge_max_elems>150</purge_max_elems> 
+    </session_handlers>
+        
+    <!-- This number is appended to session summaries in index files so Localagent's inverted indices in memory know where to find the pcaps -->
+    <thread_offset>0</thread_offset> 
+
+    <recycle_threshold>7200</recycle_threshold> <!-- Min time since last modification for pcap file to be moved to trash -->
+
+</swriter>

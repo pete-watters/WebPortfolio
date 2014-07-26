@@ -1,0 +1,386 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<!--  Inclue deader file with all css/ js  -->
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="icon" href="images/favicon.gif" type="image/gif"> 
+
+	
+
+<title>TNFMON CEM Analysis</title>
+
+
+
+<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="js/highstock.js"></script>   
+
+<!-- Form style JS. select elements taken out....-->
+
+<script type="text/javascript" src="js/custom-form.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.7.1.custom.css" />
+
+<link type="text/css" rel="stylesheet" href="css/style.css" /> 
+
+
+
+<!-- Include jQuery declarations -->
+
+<script type="text/javascript">
+
+$(function(){
+
+	// Tabs
+
+	$('#Main_tabs').tabs();
+
+	$('#Statistics_tabs').tabs();
+
+	$('#Inventory_tabs').tabs();
+
+	$('#CustomerMatrix_tabs').tabs();
+
+	$("#search_accordion").accordion({ header: "h3" });
+
+	
+
+});
+
+</script>
+
+
+
+<!-- Search Form Definitions -->
+
+<!-- Include Servlet that sets up select List -->
+
+
+
+ 	
+
+ 	
+
+ 	
+
+<!--  ComboBox Population -->
+
+<script type="text/javascript">
+
+
+
+var SiteData = [{"Customer"   : "","Site"  : ['']},{"Customer"   : "TNF:TNF INTERNAL","Site"  : ['1:H2REP2:Sandyford', '3:MPPMASTER:Sandyford']}, {"Customer"   : "","Site"  : ['']},{"Customer"   : "VFES:VODAFONE SPAIN","Site"  : ['2:ALCOBENDASTRIAL:Somewhere in Spain']}]
+
+;
+
+$(function() { // create an array to be referenced by state name
+
+		state = [] ;
+
+		for(var i=0; i<SiteData.length; i++) {	state[SiteData[i].Customer] = SiteData[i].Site ;
+
+				 								}
+
+			});
+
+
+
+$(function() {
+
+ // populate Customer select box
+
+ var options = '' ;
+
+ for (var i = 0; i < SiteData.length; i++) {
+
+  options += '<option value="' + SiteData[i].Customer + '">' + SiteData[i].Customer + '</option>'; 
+
+ }
+
+ $("#Customer").html(options);   // populate select box with array
+
+
+
+ // selecting state (change) will populate Site select box
+
+ $("#Customer").bind("change",
+
+   function() {
+
+    $("#Site").children().remove() ;          // clear select box
+
+    var options = '' ;
+
+    for (var i = 0; i < state[this.value].length; i++) { 
+
+     options += '<option value="' + state[this.value][i] + '">' + state[this.value][i] + '</option>'; 
+
+    }
+
+    $("#Site").html(options);   // populate select box with array
+
+   }            // bind function end
+
+ );             // bind end 
+
+
+
+ 
+
+$(".ValidateData").click(function() {
+
+	// get vaues from form and set dataString
+
+	var Customer = $("#Customer").val();
+
+	var Site = $("#Site").val();
+
+	var StartDate = $("#StartDate").val();
+
+	var EndDate = $("#EndDate").val();
+
+	var dataString = "Customer="+ Customer+"&Site="+Site+"&StartDate="+StartDate+"&EndDate="+EndDate;
+
+		
+
+	if(Customer == ""){		
+
+		alert("Please Choose a customer");		
+
+		}
+
+	else{		
+
+		$("#flash").show();
+
+		$("#flash").fadeIn(400).html('<img src="images/ajax-loader.gif" align="absmiddle">&nbsp;<span class="loading">Loading Comment...</span>');
+
+	$.ajax({
+
+	    	type: "POST",
+
+     	    url: "AJAX_ValidateData.jsp",
+
+			data: dataString,
+
+			cache: false,
+
+			success: function(data){$("#flash").hide();			
+
+			$("#console").empty();
+
+			$("#console").append(data);}
+
+  			});
+
+		}			
+
+		return false;
+
+	});
+
+		
+
+$("#StartDate").datepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+
+$("#EndDate").datepicker({ showOn: 'button',dateFormat: 'yy-mm-dd'}).next('button').text('').button({icons:{primary : 'ui-icon-calendar'}});
+
+$("form").form();	});
+
+  </script>
+
+<!-- Search Form Definitions -->
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<div id="Main_tabs"> 
+
+  
+
+    
+
+        <ul> 
+
+        <li><a href="#Main_tab"><span></span>Home</a></li>    
+
+        
+
+        </ul>
+
+       
+
+<div id="Main_tab">
+
+	<div id="search_accordion" style="height:80%">
+
+		<div>		
+
+		  <h3><a href="#">Statistics</a></h3>
+
+		 <div>
+
+		  <form  method="post" action="">
+
+				<fieldset>
+
+			<legend>Statistic Search</legend>
+
+			<table>
+
+			<tr><td>
+
+				<table>
+
+					<tr><td><label for="Customer">Customer:</label></td>
+
+						<td><select name="Customer" id="Customer"></select></td></tr>
+
+					<tr><td><label for="Site">Site:</label></td>	
+
+						<td><select name="Site" id="Site"></select></td></tr>
+
+					<tr><td><label for="StartDate">Start Date:</label></td>	
+
+						<td><input type="text" id="StartDate" /></td></tr>
+
+					<tr><td><label for="EndDate">End Date:</label></td>	
+
+						<td><input type="text" id="EndDate" /></td></tr>
+
+					<tr><td>
+
+						<input type="submit"  value="ValidateData"  id="v" name="submit" class="ValidateData"/>
+
+						<input type="reset" id="Reset" />
+
+					</td></tr>
+
+				</table>
+
+			</td>
+
+			<td>
+
+			<div id="flash"></div>
+
+			<div id="console"  class="ui-state-info ui-corner-all" ></div>
+
+				
+
+			</td>
+
+			</tr>
+
+			</table>
+
+				</fieldset>		
+
+			</form>
+
+			
+
+			</div>		
+
+		</div>
+
+		
+
+		 <div>
+
+		<h3><a href="#">Inventory Search</a></h3>
+
+		 <div>
+
+		<form id="themeform">
+
+		
+
+		<fieldset>
+
+		<legend>Inventory Search Form</legend>
+
+		<table>
+
+		<tr><td>
+
+		<label for="CustomerSelect">Choose a customer:</label>
+
+				<select name="CustomerSelect" id="CustomerSelect">
+
+				<option value="">None</option>
+
+				<optgroup label="TNF"><option value="TNF">TNF : TNF INTERNAL</option></optgroup><optgroup label="VFES"><option value="VFES">VFES : VODAFONE SPAIN</option></optgroup>
+
+		</select>
+
+		</td></tr>
+
+		<tr><td><input type="reset" /></td><td><input type="submit" value="Enter" /></td></tr>
+
+		
+
+		</table>
+
+		</fieldset>
+
+		</form>			
+
+		</div>
+
+		   </div>
+
+	</div>
+
+		        
+
+   			
+
+ 	</div>
+
+ 	
+
+	
+
+	
+
+	
+
+	
+
+ </div>
+
+ 
+
+
+
+</body>
+
+</html>

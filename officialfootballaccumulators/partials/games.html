@@ -1,0 +1,47 @@
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#soccerBalls2" data-toggle="tab">Soccer Balls 2</a></li>
+    <li><a href="#bicycleKickChampion" data-toggle="tab">Bicycle Kick Champion</a></li>
+    <li><a href="#yahooSoccer" data-toggle="tab">Yahoo! Soccer</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="soccerBalls2">        
+        <div class="row">
+              <!-- game --> 
+              <div class="span10">
+               <embed width="700" height="525" src="swf/soccer_balls_2.swf" type="application/x-shockwave-flash"></embed>
+             </div>
+              <!-- ads --> 
+              <div class="span2">                    
+                  <div ng-include="'partials/widgets/adCarousel_120x600.html'" ></div>
+              </div>
+            </div>
+      </div>
+      <div class="tab-pane fade" id="bicycleKickChampion">
+           <div class="row">
+              <!-- game --> 
+              <div class="span10">
+               <embed src="http://www.myfootballgames.co.uk/files/file/Bicycle-Kick-Champion.swf" width="680" height="450" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" menu="false">
+             </div>
+              <!-- ads --> 
+              <div class="span2">
+                <div ng-include="'partials/widgets/adCarousel_120x600.html'" ></div>
+
+              </div>
+            </div>
+              
+      </div>
+      <div class="tab-pane fade" id="yahooSoccer">
+        <div class="row">
+          <!-- game --> 
+          <div class="span10">
+           <embed src="http://www.flashgames247.com/misc-games/12501/Soccer_in_Japan_june_30th_2008.swf" width="530" height="400" id="game_content" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+         </div>
+          <!-- ads --> 
+          <div class="span2">
+            <div ng-include="'partials/widgets/adCarousel_120x600.html'" ></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+

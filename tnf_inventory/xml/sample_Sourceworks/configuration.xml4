@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dacas>
+    <!-- Config base direcrory, each additional config path is prepended by this value. -->
+    <config_base>/apps/midas/etc/</config_base>
+    
+    <!-- Configuration backup directory. -->
+    <backup>./bkup</backup>
+
+    <!-- Specify the process id, used in multiprocess mode (dispatcher or classifier) --> 
+    <process_id>4</process_id>
+    
+    <!-- Setting specifies sub-directory name for multy process mode. Should be empty for debug on dispatcher mode -->
+    <process_sub_dir>4</process_sub_dir>
+  
+    <!-- Specifies the path to the features configuration file -->
+    <features>config/features.xml</features>
+        
+    <!-- Specifies the path to the output configuration file -->
+    <records>config/defaultoutput.xml</records>
+        
+    <!-- Specifies the path to the binary dictionary configuration file -->
+    <binary_dictionary>config/binarydictionary.xml</binary_dictionary>
+        
+    <!-- Specifies the path to the detection rules configuration file -->
+    <detection>config/detection.xml</detection>   
+
+    <!-- Specifies the path to the statistical detection rules configuration file -->
+    <stat_detection>config/statdetection.xml</stat_detection>   
+
+    <!-- Specifies the path to the IPC configuration file -->
+    <ipc>config/ipc.xml</ipc>
+
+    <!-- Trace output settings -->
+    <trace>
+        <console_output>no</console_output>
+    </trace>
+    
+    <!-- Input settings -->
+    <input>
+      
+        <!-- type should be set to 'atm' to use the interphase atm card -->
+        <!-- type should be set to 'tnf' if using the now factory card. The 'path' parameter will be ignored for the moment -->
+        <type>shm</type>
+        
+        <!-- Path to the pcap file or NIC device -->
+        <path>4</path>
+        
+    </input>
+
+    <!-- GTP ageing queue settings -->
+    <gtp>
+        <pdp_context>
+            <high_watermark>375000</high_watermark>
+            <low_watermark>372500</low_watermark>
+        </pdp_context>
+    </gtp>
+    
+</dacas>

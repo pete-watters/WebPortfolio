@@ -1,0 +1,396 @@
+<div id="canvas">
+  
+   <!-- START TOPSECTION -->
+     <div id="topsection" class="top-questions">
+
+	  	<!--<div class="progress_bar">
+        <div class="progress"></div>
+        <div class="progress_text">0% Complete</div>
+	</div> -->
+	
+	 </div>
+   <!-- END TOPSECTION -->	
+
+        <form action="#" method="post">
+	
+            <!-- #first_step -->
+            <div class="first_step">
+           <table width="95%" class="questions-form">
+		   
+		   <tbody><tr>
+		    <th>Name<span>(job title)</span></th>
+			<th>Age</th>
+			<th>Nickname</th>
+			<th>Employee</th>
+			</tr>
+			
+			  <tr>
+			    <td width="60%">Giacomo Guilizzoni<span>Founder &amp; CEO</span></td>
+				<td width="10%">34</td>
+				<td width="20%">Peldi</td>
+				<td width="10%">
+				<!-- If box is checkd add class "checked-box" to span -->
+				<span class="check-bg"><input type="checkbox" name="name" value="Giacomo"></span></td>
+			   </tr>
+			  
+			  	<tr>
+			    <td width="60%">Guido Jack Guillzzoni</td>
+				<td width="10%">4</td>
+				<td width="20%">The Guids</td>
+				<td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Guido"></span></td>
+			    </tr>
+			  
+			  	<tr>
+			    <td width="60%">Marco Botteo<span>Tuttotare</span></td>
+				<td width="10%">31</td>
+				<td width="20%"></td>
+				<td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Marco"></span></td>
+			    </tr>
+			  
+			    <tr>
+			     <td width="60%">Mariah Maclachlan</td>
+				 <td width="10%">35</td>
+				 <td width="20%">Patata</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Mariah"></span></td>
+			     </tr>
+			  
+			     <tr>
+			     <td width="60%">Valerie Liberty<span>COO, WOW! Division</span></td>
+				 <td width="10%">:)</td>
+			  	 <td width="20%">Val</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Valerie"></span></td>
+			     </tr>
+			  
+			  	 <tr>
+			     <td width="60%">Guido Jack Guillzzoni</td>
+				 <td width="10%">4</td>
+				 <td width="20%">The Guids</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Guido"></span></td>
+			     </tr>
+			  
+			     <tr>
+			     <td width="60%">Marco Botteo<span>Tuttotare</span></td>
+				 <td width="10%">31</td>
+				 <td width="20%"></td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Marco"></span></td>
+			    </tr>
+								
+			  	<tr>
+			    <td width="60%">Marco Botteo<span>Tuttotare</span></td>
+				<td width="10%">31</td>
+				<td width="20%"></td>
+				<td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Marco"></span></td>
+			    </tr>
+			  
+			    <tr>
+			     <td width="60%">Mariah Maclachlan</td>
+				 <td width="10%">35</td>
+				 <td width="20%">Patata</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Mariah"></span></td>
+			     </tr>
+			  
+			     <tr>
+			     <td width="60%">Valerie Liberty<span>COO, WOW! Division</span></td>
+				 <td width="10%">:)</td>
+			  	 <td width="20%">Val</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Valerie"></span></td>
+			     </tr>
+			  
+			  	 <tr>
+			     <td width="60%">Guido Jack Guillzzoni</td>
+				 <td width="10%">4</td>
+				 <td width="20%">The Guids</td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Guido"></span></td>
+			     </tr>
+			  
+			     <tr>
+			     <td width="60%">Marco Botteo<span>Tuttotare</span></td>
+				 <td width="10%">31</td>
+				 <td width="20%"></td>
+				 <td width="10%"><span class="check-bg"><input type="checkbox" name="name" value="Marco"></span></td>
+			    </tr>
+				
+			</tbody></table>
+			 <input class="submit_first next-questions bluebtn" type="submit" name="submit_first" value="Continue">
+			 <input class="cancelqestions next-questions bluebtn" type="button" name="cancel" value="I'll finish this later...">
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #second_step -->
+            <div class="second_step">
+                    <div class="questions-sets">
+					<div class="quest-head">
+                          <div class="title"><img src="images/checked.png" alt="" class="titleIcon"><h1>Some title here</h1></div>
+                    </div>
+					
+					  <ul class="questions-list">
+					  <!-- Each input should have a unique class eg. q1, q1 etc -->
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q1">
+						<!-- has id "invalid-<input's class name>" -->
+						<div id="invalid-q1" class="invalidanswer">The answer you've entered isn't valid</div>
+						<!-- has id "valid-<input's class name>" -->
+						<div id="valid-q1" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q2">
+						<div id="invalid-q2" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q2" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+					<!-- Children questions 1-->
+						<li>
+						<span>
+						Do you have sales staff out on the road?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<div class="form-radiobtns">
+						<!-- add id <uniqueid>-subquestions to the input you want to have subquestions -->
+						<span><input type="radio" name="staff" value="yes" class="q5" id="q5-subquestions"><span>Yes</span></span>
+                        <span><input type="radio" name="staff" value="no" class="q5"><span>No</span></span> 
+						</div>
+						<!-- add class <uniqueid>-showsubquestions to the list of subquestions -->
+                         <ul class="q5-showsubquestions subquestions-list">
+						  <li>
+						<span>
+					    How many sales staff do you have on the road!
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="sq1" alt="numeric">
+						<div id="invalid-sq1" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-sq1" class="validanswer">The answer you've entered is valid</div>
+						  </li>
+						  
+						<li>
+						<span>
+					    How many sales staff do you have on the road!
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="sq2" alt="numeric">
+						<div id="invalid-sq2" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-sq2" class="validanswer">The answer you've entered is valid</div>
+						  </li>
+						  
+						</ul> 
+						
+						<div id="invalid-q6" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q6" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Numberic value -->
+						<li>
+						<span>
+					    This is a numeric only input example!
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q4" alt="numeric">
+						<div id="invalid-q4" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q4" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Date picker -->
+					    <li>
+						<span>
+						This is an example of date picker
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" readonly="readonly" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q5 datepicker">
+						<div id="invalid-q5" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q5" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						
+					  </ul>	
+					</div>
+                <input class="submit_second next-questions bluebtn" type="submit" name="submit_second" value="Next Step">
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #third_step -->
+            <div class="third_step">
+                                 <div class="questions-sets">
+					<div class="quest-head">
+                          <div class="title"><img src="images/checked.png" alt="" class="titleIcon"><h1>Some title here</h1></div>
+                    </div>
+					
+					  <ul class="questions-list">
+					  <!-- Each input should have a unique class eg. q1, q1 etc -->
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q7">
+						<!-- has id "invalid-<input's class name>" -->
+						<div id="invalid-q7" class="invalidanswer">The answer you've entered isn't valid</div>
+						<!-- has id "valid-<input's class name>" -->
+						<div id="valid-q7" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q8">
+						<div id="invalid-q8" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q8" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q9">
+						<div id="invalid-q9" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q9" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Numberic value -->
+						<li>
+						<span>
+					    This is a numeric only input example!
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q10" alt="numeric">
+						<div id="invalid-q10" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q10" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Date picker -->
+					    <li>
+						<span>
+						This is an example of date picker
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" readonly="readonly" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q11 datepicker">
+						<div id="invalid-q11" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q11" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Radio inputs -->
+						<li>
+						<span>
+						Do you have sales staff out on the road?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<div class="form-radiobtns">
+						<span><input type="radio" name="staff1" value="yes" class="q12"><span>Yes</span></span>
+                        <span><input type="radio" name="staff1" value="no" class="q12"><span>No</span></span>
+						</div>
+						<div id="invalid-q12" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q12" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+					  </ul>	
+					</div>
+                <input class="submit_third next-questions bluebtn" type="submit" name="submit_third" value="Next Step">
+                
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            
+            
+            <!-- #fourth_step -->
+            <div class="fourth_step">
+                                 <div class="questions-sets">
+					<div class="quest-head">
+                          <div class="title"><img src="images/checked.png" alt="" class="titleIcon"><h1>Some title here</h1></div>
+                    </div>
+					
+					  <ul class="questions-list">
+					  <!-- Each input should have a unique class eg. q1, q1 etc -->
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q13">
+						<!-- has id "invalid-<input's class name>" -->
+						<div id="invalid-q13" class="invalidanswer">The answer you've entered isn't valid</div>
+						<!-- has id "valid-<input's class name>" -->
+						<div id="valid-q13" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q14">
+						<div id="invalid-q14" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q14" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<li>
+						<span>
+						Cum sociis natoque penatibus et magnis dis parturient montes?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q15">
+						<div id="invalid-q15" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q15" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Numberic value -->
+						<li>
+						<span>
+					    This is a numeric only input example!
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q16" alt="numeric">
+						<div id="invalid-q16" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q16" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Date picker -->
+					    <li>
+						<span>
+						This is an example of date picker
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<input type="text" readonly="readonly" onclick="this.value=''" value="Answer goes here..." onblur="formDefault(this)" class="q17 datepicker">
+						<div id="invalid-q17" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q17" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+						<!-- Radio inputs -->
+						<li>
+						<span>
+						Do you have sales staff out on the road?
+						<img class="infoimg" width="17" src="images/information.png" alt="This is some info!">
+						</span>
+						<div class="form-radiobtns">
+						<span><input type="radio" name="staff2" value="yes" class="q18"><span>Yes</span></span>
+                        <span><input type="radio" name="staff2" value="no" class="q18"><span>No</span></span>
+						</div>
+						<div id="invalid-q18" class="invalidanswer">The answer you've entered isn't valid</div>
+						<div id="valid-q18" class="validanswer">The answer you've entered is valid</div>
+						</li>
+						
+					  </ul>	
+					</div>
+                <input class="submit_fourth next-questions bluebtn" type="submit" name="fourth_second" value="Finish">            
+            </div>
+			
+			<!-- Final Step -->   
+<div class="final_step">
+<img class="success-text" src="images/success.png" alt="">
+<ul class="middleNavR">
+            <li><a href="#"><img src="images/downloaddoc.png" alt=""></a></li>
+            <li><a href="#"><img src="images/editdocument.png" alt=""></a></li>
+        </ul>
+<img src="images/success-avatar.png" alt="" class="success-avatar">
+			</div>
+            
+        </form>
+		
+  </div>

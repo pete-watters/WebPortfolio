@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipc>
+    
+    <update_interval>10</update_interval> <!-- Re-read config file each X specified seconds. "0" means - read config once at startup. -->
+
+	<max_track_count>50</max_track_count> <!-- Maximum number of domains,application and server ips tracked  by tool. Set to 50 by default. -->
+   	<session_byte_limit>2147483648</session_byte_limit> <!-- Maximum number of bytes in session. set to 2GB by default -->
+	<session_time_limit>3600</session_time_limit> <!-- Maximum time limit per session, seto to 1 hour by default-->
+    
+  
+    <!-- Session forwarding disabled at default -->
+    <forward>
+        <enable>no</enable>
+        <process_offset>0</process_offset> <!-- Used for multi-process shm communication with swriter -->
+        <protocol>SHM</protocol>
+        <destination>
+            <address>127.0.0.1</address>
+            <port>10001</port>
+        </destination>
+
+        <ipts_filter_ctrl_plane>no</ipts_filter_ctrl_plane>
+        <!--
+         Only two filters are allowed - one for include and one for exclude.
+         rule - AND/OR - how to combine the items in the filter.
+         IMSI, MSISDN and IMEI TAC supports wildcards, ie 272 will math to 
+         everything 272*, etc.
+        -->
+
+        <filter type="exclude">
+           <rule>AND</rule>
+           <apn/>
+           <rat/>
+           <lac/>
+           <cell_lac/>
+           <mcc/>
+           <mnc/>
+           <cell_id/>
+           <imei_tac/>
+           <ggsn_addr/>
+           <sgsn_addr/>
+           <imsi/>
+           <msisdn/>
+        </filter>
+        
+        <filter type="include">
+           <rule>AND</rule>
+           <apn/>
+           <rat/>
+           <lac/>
+           <cell_lac/>
+           <mcc/>
+           <mnc/>
+           <cell_id/>
+           <imei_tac/>
+           <ggsn_addr/>
+           <sgsn_addr/>
+           <imsi/>
+           <msisdn/>
+        </filter>
+        
+        <!--ISP tags-->
+        <!--<filter type="exclude">-->
+        <!--   <rule>AND</rule>-->
+        <!--   <csid/>-->
+        <!--   <l2tp_client_ip/>-->
+        <!--   <l2tp_server_ip/>-->
+        <!--</filter>-->
+
+        <!--<filter type="include">-->
+        <!--   <rule>AND</rule>-->
+        <!--   <csid/>-->
+        <!--   <l2tp_client_ip/>-->
+        <!--   <l2tp_server_ip/>-->
+        <!--</filter>-->
+        
+        <truncate>
+            <!-- all - truncate ALL packets
+                    apn - truncate only listed APNs
+                    notapn - truncate those APNs NOT listed
+                    none - don't truncate -->
+            <mode>none</mode>
+            
+            <!-- number of bytes to truncate packets to -->
+            <length>200</length>
+            
+            <!-- comma-separated list of APNs to filter (depending on criteria in 'mode') -->
+            <apn>isp.vodafone.ie,hs.vodafone.ie,office.vodafone.ie</apn>
+        </truncate>
+    </forward>
+    
+    <tracking>  
+        <enable>no</enable>             <!-- enable real time tracking -->
+        <config>./track.cfg</config>    <!-- define tracking configuration file -->
+        <interval>5</interval>          <!-- interval when the tracking config file is read in seconds -->
+        <destination>eth1</destination> <!-- interface where to send packets for tracked sessions -->
+    </tracking>
+</ipc>

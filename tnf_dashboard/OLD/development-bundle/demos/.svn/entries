@@ -1,0 +1,224 @@
+10
+
+dir
+0
+http://192.168.1.13/svn/websites/dashboard/OLD/development-bundle/demos
+http://192.168.1.13/svn/websites
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7d3c4a03-dc43-443b-8b28-a042985eb45a
+
+resizable
+dir
+
+
+
+add
+
+show
+dir
+
+
+
+add
+
+toggle
+dir
+
+
+
+add
+
+slider
+dir
+
+
+
+add
+
+removeClass
+dir
+
+
+
+add
+
+switchClass
+dir
+
+
+
+add
+
+tabs
+dir
+
+
+
+add
+
+progressbar
+dir
+
+
+
+add
+
+effect
+dir
+
+
+
+add
+
+demos.css
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+dialog
+dir
+
+
+
+add
+
+autocomplete
+dir
+
+
+
+add
+
+accordion
+dir
+
+
+
+add
+
+selectable
+dir
+
+
+
+add
+
+position
+dir
+
+
+
+add
+
+images
+dir
+
+
+
+add
+
+toggleClass
+dir
+
+
+
+add
+
+draggable
+dir
+
+
+
+add
+
+droppable
+dir
+
+
+
+add
+
+hide
+dir
+
+
+
+add
+
+index.html
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+datepicker
+dir
+
+
+
+add
+
+button
+dir
+
+
+
+add
+
+sortable
+dir
+
+
+
+add
+
+animate
+dir
+
+
+
+add
+
+addClass
+dir
+
+
+
+add
+

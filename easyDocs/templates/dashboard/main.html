@@ -1,0 +1,108 @@
+   <!-- START TOPSECTION -->
+     <div id="topsection" class="top-myfolder">
+	  
+	  	<div id="myfolder-chart">
+		 	 <div class="chart-head">Document Breakdown</div>
+		 	 <img src="images/chart.png" alt="Chart" width="150px" />
+	  	</div>	  
+	  	<div id="myfolder-overview">
+		 Overview
+		  <br />
+		  <span id="underwelcome">Find and access all of your documents easily and in the one place.</span>
+		  </div>
+		  
+		  <div id="overall-docinfo">
+		    <div id="overall-head">Overall Document info</div>
+			  <span class="overall-downloads">Number of Documents: <strong>154</strong></span>
+			  <span class="overall-last">Last generated: <a href="" title="Document name">document</a></span>
+		  </div>
+	 </div>
+   <!-- END TOPSECTION -->	
+
+  
+  <!-- START DOCUMENT LIST -->
+   <div id="doclist">
+	   <div class="title"><img class="titleIcon" alt="" src="images/myfolder2.png">
+	   	<h1>My Folder</h1>
+
+
+	      	 <form action="" class="myfolder-search">
+
+				<input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="[&quot;Peter&quot;,&quot;Alaska&quot;,&quot;Alan&quot;,&quot;Patrick&quot;]" onclick="this.value=''" value="Search through your generated documents here..." onblur="formDefault(this)" name="search">
+
+	         <input type="submit" value="" name="find">
+	    </form>
+	   </div>
+
+
+	   	<div class="btn-group document-display-views">
+			  <button class="btn" title="List view"><i class="icon-list"></i>	</button>
+			  <button class="btn" title="Small Icon view"><i class="icon-th"></i>	</button>
+			  <button class="btn" title="Large Icon view"><i class="icon-th-large"></i>	</button>
+			</div>
+
+	   <ul class="thumbnails">
+	  	 <% _.each(documents, function(document){ %>
+	  	 <li class="span2">
+		   <div class="thumbnail">
+		      <img src="<%= document.get("thumbnailLink") %>" alt="Thumbnail">
+		      <h3><%= document.get("title") %></h3>	     
+			<span><%= document.get("description") %></span>
+
+		      	<blockquote class="thumbnail-description-blockquote dashboard-thumbnail-blockquote">			
+				  <small>Created by:<cite title="Source Title"> <%= document.get("creator") %></cite></small>
+				  <small>Partner:<cite title="Source Title"> <%= document.get("partner") %></cite></small>
+				  <small>Downloads:<cite title="Source Title"> <%= document.get("downloads") %></cite></small>
+				</blockquote>
+
+				  			<button class="btn btn-block">View</button>
+							<button class="btn btn-primary btn-block">Download</button>
+							<!--
+				  			<button class="btn">View</button>
+							<button class="btn btn-primary">Download</button>
+								-->
+		    </div>
+		</li>
+
+		 <% }); %>
+
+		</ul>
+		<ul class="documents-list myfolder-list">
+		  	 <% _.each(documents, function(document){ %>
+		  	 <li>
+				 <img src="<%= document.get("thumbnailLink") %>" alt="<%= document.get("thumbnailAlt") %>">
+			     <a href="" title="<%= document.get("title") %>"><%= document.get("title") %></a>
+				<span>Vestibulum dictum adipiscing dolor amauris libero, venenatis.</span>
+				<div class="list-details">
+					<span>Created by: <strong><%= document.get("creator") %></strong></span>
+					<span>Partner: <strong><%= document.get("partner") %></strong></span>
+					<span>Downloads: <strong><%= document.get("downloads") %></strong></span>
+				</div>
+				<a class="generate" href="" title="View"><div class="view-img"></div></a>
+				<a class="generate" href="" title="Generate"><div class="download-img"></div></a>
+			</li>	
+
+			 <% }); %>
+
+			</ul>
+
+   <div class="pagination">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+
+
+
+
+   </div>
+	  
+	</div>
+  </div>
+
+		 
+	 

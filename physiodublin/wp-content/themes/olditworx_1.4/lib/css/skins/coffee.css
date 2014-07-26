@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,html{background-color:#24190d;}
+#header #primary {background:#594b32 url(../../img/theme/primary-bg.png)}
+#footer{background-color:#17130b;}
+
+a{color:#b0985a;}
+a:hover{color:#4f903b}
+
+input[type=submit], 
+a.button{background:#b0985a;}
+
+input[type=submit]:hover, 
+.button:hover {background:#4f903b;}
+
+
+/* Reset */
+a.lightbtn{background:#ddd; color:#333;}
+a.darkbtn{background:#333; color:#eee;}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Page-based record are populating when user clicks on new page's link, when he is going away
+     from current page. "The last page" case is populating when GTP context is closing. This last
+     record has duration from first page's GET to last image GET and not depends on GTP context
+     deletion time. -->
+<record_layout id="pagebased">
+    <record id="6013">
+        <field id="0">ID_RECORD_NAME</field>
+        <field id="1">ID_GTP_PDP_CONTEXT_CREATION_TIMESTAMP</field>
+        <field id="2">ID_GTP_IMSI</field>
+        <field id="3">ID_GTP_IMEISV</field>
+        <field id="4">ID_GTP_APN</field>
+        <field id="5">ID_GTP_RAT_TYPE</field>
+        <field id="6">ID_GTP_CELL_LAC</field>
+        <field id="7">ID_GTP_CELL_ID</field>
+        <field id="8">ID_SGSN_IPV4_ADDRESS</field>
+        <field id="9">ID_SGSN_UDP_PORT_NUMBER</field>
+        <field id="10">ID_GGSN_IPV4_ADDRESS</field>
+        <field id="11">ID_GGSN_UDP_PORT_NUMBER</field>
+        <field id="12">ID_CLIENT_IP_ADDRESS</field>
+        <field id="13">ID_CLIENT_PORT_NUMBER</field>
+        <field id="14">ID_SERVER_IP_ADDRESS</field>
+        <field id="15">ID_SERVER_PORT_NUMBER</field>
+        <field id="16">ID_GTP_END_USER_IPV4_ADDRESS</field>
+        <field id="17">ID_GTP_MSISDN</field>
+        <field id="18">ID_REQUEST_TIMESTAMP</field>
+        <field id="19">ID_METHOD_NAME</field>
+        <field id="20">ID_URI</field>
+        <field id="21">ID_DOMAIN_NAME</field>
+        <field id="22">ID_USER_AGENT</field>
+        <field id="23">ID_FIRST_TIME_FLAG</field>
+        <field id="24">ID_TIME_TO_FIRST_BYTE</field>
+        <field id="25">ID_DOWNLOAD_TIME</field>
+        <field id="26">ID_UPLOAD_TIME</field>
+        <field id="27">ID_PAGE_BASED_QOE_BYTES_UP</field>
+        <field id="28">ID_PAGE_BASED_QOE_BYTES_DOWN</field>
+        <field id="29">ID_PAGE_BASED_QOE_EXPECTED_BYTES_UP</field>
+        <field id="30">ID_PAGE_BASED_QOE_EXPECTED_BYTES_DOWN</field>
+        <field id="31">ID_PAGE_BASED_QOE_THROUGHPUT_UP</field>
+        <field id="32">ID_PAGE_BASED_QOE_THROUGHPUT_DOWN</field>
+        <field id="33">ID_TCP_SERVER_SETUP_TIME</field>
+        <field id="34">ID_TCP_CLIENT_SETUP_TIME</field>
+        <field id="35">ID_SERVER_STATUS_CODE</field>
+        <field id="36">ID_PAGE_BASED_QOE_ATTEMPTS</field>
+        <field id="37">ID_PAGE_BASED_QOE_SUCCEEDED_ATTEMPTS</field>           <!--Number of transactions with status < 400-->
+        <field id="38">ID_PAGE_BASED_QOE_AVERAGE_THROUGHPUT_UP</field>
+        <field id="39">ID_PAGE_BASED_QOE_AVERAGE_THROUGHPUT_DOWN</field>
+        <field id="40">ID_PAGE_BASED_QOE_AVERAGE_UPLOAD_TIME</field>
+        <field id="41">ID_PAGE_BASED_QOE_AVERAGE_DOWNLOAD_TIME</field>
+        <field id="42">ID_PAGE_BASED_QOE_AVERAGE_TIME_TO_FIRST_BYTE</field>
+        <field id="43">ID_PAGE_BASED_QOE_AVERAGE_SERVER_SETUP_TIME</field>
+        <field id="44">ID_PAGE_BASED_QOE_AVERAGE_CLIENT_SETUP_TIME</field>
+        <field id="45">ID_PAGE_BASED_QOE_TOTAL_BYTES_UP</field>
+        <field id="46">ID_PAGE_BASED_QOE_TOTAL_BYTES_DOWN</field>
+        <field id="47">ID_PAGE_BASED_QOE_DURATION</field>                     <!--Duration of the page GET/POST-->
+        <field id="48">ID_PAGE_BASED_QOE_TOTAL_DURATION</field>               <!--Duration of the page and it's content (images, css etc)-->
+        <field id="49">ID_PAGE_BASED_QOE_TOTAL_THROUGHPUT_UP</field>
+        <field id="50">ID_PAGE_BASED_QOE_TOTAL_THROUGHPUT_DOWN</field>
+        <field id="51">ID_PROBE_STATUS</field>                 <!--Probe status of the page-->
+        <field id="52">ID_CONNECTION_STOP_TIMESTAMP</field>
+        <field id="53">ID_HTTP_REFERRER</field>
+    </record>
+</record_layout>
